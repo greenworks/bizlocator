@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bizlocator</title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+
+  <!--[if lt IE 9]>
+  <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="stylesheet" href="/stylesheet/style.css" media="screen">
+  <!--[if lte IE 7]>
+  <link rel="stylesheet" href="/stylesheet/style.ie7.css" media="screen"/><![endif]-->
+  <link rel="stylesheet" href="/stylesheet/style.responsive.css" media="all">
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <script src="/javascript/jquery.js"></script>
+  <script src="/javascript/script.js"></script>
+  <script src="/javascript/script.responsive.js"></script>
+
+</head>
+<body>
+
+<div id="art-main">
+
+  <!-- Start: header -->
+  <%= render "/common/header" %>
+  <!-- End: header -->
+
+  <div class="art-sheet clearfix">
+    <div class="art-layout-wrapper">
+      <div class="art-content-layout">
+        <div class="art-content-layout-row">
+
+          <!-- Start: header -->
+          <%= render "/common/left" %>
+          <!-- End: header -->
+
+          <div class="art-layout-cell art-content">
+            <article class="art-post art-article">
+              <div id="user_nav">
+                <% if user_signed_in? %>
+                    Signed in as <%= current_user.email %>. Not you?
+                    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+                <% else %>
+                    <%= link_to "Sign up", new_user_registration_path %>
+                    or <%= link_to "sign in", new_user_session_path %>
+                <% end %>
+              </div>
+              <p class="notice"><%= notice %></p>
+
+              <p class="alert"><%= alert %></p>
+
+              <%= yield %>
+
+
+            </article>
+          </div>
+          <!-- Start: footer -->
+          <%= render "/common/right" %>
+          <!-- End: footer -->
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Start: footer -->
+  <%= render "/common/footer" %>
+  <!-- End: footer -->
+
+</div>
+
+
+</body>
+</html>

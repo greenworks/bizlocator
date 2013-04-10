@@ -1,3 +1,57 @@
 // Place all the styles related to the Info controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#social_box {
+  clear: both;
+  list-style: none outside none;
+  margin: 0;
+  padding: 0;
+}
+
+.top-menu {
+  vertical-align: bottom;
+}
+
+.top-menu-inner{
+  height:16px;
+  padding:2px 0;
+  width:1020px;
+  text-align: left;
+}
+
+.top-menu a{
+  text-decoration:none;
+}
+
+.top-menu .section{
+   padding-top: 6px;
+   float: left;
+   margin-left: 20px;
+}
+
+
+
+.search_bar {
+  height: 52px;
+  width: 459px;
+  background-image: url("/images/bizlocator-search.png");
+  background-repeat: no-repeat;
+  text-align: left;
+  margin: 0px;
+  padding:8px 0 0 5px;
+}
+
+.search_bar input{
+  width:340px;
+  height:32px;
+
+}
+
+.search_bar a div{
+  line-height:34px;
+  width: 94px;
+  float:right;
+  margin-right:15px;
+}

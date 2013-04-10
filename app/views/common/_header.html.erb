@@ -1,36 +1,130 @@
-<div class="art-header">
-  <div class="art-header-clip">
-    <div class="art-header-center">
-      <div class="art-header-jpeg"></div>
-    </div>
-  </div>
-  <div class="art-header-wrapper">
-    <div class="art-header-inner">
-      <div class="art-headerobject"></div>
-      <div class="art-logo">
-      </div>
-    </div>
-  </div>
-</div>
-<div class="cleared reset-box"></div>
+<script>
+    $(document).ready(function(){
+
+        $("#header-search-button").click(function(){
+            $("#header-search-form").submit();
+        });
+
+        $("#header-search-form").submit(function(){
+
+            var keyword = $('input[name="adsearch"]').val();
+            if(keyword=='Business Name / Category / Keyword'){
+                alert("Please Business Name / Category / Keyword.");
+                return false;
+            }else{
+                return true;
+            }
 
 
-<div class="art-nav">
-  <div class="art-nav-l"></div>
-  <div class="art-nav-r"></div>
-  <div class="art-nav-outer">
-    <div class="art-nav-wrapper">
-      <div class="art-nav-inner">
-        <ul class="art-hmenu">
-          <li>
-            <a href="./home.html" class="active"><span class="l"></span><span class="r"></span><span class="t">Home</span></a>
-          </li>
-          <li>
-            <a href="./contact-us.html"><span class="l"></span><span class="r"></span><span class="t">Contact Us</span></a>
-          </li>
+        });
+
+        $("#adsearch").blur(function(){
+            if(this.value=='') this.value='Business Name / Category / Keyword';
+        });
+
+        $("#adsearch").focus(function(){
+            if(this.value=='Business Name / Category / Keyword') this.value='';
+        });
+
+
+    });
+</script>
+
+<div class="top-menu">
+<table style="width:100%">
+  <tr>
+    <td></td>
+    <td class="top-menu-inner">
+
+      <div style="float:left;">
+        <ul id="social_box">
+
+          <li><a href="#"><img src="/images/facebook.png" alt="Facebook" /></a></li>
+          <li><a href="#"><img src="/images/twitter.png" alt="Twitter" /></a></li>
+          <li><a href="#"><img src="/images/linkedin.png" alt="Linkedin" /></a></li>
+          <li><a href="#"><img src="/images/technorati.png" alt="Technorati" /></a></li>
+          <li><a href="#"><img src="/images/myspace.png" alt="Myspace" /></a></li>
         </ul>
       </div>
-    </div>
-  </div>
+
+      <div class="section">
+        Brampton <a href="#">Change City</a>
+      </div>
+
+      <div class="section">
+        <a href="#">View More Categories</a>
+      </div>
+
+      <div class="section">
+        <a href="#">More Search Options</a>
+      </div>
+
+      <div class="section" style="float:right;">
+        <a href="#">Login</a>  | <a href="#">Register</a>
+      </div>
+
+    </td>
+    <td></td>
+  </tr>
+</table>
 </div>
-<div class="cleared reset-box"></div>
+
+
+
+<header class="art-header">
+
+  <table style="width: 100%;">
+    <tr>
+      <td></td>
+
+      <td style="width:200px">
+        <img src="/images/bizlocator-logo.png" height="100px">
+      </td>
+
+      <td style="width:509px">
+        <img src="/images/bizlocator-search.png" style="margin-left:10px;">
+      </td>
+
+      <td style="width:181px">
+        <img src="/images/dummy-ad.png" height=102px>
+      </td>
+      <td></td>
+    </tr>
+  </table>
+
+
+
+
+</header>
+
+<nav class="art-nav">
+  <div class="art-nav-inner">
+    <ul class="art-hmenu">
+      <li><a href="/info/home" class="active">Home</a>
+        <!--ul class="active">
+          <li><a href="home/new-page.html">Subpage 1</a></li>
+          <li><a href="home/new-page-2.html">Subpage 2</a></li>
+          <li><a href="home/new-page-3.html">Subpage 3</a></li>
+        </ul-->
+      </li>
+      <li><a href="#">City</a></li>
+      <li><a href="#">Business Around Me</a></li>
+      <li><a href="#">Business Hiring</a></li>
+      <li><a href="#">Winning Numbers</a></li>
+      <li><a href="#">Dummy Menu</a></li>
+      <li><a href="#">Dummy Menu</a></li>
+      <li><a href="#">Dummy Menu</a></li>
+    </ul>
+  </div>
+
+</nav>
+
+<center>
+<div style="width:700px">
+    <ul class="art-hmenu">
+      <li><a href="/info/home">Sales - Deals - Flyers - Coupons - Group Buys - All Business</a></li>
+      <li><a href="#">View The Malls</a></li>
+      <li><a href="#">Saved Ads</a></li>
+    </ul>
+</div>
+</center>

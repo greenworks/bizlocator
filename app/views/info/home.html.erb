@@ -1,2 +1,25 @@
-<h1>Info#home</h1>
-<p>Find me in app/views/info/home.html.erb</p>
+<div class="art-sheet clearfix">
+  <div class="art-layout-wrapper">
+    <div class="art-content-layout">
+      <div class="art-content-layout-row">
+
+        <!-- Start: header -->
+        <%= render "/common/quicklink" %>
+        <!-- End: header -->
+
+        <div class="art-layout-cell art-content">
+          <article class="art-post art-article">
+            <!--Start : add left menu here -->
+            <%= render :partial=>"ads/ad_slider", :locals=>{:adcount=>"4"} %>
+            <!--End : add left menu here -->
+          </article>
+        </div>
+        <!-- Start: footer -->
+        <!--%= render "/common/right" %-->
+        <!-- End: footer -->
+
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,145 +1,135 @@
-/* begin Page */
+/* Created by Artisteer v4.1.0.59861 */
 
-img
-{
-  filter: expression(artFixPNG(this));
-}/* end Page */
-
-/* begin Menu */
-.art-nav-r
-{
-  clip: rect(auto auto auto 1920px);
+.art-header, #art-header-bg, .art-layout-cell, .art-layout-wrapper, .art-footer, .art-nav, #art-hmenu-bg, .art-sheet,
+.clearfix {
+   zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).className="cleared");
 }
 
-/* end Menu */
+.art-textblock > div {
+   display: block;
+   line-height: normal;
+   zoom: 1;
+}
 
-/* begin MenuItem */
-.art-hmenu a .r
+.art-header
 {
-  clip: rect(auto auto auto 400px);
+   z-index: 1;
+   background-image: [headerimage];
+   background-position: [headerposition];
 }
-/* end MenuItem */
 
-/* begin Box, Sheet */
-
-.art-sheet-body
+#art-header-bg 
 {
-  zoom: 1;
+   display: none;
 }
-/* end Box, Sheet */
 
-/* begin Layout */
-.art-content-layout, .art-content-layout-row {display: block;}
-.art-content-layout, .art-content-layout-row {zoom: 1;}
-/* end Layout */
-
-/* begin Box, Block */
-.art-block-tl
+.art-hmenu>li, .art-hmenu>li>a
 {
-  clip: rect(auto 9px 9px auto);
+   display: inline !important;
+   zoom: 1;
+   float: none !important;
+   vertical-align: top;
 }
-
-.art-block-tr
+ul.art-hmenu, ul.art-hmenu ul {
+   zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).className="cleared");
+}
+#art-hmenu-bg 
 {
-  clip: rect(auto auto 9px 9px);
+   display: none;
 }
 
-.art-block-bl
+ul.art-hmenu>li:first-child {
+   padding-right:1px;
+}
+ul.art-hmenu>li{
+   zoom:expression(runtimeStyle.zoom=1,insertBefore(document.createElement('span'),firstChild).className='art-hmenu-separator');
+}
+ul.art-hmenu>li>span.art-hmenu-separator
 {
-  clip: rect(9px 9px auto auto);
+   position:absolute;
+   display: block;
+   top:0;
+   left:  -1px;
+   width: 1px;
+   height: 30px;
+   background: url('/images/menuseparator.png') center center no-repeat;
 }
-
-.art-block-br
+ul.art-hmenu>li:first-child>span.art-hmenu-separator
 {
-  clip: rect(9px auto auto 9px);
+   display:none;
 }
 
-.art-block-tc
+ul.art-hmenu ul{
+   background-color: #EFF2F5 !important;
+}
+
+.art-content-layout, .art-content-layout-row, .art-layout-cell 
 {
-  clip: rect(auto auto 9px auto);
+   display: block;
+   zoom: 1;
 }
-
-.art-block-bc
+.art-layout-cell
 {
-  clip: rect(9px auto auto auto);
+   position:relative;
+   float: left;
+   clear: right;
 }
 
-.art-block-cr
+ul.art-vmenu, ul.art-vmenu ul, ul.art-vmenu li{
+   zoom: 1;
+}
+
+ul.art-vmenu ul 
 {
-  clip: rect(auto auto auto 9px);
 }
 
-.art-block-cl
+input[type="text"]
 {
-  clip: rect(auto 9px auto auto);
+   margin:0 0 0 -3px;
+   zoom:expression(runtimeStyle.zoom = 1, parentNode.insertBefore(document.createElement('div'), this).appendChild(this));
 }
 
-.art-block-body
+* html input[type="text"]
 {
-  zoom: 1;
+   margin :0;
 }
-/* end Box, Block */
 
-/* begin BlockHeader */
-.art-blockheader .r
+form.art-search>input[type="text"]
 {
-  clip: rect(auto auto auto 1019px);
+   margin:0 0 0 -3px;
+   zoom:expression(runtimeStyle.zoom = 1, parentNode.insertBefore(document.createElement('div'), this).appendChild(this));
 }
-/* end BlockHeader */
 
-/* begin Box, BlockContent */
-
-.art-blockcontent-body
+form.art-search div>input[type="text"]
 {
-  zoom: 1;
+   width: 100%;
 }
-/* end Box, BlockContent */
 
-/* begin Button */
-.art-button-wrapper .art-button-r
+* html form.art-search>input[type="text"] 
 {
-  clip: rect(auto auto auto 401px);
+   margin :0;
 }
-/* end Button */
 
-/* begin Box, Post */
+.art-postheadericons span{
+   zoom: 1;
+}
+.art-postcontent {
+   height: 1%;
+}
 
-.art-post-body
+.art-postfootericons span{
+   zoom: 1;
+}
+.close-alt, .arrow-right-alt, .arrow-left-alt {
+   display: block !important;
+}
+.cw, .ccw {
+   display: none !important;
+}
+
+.art-sidebar2 
 {
-  zoom: 1;
+   width: auto;
+   float:none;
 }
-/* end Box, Post */
-
-/* begin PostContent */
-.art-postcontent
-{
-  height: 1%;
-}
-/* end PostContent */
-
-/* begin Footer */
-.art-footer-body
-{
-    padding-right: 0;
-  zoom:1;
-}
-
-.art-footer{
-  zoom:1;
-}
-
-/* end Footer */
-
-/* begin LayoutCell, content */
-.art-content {width: auto;}
-.art-content-layout .art-layout-cell, .art-content-layout .art-layout-cell .art-content-layout .art-layout-cell
-{
-  display: block;
-  position:relative;
-  float: left;
-  clear: right;
-}
-.art-content-layout .art-layout-cell, .art-content-layout .art-layout-cell .art-content-layout .art-layout-cell {  zoom:1; }
-.art-layout-cell .art-layout-cell{ float: none; clear: both;}
-/* end LayoutCell, content */
 
