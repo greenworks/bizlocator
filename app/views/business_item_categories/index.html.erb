@@ -11,19 +11,19 @@
     <th></th>
   </tr>
 
-<% @business_item_categories.each do |business_item_category| %>
-  <tr>
-    <td><%= business_item_category.name %></td>
-    <td><%= business_item_category.introtext %></td>
-    <td><%= business_item_category.description %></td>
-    <td><%= business_item_category.ispublished %></td>
-    <td><%= link_to 'Show', business_item_category %></td>
-    <td><%= link_to 'Edit', edit_business_item_category_path(business_item_category) %></td>
-    <td><%= link_to 'Destroy', business_item_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+  <% @business_item_categories.each do |business_item_category| %>
+      <tr>
+        <td><%= business_item_category.name %></td>
+        <td><%= business_item_category.introtext %></td>
+        <td><%= business_item_category.description %></td>
+        <td><%= business_item_category.ispublished %></td>
+        <td><%= link_to 'Show', business_item_category %></td>
+        <td><%= link_to 'Edit', edit_business_item_category_path(business_item_category) %></td>
+        <td><%= link_to 'Destroy', business_item_category, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      </tr>
+  <% end %>
 </table>
 
-<br />
+<br/>
 
 <%= link_to 'New Business item category', new_business_item_category_path %>

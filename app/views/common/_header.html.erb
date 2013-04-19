@@ -1,29 +1,29 @@
 <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
 
-        $("#header-search-button").click(function(){
+        $("#header-search-button").click(function () {
             $("#header-search-form").submit();
         });
 
-        $("#header-search-form").submit(function(){
+        $("#header-search-form").submit(function () {
 
             var keyword = $('input[name="adsearch"]').val();
-            if(keyword=='Business Name / Category / Keyword'){
+            if (keyword == 'Business Name / Category / Keyword') {
                 alert("Please Business Name / Category / Keyword.");
                 return false;
-            }else{
+            } else {
                 return true;
             }
 
 
         });
 
-        $("#adsearch").blur(function(){
-            if(this.value=='') this.value='Business Name / Category / Keyword';
+        $("#adsearch").blur(function () {
+            if (this.value == '') this.value = 'Business Name / Category / Keyword';
         });
 
-        $("#adsearch").focus(function(){
-            if(this.value=='Business Name / Category / Keyword') this.value='';
+        $("#adsearch").focus(function () {
+            if (this.value == 'Business Name / Category / Keyword') this.value = '';
         });
 
 
@@ -31,42 +31,42 @@
 </script>
 
 <div class="top-menu">
-<table style="width:100%">
-  <tr>
-    <td></td>
-    <td class="top-menu-inner">
+  <table style="width:100%">
+    <tr>
+      <td></td>
+      <td class="top-menu-inner">
 
-      <div style="float:left;">
-        <ul id="social_box">
+        <div style="float:left;">
+          <ul id="social_box">
 
-          <li><a href="#"><img src="/images/facebook.png" alt="Facebook" /></a></li>
-          <li><a href="#"><img src="/images/twitter.png" alt="Twitter" /></a></li>
-          <li><a href="#"><img src="/images/linkedin.png" alt="Linkedin" /></a></li>
-          <li><a href="#"><img src="/images/technorati.png" alt="Technorati" /></a></li>
-          <li><a href="#"><img src="/images/myspace.png" alt="Myspace" /></a></li>
-        </ul>
-      </div>
+            <li><a href="#"><img src="/images/facebook.png" alt="Facebook"/></a></li>
+            <li><a href="#"><img src="/images/twitter.png" alt="Twitter"/></a></li>
+            <li><a href="#"><img src="/images/linkedin.png" alt="Linkedin"/></a></li>
+            <li><a href="#"><img src="/images/technorati.png" alt="Technorati"/></a></li>
+            <li><a href="#"><img src="/images/myspace.png" alt="Myspace"/></a></li>
+          </ul>
+        </div>
 
-      <div class="section">
-        Brampton <a href="#">Change City</a>
-      </div>
+        <div class="section">
+          Brampton <a href="#">Change City</a>
+        </div>
 
-      <div class="section">
-        <a href="#">View More Categories</a>
-      </div>
+        <div class="section">
+          <a href="#">View More Categories</a>
+        </div>
 
-      <div class="section">
-        <a href="#">More Search Options</a>
-      </div>
+        <div class="section">
+          <a href="#">More Search Options</a>
+        </div>
 
-      <div class="section" style="float:right;">
-        <a href="#">Login</a>  | <a href="#">Register</a>
-      </div>
+        <div class="section" style="float:right;">
+          <a href="#">Login</a> | <a href="#">Register</a>
+        </div>
 
-    </td>
-    <td></td>
-  </tr>
-</table>
+      </td>
+      <td></td>
+    </tr>
+  </table>
 </div>
 
 
@@ -93,8 +93,6 @@
   </table>
 
 
-
-
 </header>
 
 <nav class="art-nav">
@@ -119,12 +117,11 @@
 
 </nav>
 
-<center>
-<div style="width:700px">
-    <ul class="art-hmenu">
-      <li><a href="/info/home">Sales - Deals - Flyers - Coupons - Group Buys - All Business</a></li>
-      <li><a href="#">View The Malls</a></li>
-      <li><a href="#">Saved Ads</a></li>
-    </ul>
+
+<div style="width:700px;margin:auto">
+  <ul class="art-hmenu">
+    <li><a href="/info/home">Sales - Deals - Flyers - Coupons - Group Buys - All Business</a></li>
+    <li><a href="#">View The Malls</a></li>
+    <li><a href="#">Saved Ads</a></li>
+  </ul>
 </div>
-</center>

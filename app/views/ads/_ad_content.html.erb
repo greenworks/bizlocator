@@ -1,0 +1,69 @@
+<%if display_mode == "summary"  %>
+
+    <table>
+      <tbody>
+      <tr>
+        <th>
+          <%= link_to ad.title, ad %>
+        </th>
+      </tr>
+      <tr>
+        <td><%= truncate(ad.description, :length => 100) %> <%= link_to '... (more)', ad %></td>
+      </tr>
+      <tr>
+        <td>Price : <%= (ad.price.nil? || ad.price.zero?) ? "Free !" : number_to_currency(ad.price) %></td>
+      </tr>
+      </tbody>
+    </table>
+
+<% elsif display_mode == "detailed"  %>
+
+    <div class="divTable">
+      <div class="headRow">
+        <div class="divCell"><%= @ad.title %>
+        </div>
+      </div>
+      <div class="divRow">
+        <div class="divCell">
+          <%= @ad.description %>
+        </div>
+      </div>
+      <div class="divRow">
+        <div class="divCell">
+          <b>Price: </b><%= (@ad.price.nil? || @ad.price.zero?) ? "Free !" : number_to_currency(@ad.price) %>
+        </div>
+      </div>
+      <div class="divRow">
+        <div class="divCell">
+          <b>Address:</b>
+          <%= @ad.address_id %>
+        </div>
+      </div>
+      <div class="divRow">
+        <div class="divCell">
+          <b>Company:</b>
+          <%= link_to @ad.company.name, Company.find(@ad.company_id || 0) %>
+        </div>
+      </div>
+      <div class="divRow">
+        <div class="divCell">
+          <b>Shopping mall:</b>
+          <%= link_to @ad.shopping_mall.name, ShoppingMall.find(@ad.shopping_mall_id || 0) %>
+        </div>
+      </div>
+      <div class="divRow">
+        <div class="divCell">
+          <%= @ad.ad_category_id %>
+          <%= link_to @ad.ad_category.name, AdCategory.find(@ad.ad_category_id || 0) %>
+        </div>
+      </div>
+      <div class="divRow">
+        <div class="divCell">
+          <%= link_to 'Edit', edit_ad_path(@ad) %> | <%= link_to 'Back', ads_path %>
+          | <%= link_to 'New Ad', new_ad_path %>
+        </div>
+      </div>
+    </div>
+<% end %>
+
+

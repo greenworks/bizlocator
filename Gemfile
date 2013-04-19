@@ -5,20 +5,18 @@ gem 'rails', '3.2.11'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'bourbon'
 gem 'sqlite3'
-
 gem 'devise'
-
 gem 'cancan'
-
 gem 'activeadmin-cancan'
-
-
-#gem 'mongrel'
-
 gem 'will_paginate'
+gem 'kaminari'
+gem 'jquery-rails'
 
 gem 'activeadmin'
+
+#gem 'mongrel'
 
 
 
