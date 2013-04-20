@@ -1,4 +1,9 @@
 Bizlocator::Application.routes.draw do
+
+  # You can have the root of your site routed with "root"
+  # just remember to delete public/index.html.
+  root :to => 'info#home'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
@@ -14,44 +19,18 @@ Bizlocator::Application.routes.draw do
   get "info/help"
 
   resources :emergency_numbers
-
-
   resources :city_services
-
-
   resources :city_service_categories
-
-
   resources :mall_types
-
-
   resources :shopping_malls
-
-
   resources :addresses
-
-
   resources :job_categories
-
-
   resources :jobs
-
-
   resources :business_item_categories
-
-
   resources :business_items
-
-
   resources :ad_categories
-
-
   resources :ad_positions
-
-
   resources :ads
-
-
   resources :companies
 
 
@@ -102,9 +81,6 @@ Bizlocator::Application.routes.draw do
   #     resources :products
   #   end
 
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-   root :to => 'info#home'
 
   # See how all your routes lay out with "rake routes"
 

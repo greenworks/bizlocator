@@ -1,0 +1,47 @@
+<%
+   counter = 0
+   new_row = true
+%>
+
+
+<%#sort not needed as ads will displayed randomly= hidden_field_tag :direction, params[:direction] %>
+<%#sort not needed as ads will displayed randomly= hidden_field_tag :sort, params[:sort] %>
+<h1>Listing ads</h1>
+
+<table><tr>
+
+  <th><%#sort not needed as ads will displayed randomly= sortable "title" %></th>
+  <th><%#sort not needed as ads will displayed randomly= sortable "price" %></th>
+  <th><%#sort not needed as ads will displayed randomly= sortable "company_id", "Company" %></th>
+  <th><%#sort not needed as ads will displayed randomly= sortable "ad_category_id", "Category" %></th>
+  <th><%#sort not needed as ads will displayed randomly= sortable "shopping_mall_id", "Mall" %></th>
+</tr></table>
+
+
+<%= will_paginate @ads %>
+
+
+<table>
+  <tbody>
+  <% @ads.each do |ad|
+    counter = counter + 1 %>
+
+      <% if new_row
+           new_row = false %>
+          <tr>
+      <% end %>
+      <td>
+        <%= render :partial => "ads/ad_content" , :locals => { :display_mode => "summary", :ad => ad}  %> <br/>
+        <%= link_to 'Show', ad %>
+        <%= link_to 'Edit', edit_ad_path(ad) %>
+        <%= link_to 'Destroy', ad, method: :delete, data: {confirm: 'Are you sure?'} %>
+      </td>
+
+      <% if counter%2==0
+           new_row = true %>
+          </tr>
+      <% end %>
+  <% end %>
+  </tbody>
+</table>
+<%= will_paginate @ads %>

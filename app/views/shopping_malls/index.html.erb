@@ -11,19 +11,19 @@
     <th></th>
   </tr>
 
-<% @shopping_malls.each do |shopping_mall| %>
-  <tr>
-    <td><%= shopping_mall.name %></td>
-    <td><%= shopping_mall.description %></td>
-    <td><%= shopping_mall.mall_type_id %></td>
-    <td><%= shopping_mall.ispublished %></td>
-    <td><%= link_to 'Show', shopping_mall %></td>
-    <td><%= link_to 'Edit', edit_shopping_mall_path(shopping_mall) %></td>
-    <td><%= link_to 'Destroy', shopping_mall, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+  <% @shopping_malls.each do |shopping_mall| %>
+      <tr>
+        <td><%= shopping_mall.name %></td>
+        <td><%= shopping_mall.description %></td>
+        <td><%= shopping_mall.mall_type_id %></td>
+        <td><%= shopping_mall.ispublished %></td>
+        <td><%= link_to 'Show', shopping_mall %></td>
+        <td><%= link_to 'Edit', edit_shopping_mall_path(shopping_mall) %></td>
+        <td><%= link_to 'Destroy', shopping_mall, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      </tr>
+  <% end %>
 </table>
 
-<br />
+<br/>
 
 <%= link_to 'New Shopping mall', new_shopping_mall_path %>

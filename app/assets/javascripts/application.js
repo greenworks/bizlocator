@@ -13,3 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+$(function () {
+    $("#ads th a, #ads .pagination a").live("click", function () {
+        $.getScript(this.href);
+        return false;
+    });
+    $("#ads_search input").keyup(function () {
+        $.get($("#ads_search").attr("action"), $("#ads_search").serialize(), null, "script");
+        return false;
+    });
+});

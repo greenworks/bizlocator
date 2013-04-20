@@ -1,7 +1,23 @@
-.tmo_list { margin: 20px 0 20px 20px; padding: 0; list-style: none; }
-.tmo_list li { background: transparent url(/images/templatemo_list.png) no-repeat scroll 0 0px; margin:0 0 20px; padding: 0 0 0 20px; 	line-height: 0.8em; }
-.tmo_list li a { color: #fff; }
-.tmo_list li a:hover { color: #ff4301; }
+.tmo_list {
+  margin: 20px 0 20px 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.tmo_list li {
+  background: transparent url(/images/templatemo_list.png) no-repeat scroll 0 0px;
+  margin: 0 0 20px;
+  padding: 0 0 0 20px;
+  line-height: 0.8em;
+}
+
+.tmo_list li a {
+  color: #fff;
+}
+
+.tmo_list li a:hover {
+  color: #ff4301;
+}
 
 .col_w220 {
   float: left;
@@ -13,7 +29,6 @@
 .col_last {
   margin-right: 0;
 }
-
 
 /* footer */
 
@@ -91,7 +106,6 @@
 
 /* end of copyright */
 /* end of footer */
-
 
 /*body {
   background-color: #fff;

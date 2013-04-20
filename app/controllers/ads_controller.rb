@@ -1,9 +1,15 @@
 class AdsController < ApplicationController
+
+  require 'will_paginate/array'
+
+  #helper_method :sort_column, :sort_direction
+
   # GET /ads
   # GET /ads.json
   def index
-    @ads = Ad.all
-
+    #@ads = Ad.order("title").paginate(:per_page => 6, :page => params[:page])
+    @ads = Ad.search(params[:search]).shuffle().paginate(:per_page => 6, :page => params[:page])
+    #.order("name").page(params[:page])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @ads }
@@ -80,4 +86,18 @@ class AdsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+=begin
+ #sort not needed as ads will displayed randomly
+  private
+
+  def sort_column
+    Ad.column_names.include?(params[:sort]) ? params[:sort] : "title"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
+=end
+
 end
