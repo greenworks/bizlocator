@@ -80,20 +80,6 @@ tfoot td {
 .divTable {
   display: table;
   width: auto;
-  background-color: #eee;
-}
-
-.headrow divCell {
-  float: left; /*fix for  buggy browsers*/
-  display: table-column;
-  width: auto;
-  background-color: #ccc;
-  font-size: 1.4em;
-  line-height: 1.4em;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #777777;
-  padding: 10px 7px;
-  text-align: left;
 }
 
 .divRow {
@@ -102,17 +88,37 @@ tfoot td {
   clear: both;
 }
 
-.divCell {
+.headrow divCell {
   float: left; /*fix for  buggy browsers*/
-  display: table-cell;
+  display: table-column;
   width: auto;
-  background-color: #ccc;
-  font-size: 1.2em;
+  background-color: #F5F5F5;
   line-height: 1.4em;
-  font-family: Arial, Helvetica, sans-serif;
   color: #777777;
   padding: 10px 7px;
+  font-family: 'Trebuchet MS',Arial,Helvetica,Sans-Serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: bold;
   text-align: left;
+  text-decoration: none;
+}
+
+
+.divCell {
+  float: left; /*fix for  buggy browsers*/
+  display: table-column;
+  width: auto;
+  background-color: #F5F5F5;
+  line-height: 1.4em;
+  color: #777777;
+  padding: 10px 7px;
+  font-family: 'Trebuchet MS',Arial,Helvetica,Sans-Serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: normal;
+  text-align: left;
+  text-decoration: none;
 
 }
 

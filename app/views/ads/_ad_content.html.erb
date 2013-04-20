@@ -5,22 +5,27 @@
         <div class="divCell">
           <%= link_to ad.title, ad %>
         </div>
-        <div class="headRow">
+      </div>
+      <div class="divRow">
           <div class="divCell">
-            <%=image_tag(ad.image.to_s, :height => '157', :width => '217') %>
-          </div>
-          </div>
-        <div class="divRow">
-          <div class="divCell">
-            <%= truncate(ad.description, :length => 100) %> <%= link_to '... (more)', ad %>
+            <% if ad.image.to_s != ''  %>
+          <%=image_tag(ad.image.to_s, :height => '157', :width => '217') %>
+            <% else %>
+                <%=image_tag("/images/dummy.jpeg", :height => '157', :width => '217') %>
+            <% end %>
           </div>
         </div>
-        <div class="headRow">
+      <div class="divRow">
+          <div class="divCell">
+            <%= truncate(ad.description, :length => 30) %><br/><%= link_to '... (more)', ad %>
+          </div>
+        </div>
+      <div class="headRow">
           <div class="divCell">Price : <%= (ad.price.nil? || ad.price.zero?) ? "Free !" : number_to_currency(ad.price) %>
           </div>
         </div>
-      </div>
     </div>
+
 
 <% elsif display_mode == "detailed"  %>
 
@@ -32,6 +37,15 @@
       <div class="divRow">
         <div class="divCell">
           <%= @ad.description %>
+        </div>
+      </div>
+      <div class="divRow">
+        <div class="divCell">
+          <% if ad.image.to_s != ''  %>
+              <%=image_tag(ad.image.to_s, :height => '157', :width => '217') %>
+          <% else %>
+              <%=image_tag("/images/dummy.jpeg", :height => '157', :width => '217') %>
+          <% end %>
         </div>
       </div>
       <div class="divRow">
