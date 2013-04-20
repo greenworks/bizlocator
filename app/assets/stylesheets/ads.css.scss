@@ -16,12 +16,6 @@
   background-image: url(/images/down_arrow.gif);
 }
 
-table {
-  width: 650px;
-  border-collapse: collapse;
-  border: 1px solid #FFCA5E;
-}
-
 caption {
   font: 1.8em/1.8em Arial, Helvetica, sans-serif;
   text-align: left;
@@ -44,21 +38,19 @@ thead th {
 }
 
 tbody tr {
-  background: url(bg_td1.jpg) repeat-x top;
+
 }
 
 tbody tr.odd {
-  background: #FFF8E8 url(bg_td2.jpg) repeat-x;
+
 }
 
 tbody th, td {
   font-size: 0.8em;
-  line-height: 1.4em;
+  line-height: 1.2em;
   font-family: Arial, Helvetica, sans-serif;
   color: #777777;
   padding: 10px 7px;
-  border-top: 1px solid #FFCA5E;
-  border-right: 1px solid #DDDDDD;
   text-align: left;
 }
 
@@ -85,55 +77,129 @@ tfoot td {
   height: 30px;
 }
 
-.divTable{
-  display:table;
-  width:650px;
-  background-color:#eee;
-  border:1px solid #FFCA5E;
-  border-spacing:5px;/*cellspacing:poor IE support for  this*/
-  border-collapse: collapse;
+.divTable {
+  display: table;
+  width: auto;
+  background-color: #eee;
 }
 
-.headrow divCell{
-  float:left;/*fix for  buggy browsers*/
-  display:table-column;
-  width:auto;
-  background-color:#ccc;
-  font-size: 2em;
-  line-height: 1.4em;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #777777;
-  padding: 10px 7px;
-  border-top: 1px solid #FFCA5E;
-  border-right: 1px solid #DDDDDD;
-  text-align: left;
-}
-
-.divRow{
-  display:table-row;
-  width:auto;
-  clear:both;
-  background: url(bg_td1.jpg) repeat-x top;
-}
-.divCell{
-  float:left;/*fix for  buggy browsers*/
-  display:table-column;
-  width:auto;
-  background-color:#ccc;
+.headrow divCell {
+  float: left; /*fix for  buggy browsers*/
+  display: table-column;
+  width: auto;
+  background-color: #ccc;
   font-size: 1.4em;
   line-height: 1.4em;
   font-family: Arial, Helvetica, sans-serif;
   color: #777777;
   padding: 10px 7px;
-  border-top: 1px solid #FFCA5E;
-  border-right: 1px solid #DDDDDD;
+  text-align: left;
+}
+
+.divRow {
+  display: table-row;
+  width: auto;
+  clear: both;
+}
+
+.divCell {
+  float: left; /*fix for  buggy browsers*/
+  display: table-cell;
+  width: auto;
+  background-color: #ccc;
+  font-size: 1.2em;
+  line-height: 1.4em;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #777777;
+  padding: 10px 7px;
   text-align: left;
 
 }
 
 .search_text_field {
-  font-family:verdana;
-  font-size: large;
-  font-weight:bold;
-  text-decoration:underline overline;
-  background-color:yellow;}
+  /*  font-family:verdana;
+    background-color:yellow;
+    color: #999;
+    font-weight: bold;
+    font-size: 24px;
+    padding: 10px;
+    border: 2px solid #999;
+    border-radius:2px;
+    border-width: 1;*/
+}
+
+.pageDeals .deal3 .dealBox {
+  width: 217px;
+  box-shadow: 0 0 10px #b2b2b2;
+  height: 255px;
+  float: left;
+  position: relative;
+  margin-right: 18px;
+  *width: 218px;
+  width: 217px\9;
+  *margin-right: 15px;
+  margin-right: 15px\9;
+  *border: 1px solid #ebebeb;
+  border: 1px solid #ebebeb   \9;
+}
+
+.pageDeals .deal3 .dealBox .catbox {
+  background: url(../images/blackT.png) repeat;
+  bottom: -4px;
+  color: #FFFFFF;
+  display: block;
+  font: 10px/12px Arial, Helvetica, sans-serif;
+  height: 21px;
+  margin: 0;
+  padding: 5px;
+  position: absolute;
+  width: 207px;
+  *left: 0px;
+}
+
+.pageDeals .deal3 .dealBox figcaption {
+  padding: 15px 0 9px 7px;
+  float: left;
+  height: 40px;
+  position: relative;
+  width: 203px;
+}
+
+.pageDeals .deal3 .dealBox figcaption a {
+  color: #006699;
+  font: 13px/14px Arial, Helvetica, sans-serif;
+}
+
+.pageDeals .deal3 .dealBox figcaption .addr {
+  background: url(../images/hpSprite.png) no-repeat -18px -472px;
+  color: #3D5B02;
+  display: block;
+  font-size: 82%;
+  font-weight: normal;
+  left: -2px;
+  line-height: 100%;
+  padding-left: 9px;
+  position: relative;
+  top: 5px;
+  width: 185px;
+  font-style: normal;
+  margin-left: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.pageDeals .deal3 .dealBox figcaption .addr.sel {
+  position: absolute;
+  width: 150px;
+  background: #efefef url(../images/hpSprite.png) no-repeat 5px -675px;
+  height: 56px;
+  width: 125px;
+  z-index: 9999999;
+  margin: 25px 0 0 0px;
+  padding: 5px 5px 5px 15px;
+  display: block;
+  *height: 55px;
+  overflow: auto;
+  white-space: normal;
+  line-height: 104%;
+}

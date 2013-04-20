@@ -1,14 +1,32 @@
-<br/>
-<br/>
-<br/>
+<div class="art-sheet clearfix">
+  <div class="art-layout-wrapper">
+    <div class="art-content-layout">
+      <div class="art-content-layout-row">
 
-<%= form_tag ads_path, :method => 'get', :id => "ads_search" do %>
-    <p>
-      <%= text_field_tag :search, params[:search] ,:size=>"124", :class => 'search_text_field' %>
+        <!-- Start: header -->
+        <!--%= render "/common/quicklink" %-->
+        <!-- End: header -->
 
-      <%= submit_tag "Search", :name => nil %>
-    </p>
-    <div id="ads"><%= render 'ads/ads' %></div>
-<% end %>
+        <div class="art-layout-cell art-content">
+          <article class="art-post art-article">
+            <!--Start : add left menu here -->
+
+<%= render :partial => "ads/ad_search" %>
+
+<div id="ads">
+  <%= render 'ads/ads' %>
+</div>
 
 <%= link_to 'New Ad', new_ad_path %>
+        <!--End : add left menu here -->
+          </article>
+        </div>
+        <!-- Start: footer -->
+        <!--%= render "/common/right" %-->
+        <!-- End: footer -->
+
+
+      </div>
+    </div>
+  </div>
+</div>

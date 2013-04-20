@@ -8,7 +8,15 @@ class AdsController < ApplicationController
   # GET /ads.json
   def index
     #@ads = Ad.order("title").paginate(:per_page => 6, :page => params[:page])
-    @ads = Ad.search(params[:search]).shuffle().paginate(:per_page => 6, :page => params[:page])
+    @ads = Ad.search(params[:search])
+    if params.has_key?(:price_from) && params[:price_from] != ''
+      @ads = @ads.where(' price >= ?', "#{params[:price_from]}")
+    end
+    if params.has_key?(:price_to) && params[:price_to] != ''
+      @ads = @ads.where(' price <= ?', "#{params[:price_to]}")
+    end
+    @ads = @ads.shuffle().paginate(:per_page => 6, :page => params[:page])
+#    @ads = Ad.search(params[:search],params[:price_from],params[:price_to]).shuffle().paginate(:per_page => 6, :page => params[:page])
     #.order("name").page(params[:page])
     respond_to do |format|
       format.html # index.html.erb

@@ -1,9 +1,8 @@
 <%
    counter = 0
    new_row = true
+   ads_per_row = 3
 %>
-
-
 <%#sort not needed as ads will displayed randomly= hidden_field_tag :direction, params[:direction] %>
 <%#sort not needed as ads will displayed randomly= hidden_field_tag :sort, params[:sort] %>
 <h1>Listing ads</h1>
@@ -21,27 +20,33 @@
 <%= will_paginate @ads %>
 
 
-<table>
-  <tbody>
+<div class="divTable">
+
   <% @ads.each do |ad|
     counter = counter + 1 %>
 
-      <% if new_row
+      <% if new_row or ad.nil?
            new_row = false %>
-          <tr>
+      <div class="headRow">
       <% end %>
-      <td>
-        <%= render :partial => "ads/ad_content" , :locals => { :display_mode => "summary", :ad => ad}  %> <br/>
-        <%= link_to 'Show', ad %>
-        <%= link_to 'Edit', edit_ad_path(ad) %>
-        <%= link_to 'Destroy', ad, method: :delete, data: {confirm: 'Are you sure?'} %>
-      </td>
 
-      <% if counter%2==0
+        <div class="divCell">
+
+          <ul id="categoryPageListing" style="float:left;padding-left:18px" class="multiDeal deal4 deal3 show4">
+                <!--%= render :partial => "ads/ad_content" , :locals => { :display_mode => "summary", :ad => ad}  %> <br/-->
+                <%= render :partial => "ads/ad_content" , :locals => { :display_mode => "summary", :ad => ad}  %>
+          </ul>
+          <% if false %>
+                <%= link_to 'Show', ad %>
+                <%= link_to 'Edit', edit_ad_path(ad) %>
+                <%= link_to 'Destroy', ad, method: :delete, data: {confirm: 'Are you sure?'} %>
+            <% end %>
+        </div>
+
+      <% if counter%ads_per_row==0
            new_row = true %>
-          </tr>
+      </div>
       <% end %>
   <% end %>
-  </tbody>
-</table>
+</div>
 <%= will_paginate @ads %>

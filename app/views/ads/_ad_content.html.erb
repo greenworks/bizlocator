@@ -1,20 +1,26 @@
 <%if display_mode == "summary"  %>
 
-    <table>
-      <tbody>
-      <tr>
-        <th>
+    <div class="divTable">
+      <div class="headRow">
+        <div class="divCell">
           <%= link_to ad.title, ad %>
-        </th>
-      </tr>
-      <tr>
-        <td><%= truncate(ad.description, :length => 100) %> <%= link_to '... (more)', ad %></td>
-      </tr>
-      <tr>
-        <td>Price : <%= (ad.price.nil? || ad.price.zero?) ? "Free !" : number_to_currency(ad.price) %></td>
-      </tr>
-      </tbody>
-    </table>
+        </div>
+        <div class="headRow">
+          <div class="divCell">
+            <%=image_tag(ad.image.to_s, :height => '157', :width => '217') %>
+          </div>
+          </div>
+        <div class="divRow">
+          <div class="divCell">
+            <%= truncate(ad.description, :length => 100) %> <%= link_to '... (more)', ad %>
+          </div>
+        </div>
+        <div class="headRow">
+          <div class="divCell">Price : <%= (ad.price.nil? || ad.price.zero?) ? "Free !" : number_to_currency(ad.price) %>
+          </div>
+        </div>
+      </div>
+    </div>
 
 <% elsif display_mode == "detailed"  %>
 
@@ -53,16 +59,18 @@
       </div>
       <div class="divRow">
         <div class="divCell">
-          <%= @ad.ad_category_id %>
           <%= link_to @ad.ad_category.name, AdCategory.find(@ad.ad_category_id || 0) %>
         </div>
       </div>
-      <div class="divRow">
-        <div class="divCell">
-          <%= link_to 'Edit', edit_ad_path(@ad) %> | <%= link_to 'Back', ads_path %>
-          | <%= link_to 'New Ad', new_ad_path %>
-        </div>
-      </div>
+      <% if 1 %>
+          <div class="divRow">
+            <div class="divCell">
+              <%= link_to 'Edit', edit_ad_path(@ad) %> | <%= link_to 'Back', ads_path %>
+              | <%= link_to 'New Ad', new_ad_path %>
+            </div>
+          </div>
+      <% end %>
+
     </div>
 <% end %>
 
