@@ -1,3 +1,80 @@
 // Place all the styles related to the companies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.companylist {
+  /*background: none repeat scroll 0px 0px #F0FAFF;*/
+  margin:10px 0;
+  float:left;
+  border:1px dashed #6FB6F8;
+  padding:5px;
+}
+
+.companylist:hover{
+  background: none repeat scroll 0px 0px #F0FAFF;
+}
+
+.companylist a{
+  text-decoration: none;
+}
+
+.companylist .name a{
+  color:#0000FF;
+}
+
+.companylist .info{
+  margin:5px 0px;
+  font:12px;
+}
+
+.companylist .about{
+   font-size:18px;
+   padding:4px;
+}
+
+.companylist .about img{
+  height:24px;
+  float: left;
+  margin-right:5px;
+}
+
+.companylist .offers{
+  font-size:18px;
+  padding:4px;
+}
+
+.companylist .offers img{
+  height:24px;
+  float: left;
+  margin-right:5px;
+}
+
+.companylist .business{
+  font-size:18px;
+  padding:4px;
+}
+
+.companylist .business img{
+  height:24px;
+  float: left;
+  margin-right:5px;
+}
+
+.companylist .contact p {
+  margin-top:5px;
+}
+
+.companylist .contact .address{
+
+}
+
+.companylist .contact .phone,.companylist .contact .fax,.companylist .contact .email{
+   float: left;
+   width:300px;
+}
+
+.companylist .contact .phone img,.companylist .contact .fax img,,.companylist .contact .email img{
+  float: left;
+  height: 24px;
+  margin-right: 5px;
+}

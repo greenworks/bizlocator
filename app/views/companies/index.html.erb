@@ -1,6 +1,21 @@
+
+<div class="art-sheet clearfix">
+  <div class="art-layout-wrapper">
+    <div class="art-content-layout">
+      <div class="art-content-layout-row">
+
+        <!-- Start: header -->
+
+        <!-- End: header -->
+
+        <div class="art-layout-cell art-content">
+          <article class="art-post art-article">
+
+
+
 <h1>Listing companies</h1>
 
-<table>
+<!--table>
   <tr>
     <th>Name</th>
     <th>Owner name</th>
@@ -15,10 +30,14 @@
     <th></th>
     <th></th>
     <th></th>
-  </tr>
+  </tr-->
 
   <% @companies.each do |company| %>
-      <tr>
+
+                <%= render :partial =>"companies/company", :locals => {:company => company} %>
+
+
+      <!--tr>
         <td><%= company.name %></td>
         <td><%= company.owner_name %></td>
         <td><%= company.user_id %></td>
@@ -32,10 +51,22 @@
         <td><%= link_to 'Show', company %></td>
         <td><%= link_to 'Edit', edit_company_path(company) %></td>
         <td><%= link_to 'Destroy', company, method: :delete, data: {confirm: 'Are you sure?'} %></td>
-      </tr>
+      </tr-->
   <% end %>
-</table>
+<!--/table>
 
 <br/>
 
-<%= link_to 'New Company', new_company_path %>
+<  %= link_to 'New Company', new_company_path %-->
+
+          </article>
+        </div>
+        <!-- Start: footer -->
+        <!--%= render "/common/right" %-->
+        <!-- End: footer -->
+
+
+      </div>
+    </div>
+  </div>
+</div>
