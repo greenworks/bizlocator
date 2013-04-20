@@ -1,0 +1,19 @@
+<%= form_tag ads_path, :method => 'get', :id => "ads_search" , :class =>"none" do %>
+    <div class="divTable">
+      <div class="divRow">
+        <div class="divCell">
+          Search Ad :
+          <%= text_field_tag :search, params[:search], :class => "search_text_field" %>
+        </div>
+        <div class="divCell">
+          Price Range from :   <%= text_field_tag :price_from, params[:price_from], :class => "search_text_field" %>  to : <%= text_field_tag :price_to, params[:price_to], :class => "search_text_field" %>
+        </div>
+        <div class="divCell">
+          <%= submit_tag "Search" %>
+        </div>
+          <div class="divCell">
+            <%= link_to "View All Ads", ads_path  %>
+          </div>
+        </div>
+    </div>
+<% end %>

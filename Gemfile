@@ -15,6 +15,8 @@ gem 'kaminari'
 gem 'jquery-rails'
 
 gem 'activeadmin'
+gem 'carrierwave'
+#gem 'rmagick' , '2.12'
 
 #gem 'mongrel'
 
