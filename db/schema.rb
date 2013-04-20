@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130420120411) do
+ActiveRecord::Schema.define(:version => 20130420152734) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20130420120411) do
     t.boolean  "ispublished"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "image"
   end
 
   create_table "ad_positions", :force => true do |t|
@@ -120,6 +121,7 @@ ActiveRecord::Schema.define(:version => 20130420120411) do
     t.date     "expiry_date"
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
+    t.string   "image"
   end
 
   create_table "city_service_categories", :force => true do |t|
@@ -138,6 +140,7 @@ ActiveRecord::Schema.define(:version => 20130420120411) do
     t.boolean  "ispublished"
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
+    t.string   "image"
   end
 
   create_table "companies", :force => true do |t|
@@ -162,6 +165,7 @@ ActiveRecord::Schema.define(:version => 20130420120411) do
     t.boolean  "ispublished"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "image"
   end
 
   create_table "job_categories", :force => true do |t|
@@ -186,6 +190,7 @@ ActiveRecord::Schema.define(:version => 20130420120411) do
     t.boolean  "isapproved"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.string   "image"
   end
 
   create_table "mall_types", :force => true do |t|
@@ -204,6 +209,7 @@ ActiveRecord::Schema.define(:version => 20130420120411) do
     t.boolean  "ispublished"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.string   "image"
   end
 
   create_table "users", :force => true do |t|
