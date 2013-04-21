@@ -5,7 +5,11 @@
   <%= @ad_category.name %>
 </p>
 <p>
-  <%= image_tag @ad_category.image.to_s %>
+  <% if @ad_category.image.to_s != ''  %>
+      <%=image_tag(@ad_category.image.to_s, :height => '157', :width => '217') %>
+  <% else %>
+      <%=image_tag("/images/dummy.jpeg", :height => '157', :width => '217') %>
+  <% end %>
 </p>
 <p>
   <b>Introtext:</b>

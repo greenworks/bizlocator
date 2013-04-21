@@ -1,18 +1,15 @@
 <br/>
 <br/>
-<br/>
-<br/>
 <h1>Listing ad_categories</h1>
 
-<% ('A'..'Z').each do |char| %>
+<% ad_categories = @ad_categories %>
 
-    <% if char==params[:char] %>
-        <%= link_to char, ad_categories_path(:char => char), :class => 'selected_char' %>
-    <% else %>
-        <%= link_to char, ad_categories_path(:char => char) %>
+<% AdCategory.all.group_by(&:initial).each do |initial, ad_categories| %>
+    <%= content_tag(:h2, initial)%>
+    <% ad_categories.each do |ad_category|%>
+        <%= link_to(ad_category.name, ad_category) %>
     <% end %>
 <% end %>
-<%= link_to "ALL", ad_categories_path %>
 
 <table>
   <tr>
@@ -41,4 +38,3 @@
 <br/>
 
 <%= link_to 'New Ad category', new_ad_category_path %>
-

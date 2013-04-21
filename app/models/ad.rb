@@ -11,9 +11,9 @@ class Ad < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
-  def self.search_by_category_id(category_id)
-    if  category_id
-      where(' ad_category_id =?', category_id)
+  def self.search_similar_ads(main_ad)
+    if  main_ad
+      where(' ad_category_id =?  and id<> ? ', main_ad.ad_category_id, main_ad.id)
     else
       scoped
     end

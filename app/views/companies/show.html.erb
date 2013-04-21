@@ -5,7 +5,11 @@
   <%= @company.name %>
 </p>
 <p>
-  <%= image_tag @company.image.to_s %>
+  <% if @company.image.to_s != ''  %>
+      <%=image_tag(@company.image.to_s, :height => '157', :width => '217') %>
+  <% else %>
+      <%=image_tag("/images/dummy.jpeg", :height => '157', :width => '217') %>
+  <% end %>
 </p>
 <p>
   <b>Owner name:</b>

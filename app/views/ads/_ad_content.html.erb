@@ -9,7 +9,7 @@
       <div class="divRow">
           <div class="divCell">
             <% if ad.image.to_s != ''  %>
-          <%=image_tag(ad.image.to_s, :height => '157', :width => '217') %>
+                <%=image_tag(ad.image.to_s, :height => '157', :width => '217') %>
             <% else %>
                 <%=image_tag("/images/dummy.jpeg", :height => '157', :width => '217') %>
             <% end %>

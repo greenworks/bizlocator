@@ -5,9 +5,12 @@
   <%= @emergency_number.name %>
 </p>
 <p>
-  <%= image_tag @emergency_number.image.to_s %>
+  <% if @emergency_number.image.to_s != ''  %>
+      <%=image_tag(@emergency_number.image.to_s, :height => '157', :width => '217') %>
+  <% else %>
+      <%=image_tag("/images/dummy.jpeg", :height => '157', :width => '217') %>
+  <% end %>
 </p>
-
 <p>
   <b>Value:</b>
   <%= @emergency_number.value %>

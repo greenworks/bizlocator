@@ -6,7 +6,11 @@
 </p>
 
 <p>
-  <%= image_tag @shopping_mall.image.to_s %>
+  <% if @shopping_mall.image.to_s != ''  %>
+      <%=image_tag(@shopping_mall.image.to_s, :height => '157', :width => '217') %>
+  <% else %>
+      <%=image_tag("/images/dummy.jpeg", :height => '157', :width => '217') %>
+  <% end %>
 </p>
 
 <p>
