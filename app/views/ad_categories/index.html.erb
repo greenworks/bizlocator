@@ -20,6 +20,7 @@
     <th>Introtext</th>
     <th>Description</th>
     <th>Ispublished</th>
+    <th>Image</th>
     <th></th>
     <th></th>
     <th></th>
@@ -31,6 +32,13 @@
         <td><%= ad_category.introtext %></td>
         <td><%= ad_category.description %></td>
         <td><%= ad_category.ispublished %></td>
+        <td>
+          <% if ad_category.image.to_s != ''  %>
+              <%=image_tag(ad_category.image.to_s, :height => '60', :width => '120') %>
+          <% else %>
+              <%=image_tag("/images/dummy.jpeg", :height => '60 ', :width => '120') %>
+          <% end %>
+        </td>
         <td><%= link_to 'Show', ad_category %></td>
         <td><%= link_to 'Edit', edit_ad_category_path(ad_category) %></td>
         <td><%= link_to 'Destroy', ad_category, method: :delete, data: {confirm: 'Are you sure?'} %></td>
