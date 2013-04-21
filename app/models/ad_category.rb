@@ -12,4 +12,8 @@ class AdCategory < ActiveRecord::Base
     name.slice(0).chr.upcase
   end
 
+  def get_child_categories
+    AdCategory.where("parent_category_id = ?", "#{id}").limit(3)
+  end
+
 end

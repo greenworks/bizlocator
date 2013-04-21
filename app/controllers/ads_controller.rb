@@ -9,6 +9,12 @@ class AdsController < ApplicationController
   def index
     #@ads = Ad.order("title").paginate(:per_page => 6, :page => params[:page])
     @ads = Ad.search(params[:search])
+    if params.has_key?(:ad_category_id) && params[:ad_category_id] != ''
+      @ads = @ads.where(' ad_category_id = ?', "#{params[:ad_category_id]}")
+    end
+    if params.has_key?(:company_id) && params[:company_id] != ''
+      @ads = @ads.where(' company_id = ?', "#{params[:company_id]}")
+    end
     if params.has_key?(:price_from) && params[:price_from] != ''
       @ads = @ads.where(' price >= ?', "#{params[:price_from]}")
     end
