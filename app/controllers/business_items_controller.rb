@@ -3,6 +3,15 @@ class BusinessItemsController < ApplicationController
   # GET /business_items.json
   def index
     @business_items = BusinessItem.all
+    @business_items = BusinessItem.search(params[:search])
+    if params.has_key?(:business_item_category_id) && params[:business_item_category_id] != ''
+      @business_items = @business_items.where(' business_item_category_id = ?', "#{params[:business_item_category_id]}")
+    end
+    if params.has_key?(:company_id) && params[:company_id] != ''
+      @business_items = @business_items.where(' company_id = ?', "#{params[:company_id]}")
+    end
+
+    @business_items = @business_items.shuffle().paginate(:per_page => 6, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

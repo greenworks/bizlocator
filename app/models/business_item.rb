@@ -8,4 +8,12 @@ class BusinessItem < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
+  def self.search(keyword)
+    if keyword
+      where(' title LIKE ?  ', "%#{keyword}%")
+    else
+      scoped
+    end
+  end
+
 end

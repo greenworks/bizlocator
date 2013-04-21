@@ -6,6 +6,7 @@
     <th>Description</th>
     <th>Mall type</th>
     <th>Ispublished</th>
+    <th>Image</th>
     <th></th>
     <th></th>
     <th></th>
@@ -17,6 +18,13 @@
         <td><%= shopping_mall.description %></td>
         <td><%= shopping_mall.mall_type_id %></td>
         <td><%= shopping_mall.ispublished %></td>
+        <td>
+          <% if shopping_mall.image.to_s != ''  %>
+              <%=image_tag(shopping_mall.image.to_s, :height => '157', :width => '217') %>
+          <% else %>
+              <%=image_tag("/images/dummy.jpeg", :height => '157', :width => '217') %>
+          <% end %>
+        </td>
         <td><%= link_to 'Show', shopping_mall %></td>
         <td><%= link_to 'Edit', edit_shopping_mall_path(shopping_mall) %></td>
         <td><%= link_to 'Destroy', shopping_mall, method: :delete, data: {confirm: 'Are you sure?'} %></td>

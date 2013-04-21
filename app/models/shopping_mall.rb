@@ -7,4 +7,5 @@ class ShoppingMall < ActiveRecord::Base
   attr_accessible :description, :ispublished, :mall_type_id, :name, :image
 
   mount_uploader :image, ImageUploader
+
 end
