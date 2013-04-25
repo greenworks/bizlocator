@@ -2,78 +2,64 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.companylist {
+.companylistitem {
   /*background: none repeat scroll 0px 0px #F0FAFF;*/
   margin:10px 0;
   float:left;
   border:1px dashed #6FB6F8;
-  padding:5px;
+  padding:10px;
+  width:450px;
+  float:left;
+  margin-left:5px;
+  margin-bottom:5px;
+  font-size:13px;
 }
 
-.companylist:hover{
+.companylistitem:hover{
   background: none repeat scroll 0px 0px #F0FAFF;
 }
 
-.companylist a{
+.companylistitem a{
   text-decoration: none;
 }
 
-.companylist .name a{
+.companylistitem .name a{
   color:#0000FF;
 }
 
-.companylist .info{
+.companylistitem .info{
   margin:5px 0px;
-  font:12px;
+  font-size:12px;
+  height:54px;
 }
 
-.companylist .about{
-   font-size:18px;
+.companylistitem .about,.companylistitem .offers,.companylistitem .business{
+   font-size:16px;
    padding:4px;
 }
 
-.companylist .about img{
-  height:24px;
+.companylistitem .about img,.companylistitem .offers img,.companylistitem .business img{
+  height:20px;
   float: left;
   margin-right:5px;
 }
 
-.companylist .offers{
-  font-size:18px;
-  padding:4px;
-}
 
-.companylist .offers img{
-  height:24px;
-  float: left;
-  margin-right:5px;
-}
-
-.companylist .business{
-  font-size:18px;
-  padding:4px;
-}
-
-.companylist .business img{
-  height:24px;
-  float: left;
-  margin-right:5px;
-}
-
-.companylist .contact p {
+.companylistitem .contact p {
   margin-top:5px;
 }
 
-.companylist .contact .address{
-
+.companylistitem .contact .address{
+   margin-bottom: 10px;
+   height: 32px;
 }
 
-.companylist .contact .phone,.companylist .contact .fax,.companylist .contact .email{
+.companylistitem .contact .phone,.companylistitem .contact .fax,.companylistitem .contact .email{
    float: left;
-   width:300px;
+   width:400px;
 }
 
-.companylist .contact .phone img,.companylist .contact .fax img,,.companylist .contact .email img{
+.companylistitem .contact .phone img,.companylistitem .contact .fax img,,.companylistitem .contact .email img{
   float: left;
   height: 24px;
   margin-right: 5px;

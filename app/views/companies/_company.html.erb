@@ -1,17 +1,17 @@
-<div class="companylist">
+<div class="companylistitem">
   <h3 class="name"><a href="#"><%= company.name %></a></h3>
-  <div class="info"><%= company.info %></div>
+  <div class="info"><%= company.description %></div>
 
  <table>
    <tr>
-     <td width=30% class="about"><a href="#"><img src="../images/get_info.png">About</a></td>
-     <td width=30% class="offers"><a href="#"><img src="../images/offer.png">Offers<a></a></td>
-     <td width=30% class="business"><a href="#"><img src="../images/directory.png">Business Listing</a></td>
+     <td  class="about"><a href="/companies/show/<%= company.id %>"><img src="../images/get_info.png">About</a></td>
+     <td  class="offers"><a href="/ads/?comapany_id=<%= company.id %>"><img src="../images/offer.png">Offers<a></a></td>
+     <td  class="business"><a href="/business_items/?comapany_id=<%= company.id %>"><img src="../images/directory.png">Business Listing</a></td>
    </tr>
  </table>
 
 <div class="contact">
-  <p class="address"><b>Address</b>:No. A - 72, Sector - 34, Noida - 201 301, Uttar Pradesh, India</p>
+  <p class="address"><b>Address</b>:<%= company.info %></p>
   <div class="phone"><img src="../images/phone.png"><b>Phone</b>:<%= company.phone %></div>
   <div class="fax"><img src="../images/fax.png"><b>Fax</b>:<%= company.fax %></div>
   <div class="email"><img src="../images/email.png"><b>Email</b>:<%= company.email %></div>

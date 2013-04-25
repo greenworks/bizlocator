@@ -2,210 +2,81 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.current {
-  padding-right: 12px;
-  background-repeat: no-repeat;
-  background-position: right center;
-}
-
-.asc {
-  background-image: url(/images/up_arrow.gif);
-}
-
-.desc {
-  background-image: url(/images/down_arrow.gif);
-}
-
-caption {
-  font: 1.8em/1.8em Arial, Helvetica, sans-serif;
-  text-align: left;
-  text-indent: 10px;
-  background: url(bg_caption.jpg) right top;
-  height: 45px;
-  color: #FFAA00;
-}
-
-thead th {
-  background: url(bg_th.jpg) no-repeat right;
-  height: 47px;
-  color: #FFFFFF;
-  font-size: 0.8em;
-  font-weight: bold;
-  padding: 0px 7px;
-  margin: 20px 0px 0px;
-  text-align: left;
-  border-right: 1px solid #FCF1D4;
-}
-
-tbody tr {
-
-}
-
-tbody tr.odd {
-
-}
-
-tbody th, td {
-  font-size: 0.8em;
-  line-height: 1.2em;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #777777;
-  padding: 10px 7px;
-  text-align: left;
-}
-
-a {
-  color: #777777;
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-a:hover {
-  color: #F8A704;
-  text-decoration: underline;
-}
-
-tfoot th {
-  background: url(bg_total.jpg) repeat-x bottom;
-  color: #FFFFFF;
-  height: 30px;
-}
-
-tfoot td {
-  background: url(bg_total.jpg) repeat-x bottom;
-  color: #FFFFFF;
-  height: 30px;
-}
-
-.divTable {
-  display: table;
-  width: auto;
-}
-
-.divRow {
-  display: table-row;
-  width: auto;
-  clear: both;
-}
-
-.headrow divCell {
-  float: left; /*fix for  buggy browsers*/
-  display: table-column;
-  width: auto;
-  background-color: #F5F5F5;
-  line-height: 1.4em;
-  color: #777777;
-  padding: 10px 7px;
-  font-family: 'Trebuchet MS',Arial,Helvetica,Sans-Serif;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: bold;
-  text-align: left;
-  text-decoration: none;
-}
-
-
-.divCell {
-  float: left; /*fix for  buggy browsers*/
-  display: table-column;
-  width: auto;
-  background-color: #F5F5F5;
-  line-height: 1.4em;
-  color: #777777;
-  padding: 10px 7px;
-  font-family: 'Trebuchet MS',Arial,Helvetica,Sans-Serif;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: normal;
-  text-align: left;
-  text-decoration: none;
-
-}
-
-.search_text_field {
-  /*  font-family:verdana;
-    background-color:yellow;
-    color: #999;
-    font-weight: bold;
-    font-size: 24px;
-    padding: 10px;
-    border: 2px solid #999;
-    border-radius:2px;
-    border-width: 1;*/
-}
-
-.pageDeals .deal3 .dealBox {
-  width: 217px;
-  box-shadow: 0 0 10px #b2b2b2;
-  height: 255px;
-  float: left;
+.active_deals{
   position: relative;
-  margin-right: 18px;
-  *width: 218px;
-  width: 217px\9;
-  *margin-right: 15px;
-  margin-right: 15px\9;
-  *border: 1px solid #ebebeb;
-  border: 1px solid #ebebeb   \9;
+  left: -8px;
+  text-decoration:none;
 }
 
-.pageDeals .deal3 .dealBox .catbox {
-  background: url(../images/blackT.png) repeat;
-  bottom: -4px;
-  color: #FFFFFF;
-  display: block;
-  font: 10px/12px Arial, Helvetica, sans-serif;
-  height: 21px;
-  margin: 0;
+.active_deals .dealio{
+  margin: 10px 6px;
+  float: left;
+  width: 223px;
   padding: 5px;
-  position: absolute;
-  width: 207px;
-  *left: 0px;
+  border:1px dashed #7FBDF8;
 }
 
-.pageDeals .deal3 .dealBox figcaption {
-  padding: 15px 0 9px 7px;
+.active_deals .dealio:hover{
+  border:1px solid #7FBDF8;
+  background-color: #F0FAFF;
+}
+
+
+.active_deals .discount {
+  color: #464646;
+  font-weight: bold;
+  background: url("../images/side_deals_bg.png") repeat-x top #D8D8D8;
+  height: 36px;
+  width: 100%;
   float: left;
+  line-height: 40px;
+  text-align: center;
+  margin-top: 2px;
+}
+
+.active_deals .image{
+  height:138px ;
+  display:table-cell;
+  float: left;
+  text-align: left;
+  /*border:1px solid #D8D8D8;   */
+}
+
+.active_deals .image img{
+  width:100%;
+}
+
+
+.active_deals .more a{
+  color: #fff;
+  font-weight: bold;
+  background: #f2a90c; /* Old browsers */
+  background: -moz-linear-gradient(top, #f2a90c 0%, #ff9000 39%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2a90c), color-stop(39%,#ff9000)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #f2a90c 0%,#ff9000 39%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #f2a90c 0%,#ff9000 39%); /* Opera11.10+ */
+  background: -ms-linear-gradient(top, #f2a90c 0%,#ff9000 39%); /* IE10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2a90c', endColorstr='#ff9000',GradientType=0 ); /* IE6-9 */
+  background: linear-gradient(top, #f2a90c 0%,#ff9000 39%); /* W3C */
   height: 40px;
-  position: relative;
-  width: 203px;
+  width: 100%;
+  float: right;
+  line-height: 40px;
+  text-align: center;
+  text-decoration:none;
 }
 
-.pageDeals .deal3 .dealBox figcaption a {
-  color: #006699;
-  font: 13px/14px Arial, Helvetica, sans-serif;
+.active_deals .title  {
+  padding: 5px 0px;
+  width: 100%;
+  float: left;
+  color: #43484c;
+  width: 230px;
+  font-size: 10px;
 }
 
-.pageDeals .deal3 .dealBox figcaption .addr {
-  background: url(../images/hpSprite.png) no-repeat -18px -472px;
-  color: #3D5B02;
-  display: block;
-  font-size: 82%;
-  font-weight: normal;
-  left: -2px;
-  line-height: 100%;
-  padding-left: 9px;
-  position: relative;
-  top: 5px;
-  width: 185px;
-  font-style: normal;
-  margin-left: 5px;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.pageDeals .deal3 .dealBox figcaption .addr.sel {
-  position: absolute;
-  width: 150px;
-  background: #efefef url(../images/hpSprite.png) no-repeat 5px -675px;
-  height: 56px;
-  width: 125px;
-  z-index: 9999999;
-  margin: 25px 0 0 0px;
-  padding: 5px 5px 5px 15px;
-  display: block;
-  *height: 55px;
-  overflow: auto;
-  white-space: normal;
-  line-height: 104%;
+.active_deals .title a{
+  color: #464646 !important;
+  font-size: 12px !important;
+  text-decoration: none;
 }

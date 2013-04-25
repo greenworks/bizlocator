@@ -1,7 +1,7 @@
 #featured{ 
 	width:470px;
 	position:relative; 
-	border:2px solid #ccc;
+	/*border:2px solid #ccc;   */
 	height:394px;
     overflow:hidden;
     background-color: white;
@@ -35,7 +35,8 @@
 	border:1px solid #eee;
 }
 #featured ul.ui-tabs-nav li span{ 
-	font-size:11px; font-family:Verdana; 
+	font-size:11px;
+    font-family:Verdana;
 	line-height:18px; 
 }
 #featured li.ui-tabs-nav-item{
@@ -46,7 +47,7 @@
     background:#fff;
 	line-height:20px;
     outline:none;
-    border: 1px solid #CCCCCC;
+    border: 1px solid #E5E5E5;
 }
 
 #featured li.ui-tabs-nav-item a{
@@ -58,13 +59,13 @@
 }
 
 #featured li.ui-tabs-nav-item :hover{
-	background:#f2f2f2; 
+	color:#FF9009;
 }
 #featured li.ui-tabs-selected, #featured li.ui-tabs-active{ 
 	background:url('/images/home-slideshow/selected-item.gif') top left no-repeat;  
 }
 #featured ul.ui-tabs-nav li.ui-tabs-selected a,#featured ul.ui-tabs-nav li.ui-tabs-selected, #featured ul.ui-tabs-nav li.ui-tabs-active a{
-	background:#DEEBF2;
+	background:#E9F4FF;
 }
 #featured .ui-tabs-panel{ 
 	width:470px;
