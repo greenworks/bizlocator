@@ -11,6 +11,8 @@
 
 .top-menu {
   vertical-align: bottom;
+  margin-top: -28px;
+  color: white;
 }
 
 .top-menu-inner {
@@ -22,6 +24,7 @@
 
 .top-menu a {
   text-decoration: none;
+  color: white;
 }
 
 .top-menu .section {
@@ -51,4 +54,30 @@
   width: 94px;
   float: right;
   margin-right: 15px;
+}
+
+.submenu {
+  background-image: url("/images/grey-header-image.png");
+  background-repeat: no-repeat;
+  height: 40px;
+  width: 1020px;
+  text-align: center;
+  font-weight: normal ;
+  padding-top: 8px;
+}
+
+.submenu span{
+  margin:20px;
+}
+
+.submenu a{
+  color: #003B75;
+  text-decoration:none;
+  font-weight: normal ;
+}
+
+.submenu a:hover{
+  color: #FF9009;
+  text-decoration:none;
+  font-weight: normal ;
 }

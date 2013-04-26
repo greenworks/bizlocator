@@ -435,123 +435,45 @@ jQuery(function($) {
 });
 jQuery(function() {
     "use strict";
-    setOpenSubmenuWithHover({vMenuClass: "art-vmenu", activeClass: "active", hoveredClass: "hovered"});
+    setOpenSubmenuWithNoReload({vMenuClass: "art-vmenu", activeClass: "active", hoveredClass: "hovered"});
 });
 
-(function ($) {
-    "use strict";
-    $.fn.hoverIntent = function (f, g) {
-        var cfg = {
-            sensitivity: 7,
-            interval: 100,
-            timeout: 0
-        };
-        cfg = $.extend(cfg, g ? {
-            over: f,
-            out: g
-        } : f);
-        var cX, cY, pX, pY;
-        var track = function (ev) {
-                cX = ev.pageX;
-                cY = ev.pageY
-            };
-        var compare = function (ev, ob) {
-                ob.hoverIntent_t = clearTimeout(ob.hoverIntent_t);
-                if ((Math.abs(pX - cX) + Math.abs(pY - cY)) < cfg.sensitivity) {
-                    $(ob).unbind("mousemove", track);
-                    ob.hoverIntent_s = 1;
-                    return cfg.over.apply(ob, [ev])
-                } else {
-                    pX = cX;
-                    pY = cY;
-                    ob.hoverIntent_t = setTimeout(function () {
-                        compare(ev, ob)
-                    }, cfg.interval)
-                }
-            };
-        var delay = function (ev, ob) {
-                ob.hoverIntent_t = clearTimeout(ob.hoverIntent_t);
-                ob.hoverIntent_s = 0;
-                return cfg.out.apply(ob, [ev])
-            };
-        var handleHover = function (e) {
-                var ev = $.extend({}, e);
-                var ob = this;
-                if (ob.hoverIntent_t) {
-                    ob.hoverIntent_t = clearTimeout(ob.hoverIntent_t)
-                }
-                if (e.type == "mouseenter") {
-                    pX = ev.pageX;
-                    pY = ev.pageY;
-                    $(ob).bind("mousemove", track);
-                    if (ob.hoverIntent_s != 1) {
-                        ob.hoverIntent_t = setTimeout(function () {
-                            compare(ev, ob)
-                        }, cfg.interval)
-                    }
-                } else {
-                    $(ob).unbind("mousemove", track);
-                    if (ob.hoverIntent_s == 1) {
-                        ob.hoverIntent_t = setTimeout(function () {
-                            delay(ev, ob)
-                        }, cfg.timeout)
-                    }
-                }
-            };
-        return this.bind('mouseenter', handleHover).bind('mouseleave', handleHover)
-    }
-})(jQuery);
-
-var setOpenSubmenuWithHover = (function ($) {
+var setOpenSubmenuWithNoReload = (function($) {
     "use strict";
     return (function(vMenuInfo) {
         $("ul." + vMenuInfo.vMenuClass + " li").each(function () {
             var item = $(this);
-            var simple = item.children("ul").length === 0;
-            if (!simple) {
-                item.children("a").hoverIntent({interval: 200, over: function() {
-                    var link = $(this);
-                    hideVMenuSubmenus(link, vMenuInfo.activeClass);
-                    showVMenuSubmenu(link, vMenuInfo.activeClass, vMenuInfo.hoveredClass, false);
-                }, out: function () { }});
-            }
             item.children("a").bind("click", function(e) {
                 var link = $(this);
-                hideVMenuSubmenus(link, vMenuInfo.activeClass);
-                showVMenuSubmenu(link, vMenuInfo.activeClass, vMenuInfo.hoveredClass, simple);
+                var simple = link.siblings("ul").length === 0;
+                link.parent().siblings().children("ul." + vMenuInfo.activeClass).slideUp(function() {
+                    $(this).find("li, a, ul").removeClass(vMenuInfo.activeClass);
+                    $(this).removeClass(vMenuInfo.activeClass).siblings("a").removeClass(vMenuInfo.activeClass);
+                    $(this).css("display", "");
+                });
+                link.parent().siblings().children("a." + vMenuInfo.activeClass).removeClass(vMenuInfo.activeClass);
+                link.parent().siblings().removeClass(vMenuInfo.activeClass);
+                if (simple && !link.hasClass(vMenuInfo.activeClass)) {
+                    link.addClass(vMenuInfo.activeClass).parent().addClass(vMenuInfo.activeClass);
+                }
+                if (!simple) {
+                    if (link.hasClass(vMenuInfo.activeClass)) {
+                        link.siblings("ul").slideUp("fast", function() {
+                            $(this).removeClass(vMenuInfo.activeClass).siblings("a").removeClass(vMenuInfo.activeClass).parent().removeClass(vMenuInfo.activeClass);
+                            $(this).css("display", "");
+                        });
+                    } else {
+                        link.siblings("ul").slideDown("fast", function() {
+                            $(this).addClass(vMenuInfo.activeClass).siblings("a").addClass(vMenuInfo.activeClass).parent().addClass(vMenuInfo.activeClass);
+                            $(this).css("display", "");
+                        });
+                    }
+                
+                    e.preventDefault();
+                    return false;
+                }
             });
         });
-    });
-})(jQuery);
-
-var showVMenuSubmenu = (function ($) {
-    "use strict";
-    return (function(link, activeClass, hoveredClass, simple) {
-        if (simple) {
-            if (!link.hasClass(activeClass)) {
-                link.addClass(activeClass);
-            }
-            return;
-        }
-        if (!link.hasClass(activeClass)) {
-            link.siblings("ul").slideDown("fast", function() {
-                $(this).siblings("a").removeClass(hoveredClass);
-                $(this).addClass(activeClass).siblings("a").addClass(activeClass);
-                $(this).css("display", "");
-            });
-        }
-    });
-})(jQuery);
-
-var hideVMenuSubmenus = (function ($) {
-    "use strict";
-    return (function(link, activeClass) {
-        link.parent().siblings().children("ul." + activeClass).slideUp(function() {
-            $(this).find("a, ul").removeClass(activeClass);
-            $(this).removeClass(activeClass).siblings("a").removeClass(activeClass);
-            $(this).css("display", "");
-        });
-        link.parent().siblings().children("a." + activeClass).removeClass(activeClass);
     });
 })(jQuery);
 
@@ -589,11 +511,6 @@ var artButtonSetup = (function ($) {
 jQuery(function () {
     'use strict';
     artButtonSetup("art-button");
-});
-
-jQuery(function($) {
-    'use strict';
-    $('input.art-search-button, form.art-search input[type="submit"]').attr('value', '');
 });
 
 var Control = (function ($) {
