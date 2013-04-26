@@ -28,5 +28,11 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/ryanb/cancan/wiki/Defining-Abilities
+
+    user ||= AdminUser.new
+    if user.kind_of?(AdminUser)
+      can :manage, :all
+    end
+
   end
 end

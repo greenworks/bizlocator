@@ -6,7 +6,7 @@ class Ad < ActiveRecord::Base
   belongs_to :ad_position
   belongs_to :user
 
-  attr_accessible :ad_category_id, :ad_position_id, :address_id, :company_id, :description, \
+  attr_accessible :title, :ad_category_id, :ad_position_id, :address_id, :company_id, :description, \
   :expiry_date, :isapproved, :ispublished, :price, :shopping_mall_id, :title, :user_id, :image
 
   mount_uploader :image, ImageUploader

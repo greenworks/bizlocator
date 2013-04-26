@@ -14,7 +14,7 @@ gem 'will_paginate'
 gem 'kaminari'
 gem 'jquery-rails'
 
-gem 'activeadmin'
+gem 'activeadmin' , ' 0.5.1'
 gem 'carrierwave'
 #gem 'rmagick' , '2.12'
 

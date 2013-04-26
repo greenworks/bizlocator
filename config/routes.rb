@@ -1,11 +1,17 @@
 Bizlocator::Application.routes.draw do
 
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   root :to => 'info#home'
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
+=begin
+  devise_for :admin_users, ActiveAdmin::Devise.config, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+=end
 
   devise_for :users
   ActiveAdmin.routes(self)
