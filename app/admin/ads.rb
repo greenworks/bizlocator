@@ -14,25 +14,22 @@ ActiveAdmin.register Ad do
       truncate(ad.description, :length=> 50)
     end
     column "Ad Category" do |ad|
-      link_to ad.ad_category.nil? ? "NA" : ad.ad_category.name , ad.ad_category
-    end
-    column "Ad Category" do |ad|
-      link_to "Ad Categories (#{ad.ad_category.name})", :controller => "ad_categories", :action => "index", 'q[ad_category_id_eq]' => "#{ad.ad_category_id}".html_safe
+      ad.ad_category.nil? ? "" : ad.ad_category.name
     end
     column "Address" do |ad|
-      link_to ad.address.nil? ? "NA" : ad.address.name , ad.address
+      ad.address.nil? ? "" : ad.address.name
     end
     column "Company" do |ad|
-      link_to ad.company.nil? ? "NA" : ad.company.name , ad.company
+      ad.company.nil? ? "" : ad.company.name
     end
     column "Shopping Mall" do |ad|
-      link_to ad.shopping_mall.nil? ? "NA" : ad.shopping_mall.name, ad.shopping_mall
+      ad.shopping_mall.nil? ? "" : ad.shopping_mall.name
     end
     column "User" do |ad|
-      link_to ad.user.nil? ? "NA" : ad.user.name, ad.user
+     ad.user.nil? ? "" : ad.user.name
     end
     column "Ad Position" do |ad|
-      link_to ad.ad_position.nil? ? "NA" : ad.ad_position.name, ad.ad_position
+      ad.ad_position.nil? ? "" : ad.ad_position.name
     end
 
     column :expiry_date
