@@ -1,0 +1,32 @@
+
+<div class="user_companies" >
+  <span style="font-weight: bold">  My Companies  </span> | <%= link_to "Create New Company", new_company_path %>
+  <br/>
+  <br/>
+  <%= render :partial =>"companies/user_index"  %>
+</div>
+
+
+<div class="user_ads" >
+  <span style="font-weight: bold">  My Ads  </span> | <%= link_to "Create New Ad", new_ad_path %>
+  <br/>
+  <br/>
+  <%= render :partial =>"ads/user_index"  %>
+</div>
+
+<div class="user_business_items" >
+  <span style="font-weight: bold">  My Business Items  </span> | <%= link_to "Create Business Item", new_business_item_path %>
+  <br/>
+  <br/>
+  <%= render :partial =>"business_items/user_index"  %>
+</div>
+
+
+<div class="user_jobs" >
+  <span style="font-weight: bold">  My Jobs  </span> | <%= link_to "Create New job", new_job_path %>
+  <br/>
+  <br/>
+  <%= render :partial =>"jobs/user_index"  %>
+</div>
+
+

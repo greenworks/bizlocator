@@ -70,9 +70,14 @@
             <a href="#">More Search Options</a>
           </div>
 
-          <div class="section" style="float:right;">
-            <a href="#">Login</a> | <a href="#">Register</a>
+          <div class="user_nav" style="float:right;">
+            <% if user_signed_in? %>
+                 <%= current_user.email %> |  <%= link_to "My Account", "info/user_home" %> |  <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
+            <% else %>
+                <%= link_to "Login", new_user_session_path %> | <%= link_to "Register", new_user_registration_path %>
+            <% end %>
           </div>
+
 
         </td>
         <td></td>

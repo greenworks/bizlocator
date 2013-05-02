@@ -10,4 +10,9 @@ class InfoController < ApplicationController
 
   def help
   end
+
+  def  users_home
+  end
+
+
 end

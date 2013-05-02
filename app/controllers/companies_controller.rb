@@ -1,4 +1,7 @@
 class CompaniesController < ApplicationController
+
+  require 'will_paginate/array'
+
   # GET /companies
   # GET /companies.json
   def index

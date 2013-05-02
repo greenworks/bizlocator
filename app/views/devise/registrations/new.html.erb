@@ -7,6 +7,16 @@
       <br/>
       <%= f.email_field :email, :autofocus => true %></div>
 
+    <div><%= f.label :name %>
+      <br/>
+      <%= f.text_field :name %>
+    </div>
+
+    <div><%= f.label :role_id %>
+      <br/>
+      <%=collection_select(:user, :role_id, Role.all, :id, :name  ) %>
+    </div>
+
     <div><%= f.label :password %>
       <br/>
       <%= f.password_field :password %></div>

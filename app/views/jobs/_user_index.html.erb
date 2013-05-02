@@ -17,6 +17,9 @@
     <th></th>
   </tr>
 
+  <% @jobs = Job.where("user_id = ? ", current_user.id).paginate(:per_page => 8, :page => params[:page]) %>
+
+
   <% @jobs.each do |job| %>
       <tr>
         <td><%= job.title %></td>
@@ -30,10 +33,8 @@
         <td><%= job.ispublished %></td>
         <td><%= job.isapproved %></td>
         <td><%= link_to 'Show', job %></td>
-        <% if user_signed_in? && business_item.user_id == current_user.id %>
-            <td><%= link_to 'Edit', edit_job_path(job) %></td>
-            <td><%= link_to 'Destroy', job, method: :delete, data: {confirm: 'Are you sure?'} %></td>
-        <% end %>
+        <td><%= link_to 'Edit', edit_job_path(job) %></td>
+        <td><%= link_to 'Destroy', job, method: :delete, data: {confirm: 'Are you sure?'} %></td>
       </tr>
   <% end %>
 </table>

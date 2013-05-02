@@ -1,27 +1,29 @@
+
 <div class="art-sheet clearfix">
   <div class="art-layout-wrapper">
     <div class="art-content-layout">
       <div class="art-content-layout-row">
 
         <!-- Start: header -->
-        <!--%= render "/common/quicklink" %-->
+
         <!-- End: header -->
 
         <div class="art-layout-cell art-content">
           <article class="art-post art-article">
-            <!--Start : add left menu here -->
-
-            <!--%= render :partial => "ads/ad_search" %-->
-
-            <h1>Nearby Offers</h1>
-
-            <div id="ads">
-
-              <%= render 'ads/ads' %>
-            </div>
 
 
-            <!--End : add left menu here -->
+
+<br/>
+
+<div id="companylist">
+  <% @companies = Company.where("user_id = ? ", current_user.id).paginate(:per_page => 4, :page => params[:page]) %>
+
+  <% @companies.each do |company| %>
+
+      <%= render :partial =>"companies/company", :locals => {:company => company} %>
+
+  <% end %>
+</div>
           </article>
         </div>
         <!-- Start: footer -->

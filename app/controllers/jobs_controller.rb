@@ -1,4 +1,7 @@
 class JobsController < ApplicationController
+
+  require 'will_paginate/array'
+
   # GET /jobs
   # GET /jobs.json
   def index

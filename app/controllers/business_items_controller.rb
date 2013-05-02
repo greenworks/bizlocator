@@ -1,4 +1,6 @@
 class BusinessItemsController < ApplicationController
+  require 'will_paginate/array'
+
   # GET /business_items
   # GET /business_items.json
   def index

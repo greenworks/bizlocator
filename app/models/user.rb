@@ -6,8 +6,23 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :role_id, :name
+
+  validates_presence_of :role_id, :name
+
   # attr_accessible :title, :body
+  belongs_to :role
 
   has_many :ads
+  has_many :jobs
+  has_many :business_items
+  has_many :companies
+
+  before_create :set_default_role
+
+  private
+  def set_default_role
+    self.role_id ||= Role.find_by_name('Normal').id
+  end
+
 end

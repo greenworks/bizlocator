@@ -3,6 +3,7 @@ class BusinessItem < ActiveRecord::Base
   belongs_to :company
   belongs_to :shopping_mall
   belongs_to :address
+  belongs_to :user
 
   attr_accessible :address_id, :business_item_category_id, :company_id, :expiry_date, :isapproved, :ispublished, :shopping_mall_id, :title, :image
 

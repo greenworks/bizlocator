@@ -29,10 +29,31 @@ class Ability
     # See the wiki for details:
     # https://github.com/ryanb/cancan/wiki/Defining-Abilities
 
-    user ||= AdminUser.new
+
+
+    user ||= User.new
+
+    if user.role.name == "admin"
+      can :manage, :all
+    elsif user.role.name == "Company"
+=begin
+      can :manage, Ad , :user.in?(&:id)
+      can :manage, Company , :user.in?(&:id)
+      can :manage, Job, :user.in?(&:id)
+      can :manage, BusinessItem, :user.in?(&:id)
+      can :index, Ad
+      can :index, Company
+      can :index, Job
+      can :index, BusinessItem
+=end
+    elsif user.role.name == "Normal"
+
+    end
+
     if user.kind_of?(AdminUser)
       can :manage, :all
     end
 
   end
+
 end

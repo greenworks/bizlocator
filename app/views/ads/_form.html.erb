@@ -29,7 +29,7 @@
     <div class="field">
       <%= f.label :ad_category_id %>
       <br/>
-      <%= f.number_field :ad_category_id %>
+      <%=collection_select(:ad, :ad_category_id, AdCategory.all, :id, :name , options ={:prompt => ""} ) %>
     </div>
     <div class="field">
       <%= f.label :price %>
@@ -39,32 +39,27 @@
     <div class="field">
       <%= f.label :address_id %>
       <br/>
-      <%= f.number_field :address_id %>
+      <%=collection_select(:ad, :address_id, Address.all, :id, :name , options ={:prompt => ""} ) %>
     </div>
     <div class="field">
       <%= f.label :company_id %>
       <br/>
-      <%= f.number_field :company_id %>
+      <%=collection_select(:ad, :company_id, Company.all, :id, :name , options ={:prompt => ""} ) %>
     </div>
     <div class="field">
       <%= f.label :shopping_mall_id %>
       <br/>
-      <%= f.number_field :shopping_mall_id %>
+      <%=collection_select(:ad, :shopping_mall_id, ShoppingMall.all, :id, :name , options ={:prompt => ""} ) %>
     </div>
     <div class="field">
       <%= f.label :ad_position_id %>
       <br/>
-      <%= f.number_field :ad_position_id %>
+      <%=collection_select(:ad, :ad_position_id, AdPosition.all, :id, :name , options ={:prompt => ""} ) %>
     </div>
     <div class="field">
       <%= f.label :ispublished %>
       <br/>
       <%= f.check_box :ispublished %>
-    </div>
-    <div class="field">
-      <%= f.label :isapproved %>
-      <br/>
-      <%= f.check_box :isapproved %>
     </div>
     <div class="field">
       <%= f.label :expiry_date %>

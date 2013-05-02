@@ -1,0 +1,26 @@
+<div class="art-sheet clearfix">
+  <div class="art-layout-wrapper">
+    <div class="art-content-layout">
+      <div class="art-content-layout-row">
+
+
+
+        <div class="art-layout-cell art-content">
+          <article class="art-post art-article">
+
+
+            <div id="ads">
+              <% @ads = Ad.where("user_id = ? ", current_user.id).paginate(:per_page => 8, :page => params[:page]) %>
+              <%= render :partial => 'ads/ads' , :locals => {:index_scope => "creator" , :ads => @ads }%>
+            </div>
+
+
+
+          </article>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>

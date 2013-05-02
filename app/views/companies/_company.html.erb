@@ -17,5 +17,13 @@
   <div class="email"><img src="../images/email.png"><b>Email</b>:<%= company.email %></div>
 </div>
 
+
+  <% if user_signed_in? && company.user_id == current_user.id %>
+
+        <%= link_to 'Edit', edit_company_path(company) %>
+        <%= link_to 'Destroy', company, method: :delete, data: {confirm: 'Are you sure?'} %>
+
+  <% end %>
+
 </div>
 
