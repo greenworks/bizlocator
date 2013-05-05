@@ -81,3 +81,25 @@
   text-decoration:none;
   font-weight: normal ;
 }
+
+.user-home-menu{
+  border-top:1px solid;
+  border-bottom:1px solid;
+  padding:4px;
+}
+
+.user-home-menu a{
+   text-decoration:none;
+   margin: 0 5px;
+}
+
+.user_dashboard, .user_companies, .user_ads, .user_business_items, .user_jobs {
+  border:1px solid #7FBDF8;
+  margin:20px 0;
+  padding:10px;
+
+}
+
+.user_companies a, .user_ads a, .user_business_items a, .user_jobs a{
+  text-decoration:none;
+}

@@ -1,11 +1,11 @@
 <% if user_signed_in? %>
 
 
+
     <% if current_user.role_id != nil  %>
 
         <h2> <%= current_user.role.name %> User Home Page </h2>
-
-
+        <br/>
         <% if current_user.role.name == Role.find_by_name("Company").name  %>
 
             <%= render :partial=> "company_user" %>
