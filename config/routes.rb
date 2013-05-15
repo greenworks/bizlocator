@@ -1,5 +1,14 @@
 Bizlocator::Application.routes.draw do
 
+  resources :bookmark_business_items
+
+
+  resources :bookmark_ads
+
+
+  resources :bookmark_jobs
+
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config

@@ -52,6 +52,7 @@ class BusinessItemsController < ApplicationController
   # POST /business_items.json
   def create
     @business_item = BusinessItem.new(params[:business_item])
+    @business_item.user_id = current_user.id
 
     respond_to do |format|
       if @business_item.save

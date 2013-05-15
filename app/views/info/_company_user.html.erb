@@ -49,3 +49,9 @@
 </div>
 
 
+<div class="user_addresses" >
+  <span style="font-weight: bold">  My Addresses  </span> | <%= link_to "Create New Addresses", new_address_path %>
+  <br/>
+  <br/>
+  <%= render :partial =>"addresses/user_index"  %>
+</div>

@@ -5,6 +5,7 @@ class Ad < ActiveRecord::Base
   belongs_to :address
   belongs_to :ad_position
   belongs_to :user
+  has_many :bookmark_ads
 
   attr_accessible :title, :ad_category_id, :ad_position_id, :address_id, :company_id, :description, \
   :expiry_date, :isapproved, :ispublished, :price, :shopping_mall_id, :title, :user_id, :image
@@ -42,5 +43,14 @@ class Ad < ActiveRecord::Base
       scoped
     end
 
+  end
+
+  def self.user_related(user_id)
+    if (user_id)
+      where(' user_id = ? ', user_id)
+    else
+      nil
+
+    end
   end
 end

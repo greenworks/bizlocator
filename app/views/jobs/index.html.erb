@@ -30,7 +30,7 @@
         <td><%= job.ispublished %></td>
         <td><%= job.isapproved %></td>
         <td><%= link_to 'Show', job %></td>
-        <% if user_signed_in? && business_item.user_id == current_user.id %>
+        <% if user_signed_in? && job.user_id == current_user.id %>
             <td><%= link_to 'Edit', edit_job_path(job) %></td>
             <td><%= link_to 'Destroy', job, method: :delete, data: {confirm: 'Are you sure?'} %></td>
         <% end %>

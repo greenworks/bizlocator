@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130502131816) do
+ActiveRecord::Schema.define(:version => 20130515163509) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20130502131816) do
     t.boolean  "ispublished"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.integer  "user_id"
   end
 
   create_table "admin_users", :force => true do |t|
@@ -100,6 +101,27 @@ ActiveRecord::Schema.define(:version => 20130502131816) do
     t.datetime "updated_at",       :null => false
     t.integer  "user_id"
     t.string   "image"
+  end
+
+  create_table "bookmark_ads", :force => true do |t|
+    t.integer  "ad_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "bookmark_business_items", :force => true do |t|
+    t.integer  "business_item_id"
+    t.integer  "user_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "bookmark_jobs", :force => true do |t|
+    t.integer  "job_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "business_item_categories", :force => true do |t|

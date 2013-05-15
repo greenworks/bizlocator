@@ -39,22 +39,22 @@
     <div class="field">
       <%= f.label :address_id %>
       <br/>
-      <%=collection_select(:ad, :address_id, Address.all, :id, :name , options ={:prompt => ""} ) %>
+      <%=collection_select(:ad, :address_id, Address.user_related(current_user.id), :id, :name  ) %>
     </div>
     <div class="field">
       <%= f.label :company_id %>
       <br/>
-      <%=collection_select(:ad, :company_id, Company.all, :id, :name , options ={:prompt => ""} ) %>
+      <%=collection_select(:ad, :company_id, Company.user_related(current_user.id), :id, :name   ) %>
     </div>
     <div class="field">
       <%= f.label :shopping_mall_id %>
       <br/>
-      <%=collection_select(:ad, :shopping_mall_id, ShoppingMall.all, :id, :name , options ={:prompt => ""} ) %>
+      <%=collection_select(:ad, :shopping_mall_id, ShoppingMall.all, :id, :name , :include_blank => true  ) %>
     </div>
     <div class="field">
       <%= f.label :ad_position_id %>
       <br/>
-      <%=collection_select(:ad, :ad_position_id, AdPosition.all, :id, :name , options ={:prompt => ""} ) %>
+      <%=collection_select(:ad, :ad_position_id, AdPosition.all, :id, :name ,  :include_blank => true  ) %>
     </div>
     <div class="field">
       <%= f.label :ispublished %>

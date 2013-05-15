@@ -29,7 +29,7 @@
     <div class="field">
       <%= f.label :company_id %>
       <br/>
-      <%= f.number_field :company_id %>
+      <%=collection_select(:job, :company_id, Company.user_related(current_user.id), :id, :name   ) %>
     </div>
     <div class="field">
       <%= f.label :qualification %>
@@ -52,19 +52,9 @@
       <%= f.date_select :expiry_date %>
     </div>
     <div class="field">
-      <%= f.label :ispublished %>
-      <br/>
-      <%= f.check_box :ispublished %>
-    </div>
-    <div class="field">
       <%= f.label :image %>
       <br/>
       <%= f.file_field :image %>
-    </div>
-    <div class="field">
-      <%= f.label :isapproved %>
-      <br/>
-      <%= f.check_box :isapproved %>
     </div>
     <div class="actions">
       <%= f.submit %>

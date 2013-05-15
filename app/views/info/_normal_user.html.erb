@@ -1,0 +1,44 @@
+<div class="user-home-menu">
+  <a href="">Dashboard</a> |
+  <a href="">Company</a> |
+  <a href="">Ads</a> |
+  <a href="">Business Listing</a> |
+  <a href="">Job Posting</a> |
+  <a href="">My Profile</a>
+</div>
+
+<div class="user_dashboard" >
+  <span style="font-weight: bold"> Dashboard  </span>
+  <br/><br/>
+  This section will contain
+  <br/>summary of all entities.
+  <br/>Admin Notification
+  <br/>News / offers for this user
+  <br/>Feedback form for this user
+
+</div>
+
+<div class="user_ads" >
+  <span style="font-weight: bold">  Bookmarked Ads  </span>
+  <br/>
+  <br/>
+  <%= render :partial =>"ads/user_index"  %>
+</div>
+
+<div class="user_business_items" >
+  <span style="font-weight: bold">  Bookmarked Business Items  </span>
+  <br/>
+  <br/>
+  <%= render :partial =>"business_items/user_index"  %>
+</div>
+
+<div class="user_jobs" >
+  <span style="font-weight: bold">  Bookmarked Jobs  </span>
+  <br/>
+  <br/>
+  <%= render :partial =>"jobs/user_index"  %>
+</div>
+
+
+
+
