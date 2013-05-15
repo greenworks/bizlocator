@@ -14,4 +14,9 @@ class Address < ActiveRecord::Base
       nil
     end
   end
+
+  def address_brief
+    self.address_line_one  + ', ' + self.address_line_two
+  end
+
 end

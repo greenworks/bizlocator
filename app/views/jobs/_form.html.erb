@@ -29,8 +29,9 @@
     <div class="field">
       <%= f.label :company_id %>
       <br/>
-      <%=collection_select(:job, :company_id, Company.user_related(current_user.id), :id, :name   ) %>
+      <%=collection_select(:job, :company_id, Company.user_related(current_user.id), :id, :name   ) %>   | <%= link_to "Add another company", new_company_path %>
     </div>
+
     <div class="field">
       <%= f.label :qualification %>
       <br/>
@@ -39,7 +40,7 @@
     <div class="field">
       <%= f.label :job_categiory_id %>
       <br/>
-      <%= f.number_field :job_categiory_id %>
+      <%=collection_select(:ad, :ad_category_id, JobCategory.all, :id, :name  ) %> | <%= link_to "Add New Job Category", new_job_category_path %>
     </div>
     <div class="field">
       <%= f.label :meeting_address %>

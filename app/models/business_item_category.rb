@@ -8,4 +8,8 @@ class BusinessItemCategory < ActiveRecord::Base
     BusinessItemCategory.where("parent_category_id = ?", "#{id}").limit(3)
   end
 
+  def get_all_child_categories
+    BusinessItemCategory.where("parent_category_id = ?", "#{id}")
+  end
+
 end

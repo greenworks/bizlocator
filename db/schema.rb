@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130515163509) do
+ActiveRecord::Schema.define(:version => 20130515183040) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -59,8 +59,6 @@ ActiveRecord::Schema.define(:version => 20130515163509) do
     t.string   "website"
     t.string   "google_map_code"
     t.string   "chat_code"
-    t.integer  "company_id"
-    t.integer  "shopping_mall_id"
     t.boolean  "ispublished"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
@@ -183,6 +181,7 @@ ActiveRecord::Schema.define(:version => 20130515163509) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "image"
+    t.integer  "address_id"
   end
 
   create_table "emergency_numbers", :force => true do |t|
@@ -245,6 +244,7 @@ ActiveRecord::Schema.define(:version => 20130515163509) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.string   "image"
+    t.integer  "address_id"
   end
 
   create_table "users", :force => true do |t|

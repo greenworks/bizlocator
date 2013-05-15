@@ -4,7 +4,7 @@ class Company < ActiveRecord::Base
   has_many :addresses
   has_many :business_items
 
-  attr_accessible :description, :email, :fax, :info, :isapproved, :ispublished, :name, :owner_name, :phone, :user_id , :image
+  attr_accessible :description, :email, :fax, :info, :isapproved, :ispublished, :name, :owner_name, :phone, :user_id , :image, :address_id
 
   mount_uploader :image, ImageUploader
 

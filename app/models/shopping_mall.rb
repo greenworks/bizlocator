@@ -4,7 +4,7 @@ class ShoppingMall < ActiveRecord::Base
   belongs_to :mall_type
   has_one :address
 
-  attr_accessible :description, :ispublished, :mall_type_id, :name, :image
+  attr_accessible :description, :ispublished, :mall_type_id, :name, :image, :address_id
 
   mount_uploader :image, ImageUploader
 
