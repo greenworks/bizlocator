@@ -25,14 +25,13 @@
     <div class="field">
       <%= f.label :mall_type_id %>
       <br/>
-      <%= f.number_field :mall_type_id %>
-      <%=collection_select(:shopping_mall, :address_id, MallType.all, :id, :name) %> | <%= link_to "Create New Malltype", new_mall_type_path %>
+      <%=collection_select(:shopping_mall, :mall_type_id, MallType.all, :id, :name) %> | <%= link_to "Create New Malltype", new_mall_type_path, :onclick=>"window.open(this.href,'create_mall_type', 'height=600, width=600');return false;" %>
     </div>
 
     <div class="field">
       <%= f.label :address_id %>
       <br/>
-      <%=collection_select(:shopping_mall, :address_id, Address.user_related(current_user.id), :id, :address_brief    ) %> | <%= link_to "Create New Addresses", new_address_path %>
+      <%=collection_select(:shopping_mall, :address_id, Address.user_related(current_user.id), :id, :address_brief    ) %> | <%= link_to "Create New Addresses", new_address_path, :onclick=>"window.open(this.href,'create_address', 'height=600, width=600');return false;" %>
 
     </div>
     <div class="field">

@@ -28,6 +28,12 @@
   <%= @shopping_mall.ispublished %>
 </p>
 
+<div class="shopping_mall_ads">
+  <% @ads = Ad.where(' shopping_mall_id = ?', "#{@shopping_mall.id}").paginate(:per_page => 12, :page => params[:page])%>
+  <%= render :partial =>"ads/ads", :locals => {:ads=> @ads} %>
+
+</div>
+
 
 <%= link_to 'Edit', edit_shopping_mall_path(@shopping_mall) %> |
 <%= link_to 'Back', shopping_malls_path %>

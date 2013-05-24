@@ -29,7 +29,12 @@
     <div class="field">
       <%= f.label :address_id %>
       <br/>
-      <%=collection_select(:company, :address_id, Address.user_related(current_user.id), :id, :address_brief    ) %> | <%= link_to "Add New Addresses", new_address_path %>
+      <%=collection_select(:company,
+                           :address_id,
+                           Address.user_related(current_user.id),
+                           :id,
+                           :address_brief) %>
+      | <%= link_to "Add New Addresses", new_address_path %>
     </div>
     <div class="field">
       <%= f.label :description %>

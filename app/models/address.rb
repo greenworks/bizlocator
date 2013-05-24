@@ -16,7 +16,14 @@ class Address < ActiveRecord::Base
   end
 
   def address_brief
-    self.address_line_one  + ', ' + self.address_line_two
-  end
+    output =''
+    if self.address_line_one != nil && self.address_line_one != ''
+      output.concat(self.address_line_one)
+    end
 
+    if  self.address_line_two != nil && self.address_line_two != ''
+      output.concat(self.address_line_two)
+    end
+    output
+  end
 end
