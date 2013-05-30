@@ -17,7 +17,7 @@
 
   <% @business_items.each do |business_item|  %>
 
-      <%= render :partial =>"business_items/business_item_450", :locals => {:business_item => business_item} %>
+      <%= render :partial => "business_items/business_item_contents", :locals => {:business_item => business_item} %>
 
   <% end %>
 

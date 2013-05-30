@@ -34,6 +34,12 @@
 
 </div>
 
+<div class="shopping_mall_business_items">
+  <% @business_items = BusinessItem.where(' shopping_mall_id = ?', "#{@shopping_mall.id}").paginate(:per_page => 12, :page => params[:page])%>
+  <%= render :partial =>"business_items/business_items", :locals => {:business_items => @business_items } %>
+
+</div>
+
 
 <%= link_to 'Edit', edit_shopping_mall_path(@shopping_mall) %> |
 <%= link_to 'Back', shopping_malls_path %>
