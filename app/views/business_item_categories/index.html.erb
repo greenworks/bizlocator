@@ -1,4 +1,14 @@
-<h1>Listing business_item_categories</h1>
+<h2>Listing business_item_categories</h2>
+
+<% ('A'..'Z').each do |char| %>
+
+    <% if char==params[:char] %>
+        <%= link_to char, business_item_categories_path(:char => char), :class => 'selected_char' %>
+    <% else %>
+        <%= link_to char, business_item_categories_path(:char => char) %>
+    <% end %>
+<% end %>
+<%= link_to "ALL", ad_categories_path %>
 
 <table>
   <tr>
@@ -19,7 +29,7 @@
         <td><%= business_item_category.name %></td>
         <td>
           <% business_item_category.get_child_categories.each do |subcategory| %>
-              <b><%= subcategory.id %>, </b>
+              <b><%= subcategory && subcategory.name%>, </b>
           <% end%>
         </td>
         <td>

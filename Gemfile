@@ -18,10 +18,8 @@ gem 'activeadmin' , ' 0.5.1'
 gem 'carrierwave'
 #gem 'rmagick' , '2.12'
 
-#gem 'mongrel'
-
-
-
+#gem 'thin'  , '2.0.0.pre'
+gem 'mongrel' , '1.2.0.pre2'
 
 # Gems used only for assets and not required
 # in production environments by default.
