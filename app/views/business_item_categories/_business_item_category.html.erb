@@ -22,14 +22,18 @@
 
 
 <div class="business_item_categories_business_items">
-  <% @business_items = BusinessItem.where(' business_item_category_id = ?', "#{@business_item_category.id}").paginate(:per_page => 12, :page => params[:page])%>
+  <% @business_items = BusinessItem.where(' business_item_category_id = ?', "#{@business_item_category.id}").paginate(:per_page => 6, :page => params[:page])%>
   <%= render :partial =>"business_items/business_items", :locals => {:business_items => @business_items } %>
 
 </div>
 
+<div class="business_item_sub_categories">
+  <% @business_item_sub_categories = BusinessItemCategory.where(' parent_category_id = ?', "#{@business_item_category.id}").paginate(:per_page => 4, :page => params[:page])%>
+  <%= render :partial =>"business_item_categories/business_item_category", :locals => {:business_item_category => @business_item_category } %>
+</div>
 
 <div class="business_item_sub_categories">
-  <%= render :partial =>"business_items/business_items", :locals => {:business_items => @business_items } %>
+
 </div>
 
 <%= link_to 'Edit', edit_business_item_category_path(@business_item_category) %> |

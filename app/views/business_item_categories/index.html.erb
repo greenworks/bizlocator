@@ -4,6 +4,7 @@
   <tr>
     <th>Name</th>
     <th>SubCategories</th>
+    <th>Business Item count</th>
     <th>Parent Category</th>
     <th>Introtext</th>
     <th>Description</th>
@@ -20,6 +21,9 @@
           <% business_item_category.get_child_categories.each do |subcategory| %>
               <b><%= subcategory.id %>, </b>
           <% end%>
+        </td>
+        <td>
+          <% BusinessItem.where('business_item_category_id = ?',"#{:id}").count %>
         </td>
         <td><%= business_item_category.parent_category_id %></td>
         <td><%= business_item_category.introtext %></td>

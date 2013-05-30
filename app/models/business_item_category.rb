@@ -12,4 +12,6 @@ class BusinessItemCategory < ActiveRecord::Base
     BusinessItemCategory.where("parent_category_id = ?", "#{id}")
   end
 
+
+
 end
