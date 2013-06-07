@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.companylistitem {
+.company_list {
   /*background: none repeat scroll 0px 0px #F0FAFF;*/
   margin:10px 0;
   float:left;
@@ -15,51 +15,51 @@
   font-size:13px;
 }
 
-.companylistitem:hover{
+.company_list:hover{
   background: none repeat scroll 0px 0px #F0FAFF;
 }
 
-.companylistitem a{
+.company_list a{
   text-decoration: none;
 }
 
-.companylistitem .name a{
+.company_list .name a{
   color:#0000FF;
 }
 
-.companylistitem .info{
+.company_list .info{
   margin:5px 0px;
   font-size:12px;
   height:54px;
 }
 
-.companylistitem .about,.companylistitem .offers,.companylistitem .business{
+.company_list .about,.company_list .offers,.company_list .business{
    font-size:16px;
    padding:4px;
 }
 
-.companylistitem .about img,.companylistitem .offers img,.companylistitem .business img{
+.company_list .about img,.company_list .offers img,.company_list .business img{
   height:20px;
   float: left;
   margin-right:5px;
 }
 
 
-.companylistitem .contact p {
+.company_list .contact p {
   margin-top:5px;
 }
 
-.companylistitem .contact .address{
+.company_list .contact .address{
    margin-bottom: 10px;
    height: 32px;
 }
 
-.companylistitem .contact .phone,.companylistitem .contact .fax,.companylistitem .contact .email{
+.company_list .contact .phone,.company_list .contact .fax,.company_list .contact .email{
    float: left;
    width:400px;
 }
 
-.companylistitem .contact .phone img,.companylistitem .contact .fax img,,.companylistitem .contact .email img{
+.company_list .contact .phone img,.company_list .contact .fax img,,.company_list .contact .email img{
   float: left;
   height: 24px;
   margin-right: 5px;

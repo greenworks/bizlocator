@@ -1,12 +1,12 @@
-<div class="companylistitem">
+<div class="company_list">
   <h3 class="name"><a href="#"><%= company.name %></a></h3>
   <div class="info"><%= company.description %></div>
 
  <table>
    <tr>
      <td  class="about"><a href="/companies/show/<%= company.id %>"><img src="../images/get_info.png">About</a></td>
-     <td  class="offers"><a href="/ads/?comapany_id=<%= company.id %>"><img src="../images/offer.png">Offers<a></a></td>
-     <td  class="business"><a href="/business_items/?comapany_id=<%= company.id %>"><img src="../images/directory.png">Business Listing</a></td>
+     <td  class="offers"><a href="/ads/?company_id=<%= company.id %>"><img src="../images/offer.png">Offers</a></td>
+     <td  class="business"><a href="/business_items/?company_id=<%= company.id %>"><img src="../images/directory.png">Business Listing</a></td>
    </tr>
  </table>
 

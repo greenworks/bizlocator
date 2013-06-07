@@ -17,7 +17,7 @@ ActiveAdmin.register Ad do
       ad.ad_category.nil? ? "" : ad.ad_category.name
     end
     column "Address" do |ad|
-      ad.address.nil? ? "" : ad.address.name
+      ad.address.nil? ? "" : ad.address.address_brief
     end
     column "Company" do |ad|
       ad.company.nil? ? "" : ad.company.name

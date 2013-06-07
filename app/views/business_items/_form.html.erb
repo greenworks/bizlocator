@@ -20,12 +20,12 @@
     <div class="field">
       <%= f.label :business_item_category_id %>
       <br/>
-      <%=collection_select(:business_item, :business_item_category_id, BusinessItemCategory.all, :id, :name  ) %> | <%= link_to "Add New Ad Category", new_business_item_category_path %>
+      <%= f.collection_select(:business_item, :business_item_category_id, BusinessItemCategory.all, :id, :name  ) %> | <%= link_to "Add New Ad Category", new_business_item_category_path %>
     </div>
     <div class="field">
       <%= f.label :company_id %>
       <br/>
-      <%=collection_select(:business_item, :company_id, Company.user_related(current_user.id), :id, :name   ) %>  | <%= link_to "Add another company", new_company_path %>
+      <%= f.collection_select(:business_item, :company_id, Company.user_related(current_user.id), :id, :name   ) %>  | <%= link_to "Add another company", new_company_path %>
     </div>
     <div class="field">
       <%= f.label :shopping_mall_id %>
