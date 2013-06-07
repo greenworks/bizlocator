@@ -93,13 +93,30 @@
    margin: 0 5px;
 }
 
-.user_dashboard, .user_companies, .user_ads, .user_business_items, .user_jobs {
+.user_dashboard, .user_companies, .user_ads, .user_business_items, .user_jobs, .user_addresses {
   border:1px solid #7FBDF8;
   margin:20px 0;
   padding:10px;
 
 }
 
-.user_companies a, .user_ads a, .user_business_items a, .user_jobs a{
+.user_companies a, .user_ads a, .user_business_items a, .user_jobs a, .user_addresses a{
+  text-decoration:none;
+}
+
+
+.user_dashboard, .user_companies, .user_ads, .user_business_items, .user_jobs, .user_addresses {
+  border:1px solid #7FBDF8;
+  margin:20px 0;
+  padding:10px;
+
+}
+
+#user_companies a{
+  text-decoration:none;
+}
+
+
+#user_companies{
   text-decoration:none;
 }
