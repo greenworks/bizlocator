@@ -12,7 +12,7 @@ class BusinessItem < ActiveRecord::Base
 
   def self.search(keyword)
     if keyword
-      where(' title LIKE ?  ', "%#{keyword}%")
+      where(' title LIKE ? ', "%#{keyword}%")
     else
       scoped
     end

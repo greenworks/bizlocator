@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 <p>
   <b>Name:</b>
@@ -16,15 +16,12 @@
   <%= @ad_category.introtext %>
 </p>
 
-<p>
-  <b>Description:</b>
-  <%= @ad_category.description %>
-</p>
 
-<p>
-  <b>Ispublished:</b>
-  <%= @ad_category.ispublished %>
-</p>
+<div class="ad_category_ads">
+  <% @ads = Ad.where(' ad_category_id = ?', "#{@ad_category.id}").paginate(:per_page => 12, :page => params[:page])%>
+  <%= render :partial =>"ads/ads", :locals => {:ads=> @ads} %>
+
+</div>
 
 <%= link_to 'Edit', edit_ad_category_path(@ad_category) %> |
 <%= link_to 'Back', ad_categories_path %>

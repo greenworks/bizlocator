@@ -1,10 +1,8 @@
 <div class="user-home-menu">
-  <a href="">Dashboard</a> |
-  <a href="">Company</a> |
-  <a href="">Ads</a> |
-  <a href="">Business Listing</a> |
-  <a href="">Job Posting</a> |
-  <a href="">My Profile</a>
+  <a href="#user_dashboard">Dashboard</a> |
+  <a href="#user_ads">Ads</a> |
+  <a href="#user_business_items">Business Listing</a> |
+  <a href="#user_jobs">Jobs</a>
 </div>
 
 <div class="user_dashboard" >
@@ -22,21 +20,22 @@
   <span style="font-weight: bold">  Bookmarked Ads  </span>
   <br/>
   <br/>
-  <%= render :partial =>"ads/user_index"  %>
+
+  <%= render :partial => "bookmark_ads/list" %>
 </div>
 
 <div class="user_business_items" >
   <span style="font-weight: bold">  Bookmarked Business Items  </span>
   <br/>
   <br/>
-  <%= render :partial =>"business_items/user_index"  %>
+  <%= render :partial =>"bookmark_business_items/list"  %>
 </div>
 
 <div class="user_jobs" >
   <span style="font-weight: bold">  Bookmarked Jobs  </span>
   <br/>
   <br/>
-  <%= render :partial =>"jobs/user_index"  %>
+  <%= render :partial =>"bookmark_jobs/list"  %>
 </div>
 
 

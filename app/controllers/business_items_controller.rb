@@ -4,7 +4,7 @@ class BusinessItemsController < ApplicationController
   # GET /business_items
   # GET /business_items.json
   def index
-    @business_items = BusinessItem.all
+    #@business_items = BusinessItem.all
     @business_items = BusinessItem.search(params[:search])
     if params.has_key?(:business_item_category_id) && params[:business_item_category_id] != ''
       @business_items = @business_items.where(' business_item_category_id = ?', "#{params[:business_item_category_id]}")
@@ -12,9 +12,18 @@ class BusinessItemsController < ApplicationController
     if params.has_key?(:company_id) && params[:company_id] != ''
       @business_items = @business_items.where(' company_id = ?', "#{params[:company_id]}")
     end
-
+    if params.has_key?(:company_name) && params[:company_name] != ''
+      companies = Company.search(params[:company_name]).all(:select => :id).collect(&:id)
+      @business_items = @business_items.where("company_id IN (#{companies.join(',')} )")
+    end
+    if params.has_key?(:business_item_category_name) && params[:business_item_category_name] != ''
+      business_item_categories = BusinessItemCategory.search(params[:business_item_category_name]).all(:select => :id).collect(&:id)
+      @business_items = @business_items.where("business_item_category_id IN (#{business_item_categories.join(',')} )")
+    end
+    if params.has_key?(:shopping_mall_id) && params[:shopping_mall_id] != ''
+      @ads = @ads.where(' shopping_mall_id = ?', "#{params[:shopping_mall_id]}")
+    end
     @business_items = @business_items.shuffle().paginate(:per_page => 6, :page => params[:page])
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @business_items }

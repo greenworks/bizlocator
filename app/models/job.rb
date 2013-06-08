@@ -16,4 +16,12 @@ class Job < ActiveRecord::Base
     end
   end
 
+  def self.search(keyword)
+    if keyword
+      where(' title LIKE ?  OR description LIKE ? ', "%#{keyword}%", "%#{keyword}%")
+    else
+      scoped
+    end
+  end
+
 end

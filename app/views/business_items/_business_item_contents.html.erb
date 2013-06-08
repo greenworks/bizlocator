@@ -6,8 +6,7 @@
 </div>
 
 <div style="background-color: #EDF6FF;padding:6px 3px;height:27px;">
-  <!--%= business_item.address.address_line_one + "," + business_item.address.address_line_two %-->
-  Ground Floor, Building No 237, Gulab Building P D Mello Road Fort Mumbai
+  <%= business_item.address.address_line_one + "," + business_item.address.address_line_two %>
 </div>
   <br/>
   <table >
@@ -20,16 +19,16 @@
     </td>
     <td width=50% style="padding-left: 10px;border-left:2px solid #7FBDF8;">
       <b>Contact</b>
-
       <br/>
-      <br/>Phone: +91 9860865800
-      <br/>Fax: +91 9096061113
-      <br/>Emai: care@bizlocator.com
+      <br/>Name : <%= business_item.address.contact_name %>
+      <br/>Phone: <%= business_item.address.phone %>
+      <br/>Fax: <%= business_item.address.fax %>
+      <br/>Email: <%= business_item.address.email %>
       <br/>
     </td>
   </tr>
 </table>
-  <span style="float:right"><a href="#">view more</a></span>
+  <span style="float:right"><%= link_to "View more", business_item %></span>
 </div>
 
 

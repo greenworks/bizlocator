@@ -5,9 +5,6 @@
     <th>Company</th>
     <th>Shopping mall</th>
     <th>Address</th>
-    <th>Ispublished</th>
-    <th>Isapproved</th>
-    <th>Expiry date</th>
     <th></th>
     <th></th>
     <th></th>
@@ -23,9 +20,6 @@
         <td><%= business_item.company_id %></td>
         <td><%= business_item.shopping_mall_id %></td>
         <td><%= business_item.address_id %></td>
-        <td><%= business_item.ispublished %></td>
-        <td><%= business_item.isapproved %></td>
-        <td><%= business_item.expiry_date %></td>
         <td><%= link_to 'Show', business_item %></td>
         <% if user_signed_in? && business_item.user_id == current_user.id %>
             <td><%= link_to 'Edit', edit_business_item_path(business_item) %></td>

@@ -16,6 +16,13 @@ class BusinessItemCategory < ActiveRecord::Base
     BusinessItemCategory.where(" id = ?", "#{parent_category_id}")
   end
 
+  def self.search(keyword)
+    if (keyword)
+      where(' name LIKE ? ',  "%#{keyword}%")
+    else
+      nil
+    end
+  end
 
 
 end

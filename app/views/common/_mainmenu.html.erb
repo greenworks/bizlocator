@@ -8,13 +8,13 @@
           <li><a href="home/new-page-3.html">Subpage 3</a></li>
         </ul-->
       </li>
-      <li><a href="#">CITY</a></li>
-      <li><%= link_to "Business Items", business_items_path %></li>
-      <li><%= link_to "Business Item Categories", business_item_categories_path%></li>
+      <li><%= link_to "Shopping Malls", shopping_malls_path %></li>
       <li><%= link_to "Ads", ads_path %></li>
       <li><%= link_to "Ad Categories", ad_categories_path %></li>
-      <li><%= link_to "Shopping Malls", shopping_malls_path %></li>
-
+      <li><%= link_to "Business Items", business_items_path %></li>
+      <li><%= link_to "Business Item Categories", business_item_categories_path%></li>
+      <li><%= link_to "Jobs", jobs_path %></li>
+      <li><a href="#">CITY</a></li>
     </ul>
   </div>
 
@@ -22,7 +22,12 @@
 
 
 <div class="submenu">
-    <a href="/info/home">Sales . Deals . Flyers . Coupons . Group Buys . All Business</a>  <span>|</span>
-    <a href="#">View The Malls</a> <span>|</span>
-    <a href="#">Saved Ads</a>
+    <%= link_to "View The Malls", shopping_malls_path %> <span>|</span>
+    <% if user_signed_in? && current_user.role.name == "Normal" %>
+       <%= link_to "Saved Ads", bookmark_ads_path%><span>|</span>
+       <%= link_to "Saved Jobs", bookmark_jobs_path %><span>|</span>
+       <%= link_to "Saved Jobs", bookmark_business_items_path %><span>|</span>
+    <% end %>
+    <!--<a href="/info/home">Sales . Deals . Flyers . Coupons . Group Buys . All Business</a><span>|</span>-->
+    <%= link_to 'Change Profile', edit_user_registration_path %>
 </div>

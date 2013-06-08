@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @job.title %>
+</p>
+<p>
+  <% if @job.image.to_s != ''  %>
+      <%=image_tag(@job.image.to_s, :height => '157', :width => '217') %>
+  <% else %>
+      <%=image_tag("/images/dummy.jpeg", :height => '157', :width => '217') %>
+  <% end %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @job.description %>
+</p>
+
+<p>
+  <b>Vacancy count:</b>
+  <%= @job.vacancy_count %>
+</p>
+
+<p>
+  <b>Company:</b>
+  <%= @job.company_id %>
+</p>
+
+<p>
+  <b>Qualification:</b>
+  <%= @job.qualification %>
+</p>
+
+<p>
+  <b>Job categiory:</b>
+  <%= @job.job_categiory_id %>
+</p>
+
+<p>
+  <b>Meeting address:</b>
+  <%= @job.meeting_address %>
+</p>
+
+<p>
+  <b>Expiry date:</b>
+  <%= @job.expiry_date %>
+</p>
+
+<p>
+  <b>Ispublished:</b>
+  <%= @job.ispublished %>
+</p>
+
+<p>
+  <b>Isapproved:</b>
+  <%= @job.isapproved %>
+</p>
+
+<% if user_signed_in? && @job.user_id == current_user.id %>
+    <%= link_to 'Edit', edit_job_path(@job) %> |
+    <%= link_to "Back to My Account", "/info/user_home" %>
+<% end %>
+<%= link_to 'Back to Complete list', jobs_path %>

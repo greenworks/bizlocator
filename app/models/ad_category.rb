@@ -20,4 +20,6 @@ class AdCategory < ActiveRecord::Base
     AdCategory.where("parent_category_id = ?", "#{id}")
   end
 
+
+
 end

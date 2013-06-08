@@ -14,7 +14,14 @@ class Company < ActiveRecord::Base
     else
       nil
     end
+  end
 
+  def self.search(keyword)
+    if (keyword)
+      where(' name LIKE ? ',  "%#{keyword}%")
+    else
+      nil
+    end
   end
 
 end

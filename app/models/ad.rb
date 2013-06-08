@@ -42,7 +42,6 @@ class Ad < ActiveRecord::Base
     else
       scoped
     end
-
   end
 
   def self.user_related(user_id)
@@ -53,4 +52,7 @@ class Ad < ActiveRecord::Base
 
     end
   end
+
+
+
 end

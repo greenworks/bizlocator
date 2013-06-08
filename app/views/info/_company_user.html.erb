@@ -1,26 +1,37 @@
-<br/>
-<br/>
-<br/>
 
-<a href="#my_div" rel="facebox">Facebox test</a>
+<!--%= javascript_include_tag src="fancybox" %-->
 
-<div id="my_div" >
+<!--<script>
+//    jQuery(document).ready(function() {
+//        alert('hello');
+//        jQuery("fancybox").fancybox();
+//    });
+</script>-->
 
-  <span style="font-weight: bold"> Facebox test COntebnt Lines  </span>
+
+<!--
+<a href="#fancybox" rel="facebox">fancybox test</a>
+
+<div id="fancybox" >
+
+  <span style="font-weight: bold"> fancybox test Content Lines  </span>
 
 </div>
 
+<a class="fancybox">HELLO FANCY</a>
+
+-->
 
 <div class="user-home-menu">
-  <a href="">Dashboard</a> |
-  <a href="">Company</a> |
-  <a href="">Ads</a> |
-  <a href="">Business Listing</a> |
-  <a href="">Job Posting</a> |
-  <a href="">My Profile</a>
+  <a href="#user_dashboard">Dashboard</a> |
+  <a href="#user_companies" class="fancybox">Company</a> |
+  <a href="#user_ads">Ads</a> |
+  <a href="#user_business_items">Business Listing</a> |
+  <a href="#user_jobs">Job Postings</a> |
+  <a href="#user_addresses">Address List</a>
 </div>
 
-<div class="user_dashboard" >
+<div id="user_dashboard" >
   <span style="font-weight: bold"> Dashboard  </span>
   <br/><br/>
   This section will contain
@@ -28,7 +39,6 @@
   <br/>Admin Notification
   <br/>News / offers for this user
   <br/>Feedback form for this user
-
 </div>
 
 <div id="user_companies" >
@@ -39,14 +49,14 @@
 </div>
 
 
-<div class="user_ads" >
+<div id="user_ads" >
   <span style="font-weight: bold">  My Ads  </span> | <%= link_to "Create New Ad", new_ad_path %>
   <br/>
   <br/>
   <%= render :partial =>"ads/user_index"  %>
 </div>
 
-<div class="user_business_items" >
+<div id="user_business_items" >
   <span style="font-weight: bold">  My Business Items  </span> | <%= link_to "Create Business Item", new_business_item_path %>
   <br/>
   <br/>
@@ -54,7 +64,7 @@
 </div>
 
 
-<div class="user_jobs" >
+<div id="user_jobs" >
   <span style="font-weight: bold">  My Jobs  </span> | <%= link_to "Create New job", new_job_path %>
   <br/>
   <br/>
@@ -62,7 +72,7 @@
 </div>
 
 
-<div class="user_addresses" >
+<div id="user_addresses" >
   <span style="font-weight: bold">  My Addresses  </span> | <%= link_to "Create New Addresses", new_address_path %>
   <br/>
   <br/>

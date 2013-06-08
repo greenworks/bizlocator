@@ -17,15 +17,5 @@
       <td width=50% class="discount"  title="<%=ad.title%>" ><%= ad.price.to_i %> % Off</td>
       <td width=50% class="more"  title="<%=ad.title%>" ><a href="/ads/<%=ad.id%>/">More</a></td>
     </tr>
-    <% if user_signed_in? && ad.user_id == current_user.id %>
-    <tr>
-      <td><%= link_to 'Edit', edit_ad_path(ad) %></td>
-      <td><%= link_to 'Destroy', ad, method: :delete, data: {confirm: 'Are you sure?'} %></td>
-    </tr>
-    <% end %>
   </table>
-
-
-
-
 </div>
