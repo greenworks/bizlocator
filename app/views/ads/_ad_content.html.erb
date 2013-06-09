@@ -58,7 +58,7 @@
             <b>Company:</b>
             <%= link_to @ad.company.name, Company.find(@ad.company_id || 0) %>
             <br/>
-            <%= link_to " ( #{pluralize(Ad.find_all_by_company_id(@ad.company.id).count, 'Ad')} )  for this mall", ads_path(:company_id => @ad.company.id) %>
+            <%= link_to " ( #{pluralize(Ad.find_all_by_company_id(@ad.company.id).count, 'Ad')} )  for this company", ads_path(:company_id => @ad.company.id) %>
           </div>
           <div class="shopping_mall">
             <b>Shopping mall:</b>
@@ -76,7 +76,7 @@
             <div class="data_actions">
                <%= link_to 'Edit', edit_ad_path(@ad) %> |
                <%= link_to 'Back', ads_path %> |
-               <%= link_to 'Destroy', company, method: :delete, data: {confirm: 'Are you sure?'} %> |
+               <%= link_to 'Destroy', ad, method: :delete, data: {confirm: 'Are you sure?'} %> |
                <%= link_to 'New Ad', new_ad_path %>
             </div>
           <% end %>
