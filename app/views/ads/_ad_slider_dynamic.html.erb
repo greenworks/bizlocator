@@ -39,9 +39,10 @@
 <div id="featured">
   <ul class="ui-tabs-nav">
     <% @ad_categories = AdCategory.all(:select => :id).collect(&:id)
-       @loopvar = 1
+       @loopvar = 0
        puts "ad_categories ==> #{@ad_categories}"
        @ad_categories.each do |x|
+         @loopvar+=1
          puts "ad_category ==> #{x}"
          @ad = Ad.find_all_by_ad_category_id(x).first
          unless @ad.nil?
@@ -65,15 +66,16 @@
 
 
   <% @ad_categories = AdCategory.all(:select => :id).collect(&:id)
-     @loopvar = 1
+     @loopvar = 0
      puts "ad_categories ==> #{@ad_categories}"
      @ad_categories.each do |x|
+       @loopvar+=1
        puts "ad_category ==> #{x}"
        @ad = Ad.find_all_by_ad_category_id(x).first
        unless @ad.nil?
   %>
   <!-- First Content -->
-  <div id="fragment-<%=@loopvar%>" class="ui-tabs-panel" style="">
+  <div id="fragment-<%=@loopvar%>" class="ui-tabs-panel  ui-tabs-hide" style="">
         <% if @ad.image.to_s != ''  %>
             <%=image_tag(@ad.image.to_s, :height => '257')%>
         <% else %>

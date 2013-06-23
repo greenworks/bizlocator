@@ -22,12 +22,11 @@
 
 
 <div class="submenu">
-    <%= link_to "View The Malls", shopping_malls_path %> <span>|</span>
     <% if user_signed_in? && current_user.role.name == "Normal" %>
        <%= link_to "Saved Ads", bookmark_ads_path%><span>|</span>
        <%= link_to "Saved Jobs", bookmark_jobs_path %><span>|</span>
        <%= link_to "Saved Jobs", bookmark_business_items_path %><span>|</span>
     <% end %>
-    <!--<a href="/info/home">Sales . Deals . Flyers . Coupons . Group Buys . All Business</a><span>|</span>-->
-    <%= link_to 'Change Profile', edit_user_registration_path %>
+    <a href="/info/home">Sales . Deals . Flyers . Coupons . Group Buys . All Business</a><span>|</span>
+    <%= link_to 'Profile', edit_user_registration_path %>
 </div>
