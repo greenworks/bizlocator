@@ -5,23 +5,16 @@
     </div>
     <div class="art-vmenublockcontent">
       <ul class="art-vmenu">
-        <li><a href="#" class="active1">Entertainment</a>
-          <ul class="active1">
-            <li><a href="#">Dummy Sublink</a></li>
-            <li><a href="#">Dummy Sublink</a></li>
-            <li><a href="#">Dummy Sublink</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Dummy Quick Link</a></li>
-        <li><a href="#">Dummy Quick Link</a></li>
-        <li><a href="#">Dummy Quick Link</a></li>
-        <li><a href="#">Dummy Quick Link</a></li>
-        <li><a href="#">Dummy Quick Link</a></li>
-        <li><a href="#">Dummy Quick Link</a></li>
-        <li><a href="#">Dummy Quick Link</a></li>
-        <li><a href="#">Dummy Quick Link</a></li>
-        <li><a href="#">Dummy Quick Link</a></li>
-        <li><a href="#">Dummy Quick Link</a></li>
+        <% @ad_categories = AdCategory.get_all_main_categories
+           @ad_categories.each do |ad_category| %>
+            <li><%= link_to ad_category.name , ads_path(:ad_category_id => ad_category.id) , :class=>"active1" %>
+              <ul class="active1">
+                <% ad_category.get_all_child_categories.each do |subcategory| %>
+                    <li><%= link_to subcategory.name, subcategory %></li>
+                <% end %>
+              </ul>
+            </li>
+        <% end %>
 
       </ul>
 

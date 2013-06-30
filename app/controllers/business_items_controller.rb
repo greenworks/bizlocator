@@ -44,12 +44,23 @@ class BusinessItemsController < ApplicationController
   # GET /business_items/new
   # GET /business_items/new.json
   def new
-    @business_item = BusinessItem.new
+    if user_signed_in? && current_user.role.name == "Business Provider"
+      puts "Company.find_all_by_user_id(current_user.id) => #{Company.find_all_by_user_id(current_user.id)}"
+      puts "Company.find_all_by_user_id(current_user.id).count => #{Company.find_all_by_user_id(current_user.id).count}"
+      if Company.find_all_by_user_id(current_user.id).count > 0
+        @business_item = BusinessItem.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @business_item }
+        respond_to do |format|
+          format.html # new.html.erb
+          format.json { render json: @business_item }
+        end
+      else
+        redirect_to info_no_company_exists_path
+      end
+    else
+      redirect_to new_user_session_path
     end
+
   end
 
   # GET /business_items/1/edit

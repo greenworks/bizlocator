@@ -14,5 +14,7 @@ class InfoController < ApplicationController
   def  users_home
   end
 
+  def no_company_exists
+  end
 
 end

@@ -22,11 +22,16 @@
 
 
 <div class="submenu">
-    <% if user_signed_in? && current_user.role.name == "Normal" %>
-       <%= link_to "Saved Ads", bookmark_ads_path%><span>|</span>
-       <%= link_to "Saved Jobs", bookmark_jobs_path %><span>|</span>
-       <%= link_to "Saved Jobs", bookmark_business_items_path %><span>|</span>
-    <% end %>
-    <a href="/info/home">Sales . Deals . Flyers . Coupons . Group Buys . All Business</a><span>|</span>
-    <%= link_to 'Profile', edit_user_registration_path %>
+  <a href="/info/home">Sales . Deals . Flyers . Coupons . Group Buys . All Business</a>
+  <% if user_signed_in? %>
+      <span>|</span>
+      <% if current_user.role.name == "Consumer" %>
+          <%= link_to "Saved Ads", bookmark_ads_path%><span>|</span>
+          <%= link_to "Saved Jobs", bookmark_jobs_path %><span>|</span>
+          <%= link_to "Saved Jobs", bookmark_business_items_path %><span>|</span>
+      <% elsif user_signed_in? && current_user.role.name == "Business Provider" %>
+          <!-- Space for business provider-->
+      <% end %>
+      <%= link_to 'Profile', edit_user_registration_path %>
+  <% end %>
 </div>

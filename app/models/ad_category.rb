@@ -20,6 +20,8 @@ class AdCategory < ActiveRecord::Base
     AdCategory.where("parent_category_id = ?", "#{id}")
   end
 
-
+  def self.get_all_main_categories
+    AdCategory.where("parent_category_id is NULL or parent_category_id = 0 or parent_category_id = '' ")
+  end
 
 end

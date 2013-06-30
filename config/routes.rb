@@ -35,6 +35,8 @@ Bizlocator::Application.routes.draw do
 
   get "info/user_home"
 
+  get "info/no_company_exists"
+
   resources :emergency_numbers
   resources :city_services
   resources :city_service_categories

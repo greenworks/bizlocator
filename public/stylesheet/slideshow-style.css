@@ -1,9 +1,9 @@
-#featured{ 
+#featured{
 	width:470px;
-	position:relative; 
+	position:relative;
 	/*border:2px solid #ccc;   */
 	height:394px;
-    overflow:hidden;
+    /*overflow:hidden;*/
     background-color: white;
     margin: 3px 5px 0 5px;
     padding: 5px 250px 5px 5px;
@@ -17,10 +17,11 @@
 	list-style:none; 
 	padding:0; margin:0;
 	width:244px;
+    height: 100%;
 /*    height:455px;*/
-	overflow-x:hidden;
+    overflow-x:hidden;
+    overflow-y:scroll;
     background:white;
-
 }
 #featured ul.ui-tabs-nav li{
 	padding:2px 0;
@@ -115,7 +116,6 @@
 }
 
 
-
 #featured .info a{ 
 	text-decoration:none; 
 	color:#fff;
@@ -127,3 +127,114 @@
 #featured .ui-tabs-hide{ 
 	display:none; 
 }
+
+/*added to try horizontal slider */
+#featured-horizontal .span-tabs-panel{
+    width:470px;
+    height:300px;
+    background:#999;
+    position:relative;
+}
+#featured-horizontal .span-tabs-panel img{
+    height:80px;
+}
+#featured-horizontal .span-tabs-panel .info{
+    position:absolute;
+    bottom:0; left:0;
+    height:70px;
+    background: url('/images/home-slideshow/transparent-bg.png');
+}
+#featured-horizontal .span-tabs-panel .info a.hideshow{
+    position:absolute; font-size:11px; font-family:Verdana; color:#f0f0f0; right:10px; top:-20px; line-height:20px; margin:0; outline:none; background:#333;
+}
+#featured-horizontal .span-tabs-hide{
+    display:none;
+}
+
+/*temp*/
+
+#featured-horizontal{
+    width:100px;
+    position:relative;
+    /*border:2px solid #ccc;   */
+    height:100px;
+    /*overflow:hidden;*/
+    background-color: white;
+    margin: 3px 5px 0 5px;
+    padding: 5px 250px 5px 5px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+
+#featured-horizontal img{
+    width: 120px;
+    height: 90%;
+}
+
+/*#featured-horizontal span.span-tabs-nav{*/
+    /*position:absolute;*/
+    /*top:0;*/
+    /*left:480px;*/
+    /*list-style:none;*/
+    /*padding:0; margin:0;*/
+    /*width:244px;*/
+    /*    height:455px;*/
+    /*overflow-x:hidden;*/
+    /*background:white;*/
+
+/*}*/
+#featured-horizontal span.span-tabs-nav li{
+    padding:2px 0;
+    font-size:12px;
+    color:#666;
+    margin:2px;
+}
+#featured-horizontal span.span-tabs-nav span img{
+    float:left; margin:2px 5px;
+    background:#DEEBF2;
+    padding:2px;
+    border:1px solid #eee;
+}
+#featured-horizontal span.span-tabs-nav span span{
+    font-size:11px;
+    font-family:Verdana;
+    line-height:18px;
+}
+#featured-horizontal span.span-tabs-nav-item{
+    height:58px;
+    width:237px;
+    text-decoration:none;
+    color:#333;
+    background:#fff;
+    line-height:20px;
+    outline:none;
+    border: 1px solid #E5E5E5;
+}
+
+#featured-horizontal span.span-tabs-nav-item a{
+    text-decoration:none;
+    color:#333;
+    background:#fff;
+    line-height:20px;
+    outline:none;
+    float: left;
+    display: inline;
+}
+
+/*#featured-horizontal span.span-tabs-nav-item :hover{*/
+    /*color:#FF9009;*/
+/*}*/
+/*#featured-horizontal span.span-tabs-selected, #featured-horizontal span.span-tabs-active{*/
+    /*background:url('/images/home-slideshow/selected-item.gif') top left no-repeat;*/
+/*}*/
+/*#featured-horizontal span.span-tabs-nav span.span-tabs-selected a,#featured-horizontal span.span-tabs-nav span.span-tabs-selected, #featured-horizontal span.span-tabs-nav span.span-tabs-active a{*/
+    /*background:#E9F4FF;*/
+/*}*/
+
+/*#featured-horizontal span.span-tabs-nav span.span-tabs-nav-item span-tabs-selected img{*/
+    /*width: 40%;*/
+    /*width: 40px;*/
+    /*height: 80px;*/
+/*}*/
+

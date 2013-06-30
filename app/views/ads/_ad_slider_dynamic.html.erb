@@ -40,19 +40,20 @@
   <ul class="ui-tabs-nav">
     <% @ad_categories = AdCategory.all(:select => :id).collect(&:id)
        @loopvar = 0
-       puts "ad_categories ==> #{@ad_categories}"
+       puts "loopvar ==> #{@loopvar}"
        @ad_categories.each do |x|
          @loopvar+=1
-         puts "ad_category ==> #{x}"
+         #puts "ad_category ==> #{x}"
          @ad = Ad.find_all_by_ad_category_id(x).first
          unless @ad.nil?
+           puts "ad ==> #{@ad.id}"
     %>
             <li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-<%=@loopvar%>">
               <a href="#fragment-<%=@loopvar%>">
                 <% if @ad.image.to_s != ''  %>
                     <%=image_tag(@ad.image.to_s)%>
                 <% else %>
-                    <%=image_tag("/images/dummy.jpeg", :height => '80') %>
+                    <%=image_tag("/images/dummy.jpeg") %>
                 <% end %>
                 <span>
                   <%= @ad.title %>
@@ -94,41 +95,14 @@
   </div>
   <% end %>
 <% end %>
-
-  <!-- Horizontal slider -->
-  <span class="ui-tabs-nav-horizontal">
-    <% @ad_categories = AdCategory.all(:select => :id).collect(&:id)
-       @loopvar = 0
-       puts "ad_categories ==> #{@ad_categories}"
-       @ad_categories.each do |x|
-         @loopvar+=1
-         puts "ad_category ==> #{x}"
-         @ad = Ad.find_all_by_ad_category_id(x).first
-         unless @ad.nil?
-    %>
-            <li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-<%=@loopvar%>">
-              <a href="#fragment-<%=@loopvar%>">
-                <% if @ad.image.to_s != ''  %>
-                    <%=image_tag(@ad.image.to_s)%>
-                <% else %>
-                    <%=image_tag("/images/dummy.jpeg", :height => '80') %>
-                <% end %>
-                <span>
-                  <%= @ad.title %>
-                </span>
-              </a>
-            </li>
-        <% end %>
-    <% end %>
-    <!--li class="ui-tabs-nav-item" id="nav-fragment-7"><a href="#fragment-7"><img src="/images/home-slideshow/image2-small.jpg" alt="" /><span>20 Beautiful Long Exposure Photographs</span></a></li-->
-  </span>
-
-  <!-- Horizontal slider end-->
-
 </div>
 
-<div>
-  <h2>Click for more business opportunities for business provider</h2>
-</div>
+
+<% if user_signed_in? && current_user.role.name == "Business Provider" %>
+    <!-- Space for business provider-->
+    <!--%= render :partial => "ads/ad_slider_horizontal"%-->
+    <h2><%= link_to "New Business", new_business_item_path %></h2>
+<% end %>
+
 
 
