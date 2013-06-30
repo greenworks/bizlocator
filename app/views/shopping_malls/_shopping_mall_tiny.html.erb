@@ -1,0 +1,24 @@
+<table>
+  <tr>
+    <td>
+      <% if shopping_mall.image.to_s != ''  %>
+          <%=image_tag(shopping_mall.image.to_s, :height => '157', :width => '217') %>
+      <% else %>
+          <%=image_tag("/images/dummy.jpeg", :height => '157', :width => '217') %>
+      <% end %>
+    </td>
+    <td>
+      <%= link_to shopping_mall.name, shopping_mall ,  :style => 'text-decoration: underline, text-weight: bold' %>
+      <br>
+      <%= shopping_mall.address && shopping_mall.address.address_brief %>
+    </td>
+    <td>
+
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <%= shopping_mall.description %>
+    </td>
+  </tr>
+</table>

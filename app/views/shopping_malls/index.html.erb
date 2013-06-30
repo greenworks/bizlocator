@@ -1,36 +1,55 @@
-<h1>Listing shopping_malls</h1>
 
-<table>
+
+<table style="border-width: 1">
   <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Mall type</th>
-    <th>Ispublished</th>
-    <th>Image</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <td colspan="2" style="text-align:center">
+      <h1 style="text-decoration:underline">View The Malls</h1>
+      <% if params[:city] %>
+          <%=params[:city]%>
+      <% end %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <h2 style="text-decoration:underline">MAJOR MALLS</h2>
+    </td>
+    <td>
+      <h2 style="text-decoration:underline">PLAZA MALLS</h2>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <table>
+        <%
+           @major_malls = @shopping_malls.where(" mall_type_id = 1")
+           @major_malls.each do |shopping_mall|
+        %>
+            <tr>
+              <td>
+                <%= render :partial => "shopping_malls/shopping_mall_tiny", :locals => {:shopping_mall => shopping_mall} %>
+              </td>
+            </tr>
+        <% end %>
+      </table>
+    </td>
+    <td>
+      <table>
+        <%
+           @plaza_malls = @shopping_malls.where(" mall_type_id = 2")
+           @plaza_malls.each do |shopping_mall|
+        %>
+            <tr>
+              <td>
+                <%= render :partial => "shopping_malls/shopping_mall_tiny", :locals => {:shopping_mall => shopping_mall} %>
+              </td>
+            </tr>
+        <% end %>
+      </table>
+    </td>
   </tr>
 
-  <% @shopping_malls.each do |shopping_mall| %>
-      <tr>
-        <td><%= shopping_mall.name %></td>
-        <td><%= shopping_mall.description %></td>
-        <td><%= shopping_mall.mall_type_id %></td>
-        <td><%= shopping_mall.ispublished %></td>
-        <td>
-          <% if shopping_mall.image.to_s != ''  %>
-              <%=image_tag(shopping_mall.image.to_s, :height => '157', :width => '217') %>
-          <% else %>
-              <%=image_tag("/images/dummy.jpeg", :height => '157', :width => '217') %>
-          <% end %>
-        </td>
-        <td><%= link_to 'Show', shopping_mall %></td>
-        <td><%= link_to 'Edit', edit_shopping_mall_path(shopping_mall) %></td>
-        <td><%= link_to 'Destroy', shopping_mall, method: :delete, data: {confirm: 'Are you sure?'} %></td>
-      </tr>
-  <% end %>
 </table>
+
 
 <br/>
 
