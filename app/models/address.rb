@@ -5,7 +5,20 @@ class Address < ActiveRecord::Base
   has_many :business_items
   has_many :shopping_malls
 
-  attr_accessible :address_line_one, :address_line_two, :chat_code, :city, :company_id, :contact_name, :country, :email, :fax, :google_map_code, :ispublished, :phone, :postal_code, :shopping_mall_id, :website, :user_id
+  geocoded_by :city
+
+  attr_accessible :address_line_one, :address_line_two, :chat_code, :city, :company_id, :contact_name, \
+  :country, :email, :fax, :google_map_code, :ispublished, :phone, :postal_code, :street, \
+  :shopping_mall_id, :website, :user_id, :city, :latitude, :longitude, :address_brief, :geocode
+
+  after_validation :geocode , :if => :address_brief_changed?
+
+  #before_validation_on_update :geocode_address
+
+  def address_brief_changed?
+    attrs = %w(address_line_one address_line_two street postal_code city country)
+    attrs.any?{|a| send "#{a}_changed?"}
+  end
 
   def self.user_related(user_id)
     if (user_id)
@@ -16,14 +29,23 @@ class Address < ActiveRecord::Base
   end
 
   def address_brief
-    output =''
-    if self.address_line_one != nil && self.address_line_one != ''
-      output.concat(self.address_line_one)
-    end
-
-    if  self.address_line_two != nil && self.address_line_two != ''
-      output.concat(self.address_line_two)
-    end
-    output
+    [ address_line_one, address_line_two, street, postal_code , city, country].compact.join(' ')
   end
+=begin
+
+  def geocode_address
+    if !address_brief.blank?
+      geo=Geokit::Geocoders::MultiGeocoder.geocode(address_brief)
+      errors.add(:address_brief, "Could not Geocode address") if !geo.success
+      self.latitude, self.longitude = geo.lat,geo.lng if geo.success
+    end
+  end
+
+# Checks whether this object has been geocoded or not. Returns the truth
+  def geocoded?
+    lat? && lng?
+  end
+=end
+
+
 end

@@ -1,5 +1,8 @@
 Bizlocator::Application.routes.draw do
 
+  resources :locations
+
+
   resources :bookmark_business_items
 
 

@@ -13,6 +13,8 @@ gem 'activeadmin-cancan'
 gem 'will_paginate'
 gem 'kaminari'
 gem 'jquery-rails'
+gem 'geocoder'
+gem 'gmaps4rails'
 
 gem 'activeadmin' , ' 0.5.1'
 gem 'carrierwave'

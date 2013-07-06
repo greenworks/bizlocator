@@ -1,24 +1,33 @@
-<table>
+<table style="border-width: 2; border-color: #ff4301; border: 2">
   <tr>
     <td>
+      <%= link_to (shopping_mall.name).upcase , shopping_mall ,  :style => 'text-decoration: underline, text-weight: bold' %>
+    </td>
+    <td>
+      MALL INFO
+    </td>
+    <td style="text-decoration: underline, bold">
+      APPROX DISTANCE
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <%= shopping_mall.address && shopping_mall.address.address_brief %>
+    </td>
+    <td>
+      <%= pluralize( rand(10) , 'Minute' ) %>
+    </td>
+  </tr>
+  <tr height="80%">
+    <td colspan="2">
       <% if shopping_mall.image.to_s != ''  %>
           <%=image_tag(shopping_mall.image.to_s, :height => '157', :width => '217') %>
       <% else %>
           <%=image_tag("/images/dummy.jpeg", :height => '157', :width => '217') %>
       <% end %>
     </td>
-    <td>
-      <%= link_to shopping_mall.name, shopping_mall ,  :style => 'text-decoration: underline, text-weight: bold' %>
-      <br>
-      <%= shopping_mall.address && shopping_mall.address.address_brief %>
-    </td>
-    <td>
+    <td width="40%">
 
-    </td>
-  </tr>
-  <tr>
-    <td colspan="3">
-      <%= shopping_mall.description %>
     </td>
   </tr>
 </table>

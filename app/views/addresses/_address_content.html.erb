@@ -3,52 +3,42 @@
   <table width=100% >
     <tr>
       <td>
+        <p>
+          <b>Address line one:</b>
+          <%= @address.address_line_one %>
+        </p>
 
-
-
-      <p>
-        <b>Contact name:</b>
-        <%= @address.contact_name %>
-      </p>
-
-      <p>
-        <b>Email:</b>
-        <%= @address.email %>
-      </p>
-
-      <p>
-        <b>Phone:</b>
-        <%= @address.phone %>
-      </p>
-
-      <p>
-        <b>Fax:</b>
-        <%= @address.fax %>
-      </p>
-
-      <p>
-        <b>Address line one:</b>
-        <%= @address.address_line_one %>
-      </p>
-
-      <p>
+        <p>
         <b>Address line two:</b>
         <%= @address.address_line_two %>
       </p>
 
-      <p>
-        <b>Postal code:</b>
-        <%= @address.postal_code %>
+        <p>
+        <b>Street:</b>
+        <%= @address.street %>
       </p>
 
-      <p>
+        <p>
         <b>City:</b>
         <%= @address.city %>
       </p>
-
+        <p>
+          <b>Postal code:</b>
+          <%= @address.postal_code %>
+        </p>
       <p>
         <b>Country:</b>
         <%= @address.country %>
+      </p>
+
+      <p>
+        <b>Latitude:</b>
+        <%= @address.latitude %>
+      </p>
+
+      <p>
+        <b>Longitude:</b>
+        <%= @address.longitude %>
       </p>
 
       <p>
@@ -57,8 +47,8 @@
       </p>
 
       <p>
-        <b>Google map code:</b>
-        <%= @address.google_map_code %>
+        <b>Google map : <%=@address.address_brief %></b>
+        <!--%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@address.latitude}%2C#{@address.longitude}"%-->
       </p>
 
       <p>
@@ -66,12 +56,13 @@
         <%= @address.chat_code %>
       </p>
 
+        <p>
+          <b>Contact name:</b> <%= @address.contact_name %> <br/>
+          <b>Email:</b> <%= @address.email %>               <br/>
+          <b>Phone:</b>          <%= @address.phone %>           <br/>
+          <b>Fax:</b>          <%= @address.fax %>                    <br/>
+        </p>
 
-
-      <p>
-        <b>Ispublished:</b>
-        <%= @address.ispublished %>
-      </p>
       </td>
     </tr>
     <% if user_signed_in? && address.user_id == current_user.id %>
