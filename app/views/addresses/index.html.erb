@@ -23,7 +23,7 @@
         <td><%= address.postal_code %></td>
         <td><%= address.country %></td>
         <td><%= address.website %></td>
-        <td><%= address.google_map_code %></td>
+        <td><%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{address.latitude}%2C#{address.longitude}" , :height=>'100%' %></td>
         <td><%= address.contact_name %>
           <div>Email <%= address.email %></div>
           <div>Phone <%= address.phone %></div>

@@ -1,55 +1,25 @@
 
 
-<table style="border-width: 1">
-  <tr>
-    <td colspan="2" style="text-align:center">
+  <div style="text-align:center;border-width: 1">
       <h3 style="">View The Malls</h3>
       <% if params[:city] %>
           <%=params[:city]%>
       <% end %>
-      <%=     %>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <h2 style="text-decoration:underline">MAJOR MALLS</h2>
-    </td>
-    <td>
-      <h2 style="text-decoration:underline">PLAZA MALLS</h2>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <table>
-        <%
-           @major_malls = @shopping_malls.where(" mall_type_id = 1")
-           @major_malls.each do |shopping_mall|
-        %>
-            <tr>
-              <td>
-                <%= render :partial => "shopping_malls/shopping_mall_tiny", :locals => {:shopping_mall => shopping_mall} %>
-              </td>
-            </tr>
-        <% end %>
-      </table>
-    </td>
-    <td>
-      <table>
-        <%
-           @plaza_malls = @shopping_malls.where(" mall_type_id = 2")
-           @plaza_malls.each do |shopping_mall|
-        %>
-            <tr>
-              <td>
-                <%= render :partial => "shopping_malls/shopping_mall_tiny", :locals => {:shopping_mall => shopping_mall} %>
-              </td>
-            </tr>
-        <% end %>
-      </table>
-    </td>
-  </tr>
-
-</table>
+  </div>
+  <div style="font-size: 10px">
+    <span>
+      ALL MALLS (<%=@shopping_malls.count %>)
+    </span>
+    <span>
+      MAJOR MALLS (<%=@shopping_malls.where(" mall_type_id=1").count %>)
+    </span>
+    <span>
+      PLAZA MALLS (<%=@shopping_malls.where(" mall_type_id=2").count %>)
+    </span>
+  </div>
+  <%     @shopping_malls.each do |shopping_mall|   %>
+      <%= render :partial => "shopping_malls/shopping_mall_tiny", :locals => {:shopping_mall => shopping_mall} %>
+  <% end %>
 
 
 <br/>

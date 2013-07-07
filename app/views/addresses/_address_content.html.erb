@@ -1,3 +1,5 @@
+<% width=450
+   height = (width*0.66).round(0) %>
 <div class="dealio" >
 
   <table width=100% >
@@ -48,7 +50,8 @@
 
       <p>
         <b>Google map : <%=@address.address_brief %></b>
-        <!--%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@address.latitude}%2C#{@address.longitude}"%-->
+        <%= image_tag "http://maps.google.com/maps/api/staticmap?size=#{width}x#{height}&scale=1&sensor=false&zoom=12&feature=all&markers=#{shopping_mall.address.latitude}%2C#{shopping_mall.address.longitude}" %>
+
       </p>
 
       <p>

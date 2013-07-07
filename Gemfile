@@ -13,6 +13,7 @@ gem 'activeadmin-cancan'
 gem 'will_paginate'
 gem 'kaminari'
 gem 'jquery-rails'
+
 gem 'geocoder'
 gem 'gmaps4rails'
 
