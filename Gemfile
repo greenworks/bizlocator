@@ -15,7 +15,7 @@ gem 'kaminari'
 gem 'jquery-rails'
 
 gem 'geocoder'
-gem 'gmaps4rails'
+gem "gmaps4rails", "~> 1.5.6"
 
 gem 'activeadmin' , ' 0.5.1'
 gem 'carrierwave'
@@ -35,6 +35,7 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
+
 
 gem 'jquery-rails'
 

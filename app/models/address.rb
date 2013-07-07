@@ -5,13 +5,13 @@ class Address < ActiveRecord::Base
   has_many :business_items
   has_many :shopping_malls
 
-  geocoded_by :city
+  geocoded_by :address_brief
 
   attr_accessible :address_line_one, :address_line_two, :chat_code, :city, :company_id, :contact_name, \
   :country, :email, :fax, :google_map_code, :ispublished, :phone, :postal_code, :street, \
   :shopping_mall_id, :website, :user_id, :city, :latitude, :longitude, :address_brief, :geocode
 
-  after_validation :geocode , :if => :address_brief_changed?
+  after_validation :geocode #, :if => :address_brief_changed?
 
   #before_validation_on_update :geocode_address
 
