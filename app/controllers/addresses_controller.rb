@@ -2,7 +2,17 @@ class AddressesController < ApplicationController
   # GET /addresses
   # GET /addresses.json
   def index
-    @addresses = Address.all
+    @addresses = Address.all #limit(1).all
+=begin
+    @json = @addresses.to_gmaps4rails do |address, marker|
+      marker.infowindow render_to_string(:partial => "/addresses/infowindow", :locals => { :address => address})
+      marker.title "#{address.contact_name}"
+      marker.json({ :contact_name => address.contact_name})
+      marker.picture({:picture => "http://mapicons.nicolasmollet.com/wp-content/uploads/mapicons/shape-default/color-3875d7/shapecolor-color/shadow-1/border-dark/symbolstyle-contrast/symbolshadowstyle-dark/gradient-iphone/information.png",
+                      :width => 32,
+                      :height => 32})
+    end
+=end
 
     respond_to do |format|
       format.html # index.html.erb

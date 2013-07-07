@@ -52,6 +52,8 @@
         <b>Google map : <%=@address.address_brief %></b>
         <%= image_tag "http://maps.google.com/maps/api/staticmap?size=#{width}x#{height}&scale=1&sensor=false&zoom=12&feature=all&markers=#{shopping_mall.address.latitude}%2C#{shopping_mall.address.longitude}" %>
 
+        <!--%= gmaps4rails(@json) %-->
+
       </p>
 
       <p>

@@ -23,7 +23,14 @@
         <td><%= address.postal_code %></td>
         <td><%= address.country %></td>
         <td><%= address.website %></td>
-        <td><%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{address.latitude}%2C#{address.longitude}" , :height=>'100%' %></td>
+        <td>
+          <% width=450
+             height = (width*0.66).round(0) %>
+
+          <%= image_tag "http://maps.google.com/maps/api/staticmap?size=#{width}x#{height}&scale=1&sensor=false&zoom=12&feature=all&markers=#{shopping_mall.address.latitude}%2C#{shopping_mall.address.longitude}" %>
+          <!--%= gmaps4rails(@json) %-->
+
+        </td>
         <td><%= address.contact_name %>
           <div>Email <%= address.email %></div>
           <div>Phone <%= address.phone %></div>

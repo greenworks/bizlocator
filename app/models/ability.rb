@@ -35,7 +35,7 @@ class Ability
 
     if user.role.name == "admin"
       can :manage, :all
-    elsif user.role.name == "Company"
+    elsif user.role.name == "Business Provider"
 =begin
       can :manage, Ad , :user.in?(&:id)
       can :manage, Company , :user.in?(&:id)
@@ -46,7 +46,7 @@ class Ability
       can :index, Job
       can :index, BusinessItem
 =end
-    elsif user.role.name == "Normal"
+    elsif user.role.name == "Consumer"
 
     end
 
