@@ -3,16 +3,11 @@
     <div class="art-vmenublockheader">
       <h3 class="t">Quick Links</h3>
     </div>
-    <div class="art-vmenublockcontent">
-      <ul class="art-vmenu">
+    <div class="quicklinks">
+      <ul class="quicklinks_items">
         <% @ad_categories = AdCategory.get_all_main_categories
            @ad_categories.each do |ad_category| %>
-            <li><%= link_to ad_category.name , ads_path(:ad_category_id => ad_category.id) , :class=>"active1" %>
-              <ul class="active1">
-                <% ad_category.get_all_child_categories.each do |subcategory| %>
-                    <li><%= link_to subcategory.name, subcategory %></li>
-                <% end %>
-              </ul>
+            <li><%= link_to ad_category.name , ads_path(:ad_category_id => ad_category.id) %>
             </li>
         <% end %>
 

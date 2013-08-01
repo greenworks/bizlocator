@@ -40,6 +40,8 @@ Bizlocator::Application.routes.draw do
 
   get "info/no_company_exists"
 
+  get "/set_language", :to=>"application#set_my_language"
+
   resources :emergency_numbers
   resources :city_services
   resources :city_service_categories

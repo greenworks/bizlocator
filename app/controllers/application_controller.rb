@@ -1,6 +1,14 @@
 class ApplicationController < ActionController::Base
   after_filter :store_location
 
+  def set_my_language
+    if session[:mylanguage]
+      puts 'mylanguage is set to ' + session[:mylanguage]
+    end
+    session[:mylanguage]='My Language Value'
+    redirect_to :back
+  end
+
   private
   def store_location
     session[:return_to] = request.fullpath

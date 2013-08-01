@@ -40,13 +40,13 @@
   <ul class="ui-tabs-nav">
     <% @ad_categories = AdCategory.all(:select => :id).collect(&:id)
        @loopvar = 0
-       puts "loopvar ==> #{@loopvar}"
+       #puts "loopvar ==> #{@loopvar}"
        @ad_categories.each do |x|
          @loopvar+=1
          #puts "ad_category ==> #{x}"
          @ad = Ad.find_all_by_ad_category_id(x).first
          unless @ad.nil?
-           puts "ad ==> #{@ad.id}"
+           #puts "ad ==> #{@ad.id}"
     %>
             <li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-<%=@loopvar%>">
               <a href="#fragment-<%=@loopvar%>">
@@ -68,15 +68,29 @@
 
   <% @ad_categories = AdCategory.all(:select => :id).collect(&:id)
      @loopvar = 0
-     puts "ad_categories ==> #{@ad_categories}"
+     #puts "ad_categories ==> #{@ad_categories}"
      @ad_categories.each do |x|
        @loopvar+=1
-       puts "ad_category ==> #{x}"
+       #puts "ad_category ==> #{x}"
        @ad = Ad.find_all_by_ad_category_id(x).first
        unless @ad.nil?
   %>
   <!-- Content Display-->
   <div id="fragment-<%=@loopvar%>" class="ui-tabs-panel  ui-tabs-hide" style="">
+    <table  border="1" style="font-size: 10px">
+      <tr>
+        <td><%=@ad.title%> <img src="/images/ethnic_logo.bmp" alt="Ethnic Match"/></td>
+        <td><%=@ad.address.address_brief%> </td>
+      </tr>
+      <tr>
+        <td>
+          <%=link_to "In The Mall", @ad.shopping_mall %> -
+          <%=link_to "Order Online", @ad %> -
+          <%=link_to "We Deliver", @ad %> -
+        </td>
+        <td><%=@ad.address.contact_info%> </td>
+      </tr>
+    </table>
         <% if @ad.image.to_s != ''  %>
             <%=image_tag(@ad.image.to_s, :height => '100%', :width => '100%')%>
         <% else %>

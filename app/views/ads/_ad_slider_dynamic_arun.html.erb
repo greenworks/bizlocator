@@ -45,10 +45,10 @@
 
   <% @ad_categories = AdCategory.all(:select => :id).collect(&:id)
      @loopvar = 0
-     puts "ad_categories ==> #{@ad_categories}"
+     #puts "ad_categories ==> #{@ad_categories}"
      @ad_categories.each do |x|
        @loopvar+=1
-       puts "ad_category ==> #{x}"
+       #puts "ad_category ==> #{x}"
        @ad = Ad.find_all_by_ad_category_id(x).first
        unless @ad.nil?
   %>
@@ -75,10 +75,10 @@
   <ul class="ui-tabs-nav">
     <% @ad_categories = AdCategory.all(:select => :id).collect(&:id)
        @loopvar = 0
-       puts "ad_categories ==> #{@ad_categories}"
+       #puts "ad_categories ==> #{@ad_categories}"
        @ad_categories.each do |x|
          @loopvar+=1
-         puts "ad_category ==> #{x}"
+         #puts "ad_category ==> #{x}"
          @ad = Ad.find_all_by_ad_category_id(x).first
          unless @ad.nil?
     %>

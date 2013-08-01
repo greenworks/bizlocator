@@ -5,14 +5,14 @@
 
   <% begin
      if index_scope == "creator" && user_signed_in?
-       puts "ad index scope #{index_scope}  ,  #{current_user.id}"
+       #puts "ad index scope #{index_scope}  ,  #{current_user.id}"
      else
-       puts "ad index scope is chosen PUBLIC"
+       #puts "ad index scope is chosen PUBLIC"
   %>
       <%= render :partial =>"ads/ad_search"%>
   <% end
      rescue NameError
-       puts "ad index scope is chosen PUBLIC"
+       #puts "ad index scope is chosen PUBLIC"
      end
   %>
 

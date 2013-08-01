@@ -37,6 +37,10 @@ class Address < ActiveRecord::Base
   def gmaps4rails_address
     address_brief
   end
+
+  def contact_info
+    "Ph : " + phone
+  end
 =begin
 
   def geocode_address
