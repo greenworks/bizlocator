@@ -6,7 +6,7 @@
 </div>
 
 <div style="background-color: #EDF6FF;padding:6px 3px;height:27px;">
-  <%= business_item.address.address_line_one + "," + business_item.address.address_line_two %>
+  <%= business_item.address && business_item.address.address_brief %>
 </div>
   <br/>
   <table >
@@ -14,16 +14,16 @@
     <td width=50% style="padding-right:10px;height:90px">
       <b>About</b>
       <br/>
-      <br/>Company:<%= business_item.company.name %>
-      <br/>Located at :<%= business_item.shopping_mall.name %>
+      <br/>Company:<%= business_item.shopping_mall && business_item.company.name %>
+      <br/>Located at :<%= business_item.shopping_mall && business_item.shopping_mall.name %>
     </td>
     <td width=50% style="padding-left: 10px;border-left:2px solid #7FBDF8;">
       <b>Contact</b>
       <br/>
-      <br/>Name : <%= business_item.address.contact_name %>
-      <br/>Phone: <%= business_item.address.phone %>
-      <br/>Fax: <%= business_item.address.fax %>
-      <br/>Email: <%= business_item.address.email %>
+      <br/>Name : <%= business_item.address && business_item.address.contact_name %>
+      <br/>Phone: <%= business_item.address && business_item.address.phone %>
+      <br/>Fax: <%= business_item.address && business_item.address.fax %>
+      <br/>Email: <%= business_item.address && business_item.address.email %>
       <br/>
     </td>
   </tr>

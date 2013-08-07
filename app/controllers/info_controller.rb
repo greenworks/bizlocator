@@ -17,4 +17,8 @@ class InfoController < ApplicationController
   def no_company_exists
   end
 
+  def business_page_1
+
+  end
+
 end

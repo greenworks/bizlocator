@@ -15,7 +15,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require_tree .
-$(function () {
+/*$(function () {
     $("#ads th a, #ads .pagination a").live("click", function () {
         $.getScript(this.href);
         return false;
@@ -24,7 +24,7 @@ $(function () {
         $.get($("#ads_search").attr("action"), $("#ads_search").serialize(), null, "script");
         return false;
     });
-});
+});*/
 
 //$('a[data-popup]').live('click', function(e) { window.open($(this).attr('href')); e.preventDefault(); });
 
