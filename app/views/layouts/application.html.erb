@@ -1,54 +1,30 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Bizlocator</title>
-  <%= stylesheet_link_tag "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+  <head>
+  	<meta charset="utf-8" />
 
-  <!--[if lt IE 9]>
-  <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <link rel="stylesheet" href="/stylesheet/style.css" media="screen">
-  <!--[if lte IE 7]>
-  <link rel="stylesheet" href="/stylesheet/style.ie7.css" media="screen"/><![endif]-->
-  <link rel="stylesheet" href="/stylesheet/style.responsive.css" media="all">
+  	<!-- Uncomment to make IE8 render like IE7 -->
+  	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
 
-  <!--<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">-->
+  	<!-- Set the viewport width to device width for mobile -->
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <script src="/javascript/jquery.js"></script>
-  <script src="/javascript/script.js"></script>
-  <script src="/javascript/script.responsive.js"></script>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+  	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
-</head>
-<body>
+  	<%= stylesheet_link_tag    "application" %>
+  	<%= javascript_include_tag "vendor/custom.modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
 
+  <body>
 
+    <%= yield %>
 
-
-<div id="art-main">
-
-  <!-- Start: header -->
-
-  <%= render "/common/header" %>
-
-  <!-- End: header -->
-
-  <div class="art-sheet clearfix">
-  <%= render "/common/mainmenu" %>
-
-
-  <%= yield %>
-
-
-  </div>
-  <!-- Start: footer -->
-  <%= render "/common/footer" %>
-  <!-- End: footer -->
-
-</div>
-
-
-</body>
-<%= yield :scripts %>
+    
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>
