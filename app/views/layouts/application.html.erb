@@ -13,7 +13,7 @@
   	<!-- Set the viewport width to device width for mobile -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  	<title><%= content_for?(:title) ? yield(:title) : "Bizlocator" %></title>
 
   	<%= stylesheet_link_tag    "application" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
@@ -22,7 +22,78 @@
 
   <body>
 
-    <%= yield %>
+  <div class="row" style="font-size: 12px; text-wrap: false">
+    <div class="small-12 columns">
+      <div class="small-3 columns">
+        <a href="#"><img src="/images/facebook.png" alt="Facebook"/></a>
+        <a href="#"><img src="/images/twitter.png" alt="Twitter"/></a>
+        <a href="#"><img src="/images/linkedin.png" alt="Linkedin"/></a>
+        <a href="#"><img src="/images/technorati.png" alt="Technorati"/></a>
+        <a href="#"><img src="/images/myspace.png" alt="Myspace"/></a>
+      </div>
+      <div class="small-2 columns">
+        <a href="#">Brampton</a> |
+          <a href="#">Change</a>
+      </div>
+      <div class="small-4 columns">
+          <a href="#">View All Categories</a> -- <a href="#">More Search Options</a>
+      </div>
+      <div class="small-2 columns"><a href="#">Set language?</a></div>
+      <div class="small-1 columns">
+        <a href="#">Login</a> | <a href="#">Register</a>
+        <!--%= render "/common/mainmenu" %-->
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-3 columns">
+      <img src="/images/bizlocator-logo.png" height="90px">
+    </div>
+    <div class="small-7 columns">
+      <%= render :partial => "ads/ad_search" %>
+    </div>
+    <div class="small-2 columns">
+      <img src="/images/dummy-ad.png" height=102px>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <nav class="nav-bar" style="color: #ffffff">
+        <section class="top-bar-section">
+          <ul class="left">
+            <li><a href="/info/home" class="active">Home</a>
+            <li><a href="#">City</a></li>
+            <li><%= link_to "Jobs", jobs_path %></li>
+            <li><%= link_to "Business Around Me", business_items_path %></li>
+            <li><%= link_to "Entertainment", shopping_malls_path %></li>
+            <li><%= link_to "Rewards", shopping_malls_path %></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-2 columns"><a href="/info/home" class="active">Home</a></div>
+    <div class="small-2 columns"><a href="#">City</a></div>
+    <div class="small-2 columns"><%= link_to "Jobs", jobs_path %></div>
+    <div class="small-2 columns"><%= link_to "Business Around Me", business_items_path %></div>
+    <div class="small-2 columns"><%= link_to "Entertainment", shopping_malls_path %></div>
+    <div class="small-2 columns"><%= link_to "Rewards", shopping_malls_path %></div>
+  </div>
+
+
+
+  <div class="row">
+    <div class="large-6 columns">
+      <%= yield %>
+    </div>
+    <div class="large-2 large-offset-3 columns">
+      <%= render "/common/quicklink" %>
+    </div>
+  </div>
 
     
     <%= javascript_include_tag "application" %>
