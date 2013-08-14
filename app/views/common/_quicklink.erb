@@ -1,10 +1,10 @@
 <div class="small-3 small-offset-2 ocolumns">
-  <span class="radius secondary label" style="position: center">Quick Links</span>
+  <span class="secondary label" style="position: center">Quick Links</span>
 </div>
 <br/>
 
 <% @ad_categories = AdCategory.get_all_main_categories
    @ad_categories.each do |ad_category| %>
-    <%= link_to ad_category.name , ads_path(:ad_category_id => ad_category.id), :class=>"tiny-12 columns tiny button secondary round", :style => {:width=>"100%"} %>
+    <%= link_to ad_category.name , ads_path(:ad_category_id => ad_category.id), :class=>"tiny-12 columns tiny button secondary", :style => {:width=>"100%", :background_color=>"#74ad5a"} %>
 <% end %>
 
