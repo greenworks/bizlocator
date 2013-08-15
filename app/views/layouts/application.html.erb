@@ -13,7 +13,7 @@
   	<!-- Set the viewport width to device width for mobile -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  	<title><%= content_for?(:title) ? yield(:title) : "Bizlocator" %></title>
+  	<title><%= content_for?(:title) ? yield(:title) : "BizLocator" %></title>
 
   	<%= stylesheet_link_tag    "application" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
@@ -25,58 +25,7 @@
   <div class="row"></div>
 
   <div class="row">
-    <div class="small-12 columns">
-      <div class="small-3 columns">
-        <a href="#"><img src="/images/facebook.png" alt="Facebook"/></a>
-        <a href="#"><img src="/images/twitter.png" alt="Twitter"/></a>
-        <a href="#"><img src="/images/linkedin.png" alt="Linkedin"/></a>
-        <a href="#"><img src="/images/technorati.png" alt="Technorati"/></a>
-        <a href="#"><img src="/images/myspace.png" alt="Myspace"/></a>
-      </div>
-      <div class="small-3 columns">
-
-        <span class="tiny radius secondary label">City =></span>
-        <ul id="cities" class="f-dropdown content" data-dropdown-content="" style="position: absolute; top: 1302.59375px; left: -99999px;">
-          <li><a href="#">Brampton</a></li>
-          <li><a href="#">Ontario</a></li>
-          <li><a href="#">Vancover</a></li>
-          <li><a href="#">Winnipeg</a></li>
-        </ul>
-        <a href="#" data-dropdown="cities" class="tiny button dropdown">Brampton</a>
-
-
-      </div>
-      <div class="small-2 columns">
-        <%= link_to "View All Categories","/info/business_page_1", :style=>"font-size:10px; color:#fffff" %>
-      </div>
-      <div class="small-1 columns">
-        <a href="#">Language</a>
-      </div>
-      <div class="small-3 columns">
-        <ul class="button-group even-2">
-          <li><a href="#" data-reveal-id="loginModal" class="radius button tiny active">Login</a></li>
-          <li><a href="#" data-reveal-id="registerModal" class="tiny button radius">Register</a></li>
-        </ul>
-        <!--%= render "/common/mainmenu" %-->
-      </div>
-    </div>
-  </div>
-  <div id="loginModal" class="reveal-modal" style="display: none; -webkit-transform-origin: 0px 0px; opacity: 1; -webkit-transform: scale(1, 1); visibility: hidden; top: 100px;">
-    <h2>Enter your credetials for logging in</h2>
-    <p>Reveal makes these very easy to summon and dismiss. The close button is simply an anchor with a unicode character icon and a class of <code>close-reveal-modal</code>. Clicking anywhere outside the modal will also dismiss it.</p>
-    <p>Finally, if your modal summons another Reveal modal, the plugin will handle that for you gracefully.</p>
-    <p>
-      <a href="#" class="secondary button">Sign In</a>
-      <a href="#" data-reveal-id="registerModal" class="secondary button">Register</a>
-    </p>
-    <a class="close-reveal-modal">×</a>
-  </div>
-  <div id="registerModal" class="reveal-modal" style="display: none; -webkit-transform-origin: 0px 0px; opacity: 1; -webkit-transform: scale(1, 1); visibility: hidden; top: 100px;">
-    <h2>Please register yourself</h2>
-    <p>Reveal makes these very easy to summon and dismiss. The close button is simply an anchor with a unicode character icon and a class of <code>close-reveal-modal</code>. Clicking anywhere outside the modal will also dismiss it.</p>
-    <p>Finally, if your modal summons another Reveal modal, the plugin will handle that for you gracefully.</p>
-    <p><a href="#" class="secondary button">class="secondary button">Register</a></p>
-    <a class="close-reveal-modal">×</a>
+    <%= render :partial => "common/header" %>
   </div>
 
   <div class="row">
@@ -94,21 +43,35 @@
   <div class="row">
     <div class="large-12 columns">
       <ul class="button-group even-6">
-        <li><a href="/info/home" class="small button active">Home</a></li>
-        <li><a href="#" class="small button radius">City</a></li>
-        <li><%= link_to "Jobs", jobs_path, :class=>"small button" %></li>
-        <li><%= link_to "Businesses Around", business_items_path , :class => "small button" %></li>
-        <li><%= link_to "Entertainment", shopping_malls_path ,:class => "small button"%></li>
-        <li><%= link_to "Rewards", shopping_malls_path, :class => "small button" %></li>
+        <li><a href="/info/home" class="small button active" style="background-color:#0000ff" >Home</a></li>
+        <li><a href="#" class="small button radius" style="background-color:#0000ff">City</a></li>
+        <li><%= link_to "Jobs", jobs_path, :class=>"small button" ,:style => "background-color:#0000ee"  %></li>
+        <li><%= link_to "Businesses Around", business_items_path , :class => "small button"  ,:style => "background-color:#0000ee"   %></li>
+        <li><%= link_to "Entertainment", shopping_malls_path ,:class => "small button"  ,:style => "background-color:#0000ee"  %></li>
+        <li><%= link_to "Rewards", shopping_malls_path, :class => "small button"   ,:style => "background-color:#0000ee"  %></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <ul class="button-group even-4">
+        <li><%= link_to "Sales-Deals-Flyers-Coupons-Group Buys-All Business", jobs_path, :class=>"small button" ,:style => "font-size:10px;background-color:#74ad5a"  %></li>
+        <li><%= link_to "View The Malls", business_items_path , :class => "small button"  ,:style => "font-size:10px;background-color:#74ad5a"   %></li>
+        <li><%= link_to "Save List 10", shopping_malls_path ,:class => "small button"  ,:style => "font-size:10px;background-color:#74ad5a"  %></li>
+        <li><%= link_to "Todays Points", shopping_malls_path, :class => "small button"   ,:style => "font-size:10px;background-color:#74ad5a"  %></li>
       </ul>
     </div>
   </div>
 
-
-
   <div class="row">
     <div class="large-12 columns">
       <%= yield %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <%= render :partial => "common/footer" %>
     </div>
   </div>
 
