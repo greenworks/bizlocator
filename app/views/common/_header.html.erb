@@ -38,8 +38,8 @@
         </ul>
     <% else %>
         <ul class="button-group even-3">
-          <li><a href="#" data-reveal-id="loginModal" class="tiny button" style="background-color:#0000ff" >Login</a></li>
-          <li><a href="#" data-reveal-id="registerModal" class="tiny button" style="background-color:#0000ff" >Register</a></li>
+          <li><a href="#" data-reveal-id="loginModal" style="font-size:10x" >Login</a></li>
+          <li><a href="#" data-reveal-id="registerModal" style="font-size:10x" >Register</a></li>
         </ul>
     <% end %>
   </div>
@@ -53,7 +53,7 @@
         <%= f.check_box :remember_me %><%= f.label :remember_me %>
         <button type="submit" class="secondary button">Log In</button>
         <%= link_to "Forgot your password?", new_password_path('user') ,:class=>"secondary button" ,:style => {:background_color=>"#0000ff"}  %>
-        <a href="#" data-reveal-id="registerModal" class="secondary button" style="background-color:#0000ff" >Register</a>
+        <a href="#" data-reveal-id="registerModal" class="secondary button" >Register</a>
     <% end %>
     <a class="close-reveal-modal">×</a>
   </div>
@@ -76,7 +76,7 @@
           <%= f.password_field :password_confirmation %>
         </div>
         <div>
-            <a href="#" class="secondary button" style="background-color:#0000ff" >Register</a>
+            <a href="#" class="secondary button" >Register</a>
         </div>
     <% end %>
 
