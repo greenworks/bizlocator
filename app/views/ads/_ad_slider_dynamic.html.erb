@@ -1,4 +1,3 @@
-
 <div id="featured">
   <link rel="stylesheet" type="text/css" href="/stylesheet/slideshow-style.css"/>
   <script type="text/javascript" src="/javascript/jquery-1.3.2.min.js"></script>
@@ -39,6 +38,9 @@
   </script>
 
   <ul class="ui-tabs-nav">
+    <li style="text-align: center">
+      <span class="secondary label" style="background-color:#ffffff; font-weight: bolder; color:#003871" >Featured Ads</span>
+    </li>
     <% @ad_categories = AdCategory.all(:select => :id).collect(&:id)
        @loopvar = 0
        #puts "loopvar ==> #{@loopvar}"
@@ -76,40 +78,59 @@
        @ad = Ad.find_all_by_ad_category_id(x).first
        unless @ad.nil?
   %>
-  <!-- Content Display-->
-  <div id="fragment-<%=@loopvar%>" class="ui-tabs-panel  ui-tabs-hide" style="">
-    <table  border="1" style="font-size: 10px">
-      <tr>
-        <td><%=@ad.title%> <img src="/images/ethnic_logo.bmp" alt="Ethnic Match"/></td>
-        <td><%=@ad.address.address_brief%> </td>
-      </tr>
-      <tr>
-        <td>
-          <%=link_to "In The Mall", @ad.shopping_mall %> -
-          <%=link_to "Order Online", @ad %> -
-          <%=link_to "We Deliver", @ad %> -
-        </td>
-        <td><%=@ad.address.contact_info%> </td>
-      </tr>
-    </table>
-        <% if @ad.image.to_s != ''  %>
-            <%=image_tag(@ad.image.to_s, :height => '100%', :width => '100%')%>
-        <% else %>
-            <%=image_tag("/images/dummy.jpeg", :height => '257') %>
-        <% end %>
-    <div class="info">
-      <a class="hideshow" href="#">Hide</a>
-      <h2><%= link_to @ad.title, @ad %></h2>
-      <!--<p class="desc">&lt;!&ndash;%= link_to truncate(@ad.description, :length => 100), @ad%&ndash;&gt;</p>-->
-      <p class="links">
-        <a class="art-button" href="#">More</a> <a class="art-button" href="#">Print</a>
-        <a class="art-button" href="#">Email</a> <a class="art-button" href="#">Save</a>
-        <a class="art-button" href="#">Hear</a> <a class="art-button" href="#">Share</a>
-      </p>
-    </div>
-  </div>
+          <!-- Content Display-->
+          <div id="fragment-<%=@loopvar%>" class="ui-tabs-panel  ui-tabs-hide" style="font-size: 14px; background:#eaeaea; border-width:1px; border-style:solid">
+            <div class="row" style="">
+              <div class="small-6 columns" style="border-style:solid; border-width: 1px; height:30px">
+                <%=@ad.title%>
+              </div>
+              <div class="small-6 columns" style="border-style:solid; border-width: 1px; height:30px">
+                <%=@ad.address.address_brief%>
+              </div>
+            </div>
+            <div class="row" style="">
+              <div class="small-6 columns" style="border-style:solid; border-width: 1px; height:30px">
+                <%=link_to "In The Mall", @ad.shopping_mall %> -
+                <%=link_to "Order Online", @ad %> -
+                <%=link_to "We Deliver", @ad %> -
+              </div>
+              <div class="small-6 columns" style="border-style:solid; border-width: 1px; height:30px">
+                <img src="/images/ethnic_logo.bmp" alt="Ethnic Match" style="height:20px; position: relative; top: 0px; left: 0px"/>
+                <%=@ad.address.contact_info%>
+              </div>
+            </div>
+            <div class="row" style="height: 70%">
+                <% if @ad.image.to_s != ''  %>
+                    <%=image_tag(@ad.image.to_s, :height => '100%', :width => '100%')%>
+                <% else %>
+                    <%=image_tag("/images/dummy.jpeg", :height => '257') %>
+                <% end %>
+            </div>
+            <div class="row" style="">
+              <div class="small-12 columns" style="border-style:solid; border-width: 1px; height:30px">
+                <%= link_to @ad.description, @ad %>
+              </div>
+            </div>
+            <div class="row" style="">
+              <div class="small-10 columns" style="border-style:solid; border-width: 1px; height:60px">
+                <ul class="button-group even-4" style="font-size:12px">
+                  <li style="height:22px"><%= link_to "MORE", ads_path(:ad => @ad), :class=>"small button secondary", :style => "background_color;#000000;color:#fffff" %></li>
+                  <li style="height:22px"><%= link_to "PRINT", ads_path(:ad => @ad), :class=>"small button secondary", :style => "background_color;#000000;color:#fffff" %></li>
+                  <li style="height:22px"><%= link_to "MAP", ads_path(:ad => @ad), :class=>"small button secondary", :style => "background_color;#000000;color:#fffff" %></li>
+                  <li style="height:22px"><%= link_to "SHARE", ads_path(:ad => @ad), :class=>"small button secondary", :style => "background_color;#000000;color:#fffff" %></li>
+                  &nbsp;<li style="height:22px"><%= link_to "SAVE", ads_path(:ad => @ad), :class=>"small button secondary", :style => "background_color;#000000;color:#fffff" %></li>
+                  <li style="height:22px"><%= link_to "NOTE", ads_path(:ad => @ad), :class=>"small button secondary", :style => "background_color;#000000;color:#fffff" %></li>
+                  <li style="height:22px"><%= link_to "NOTIFY", ads_path(:ad => @ad), :class=>"small button secondary", :style => "background_color;#000000;color:#fffff" %></li>
+                  <li style="height:22px"><%= link_to "HEAR ADS", ads_path(:ad => @ad), :class=>"small button secondary", :style => "background_color;#000000;color:#fffff" %></li>
+                </ul>
+              </div>
+              <div class="small-2 columns" style="border-style:solid; border-width: 1px; height:60px">
+                <%= link_to "CALL", ads_path(:ad => @ad), :class=>"small button secondary", :style => "background_color;#000000;color:#fffff" %>
+              </div>
+            </div>
+          </div>
+      <% end %>
   <% end %>
-<% end %>
   <% if user_signed_in? && current_user.role.name == "Business Provider" %>
       <!-- Space for business provider-->
       <!--%= render :partial => "ads/ad_slider_horizontal"%-->
