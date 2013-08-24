@@ -1,27 +1,24 @@
 <div class="container">
-  <div class="row">
-    <div class="span12">
+  <div class="row-fluid">
+    <div class="span9">
       <div id="myCarousel" class="carousel slide">
         <ol class="carousel-indicators">
           <% @ad_categories = AdCategory.all(:select => :id).collect(&:id)
              @loopvar = 0
              #puts "loopvar ==> #{@loopvar}"
              @ad_categories.each do |x|
-               @loopvar+=1
                #puts "ad_category ==> #{x}"
                @ad = Ad.find_all_by_ad_category_id(x).first
                unless @ad.nil?
                  #puts "ad ==> #{@ad.id}"
           %>
-                  <li data-target="#myCarousel" data-slide-to="0" class=""></li>
-                  <li data-target="#myCarousel" data-slide-to="1" class=""></li>
-                  <li data-target="#myCarousel" data-slide-to="2" <% if @loopvar==1 %> class="active" <% end %>></li>
+                  <li data-target="#myCarousel" data-slide-to="<%=@loopvar%>" <% if @loopvar==1 %> class="active" <% end %>></li>
               <% end
+                 @loopvar+=1
                  end %>
         </ol>
         <div class="carousel-inner">
           <% @ad_categories = AdCategory.all(:select => :id).collect(&:id)
-             @loopvar = 0
              #puts "loopvar ==> #{@loopvar}"
              @ad_categories.each do |x|
                @loopvar+=1
@@ -82,26 +79,17 @@
 
                   </div>
               <% end
+                 @loopvar = 0
                  end %>
-          <div class="item">
-            <img src="http://mattlockyer.com/wp-content/uploads/2011/11/Desktop2.jpg" alt="http://www.mattlockyer.com">
-                <div class="carousel-caption">
-                  <h4>Second Thumbnail label</h4>
-
-                  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                </div>
-              </div>
-                  <div class="item">
-                <img src="http://mattlockyer.com/wp-content/uploads/2011/11/tree.jpg" alt="http://www.mattlockyer.com">
-                <div class="carousel-caption">
-                  <h4>Third Thumbnail label</h4>
-
-                  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                </div>
-              </div>
-                  </div> <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
-                  <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+        </div>
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
       </div>
-                  </div>
-                  </div>
-                  </div>
+    </div>
+    <div class="span3">
+      <div class="panel" style="background: none; border: none">
+        <%= render "/common/quicklink" %>
+      </div>
+    </div>
+  </div>
+</div>
