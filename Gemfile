@@ -12,10 +12,9 @@ gem 'cancan'
 gem 'activeadmin-cancan'
 gem 'will_paginate'
 gem 'kaminari'
-gem 'jquery-rails'
 
 gem 'geocoder'
-gem "gmaps4rails", "~> 1.5.6"
+gem 'gmaps4rails', "~> 1.5.6"
 
 gem 'activeadmin' , ' 0.5.1'
 gem 'carrierwave'
@@ -35,10 +34,14 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
   gem 'zurb-foundation'
+  gem 'twitter-bootstrap-rails'
+  gem 'bootstrap-sass'
 end
 
 
 gem 'jquery-rails'
+
+gem 'jquery-ui-rails'
 
 gem 'fancybox-rails'
 

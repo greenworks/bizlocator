@@ -12,7 +12,7 @@
  *= require foundation_and_overrides
  *= require fancybox
  %= require gmaps4rails
- *= require_tree .
+  *= require_tree .
  */
 
 
