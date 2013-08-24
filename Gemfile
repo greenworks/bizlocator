@@ -34,7 +34,7 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
   gem 'zurb-foundation'
-  gem 'twitter-bootstrap-rails'
+  #gem 'twitter-bootstrap-rails'
   gem 'bootstrap-sass'
 end
 

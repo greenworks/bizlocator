@@ -13,7 +13,6 @@
 //= require jquery
 //= require fancybox
 //= require jquery_ujs
-//= require foundation
 //= require_tree .
 /*$(function () {
     $("#ads th a, #ads .pagination a").live("click", function () {
