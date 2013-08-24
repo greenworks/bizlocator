@@ -8,63 +8,62 @@
     </ul>
     <a href="#" data-dropdown="languages" class="tiny button dropdown">Language</a>
   </div>
-  <div class="span5">
-    <% if user_signed_in? %>
-        <ul class="button-group even-3">
-          <li><%= current_user.name %></li>
-          <% if current_user.role.name == "admin" %>
-              <li><%= link_to "Control Panel", "/admin" %></li>
-          <% else %>
-              <li><%= link_to "My Account", "/info/user_home" %></li>
-          <% end %>
-          <li><%= link_to "Log out", destroy_user_session_path, :method => :delete %></li>
-        </ul>
-    <% else %>
-        <ul class="btn-group">
-          <li><a href="#" data-reveal-id="loginModal" style="font-size:10x" >Login</a></li>
-          <li><a href="#" data-reveal-id="registerModal" style="font-size:10x" >Register</a></li>
-        </ul>
+  <% if user_signed_in? %>
+      <ul class="btn-group">
+        <li><%= current_user.name %></li>
+        <% if current_user.role.name == "admin" %>
+            <li><%= link_to "Control Panel", "/admin" %></li>
+        <% else %>
+            <li><%= link_to "My Account", "/info/user_home" %></li>
+        <% end %>
+        <li><%= link_to "Log out", destroy_user_session_path, :method => :delete %></li>
+      </ul>
+  <% else %>
+      <ul class="btn-group">
+        <li><a href="#" data-reveal-id="loginModal" style="font-size:10x" >Login</a></li>
+        <li><a href="#" data-reveal-id="registerModal" style="font-size:10x" >Register</a></li>
+      </ul>
+  <% end %>
+  <div id="loginModal" class="reveal-modal" style="display: none; -webkit-transform-origin: 0px 0px;
+          opacity: 1; -webkit-transform: scale(1, 1); visibility: hidden; top: 100px;">
+    <h3>Log In</h3>
+    <%= form_for("user", :url => user_session_path) do |f| %>
+        <%= f.label :email %><%= f.email_field :email, :autofocus => true %>
+        <%= f.label :role_id %><%=collection_select(:user, :role_id, Role.all, :id, :name  ) %>
+        <%= f.label :password %><%= f.password_field :password %>
+        <%= f.check_box :remember_me %><%= f.label :remember_me %>
+        <button type="submit" class="secondary button">Log In</button>
+        <%= link_to "Forgot your password?", new_password_path('user') ,:class=>"secondary button" ,:style =>
+                {:background_color=>"#0000ff"}  %>
+        <a href="#" data-reveal-id="registerModal" class="secondary button" >Register</a>
     <% end %>
-    <div id="loginModal" class="reveal-modal" style="display: none; -webkit-transform-origin: 0px 0px;
-            opacity: 1; -webkit-transform: scale(1, 1); visibility: hidden; top: 100px;">
-      <h3>Log In</h3>
-      <%= form_for("user", :url => user_session_path) do |f| %>
-          <%= f.label :email %><%= f.email_field :email, :autofocus => true %>
-          <%= f.label :role_id %><%=collection_select(:user, :role_id, Role.all, :id, :name  ) %>
-          <%= f.label :password %><%= f.password_field :password %>
-          <%= f.check_box :remember_me %><%= f.label :remember_me %>
-          <button type="submit" class="secondary button">Log In</button>
-          <%= link_to "Forgot your password?", new_password_path('user') ,:class=>"secondary button" ,:style => {:background_color=>"#0000ff"}  %>
-          <a href="#" data-reveal-id="registerModal" class="secondary button" >Register</a>
-      <% end %>
-      <a class="close-reveal-modal">×</a>
-    </div>
-    <div id="registerModal" class="reveal-modal" style="display: none; -webkit-transform-origin: 0px 0px; opacity: 1; -webkit-transform: scale(1, 1); visibility: hidden; top: 100px;">
-      <h2>Please register yourself</h2>
+    <a class="close-reveal-modal">×</a>
+  </div>
+  <div id="registerModal" class="reveal-modal" style="display: none; -webkit-transform-origin: 0px 0px; opacity: 1; -webkit-
+          transform: scale(1, 1); visibility: hidden; top: 100px;">
+    <h2>Please register yourself</h2>
 
-      <%= form_for("user", :url => user_registration_path) do |f| %>
-          <div><%= f.label :email %>
-            <%= f.email_field :email, :autofocus => true %></div>
-          <div><%= f.label :name %>
-            <%= f.text_field :name %>
-          </div>
-          <div><%= f.label :role_id %>
-            <%=collection_select(:user, :role_id, Role.all, :id, :name  ) %>
-          </div>
-          <div><%= f.label :password %>
-            <%= f.password_field :password %></div>
-          <div>
-            <%= f.label :password_confirmation %>
-            <%= f.password_field :password_confirmation %>
-          </div>
-          <div>
-            <a href="#" class="secondary button" >Register</a>
-          </div>
-      <% end %>
+    <%= form_for("user", :url => user_registration_path) do |f| %>
+        <div><%= f.label :email %>
+          <%= f.email_field :email, :autofocus => true %></div>
+        <div><%= f.label :name %>
+          <%= f.text_field :name %>
+        </div>
+        <div><%= f.label :role_id %>
+          <%=collection_select(:user, :role_id, Role.all, :id, :name  ) %>
+        </div>
+        <div><%= f.label :password %>
+          <%= f.password_field :password %></div>
+        <div>
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation %>
+        </div>
+        <div>
+          <a href="#" class="secondary button" >Register</a>
+        </div>
+    <% end %>
 
-      <a class="close-reveal-modal">×</a>
-    </div>
-
+    <a class="close-reveal-modal">×</a>
   </div>
 
 ================== application.html.erb
@@ -122,4 +121,3 @@
   </div>
 
     
-    <%= javascript_include_tag "application" %>
