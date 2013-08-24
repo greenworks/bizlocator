@@ -1,27 +1,3 @@
+<%= render :partial => "shopping_malls/mall_partitions", :locals => {:shopping_malls => @shopping_malls} %>
 
 
-  <div style="text-align:center;border-width: 1">
-      <h3 style="">View The Malls</h3>
-      <% if params[:city] %>
-          <%=params[:city]%>
-      <% end %>
-  </div>
-  <div style="font-size: 10px">
-    <span>
-      ALL MALLS (<%=@shopping_malls.count %>)
-    </span>
-    <span>
-      MAJOR MALLS (<%=@shopping_malls.where(" mall_type_id=1").count %>)
-    </span>
-    <span>
-      PLAZA MALLS (<%=@shopping_malls.where(" mall_type_id=2").count %>)
-    </span>
-  </div>
-  <%     @shopping_malls.each do |shopping_mall|   %>
-      <%= render :partial => "shopping_malls/shopping_mall_tiny", :locals => {:shopping_mall => shopping_mall} %>
-  <% end %>
-
-
-<br/>
-
-<%= link_to 'New Shopping mall', new_shopping_mall_path %>

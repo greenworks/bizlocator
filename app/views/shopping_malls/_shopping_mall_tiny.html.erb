@@ -29,10 +29,12 @@ height = (width*0.66).round(0) %>
       <% end %>
     </td>
     <td width="40%">
+      <a href="#" id="blob" class="btn large primary" rel="popover" style="margin-top: 300px">MAP</a>
       <%  if !(shopping_mall.address.nil?) %>
-          <%= image_tag "http://maps.google.com/maps/api/staticmap?size=#{width}x#{height}&scale=1&sensor=false&zoom=12&feature=all&markers=#{shopping_mall.address.latitude}%2C#{shopping_mall.address.longitude}" %>
-
-
+          <script>
+              var img = '<%= image_tag "http://maps.google.com/maps/api/staticmap?size=#{width}x#{height}&scale=1&sensor=false&zoom=12&feature=all&markers=#{shopping_mall.address.latitude}%2C#{shopping_mall.address.longitude}" %>';
+              $("#blob").popover({ title: 'This is location of mall!', content: img });
+          </script>
       <% end %>
     </td>
   </tr>
