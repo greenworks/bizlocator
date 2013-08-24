@@ -13,6 +13,7 @@
 //= require jquery
 //= require fancybox
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require foundation
 //= require_tree .
 /*$(function () {
