@@ -35,10 +35,8 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
   gem 'zurb-foundation'
-  #gem 'therubyracer'
-  #gem 'less-rails'
-  #gem 'twitter-bootstrap-rails'
-  gem 'bootstrap-sass-rails'
+#  gem 'bootstrap-sass-rails'
+
 end
 
 
