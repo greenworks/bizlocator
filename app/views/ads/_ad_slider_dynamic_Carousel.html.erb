@@ -19,15 +19,20 @@
         </ol>
         <div class="carousel-inner">
           <% @ad_categories = AdCategory.all(:select => :id).collect(&:id)
-             #puts "loopvar ==> #{@loopvar}"
+             @loopvar = 0
+             puts "loopvar ==> #{@loopvar}"
              @ad_categories.each do |x|
-               @loopvar+=1
+               #@loopvar+=1
                #puts "ad_category ==> #{x}"
                @ad = Ad.find_all_by_ad_category_id(x).first
                unless @ad.nil?
                  #puts "ad ==> #{@ad.id}"
           %>
-                  <div class="item <% if @loopvar==1 %> active <% end %>">
+                  <div class="item
+                    <%= @loopvar %>
+                    <% if (@loopvar == 1)  %>
+                        active
+                    <% end %>">
                     <% if @ad.image.to_s != ''  %>
                         <%=image_tag(@ad.image.to_s, :height => '100%', :width => '100%')%>
                     <% else %>
@@ -39,7 +44,7 @@
                     </div>
                   </div>
               <% end
-                 @loopvar = 0
+                 @loopvar+= 1
                  end %>
         </div>
         <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
