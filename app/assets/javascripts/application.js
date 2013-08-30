@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require fancybox
+//= require jquery-ui
 //= require jquery_ujs
 //= require_tree .
 /*$(function () {
@@ -27,4 +28,4 @@
 
 //$('a[data-popup]').live('click', function(e) { window.open($(this).attr('href')); e.preventDefault(); });
 
-$(function(){ $(document).foundation(); });
+//$(function(){ $(document).foundation(); });
