@@ -1,4 +1,4 @@
-Bizlab::Application.routes.draw do
+Bizlocator::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/removed_index.html.
