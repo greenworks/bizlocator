@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Bizlocator::Application.config.secret_token = '7758f7e9fd7a61f6a631208f3b095b2c62aff09d291ea833c779f96a4ed7d7eb74654efb89b0ddad1f60a5a4a10c917d80fa59b70426ced38cb36d6d1ba3eee7'
+Bizlab::Application.config.secret_token = '4eed90639557abfda6a24a83379bcf5806321c2131b9ac53de74178bc042ab5af90d433d5e28019acc6bb70294cf606195b306439bb461e3828748cda634dc23'

@@ -1,64 +1,42 @@
-Bizlocator::Application.routes.draw do
+Bizlab::Application.routes.draw do
 
-  resources :locations
-
-
-  resources :bookmark_business_items
-
-
-  resources :bookmark_ads
-
-
+  # You can have the root of your site routed with "root"
+  # just remember to delete public/removed_index.html.
+  root :to => 'info#home'
+  
+  resources :shopping_malls
+  resources :mall_types
+  resources :jobs
+  resources :job_categories
+  resources :emergency_numbers
+  resources :companies
+  resources :city_services
+  resources :city_service_categories
+  resources :business_items
+  resources :business_item_categories
   resources :bookmark_jobs
+  resources :bookmark_business_items
+  resources :bookmark_ads
+  resources :ads
+  resources :addresses
+  resources :ad_types
+  resources :ad_positions
+  resources :ad_categories
 
+  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
+  devise_for :users
 
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  root :to => 'info#home'
-
-=begin
-  devise_for :admin_users, ActiveAdmin::Devise.config, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-=end
-
-  devise_for :users
-  ActiveAdmin.routes(self)
-
   get "info/home"
-
   get "info/about"
-
   get "info/contact"
-
   get "info/help"
-
   get "info/user_home"
-
   get "info/no_company_exists"
-
-  get "info/business_page_1"
-
-  get "/set_language", :to=>"application#set_my_language"
-
-  resources :emergency_numbers
-  resources :city_services
-  resources :city_service_categories
-  resources :mall_types
-  resources :shopping_malls
-  resources :addresses
-  resources :job_categories
-  resources :jobs
-  resources :business_item_categories
-  resources :business_items
-  resources :ad_categories
-  resources :ad_positions
-  resources :ads
-  resources :companies
-
+  get "info/user_account_page"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -108,9 +86,11 @@ Bizlocator::Application.routes.draw do
   #   end
 
 
+
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+
 end

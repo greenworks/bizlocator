@@ -8,9 +8,11 @@ one:
   qualification: MyText
   job_categiory_id: 1
   meeting_address: MyText
-  expiry_date: 2013-04-07
+  expiry_date: 2013-08-31
   ispublished: false
   isapproved: false
+  image: MyString
+  user_id: 1
 
 two:
   title: MyString
@@ -20,6 +22,8 @@ two:
   qualification: MyText
   job_categiory_id: 1
   meeting_address: MyText
-  expiry_date: 2013-04-07
+  expiry_date: 2013-08-31
   ispublished: false
   isapproved: false
+  image: MyString
+  user_id: 1

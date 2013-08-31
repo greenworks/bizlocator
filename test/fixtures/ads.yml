@@ -11,7 +11,10 @@ one:
   ad_position_id: 1
   ispublished: false
   isapproved: false
-  expiry_date: 2013-04-07
+  expiry_date: 2013-08-31
+  user_id: 1
+  image: MyString
+  ad_type_id: 1
 
 two:
   title: MyString
@@ -24,4 +27,7 @@ two:
   ad_position_id: 1
   ispublished: false
   isapproved: false
-  expiry_date: 2013-04-07
+  expiry_date: 2013-08-31
+  user_id: 1
+  image: MyString
+  ad_type_id: 1

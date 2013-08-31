@@ -1,0 +1,33 @@
+<% if user_signed_in? %>
+    <div class="btn-group" style="font-size:12px; color:#fffff; font-weight: bold">
+      Welcome
+      <% if current_user.role.name == "admin" %>
+          "<%= link_to "Control Panel", "/admin" %>"
+      <% else %>
+          "<%= link_to current_user.name, "/info/user_account_page" %>"
+      <% end %>
+      <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
+    </div>
+<% else %>
+    <div class="btn-group" style="font-size:12px; color:#fffff; font-weight: bold">
+      <a href="#loginModal" role="button" data-toggle="modal">Log In</a>
+      |
+      <a href="#registerModal" role="button" data-toggle="modal">Register</a>
+    </div>
+<% end %>
+
+
+<!-- loginModal Box -->
+<div id="loginModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <%= form_for("user", :url => user_session_path) do |f| %>
+      <%= render :partial => "common/login_modal", :locals => { :f=> f} %>
+  <% end %>
+</div>
+
+<!-- registerModal Box -->
+<div id="registerModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <%= form_for("user", :url => user_registration_path) do |f| %>
+      <%= render :partial => "common/register_modal", :locals => {:f=> f} %>
+<% end %>
+
+</div>

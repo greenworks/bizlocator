@@ -18,7 +18,7 @@ class AdsControllerTest < ActionController::TestCase
 
   test "should create ad" do
     assert_difference('Ad.count') do
-      post :create, ad: { ad_category_id: @ad.ad_category_id, ad_position_id: @ad.ad_position_id, address_id: @ad.address_id, company_id: @ad.company_id, description: @ad.description, expiry_date: @ad.expiry_date, isapproved: @ad.isapproved, ispublished: @ad.ispublished, price: @ad.price, shopping_mall_id: @ad.shopping_mall_id, title: @ad.title }
+      post :create, ad: { ad_category_id: @ad.ad_category_id, ad_position_id: @ad.ad_position_id, ad_type_id: @ad.ad_type_id, address_id: @ad.address_id, company_id: @ad.company_id, description: @ad.description, expiry_date: @ad.expiry_date, image: @ad.image, isapproved: @ad.isapproved, ispublished: @ad.ispublished, price: @ad.price, shopping_mall_id: @ad.shopping_mall_id, title: @ad.title, user_id: @ad.user_id }
     end
 
     assert_redirected_to ad_path(assigns(:ad))
@@ -35,7 +35,7 @@ class AdsControllerTest < ActionController::TestCase
   end
 
   test "should update ad" do
-    put :update, id: @ad, ad: { ad_category_id: @ad.ad_category_id, ad_position_id: @ad.ad_position_id, address_id: @ad.address_id, company_id: @ad.company_id, description: @ad.description, expiry_date: @ad.expiry_date, isapproved: @ad.isapproved, ispublished: @ad.ispublished, price: @ad.price, shopping_mall_id: @ad.shopping_mall_id, title: @ad.title }
+    put :update, id: @ad, ad: { ad_category_id: @ad.ad_category_id, ad_position_id: @ad.ad_position_id, ad_type_id: @ad.ad_type_id, address_id: @ad.address_id, company_id: @ad.company_id, description: @ad.description, expiry_date: @ad.expiry_date, image: @ad.image, isapproved: @ad.isapproved, ispublished: @ad.ispublished, price: @ad.price, shopping_mall_id: @ad.shopping_mall_id, title: @ad.title, user_id: @ad.user_id }
     assert_redirected_to ad_path(assigns(:ad))
   end
 

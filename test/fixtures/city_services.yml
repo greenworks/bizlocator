@@ -5,9 +5,11 @@ one:
   description: MyText
   city_service_category_id: 1
   ispublished: false
+  image: MyString
 
 two:
   title: MyString
   description: MyText
   city_service_category_id: 1
   ispublished: false
+  image: MyString

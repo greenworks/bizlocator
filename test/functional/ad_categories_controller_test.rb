@@ -18,7 +18,7 @@ class AdCategoriesControllerTest < ActionController::TestCase
 
   test "should create ad_category" do
     assert_difference('AdCategory.count') do
-      post :create, ad_category: { description: @ad_category.description, introtext: @ad_category.introtext, ispublished: @ad_category.ispublished, name: @ad_category.name }
+      post :create, ad_category: { description: @ad_category.description, image: @ad_category.image, introtext: @ad_category.introtext, ispublished: @ad_category.ispublished, name: @ad_category.name, parent_category_id: @ad_category.parent_category_id }
     end
 
     assert_redirected_to ad_category_path(assigns(:ad_category))
@@ -35,7 +35,7 @@ class AdCategoriesControllerTest < ActionController::TestCase
   end
 
   test "should update ad_category" do
-    put :update, id: @ad_category, ad_category: { description: @ad_category.description, introtext: @ad_category.introtext, ispublished: @ad_category.ispublished, name: @ad_category.name }
+    put :update, id: @ad_category, ad_category: { description: @ad_category.description, image: @ad_category.image, introtext: @ad_category.introtext, ispublished: @ad_category.ispublished, name: @ad_category.name, parent_category_id: @ad_category.parent_category_id }
     assert_redirected_to ad_category_path(assigns(:ad_category))
   end
 

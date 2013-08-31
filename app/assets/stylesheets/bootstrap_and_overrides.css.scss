@@ -7,11 +7,12 @@ $navbarBackgroundHighlight: #888;
 $navbarText: #eee;
 $navbarLinkColor: #eee;
 
-
 @import "bootstrap";
 
 body { padding-top: 0px; }
 
 @import "bootstrap-responsive";
 
-$gridGutterWidth: 0px;
+.navbar .brand {
+  color: #FAFFB8;
+}

@@ -18,7 +18,7 @@ class CityServicesControllerTest < ActionController::TestCase
 
   test "should create city_service" do
     assert_difference('CityService.count') do
-      post :create, city_service: { city_service_category_id: @city_service.city_service_category_id, description: @city_service.description, ispublished: @city_service.ispublished, title: @city_service.title }
+      post :create, city_service: { city_service_category_id: @city_service.city_service_category_id, description: @city_service.description, image: @city_service.image, ispublished: @city_service.ispublished, title: @city_service.title }
     end
 
     assert_redirected_to city_service_path(assigns(:city_service))
@@ -35,7 +35,7 @@ class CityServicesControllerTest < ActionController::TestCase
   end
 
   test "should update city_service" do
-    put :update, id: @city_service, city_service: { city_service_category_id: @city_service.city_service_category_id, description: @city_service.description, ispublished: @city_service.ispublished, title: @city_service.title }
+    put :update, id: @city_service, city_service: { city_service_category_id: @city_service.city_service_category_id, description: @city_service.description, image: @city_service.image, ispublished: @city_service.ispublished, title: @city_service.title }
     assert_redirected_to city_service_path(assigns(:city_service))
   end
 

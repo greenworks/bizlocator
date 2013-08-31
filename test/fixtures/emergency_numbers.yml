@@ -5,9 +5,11 @@ one:
   value: MyString
   priority: 1
   ispublished: false
+  image: MyString
 
 two:
   name: MyString
   value: MyString
   priority: 1
   ispublished: false
+  image: MyString

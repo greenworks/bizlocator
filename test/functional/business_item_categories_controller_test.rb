@@ -18,7 +18,7 @@ class BusinessItemCategoriesControllerTest < ActionController::TestCase
 
   test "should create business_item_category" do
     assert_difference('BusinessItemCategory.count') do
-      post :create, business_item_category: { description: @business_item_category.description, introtext: @business_item_category.introtext, ispublished: @business_item_category.ispublished, name: @business_item_category.name }
+      post :create, business_item_category: { description: @business_item_category.description, introtext: @business_item_category.introtext, ispublished: @business_item_category.ispublished, name: @business_item_category.name, parent_category_id: @business_item_category.parent_category_id }
     end
 
     assert_redirected_to business_item_category_path(assigns(:business_item_category))
@@ -35,7 +35,7 @@ class BusinessItemCategoriesControllerTest < ActionController::TestCase
   end
 
   test "should update business_item_category" do
-    put :update, id: @business_item_category, business_item_category: { description: @business_item_category.description, introtext: @business_item_category.introtext, ispublished: @business_item_category.ispublished, name: @business_item_category.name }
+    put :update, id: @business_item_category, business_item_category: { description: @business_item_category.description, introtext: @business_item_category.introtext, ispublished: @business_item_category.ispublished, name: @business_item_category.name, parent_category_id: @business_item_category.parent_category_id }
     assert_redirected_to business_item_category_path(assigns(:business_item_category))
   end
 

@@ -18,7 +18,7 @@ class JobsControllerTest < ActionController::TestCase
 
   test "should create job" do
     assert_difference('Job.count') do
-      post :create, job: { company_id: @job.company_id, description: @job.description, expiry_date: @job.expiry_date, isapproved: @job.isapproved, ispublished: @job.ispublished, job_categiory_id: @job.job_categiory_id, meeting_address: @job.meeting_address, qualification: @job.qualification, title: @job.title, vacancy_count: @job.vacancy_count }
+      post :create, job: { company_id: @job.company_id, description: @job.description, expiry_date: @job.expiry_date, image: @job.image, isapproved: @job.isapproved, ispublished: @job.ispublished, job_categiory_id: @job.job_categiory_id, meeting_address: @job.meeting_address, qualification: @job.qualification, title: @job.title, user_id: @job.user_id, vacancy_count: @job.vacancy_count }
     end
 
     assert_redirected_to job_path(assigns(:job))
@@ -35,7 +35,7 @@ class JobsControllerTest < ActionController::TestCase
   end
 
   test "should update job" do
-    put :update, id: @job, job: { company_id: @job.company_id, description: @job.description, expiry_date: @job.expiry_date, isapproved: @job.isapproved, ispublished: @job.ispublished, job_categiory_id: @job.job_categiory_id, meeting_address: @job.meeting_address, qualification: @job.qualification, title: @job.title, vacancy_count: @job.vacancy_count }
+    put :update, id: @job, job: { company_id: @job.company_id, description: @job.description, expiry_date: @job.expiry_date, image: @job.image, isapproved: @job.isapproved, ispublished: @job.ispublished, job_categiory_id: @job.job_categiory_id, meeting_address: @job.meeting_address, qualification: @job.qualification, title: @job.title, user_id: @job.user_id, vacancy_count: @job.vacancy_count }
     assert_redirected_to job_path(assigns(:job))
   end
 

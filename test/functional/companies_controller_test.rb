@@ -18,7 +18,7 @@ class CompaniesControllerTest < ActionController::TestCase
 
   test "should create company" do
     assert_difference('Company.count') do
-      post :create, company: { description: @company.description, email: @company.email, fax: @company.fax, info: @company.info, isapproved: @company.isapproved, ispublished: @company.ispublished, name: @company.name, owner_name: @company.owner_name, phone: @company.phone, user_id: @company.user_id }
+      post :create, company: { address_id: @company.address_id, description: @company.description, email: @company.email, fax: @company.fax, image: @company.image, info: @company.info, isapproved: @company.isapproved, ispublished: @company.ispublished, name: @company.name, owner_name: @company.owner_name, phone: @company.phone, user_id: @company.user_id }
     end
 
     assert_redirected_to company_path(assigns(:company))
@@ -35,7 +35,7 @@ class CompaniesControllerTest < ActionController::TestCase
   end
 
   test "should update company" do
-    put :update, id: @company, company: { description: @company.description, email: @company.email, fax: @company.fax, info: @company.info, isapproved: @company.isapproved, ispublished: @company.ispublished, name: @company.name, owner_name: @company.owner_name, phone: @company.phone, user_id: @company.user_id }
+    put :update, id: @company, company: { address_id: @company.address_id, description: @company.description, email: @company.email, fax: @company.fax, image: @company.image, info: @company.info, isapproved: @company.isapproved, ispublished: @company.ispublished, name: @company.name, owner_name: @company.owner_name, phone: @company.phone, user_id: @company.user_id }
     assert_redirected_to company_path(assigns(:company))
   end
 

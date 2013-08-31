@@ -11,24 +11,6 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require fancybox
-//= require jquery.ui.all
 //= require jquery_ujs
-//= require foundation
+//= require twitter/bootstrap
 //= require_tree .
-/*$(function () {
-    $("#ads th a, #ads .pagination a").live("click", function () {
-        $.getScript(this.href);
-        return false;
-    });
-    $("#ads_search input").keyup(function () {
-        $.get($("#ads_search").attr("action"), $("#ads_search").serialize(), null, "script");
-        return false;
-    });
-});*/
-
-//$('a[data-popup]').live('click', function(e) { window.open($(this).attr('href')); e.preventDefault(); });
-
-//$(function(){ $(document).foundation(); });
-
-$(function(){ $(document).foundation(); });

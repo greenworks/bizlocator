@@ -13,9 +13,12 @@ one:
   website: MyString
   google_map_code: MyString
   chat_code: MyString
-  company_id: 1
-  shopping_mall_id: 1
   ispublished: false
+  user_id: 1
+  street: MyString
+  latitude: 1.5
+  longitude: 1.5
+  gmaps: false
 
 two:
   contact_name: MyString
@@ -30,6 +33,9 @@ two:
   website: MyString
   google_map_code: MyString
   chat_code: MyString
-  company_id: 1
-  shopping_mall_id: 1
   ispublished: false
+  user_id: 1
+  street: MyString
+  latitude: 1.5
+  longitude: 1.5
+  gmaps: false

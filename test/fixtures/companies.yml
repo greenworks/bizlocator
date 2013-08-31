@@ -11,6 +11,8 @@ one:
   email: MyString
   ispublished: false
   isapproved: false
+  image: MyString
+  address_id: 1
 
 two:
   name: MyString
@@ -23,3 +25,5 @@ two:
   email: MyString
   ispublished: false
   isapproved: false
+  image: MyString
+  address_id: 1

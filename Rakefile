@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Bizlocator::Application.load_tasks
+Bizlab::Application.load_tasks

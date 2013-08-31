@@ -18,7 +18,7 @@ class BusinessItemsControllerTest < ActionController::TestCase
 
   test "should create business_item" do
     assert_difference('BusinessItem.count') do
-      post :create, business_item: { address_id: @business_item.address_id, business_item_category_id: @business_item.business_item_category_id, company_id: @business_item.company_id, expiry_date: @business_item.expiry_date, isapproved: @business_item.isapproved, ispublished: @business_item.ispublished, shopping_mall_id: @business_item.shopping_mall_id, title: @business_item.title }
+      post :create, business_item: { address_id: @business_item.address_id, business_item_category_id: @business_item.business_item_category_id, company_id: @business_item.company_id, expiry_date: @business_item.expiry_date, image: @business_item.image, isapproved: @business_item.isapproved, ispublished: @business_item.ispublished, shopping_mall_id: @business_item.shopping_mall_id, title: @business_item.title, user_id: @business_item.user_id }
     end
 
     assert_redirected_to business_item_path(assigns(:business_item))
@@ -35,7 +35,7 @@ class BusinessItemsControllerTest < ActionController::TestCase
   end
 
   test "should update business_item" do
-    put :update, id: @business_item, business_item: { address_id: @business_item.address_id, business_item_category_id: @business_item.business_item_category_id, company_id: @business_item.company_id, expiry_date: @business_item.expiry_date, isapproved: @business_item.isapproved, ispublished: @business_item.ispublished, shopping_mall_id: @business_item.shopping_mall_id, title: @business_item.title }
+    put :update, id: @business_item, business_item: { address_id: @business_item.address_id, business_item_category_id: @business_item.business_item_category_id, company_id: @business_item.company_id, expiry_date: @business_item.expiry_date, image: @business_item.image, isapproved: @business_item.isapproved, ispublished: @business_item.ispublished, shopping_mall_id: @business_item.shopping_mall_id, title: @business_item.title, user_id: @business_item.user_id }
     assert_redirected_to business_item_path(assigns(:business_item))
   end
 

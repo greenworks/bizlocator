@@ -18,7 +18,7 @@ class CityServiceCategoriesControllerTest < ActionController::TestCase
 
   test "should create city_service_category" do
     assert_difference('CityServiceCategory.count') do
-      post :create, city_service_category: { description: @city_service_category.description, introtext: @city_service_category.introtext, ispublished: @city_service_category.ispublished, name: @city_service_category.name }
+      post :create, city_service_category: { description: @city_service_category.description, introtext: @city_service_category.introtext, ispublished: @city_service_category.ispublished, name: @city_service_category.name, parent_category_id: @city_service_category.parent_category_id }
     end
 
     assert_redirected_to city_service_category_path(assigns(:city_service_category))
@@ -35,7 +35,7 @@ class CityServiceCategoriesControllerTest < ActionController::TestCase
   end
 
   test "should update city_service_category" do
-    put :update, id: @city_service_category, city_service_category: { description: @city_service_category.description, introtext: @city_service_category.introtext, ispublished: @city_service_category.ispublished, name: @city_service_category.name }
+    put :update, id: @city_service_category, city_service_category: { description: @city_service_category.description, introtext: @city_service_category.introtext, ispublished: @city_service_category.ispublished, name: @city_service_category.name, parent_category_id: @city_service_category.parent_category_id }
     assert_redirected_to city_service_category_path(assigns(:city_service_category))
   end
 

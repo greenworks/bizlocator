@@ -18,7 +18,7 @@ class ShoppingMallsControllerTest < ActionController::TestCase
 
   test "should create shopping_mall" do
     assert_difference('ShoppingMall.count') do
-      post :create, shopping_mall: { description: @shopping_mall.description, ispublished: @shopping_mall.ispublished, mall_type_id: @shopping_mall.mall_type_id, name: @shopping_mall.name }
+      post :create, shopping_mall: { address_id: @shopping_mall.address_id, description: @shopping_mall.description, image: @shopping_mall.image, ispublished: @shopping_mall.ispublished, mall_type_id: @shopping_mall.mall_type_id, name: @shopping_mall.name }
     end
 
     assert_redirected_to shopping_mall_path(assigns(:shopping_mall))
@@ -35,7 +35,7 @@ class ShoppingMallsControllerTest < ActionController::TestCase
   end
 
   test "should update shopping_mall" do
-    put :update, id: @shopping_mall, shopping_mall: { description: @shopping_mall.description, ispublished: @shopping_mall.ispublished, mall_type_id: @shopping_mall.mall_type_id, name: @shopping_mall.name }
+    put :update, id: @shopping_mall, shopping_mall: { address_id: @shopping_mall.address_id, description: @shopping_mall.description, image: @shopping_mall.image, ispublished: @shopping_mall.ispublished, mall_type_id: @shopping_mall.mall_type_id, name: @shopping_mall.name }
     assert_redirected_to shopping_mall_path(assigns(:shopping_mall))
   end
 

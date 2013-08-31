@@ -5,24 +5,14 @@ gem 'rails', '3.2.11'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'bourbon'
 gem 'sqlite3'
 gem 'devise'
-gem 'cancan'
-gem 'activeadmin-cancan'
 gem 'will_paginate'
 gem 'kaminari'
-
-gem 'geocoder'
-gem 'gmaps4rails', "~> 1.5.6"
-
+gem 'nifty-generators'
 gem 'activeadmin' , ' 0.5.1'
 gem 'carrierwave'
-#gem 'rmagick' , '2.12'
-
-#gem 'thin'  , '2.0.0.pre'
-gem 'mongrel' , '1.2.0.pre2'
-gem 'fancybox-rails'
+gem 'geocoder'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -34,15 +24,12 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-  gem 'zurb-foundation'
-  #gem 'twitter-bootstrap-rails'
   gem 'bootstrap-sass'
-
-  gem 'jquery-ui-rails'
+  gem 'twitter-bootstrap-rails'
 
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails' , '2.3.0'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

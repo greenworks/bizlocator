@@ -18,7 +18,7 @@ class JobCategoriesControllerTest < ActionController::TestCase
 
   test "should create job_category" do
     assert_difference('JobCategory.count') do
-      post :create, job_category: { description: @job_category.description, introtext: @job_category.introtext, ispublished: @job_category.ispublished, name: @job_category.name }
+      post :create, job_category: { description: @job_category.description, introtext: @job_category.introtext, ispublished: @job_category.ispublished, name: @job_category.name, parent_category_id: @job_category.parent_category_id }
     end
 
     assert_redirected_to job_category_path(assigns(:job_category))
@@ -35,7 +35,7 @@ class JobCategoriesControllerTest < ActionController::TestCase
   end
 
   test "should update job_category" do
-    put :update, id: @job_category, job_category: { description: @job_category.description, introtext: @job_category.introtext, ispublished: @job_category.ispublished, name: @job_category.name }
+    put :update, id: @job_category, job_category: { description: @job_category.description, introtext: @job_category.introtext, ispublished: @job_category.ispublished, name: @job_category.name, parent_category_id: @job_category.parent_category_id }
     assert_redirected_to job_category_path(assigns(:job_category))
   end
 

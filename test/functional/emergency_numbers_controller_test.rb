@@ -18,7 +18,7 @@ class EmergencyNumbersControllerTest < ActionController::TestCase
 
   test "should create emergency_number" do
     assert_difference('EmergencyNumber.count') do
-      post :create, emergency_number: { ispublished: @emergency_number.ispublished, name: @emergency_number.name, priority: @emergency_number.priority, value: @emergency_number.value }
+      post :create, emergency_number: { image: @emergency_number.image, ispublished: @emergency_number.ispublished, name: @emergency_number.name, priority: @emergency_number.priority, value: @emergency_number.value }
     end
 
     assert_redirected_to emergency_number_path(assigns(:emergency_number))
@@ -35,7 +35,7 @@ class EmergencyNumbersControllerTest < ActionController::TestCase
   end
 
   test "should update emergency_number" do
-    put :update, id: @emergency_number, emergency_number: { ispublished: @emergency_number.ispublished, name: @emergency_number.name, priority: @emergency_number.priority, value: @emergency_number.value }
+    put :update, id: @emergency_number, emergency_number: { image: @emergency_number.image, ispublished: @emergency_number.ispublished, name: @emergency_number.name, priority: @emergency_number.priority, value: @emergency_number.value }
     assert_redirected_to emergency_number_path(assigns(:emergency_number))
   end
 

@@ -21,4 +21,9 @@ class InfoControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should get users_home" do
+    get :users_home
+    assert_response :success
+  end
+
 end
