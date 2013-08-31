@@ -22,6 +22,7 @@ gem 'carrierwave'
 
 #gem 'thin'  , '2.0.0.pre'
 gem 'mongrel' , '1.2.0.pre2'
+gem 'fancybox-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -36,12 +37,12 @@ group :assets do
   gem 'zurb-foundation'
   #gem 'twitter-bootstrap-rails'
   gem 'bootstrap-sass'
+
+  gem 'jquery-ui-rails'
+
 end
 
-
-gem 'jquery-ui-rails'
-
-gem 'fancybox-rails'
+gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

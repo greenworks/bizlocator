@@ -14,6 +14,7 @@
 //= require fancybox
 //= require jquery.ui.all
 //= require jquery_ujs
+//= require foundation
 //= require_tree .
 /*$(function () {
     $("#ads th a, #ads .pagination a").live("click", function () {
@@ -29,3 +30,5 @@
 //$('a[data-popup]').live('click', function(e) { window.open($(this).attr('href')); e.preventDefault(); });
 
 //$(function(){ $(document).foundation(); });
+
+$(function(){ $(document).foundation(); });
