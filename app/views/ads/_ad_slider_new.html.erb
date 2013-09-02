@@ -1,0 +1,162 @@
+<div class="container">
+  <div class="row-fluid">
+    <div class="span9">
+      <div id="myCarousel" class="carousel slide">
+        <ol class="carousel-indicators">
+          <% @ad_categories = AdCategory.all(:select => :id).collect(&:id)
+             @loopvar = 0
+             #puts "loopvar ==> #{@loopvar}"
+             @ad_categories.each do |x|
+               #puts "ad_category ==> #{x}"
+               @ad = Ad.find_all_by_ad_category_id(x).first
+               unless @ad.nil?
+                 #puts "ad ==> #{@ad.id}"
+          %>
+                  <li data-target="#myCarousel" data-slide-to="<%=@loopvar%>" <% if @loopvar==1 %> class="active" <% end %>></li>
+              <% end
+                 @loopvar+=1
+                 end %>
+        </ol>
+        <div class="carousel-inner">
+          <% @ad_categories = AdCategory.all(:select => :id).collect(&:id)
+             @loopvar = 0
+             puts "loopvar ==> #{@loopvar}"
+             @ad_categories.each do |x|
+               #@loopvar+=1
+               #puts "ad_category ==> #{x}"
+               @ad = Ad.find_all_by_ad_category_id(x).first
+               unless @ad.nil?
+                 #puts "ad ==> #{@ad.id}"
+          %>
+                  <div class="item
+                    <%= @loopvar %>
+                    <% if (@loopvar == 1)  %>
+                        active
+                    <% end %>">
+                    <% if @ad.image.to_s != ''  %>
+                        <%=image_tag(@ad.image.to_s, :height => '100%', :width => '100%')%>
+                    <% else %>
+                        <%=image_tag("/images/dummy.jpeg", :height => '257') %>
+                    <% end %>
+                    <div class="carousel-caption">
+                      <%= render :partial => "ads/ad_slider_header" %>
+                      <%= render :partial => "ads/ad_slider_footer" %>
+                    </div>
+                  </div>
+              <% end
+                 @loopvar+= 1
+                 end %>
+        </div>
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+      </div>
+    </div>
+    <div class="span3">
+      <div class="panel" style="background: none; border: none">
+        <%= render "/common/quicklink" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+
+  <!-- Slider -->
+  <div class="row-fluid">
+    <div class="span12" id="slider">
+      <!-- Top part of the slider -->
+      <div class="row-fluid">
+        <div class="span8" id="carousel-bounding-box">
+          <div id="myCarousel" class="carousel slide">
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+              <div class="active item" data-slide-number="0"><img src="http://placehold.it/770x300&amp;text=one"></div>
+              <div class="item" data-slide-number="1"><img src="http://placehold.it/770x300&amp;text=two"></div>
+              <div class="item" data-slide-number="2"><img src="http://placehold.it/770x300&amp;text=three"></div>
+              <div class="item" data-slide-number="3"><img src="http://placehold.it/770x300&amp;text=four"></div>
+              <div class="item" data-slide-number="4"><img src="http://placehold.it/770x300&amp;text=five"></div>
+              <div class="item" data-slide-number="5"><img src="http://placehold.it/770x300&amp;text=six"></div>
+            </div>
+            <!-- Carousel nav -->
+            <a class="carousel-control left" href="#myCarousel" data-slide="prev">‹</a>
+            <a class="carousel-control right" href="#myCarousel" data-slide="next">›</a>
+          </div>
+        </div>
+        <div class="span4" id="carousel-text"></div>
+
+        <div style="display: none;" id="slide-content">
+          <div id="slide-content-0">
+            <h2>Slider One</h2>
+            <p>Lorem Ipsum Dolor</p>
+            <p class="sub-text">October 24 2012 - <a href="#">Read more</a></p>
+          </div>
+          <div id="slide-content-1">
+            <h2>Slider Two</h2>
+            <p>Lorem Ipsum Dolor</p>
+            <p class="sub-text">October 24 2012 - <a href="#">Read more</a></p>
+          </div>
+          <div id="slide-content-2">
+            <h2>Slider Three</h2>
+            <p>Lorem Ipsum Dolor</p>
+            <p class="sub-text">October 24 2012 - <a href="#">Read more</a></p>
+          </div>
+          <div id="slide-content-3">
+            <h2>Slider Four</h2>
+            <p>Lorem Ipsum Dolor</p>
+            <p class="sub-text">October 24 2012 - <a href="#">Read more</a></p>
+          </div>
+          <div id="slide-content-4">
+            <h2>Slider Five</h2>
+            <p>Lorem Ipsum Dolor</p>
+            <p class="sub-text">October 24 2012 - <a href="#">Read more</a></p>
+          </div>
+          <div id="slide-content-5">
+            <h2>Slider Six</h2>
+            <p>Lorem Ipsum Dolor</p>
+            <p class="sub-text">October 24 2012 - <a href="#">Read more</a></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div> <!--/Slider-->
+
+  <div class="row-fluid hidden-phone" id="slider-thumbs">
+    <div class="span12">
+      <!-- Bottom switcher of slider -->
+      <ul class="thumbnails">
+        <li class="span2">
+          <a class="thumbnail" id="carousel-selector-0">
+            <img src="http://placehold.it/170x100&amp;text=one">
+          </a>
+        </li>
+        <li class="span2">
+          <a class="thumbnail" id="carousel-selector-1">
+            <img src="http://placehold.it/170x100&amp;text=two">
+          </a>
+        </li>
+        <li class="span2">
+          <a class="thumbnail" id="carousel-selector-2">
+            <img src="http://placehold.it/170x100&amp;text=three">
+          </a>
+        </li>
+        <li class="span2">
+          <a class="thumbnail" id="carousel-selector-3">
+            <img src="http://placehold.it/170x100&amp;text=four">
+          </a>
+        </li>
+        <li class="span2">
+          <a class="thumbnail" id="carousel-selector-4">
+            <img src="http://placehold.it/170x100&amp;text=five">
+          </a>
+        </li>
+        <li class="span2">
+          <a class="thumbnail" id="carousel-selector-5">
+            <img src="http://placehold.it/170x100&amp;text=six">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
