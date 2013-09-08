@@ -65,7 +65,6 @@
                  @ad = Ad.find_all_by_ad_category_id(x).first
                  unless @ad.nil?
                    @xloopvar +=1
-                   puts "xloopvar ==> #{@xloopvar}"
             %>
                     <% if ((@xloopvar -1) %@items_per_list )==0 %>
                         <div class="item <% if (@xloopvar == 1)  %>
@@ -119,9 +118,7 @@
     var id = id_selector.substr(id_selector.length -1);
     var id = parseInt(id);
     $('#myCarousel').carousel(id);
-        });
-
-
+        });                                                                                           ,
     // When the carousel slides, auto update the text
         $('#myCarousel').on('slid', function (e) {
         var id = $('.item.active').data('slide-number');

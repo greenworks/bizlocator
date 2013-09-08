@@ -13,7 +13,7 @@ gem 'nifty-generators'
 gem 'activeadmin' , ' 0.5.1'
 gem 'carrierwave'
 gem 'geocoder'
-gem 'mongrel'
+gem 'mongrel','1.2.0.pre2'
 
 # Gems used only for assets and not required
 # in production environments by default.

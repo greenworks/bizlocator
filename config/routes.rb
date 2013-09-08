@@ -37,6 +37,8 @@ Bizlocator::Application.routes.draw do
   get "info/user_home"
   get "info/no_company_exists"
   get "info/user_account_page"
+  get "info/business_page_1"
+  get "info/tester"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

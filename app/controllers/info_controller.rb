@@ -21,4 +21,8 @@ class InfoController < ApplicationController
 
   end
 
+  def tester
+
+  end
+
 end
