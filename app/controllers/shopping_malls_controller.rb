@@ -27,6 +27,15 @@ class ShoppingMallsController < ApplicationController
     end
   end
 
+  def view
+    @shopping_mall = ShoppingMall.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @shopping_mall }
+    end
+  end
+
   # GET /shopping_malls/new
   # GET /shopping_malls/new.json
   def new

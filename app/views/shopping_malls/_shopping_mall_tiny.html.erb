@@ -26,7 +26,7 @@ height = (width*0.66).round(0) %>
       <%= shopping_mall.address && shopping_mall.address.address_brief %>
     </td>
     <td rowspan="2" width="40%" style="text-align: center">
-      <span id="mall_view<%=shopping_mall.id %>" style="font-weight: bold; text-decoration: underline" rel="popover">VIEW</span> -
+      <span id="mall_view<%=shopping_mall.id %>" style="font-weight: bold; text-decoration: underline" rel="popover"><%=link_to "VIEW", "/shopping_malls/#{shopping_mall.id}/view" %></span> -
       <span id="mall_share<%=shopping_mall.id %>" style="font-weight: bold; text-decoration: underline" rel="popover">SHARE</span>
       <br>
       <span id="mall_save<%=shopping_mall.id %>" style="font-weight: bold; text-decoration: underline" rel="popover">SAVE</span> -

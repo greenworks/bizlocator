@@ -40,7 +40,9 @@ Bizlocator::Application.routes.draw do
   get "info/business_page_1"
   get "info/tester"
 
-  # The priority is based upon order of creation:
+  match 'shopping_malls/:id/view' => 'shopping_malls#view'
+
+   # The priority is based upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:
