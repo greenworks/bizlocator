@@ -1,19 +1,19 @@
-<div class="span4 offset4">
+<div class="span2 offset2">
   <table style="background-color: #ffffff">
     <tr>
-      <td>
+      <td style="width: 40%">
         <div class="image-caption-wrapper" style="height:100%;width:120px; ">
           <a href="#0" class="thumbnail" id="carousel-selector-<%=@xloopvar%>">
-            <% if @ad.image.to_s != ''  %>
-                <%=image_tag(@ad.image.to_s, :height => '100px', :width => '120px')%>
+            <% if ad.image.to_s != ''  %>
+                <%=image_tag(ad.image.to_s, :height => '100px', :width => '120px')%>
             <% else %>
                 <%=image_tag("/images/dummy.jpeg", :height => '250px') %>
             <% end %>
           </a>
         </div>
       </td>
-      <td>
-        <span><%=link_to @ad.title, ad_path(@ad) %></span>
+      <td style="width: 60%">
+        <span><%=link_to ad.title, ad_path(ad) %></span>
       </td>
     </tr>
   </table>
