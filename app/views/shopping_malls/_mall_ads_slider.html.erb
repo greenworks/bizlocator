@@ -1,52 +1,35 @@
 <!--/Slider-->
-<div class="container">
-  <div class="span9">
+  <div class="span11 container">
     <div class="well">
       <div id="myCarouselT" class="carousel slide">
         <!-- Carousel items -->
         <div class="carousel-inner">
-          <%   @items_per_list = 2
-               @xloopvar =0
-               @ad = Ad.find_all_by_shopping_mall_id(shopping_mall.id).first
-               unless @ad.nil?
-                 @xloopvar +=1
-          %>
-              <% if ((@xloopvar -1) %@items_per_list )==0 %>
-                      <div class="item <% if (@xloopvar == 1)  %>
-                                          active
-                                       <% end %>">
-                        <div class="span3  offset2">
+          <%
+             @xloopvar =0
+             @ad = Ad.find_all_by_shopping_mall_id(shopping_mall.id).first
+             unless @ad.nil?
+               @xloopvar +=1
+               if ((@xloopvar -1) %@items_per_list )==0 %>
+                  <div class="item <% if (@xloopvar == 1)  %>
+                                                            active
+                                                                                                   <% end %>">
+                    <div class="row-fluid">
               <% end %>
-                          <div class="span2 container">
-                             <div class="image-caption-wrapper" style="height:100%;width:120px; ">
-                               <a href="#0" class="thumbnail" id="carousel-selector-<%=@xloopvar%>">
-                                 <% if @ad.image.to_s != ''  %>
-                                     <%=image_tag(@ad.image.to_s, :height => '100px', :width => '120px')%>
-                                 <% else %>
-                                     <%=image_tag("/images/dummy.jpeg", :height => '250px') %>
-                                 <% end %>
-                               </a>
-                             </div>
-                           </div>
-                           <div class="span2">
-                             <span><%=link_to @ad.title, ad_path(@ad) %></span>
-                           </div>
+              <%= render :partial => "ads/ad_captioned_thumbnail", :locals => {:ad => @ad} %>
               <% if (@xloopvar%@items_per_list !=0)
                    next
                  else %>
-                  <%="</div><!--/row-fluid-->"%>
-                  <%="</div><!--/item-->"%>
-              <%end
-                end %>
-
-          <% if ((@xloopvar)%@items_per_list )!=0 %>
                   </div><!--/row-fluid-->
                   </div><!--/item-->
-              <% end %>
+                  <%end
+                    end %>
+          <% if ((@xloopvar)%@items_per_list )!=0 %>
+              </div><!--/row-fluid-->
+              </div><!--/item-->
+          <% end %>
         </div><!--/carousel-inner-->
         <a class="left carousel-control" href="#myCarouselT" data-slide="prev">‹</a>
         <a class="right carousel-control" href="#myCarouselT" data-slide="next">›</a>
       </div><!--/myCarousel-->
     </div><!--/well-->
   </div>
-</div>
