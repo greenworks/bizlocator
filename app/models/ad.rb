@@ -5,10 +5,11 @@ class Ad < ActiveRecord::Base
   belongs_to :address
   belongs_to :ad_position
   belongs_to :user
+  belongs_to :ad_type
   has_many :bookmark_ads
 
   attr_accessible :title, :ad_category_id, :ad_position_id, :address_id, :company_id, :description, \
-  :expiry_date, :isapproved, :ispublished, :price, :shopping_mall_id, :title, :user_id, :image
+  :expiry_date, :isapproved, :ispublished, :price, :shopping_mall_id, :title, :user_id, :image, :ad_type_id
 
   mount_uploader :image, ImageUploader
 

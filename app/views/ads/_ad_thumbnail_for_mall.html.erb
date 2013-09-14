@@ -1,0 +1,91 @@
+<div>
+  <div style="text-decoration: underline">
+     <%=ad.ad_type.name.upcase%>
+  </div>
+  <div>
+    <table style="border-style: solid; border-width: 1px">
+      <tr>
+        <td>
+          <span><%=link_to ad.title, ad_path(ad) %></span>
+        </td>
+        <td>
+          <span><%=ad.address.id %></span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+
+        </td>
+        <td>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="image-caption-wrapper" style="height:100%;width:120px; ">
+            <a href="#0" class="thumbnail" id="carousel-selector-<%=@xloopvar%>">
+              <% if ad.image.to_s != ''  %>
+                  <%=image_tag(ad.image.to_s, :height => '100px', :width => '120px')%>
+              <% else %>
+                  <%=image_tag("/images/dummy.jpeg", :height => '100px') %>
+              <% end %>
+            </a>
+          </div>
+        </td>
+        <td>
+          <span><%=ad.description %></span>
+          <style>
+              .popover {
+                  clear : both;
+                  padding: 20px;
+                  background-color: #eaeaea;
+                  position: inherit;
+                  top:0px;
+                  left:0px;
+                  display: none;
+                  border-color: #444141;
+                  border-style: solid;
+                  border-width: 3px;
+                  width: 200px;
+                  z-index: 22;
+              }
+          </style>
+          <div id="popAd<%=ad.id%>" class="popover" align="center">
+            <span>
+              <div class="button-group" style="margin: 5px 5px;">
+                <div>
+                  <a href="#" class="btn btn-info btn-mini">MORE <i class="icon-white icon-plus-sign"></i></a> -
+                 <a href="#" class="btn btn-info btn-mini">SAVE <i class="icon-white icon-download-alt"></i></a>
+                </div>
+
+                <div>
+                <a href="#" class="btn btn-info btn-mini">CALL<i class="icon-white icon-comment"></i></a> -
+                <a href="#" class="btn btn-info btn-mini">NOTE <i class="icon-white icon-flag"></i></a>
+                </div>
+                <div>
+
+                <a href="#" class="btn btn-info btn-mini">MAP <i class="icon-white icon-map-marker"></i></a> -
+                <a href="#" class="btn btn-info btn-mini">NOTIFY <i class="icon-white icon-inbox"></i></a>
+                </div>
+                <div>
+
+                <a href="#" class="btn btn-info btn-mini">PRINT <i class="icon-white icon-print"></i></a> -
+                <a href="#" class="btn btn-info btn-mini">SHARE <i class="icon-white icon-share"></i></a>
+                </div>
+
+                <center>
+                    <a href="javascript:closePopOver('popAd<%=ad.id%>');" class="btn btn-success btn-mini">Hide</a>
+                </center>
+
+              </div>
+            </span>
+
+          </div>
+            <span id="callerAd<%=ad.id%>">(<a href="javascript:showPopOver('popAd<%=ad.id%>','callerAd<%=ad.id%>');"><b>Do...</b></a>)</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+

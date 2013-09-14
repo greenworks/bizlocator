@@ -21,7 +21,7 @@ class BusinessItemsController < ApplicationController
       @business_items = @business_items.where("business_item_category_id IN (#{business_item_categories.join(',')} )")
     end
     if params.has_key?(:shopping_mall_id) && params[:shopping_mall_id] != ''
-      @ads = @ads.where(' shopping_mall_id = ?', "#{params[:shopping_mall_id]}")
+      @business_items = @business_items.where(" shopping_mall_id = #{params[:shopping_mall_id]}")
     end
     @business_items = @business_items.shuffle().paginate(:per_page => 6, :page => params[:page])
     respond_to do |format|

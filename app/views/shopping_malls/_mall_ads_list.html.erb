@@ -1,0 +1,112 @@
+
+<script>
+
+    // getPosition
+    function xy(x) {
+        o = document.getElementById(x);
+        var l =o.offsetLeft; var t = o.offsetTop;
+        while (o=o.offsetParent)
+            l += o.offsetLeft;
+        o = document.getElementById(x);
+        while (o=o.offsetParent)
+            t += o.offsetTop;
+        return [l,t];
+    }
+
+    // SHOW POP-OVER
+    function showPopOver(divID,parentID) {
+        // SET THE DIV POSITION
+        // SHOW THE DIV ()
+
+        document.getElementById(divID).style.display = "inline-flex";
+
+
+        var parent_y = parseInt(xy(parentID)[1]);
+        var parent_y = parseInt(xy(parentID)[0]);
+        var div_height=	parseInt(document.getElementById(divID).offsetHeight);
+        var pop_pos = parent_y - div_height - 10;
+        //document.getElementById(divID).style.top= pop_pos + 'px' ;
+        //document.getElementById(divID).style.left= xy(parentID)[0]+"px" ;  // left is as per parent
+        //alert(xy(parentID)[1]);
+        //alert(current_y);
+        //alert(hi);
+        //alert(current_y - hi);
+        //alert(top_pos);
+        //alert(document.getElementById(divID).style.top);
+    }
+
+    // CLOSE POP-OVER
+    function closePopOver(divID) {
+        // HIDE THE DIV
+        document.getElementById(divID).style.display = "none";
+    }
+</script>
+
+<div class="row-fluid">
+  <div class="span3" style="text-align:center;border-width: 1; background-color:#A3D1FF; font-size: 14px; ">
+    <span class="text-centered">
+      <%= @shopping_mall.address.address_brief %>
+    </span>
+    <br>
+    <span style="text-decoration: underline; font-size: 10px; ">
+      MAP
+    </span>
+
+  </div>
+  <div class="span6 text-centered" style="text-align:center;border-width: 1; background-color:#A3D1FF ">
+    <span>
+       <h3 style="text-decoration: underline"><%= @shopping_mall.name%></h3>
+       <h4> ALL ADS</h4>
+    </span>
+  </div>
+  <div class="span3" style="text-align:center;border-width: 1; background-color:#A3D1FF ; font-size: 12px; text-decoration: underline">
+    <span class="text-centered">
+      <%=link_to "VIEW ALL Business Categories", business_items_path(:shopping_mall_id =>  @shopping_mall.id) %>
+      <br/>
+    </span >
+  </div>
+</div>
+<div class="row-fluid container">
+
+</div>
+
+<style>
+  table{
+      width:100%;
+  }
+   td {
+       border-style: solid;
+       border-width: 1px;
+       width: 50%;
+   }
+</style>
+
+<% @items_per_line = 2
+   @ad_loop_var =0
+   Ad.find_all_by_shopping_mall_id(@shopping_mall.id).each do |ad|
+     @ad_loop_var +=1
+     if ((@ad_loop_var -1) %@items_per_line )==0 %>
+        <div class="row-fluid">
+
+    <% end %>
+        <div class="span6">
+            <%= render :partial => "ads/ad_thumbnail_for_mall", :locals => {:ad => ad} %>
+        </div> <!-- end span6 break -->
+    <% if (@ad_loop_var%@items_per_line ==0) %>
+        </div> <!-- end row-fluid forced-->
+        <div>
+          <span>
+            &nbsp;
+          </span>
+        </div>
+    <% end
+       end %>
+<% if ((@ad_loop_var)%@items_per_line )!=0 %>
+    </div> <!-- end row-fluid forced-->
+    <div></div>
+<% end %>
+
+<style>
+  table{clear:both;}
+        td{clear: both;}
+</style>

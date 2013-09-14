@@ -41,6 +41,7 @@ Bizlocator::Application.routes.draw do
   get "info/tester"
 
   match 'shopping_malls/:id/view' => 'shopping_malls#view'
+  match 'shopping_malls/:id/mall_ads' => 'shopping_malls#mall_ads'
 
    # The priority is based upon order of creation:
   # first created -> highest priority.
