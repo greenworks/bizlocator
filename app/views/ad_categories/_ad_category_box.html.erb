@@ -1,0 +1,70 @@
+<div class="row-fluid">
+  <div class="span 10" style="background-color: #A3D1FF">
+    <style>
+      table{
+          border-style:solid;
+          border-width: 1px;
+          border-color: #000000;
+          padding: 3px;
+          width:100%;
+          height:100%;
+      }
+        td    {
+            border-style:solid;
+            border-width: 1px;
+            border-color: #000000;
+            padding: 3px;
+            font-size: 14px;
+        }
+    </style>
+
+    <table>
+      <tr>
+        <td colspan="3" style="width: 80%">
+          <span style="font-size: 16px; font-weight: bold">
+            <%= ad_category.name.upcase %>
+          </span>
+          <span style="text-decoration: underline">
+            <%= link_to " ALL ADS " , ads_path(:ad_category_id => ad_category.id, :shopping_mall_id=> shopping_mall) %>
+          </span>
+        </td>
+        <td style="border-width: 0px;">
+          <span style="text-align: right">
+            <a href="#" class="btn btn-info btn-mini">NOTIFY <i class="icon-white icon-inbox"></i></a>
+          </span>
+        </td>
+
+      </tr>
+      <%
+         @child1 =  ad_category.get_child_categories[0]
+         @child2 =  ad_category.get_child_categories[1]
+         @child3 =  ad_category.get_child_categories[2]
+      %>
+      <% if  @child1 || @child2 || @child3 %>
+      <tr>
+        <td>
+          <%=ad_category.get_child_categories[0] && ad_category.get_child_categories[0].name.upcase %>
+        </td>
+        <td>
+          <%=ad_category.get_child_categories[1] && ad_category.get_child_categories[0].name.upcase %>
+        </td>
+        <td>
+          <%=ad_category.get_child_categories[2] && ad_category.get_child_categories[0].name.upcase %>
+        </td>
+        <td>
+          <span style="text-decoration: underline; font-size: 12px ">
+            <% if ad_category.get_all_child_categories.count > 3 %>
+                 MORE SUB-CATEGORIES <br><%=link_to "CLICK", ad_categories_path(:id => ad_category.id, :shopping_mall_id => @shopping_mall.id) %>
+            <% end %>
+          </span>
+
+        </td>
+      </tr>
+      <% end %>
+    </table>
+
+
+  </div>
+
+
+</div>

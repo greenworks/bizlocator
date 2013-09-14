@@ -1,6 +1,5 @@
 <!--/Slider-->
 <div class="span11 container">
-  <h4>Ad Categories</h4>
   <div class="well">
     <div id="AdCategoryCarousel" class="carousel slide">
       <!-- Carousel items -->
@@ -17,7 +16,11 @@
             <% if (@category_count%@items_per_list ==0) %>
                 </div><!--/row-fluid-->
                 </div><!--/item-->
-            <% end
+            <% else
+               %>
+            <div><span>&nbsp;</span></div>
+            <%
+               end
                end %>
 
         <% if ((@category_count)%@items_per_list )!=0 %>

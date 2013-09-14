@@ -42,8 +42,10 @@ Bizlocator::Application.routes.draw do
 
   match 'shopping_malls/:id/view' => 'shopping_malls#view'
   match 'shopping_malls/:id/mall_ads' => 'shopping_malls#mall_ads'
+  match 'shopping_malls/:id/mall_ad_categories' => 'shopping_malls#mall_ad_categories'
+  match 'shopping_malls/:id/mall_business_items' => 'shopping_malls#mall_business_items'
 
-   # The priority is based upon order of creation:
+  # The priority is based upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:

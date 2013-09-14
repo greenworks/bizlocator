@@ -27,24 +27,6 @@ class ShoppingMallsController < ApplicationController
     end
   end
 
-  def view
-    @shopping_mall = ShoppingMall.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @shopping_mall }
-    end
-  end
-
-  def mall_ads
-    @shopping_mall = ShoppingMall.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @shopping_mall }
-    end
-  end
-
   # GET /shopping_malls/new
   # GET /shopping_malls/new.json
   def new
@@ -102,6 +84,47 @@ class ShoppingMallsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to shopping_malls_url }
       format.json { head :no_content }
+    end
+  end
+
+  # custom actions
+
+  def view
+    @shopping_mall = ShoppingMall.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @shopping_mall }
+    end
+  end
+
+  def mall_ads
+    @shopping_mall = ShoppingMall.find(params[:id])
+    @mall_ads =Ad.find_all_by_shopping_mall_id(@shopping_mall.id)
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @shopping_mall }
+    end
+  end
+
+  def mall_ad_categories
+    @shopping_mall = ShoppingMall.find(params[:id])
+    @ad_categories = AdCategory.where( " id in (select ad_category_id from ads where shopping_mall_id = ? )", params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @shopping_mall }
+    end
+  end
+
+  def mall_business_items
+    @shopping_mall = ShoppingMall.find(params[:id])
+    @mall_business_items = @shopping_mall.business_items
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @shopping_mall }
     end
   end
 end

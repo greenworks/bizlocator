@@ -8,6 +8,21 @@ height = (width*0.66).round(0) %>
       border: 2;
       padding: 0px;
   }
+
+ .popoverMap {
+      clear : both;
+      padding: 20px;
+      background-color: #eaeaea;
+      position: inherit;
+      top:0px;
+      left:0px;
+      display: none;
+      border-color: #444141;
+      border-style: solid;
+      border-width: 3px;
+      z-index: 220;
+  }
+
 </style>
 <table style="border-width: 2; border-color: #ff4301; border: 2" class="<%=shopping_mall.mall_type_id %>">
   <tr>
@@ -26,22 +41,60 @@ height = (width*0.66).round(0) %>
       <%= shopping_mall.address && shopping_mall.address.address_brief %>
     </td>
     <td rowspan="2" width="40%" style="text-align: center">
-      <span id="mall_view<%=shopping_mall.id %>" style="font-weight: bold; text-decoration: underline" rel="popover"><%=link_to "VIEW", "/shopping_malls/#{shopping_mall.id}/view" %></span> -
-      <span id="mall_share<%=shopping_mall.id %>" style="font-weight: bold; text-decoration: underline" rel="popover">SHARE</span>
-      <br>
-      <span id="mall_save<%=shopping_mall.id %>" style="font-weight: bold; text-decoration: underline" rel="popover">SAVE</span> -
-      <span id="mall_map<%=shopping_mall.id %>" style="font-weight: bold; text-decoration: underline" rel="popover">MAP</span>
-      <br/>
+
+      <div>
+         <span id="mall_view<%=shopping_mall.id %>">
+           <a href="<%="/shopping_malls/#{shopping_mall.id}/view"%>"
+              class="btn btn-info btn-mini" style="text-decoration: none">
+             VIEW <i class="icon-white icon-share"></i></a>
+         </span>
+        <a href="#" class="btn btn-info btn-mini">SHARE <i class="icon-white icon-share"></i></a>
+
+      </div>
+      <div>
+        <span id="mall_save<%=shopping_mall.id %>"
+              style="font-weight: bold; text-decoration: underline" rel="popover">
+            <a href="#" class="btn btn-info btn-mini">SAVE <i class="icon-white icon-download-alt"></i></a>
+        </span>
+
+      <span id="mall_map<%=shopping_mall.id%>">
+        <a href="javascript:showPopOver('popMap<%=shopping_mall.id%>','mall_map<%=shopping_mall.id%>');"
+           class="btn btn-info btn-mini"  style="text-decoration: none">
+         MAP <i class="icon-white icon-map-marker"></i>
+        </a>
+      </span>
+        <%  if !(shopping_mall.address.nil?) %>
+            <div id="popMap<%=shopping_mall.id%>" class="popoverMap" align="center">
+            <span>
+              <div class="button-group" style="margin: 5px 5px;">
+                <%= image_tag "http://maps.google.com/maps/api/staticmap?size=#{width}x#{height}&scale=1&sensor=false&zoom=12&feature=all&markers=#{shopping_mall.address.latitude}%2C#{shopping_mall.address.longitude}" %>
+                <center>
+                  <a href="javascript:closePopOver('popMap<%=shopping_mall.id%>');" class="btn btn-success btn-mini">Hide</a>
+                </center>
+              </div>
+            </span>
+            </div>
+        <% end %>
+
+      </div>
+
+
+      <div>
+
       <span id="mall_directions<%=shopping_mall.id %>" style="font-weight: bold; text-decoration: underline" rel="popover">DIRECTIONS</span>
-      <%  if !(shopping_mall.address.nil?) %>
-          <script>
-              $('#mall_map<%=shopping_mall.id %>').popover({
-                  placement : 'bottom',
-                  title : 'Title',
-                  content : '<div id="popOverBox"><%= image_tag "http://maps.google.com/maps/api/staticmap?size=#{width}x#{height}&scale=1&sensor=false&zoom=12&feature=all&markers=#{shopping_mall.address.latitude}%2C#{shopping_mall.address.longitude}" %></div>'
-              });
-          </script>
+      </div>
+
+      <br/>
+      <br/>
+      <br/>
+      <%=link_to "View All Ads (#{shopping_mall.ads.count })", "/shopping_malls/#{shopping_mall.id}/mall_ads"%>
+      <br/>
+      <%=link_to "View All Categories (#{AdCategory.where( " id in (select ad_category_id from ads where shopping_mall_id = ? )", params[:id]).count })","/shopping_malls/#{shopping_mall.id}/mall_ad_categories"%></li>
+      <br/>
+      <% if shopping_mall.mall_type_id == 1 %>
+          <%=link_to "View All Businesses (#{shopping_mall.business_items.count})", "/shopping_malls/#{shopping_mall.id}/mall_business_items" %>
       <% end %>
+      <br/>
     </td>
   </tr>
   <tr height="80%">
