@@ -1,0 +1,12 @@
+<div class="row-fluid">
+  <div class="span1 offset3 business_item_image">
+    <% if business_item.image.to_s != ''  %>
+        <%=image_tag(business_item.image.to_s,:height => '50px', :width => '60px') %>
+    <% else %>
+        <%=image_tag("/images/dummy.jpeg", :height => '50px', :width => '600px' ) %>
+    <% end %>
+  </div>
+  <div class="span6 title">
+    <%= link_to business_item.title, business_item %>
+  </div>
+</div>

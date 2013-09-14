@@ -1,0 +1,14 @@
+
+<div class="row-fluid">
+  <div class="span1 offset3 ad_category_image">
+    <% if ad_category.image.to_s != ''  %>
+        <%=image_tag(ad_category.image.to_s,:height => '50px', :width => '60px') %>
+    <% else %>
+        <%=image_tag("/images/dummy.jpeg", :height => '50px', :width => '600px' ) %>
+    <% end %>
+  </div>
+  <div class="span6 title">
+    <%= link_to ad_category.name, ad_category %>
+    <%= link_to " ( #{pluralize(Ad.find_all_by_ad_category_id(ad_category.id).count, 'Ad')} )" , ads_path(:ad_category_id => ad_category.id, :shopping_mall_id =>  @shopping_mall.id) %>
+  </div>
+</div>

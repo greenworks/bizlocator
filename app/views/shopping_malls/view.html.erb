@@ -1,12 +1,18 @@
 <% width=450
    height = (width*0.66).round(0) %>
-<h3>View <%=@shopping_mall.name%> </h3>
+
 <div class="row-fluid">
-  <div class="span3" style="background-color: #A3D1FF">
+  <div class="span3 container" style="background-color: #A3D1FF">
+    <div>
+      <h4><%=@shopping_mall.name%> </h4>
+      <span>
+        <%=@shopping_mall.address.address_brief %>
+      </span>
+    </div>
     <div>
 
     </div>
-    <div>
+    <div style="background-color: skyblue">
       <% if @shopping_mall.image.to_s != ''  %>
           <%=image_tag(@shopping_mall.image.to_s, :style => "width:100%") %>
       <% else %>
@@ -19,7 +25,7 @@
     <div class="row-fluid">
       <div class="span12 container" style="background-color: skyblue">
         <ul class="nav nav-pills">
-          <li class="active"><a href="#">View All: Ads</a></li>
+          <li class="active"><a href="#">View All: Ads (<%=@shopping_mall.ads.count %>)</a></li>
           <li><a href="#">Sales-Deals-Flyers-Coupans-Group Buy</a></li>
         </ul>
             <%= render :partial => "shopping_malls/mall_ads_slider", :locals => {:shopping_mall => @shopping_mall} %>
@@ -28,19 +34,18 @@
     <div class="row-fluid">
       <div class="span12 container" style="background-color: skyblue">
         <ul class="nav nav-pills">
-          <li class="active"><a href="#">View All: Categories</a></li>
+          <li class="active"><a href="#">View All: Categories (<%=AdCategory.where( " id in (select ad_category_id from ads where shopping_mall_id = ? )", params[:id]).count %>)</a></li>
           <li><a href="#">Sales-Deals-Flyers-Coupans-Group Buy</a></li>
         </ul>
-        <h4>Hello all about ads</h4>
+        <%= render :partial => "shopping_malls/mall_ad_category_list", :locals => {:shopping_mall => @shopping_mall} %>
       </div>
     </div>
     <div class="row-fluid">
       <div class="span12 container" style="background-color: skyblue">
         <ul class="nav nav-pills">
-          <li class="active"><a href="#">View All: Businesses</a></li>
-          <li><a href="#">Sales-Deals-Flyers-Coupans-Group Buy</a></li>
+          <li class="active"><a href="#">View All: Businesses (<%=@shopping_mall.business_items.count%>)</a></li>
         </ul>
-        <h4>Hello all about ads</h4>
+        <%= render :partial => "shopping_malls/mall_business_item_list", :locals => {:shopping_mall => @shopping_mall} %>
       </div>
     </div>
   </div>

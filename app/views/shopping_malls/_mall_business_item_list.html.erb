@@ -1,0 +1,31 @@
+<!--/Slider-->
+<div class="span11 container">
+  <div class="well">
+    <div id="BusinessItemCarousel" class="carousel slide">
+      <!-- Carousel items -->
+      <div class="carousel-inner">
+        <% @items_per_list = 2
+           @xloopvar =0
+           BusinessItem.find_all_by_shopping_mall_id(shopping_mall.id).each do |business_item|
+             @xloopvar +=1
+             if ((@xloopvar -1) %@items_per_list )==0 %>
+                <div class="item <% if (@xloopvar == 1)  %> active <% end %>">
+                  <div class="row-fluid">
+            <% end %>
+            <%= render :partial => "business_items/business_item_thumbnail", :locals => {:business_item => business_item} %>
+            <% if (@xloopvar%@items_per_list ==0) %>
+                </div><!--/row-fluid-->
+                </div><!--/item-->
+            <% end
+               end %>
+
+        <% if ((@xloopvar)%@items_per_list )!=0 %>
+            </div><!--/row-fluid-->
+            </div><!--/item-->
+        <% end %>
+        </div><!--/carousel-inner-->
+  <a class="left carousel-control" href="#BusinessItemCarousel" data-slide="prev">‹</a>
+  <a class="right carousel-control" href="#BusinessItemCarousel" data-slide="next">›</a>
+</div><!--/myCarousel-->
+</div><!--/well-->
+</div>

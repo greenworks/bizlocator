@@ -1,32 +1,31 @@
 <!--/Slider-->
-
-  <div class="span11 container">
-    <div class="well">
-      <div id="myCarouselT" class="carousel slide">
-        <!-- Carousel items -->
-        <div class="carousel-inner">
-          <% @items_per_list = 2
-             @xloopvar =0
-             Ad.find_all_by_shopping_mall_id(shopping_mall.id).each do |ad|
-               @xloopvar +=1
-               if ((@xloopvar -1) %@items_per_list )==0 %>
-                  <div class="item <% if (@xloopvar == 1)  %> active <% end %>">
-                    <div class="row-fluid">
-              <% end %>
-              <%= render :partial => "ads/ad_captioned_thumbnail", :locals => {:ad => ad} %>
-              <% if (@xloopvar%@items_per_list ==0) %>
-                  </div><!--/row-fluid-->
-                  </div><!--/item-->
-              <% end
-              end %>
-
-          <% if ((@xloopvar)%@items_per_list )!=0 %>
+<div class="span11 container">
+<div class="well">
+  <div id="myCarouselT" class="carousel slide">
+    <!-- Carousel items -->
+    <div class="carousel-inner">
+      <% @items_per_list = 2
+         @xloopvar =0
+         Ad.find_all_by_shopping_mall_id(shopping_mall.id).each do |ad|
+           @xloopvar +=1
+           if ((@xloopvar -1) %@items_per_list )==0 %>
+              <div class="item <% if (@xloopvar == 1)  %> active <% end %>">
+                <div class="row-fluid">
+          <% end %>
+          <%= render :partial => "ads/ad_captioned_thumbnail", :locals => {:ad => ad} %>
+          <% if (@xloopvar%@items_per_list ==0) %>
               </div><!--/row-fluid-->
               </div><!--/item-->
-          <% end %>
-        </div><!--/carousel-inner-->
-        <a class="left carousel-control" href="#myCarouselT" data-slide="prev">‹</a>
-        <a class="right carousel-control" href="#myCarouselT" data-slide="next">›</a>
-      </div><!--/myCarousel-->
-    </div><!--/well-->
-  </div>
+          <% end
+          end %>
+
+      <% if ((@xloopvar)%@items_per_list )!=0 %>
+          </div><!--/row-fluid-->
+          </div><!--/item-->
+      <% end %>
+    </div><!--/carousel-inner-->
+    <a class="left carousel-control" href="#myCarouselT" data-slide="prev">‹</a>
+    <a class="right carousel-control" href="#myCarouselT" data-slide="next">›</a>
+  </div><!--/myCarousel-->
+</div><!--/well-->
+</div>
