@@ -1,0 +1,47 @@
+<div class="span6" >
+  <style>
+      .ad-table{
+          border-style: solid;
+          border-width: 1px;
+      }
+  </style>
+  <div class="row-fluid">
+    <div class="span5">
+
+    </div>
+    <div class="span7">
+
+    </div>
+  </div>
+  <div class="row-fluid ad-table">
+    <div class="span5">
+      <td width=50% class="discount"  title="<%=ad.title%>" ><%= ad.price.to_i %> % Off</td>
+    </div>
+    <div class="span7">
+      <div class="title" title="<%=ad.title%>">
+        <a href="/ads/<%=ad.id%>/"><%=ad.title[0..28]%> </a>
+      </div>
+    </div>
+  </div>
+  <div class="row-fluid ad-table">
+    <div class="span5 ad-table">
+      <td width=50% class="more"  title="<%=ad.title%>" ><a href="/ads/<%=ad.id%>/">More</a></td>
+    </div>
+    <div class="span7 ad-table">
+      <div class="image-caption-wrapper">
+        <a href="/ads/<%=ad.id%>/" title="<%=ad.title%>">
+          <% if ad.image.to_s != ''  %>
+              <%=image_tag(ad.image.to_s, :width => '223',:height => '138') %>
+          <% else %>
+              <%=image_tag("/images/no_image.gif", :height => '138', :width => '223') %>
+          <% end %>
+        </a>
+      </div>
+    </div>
+  </div>
+  <style>
+      {
+       clear: both;
+      }
+  </style>
+</div>
