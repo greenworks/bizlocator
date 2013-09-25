@@ -44,7 +44,7 @@
 
 <div class="row-fluid">
   <div class="span3" style="text-align:center;border-width: 1; background-color:#A3D1FF; font-size: 14px; ">
-    <span class="text-centered">
+    <span class="text-center">
       <%= @shopping_mall.address.address_brief %>
     </span>
     <br>
@@ -53,14 +53,14 @@
     </span>
 
   </div>
-  <div class="span6 text-centered" style="text-align:center;border-width: 1; background-color:#A3D1FF ">
+  <div class="span6 text-center" style="text-align:center;border-width: 1; background-color:#A3D1FF ">
     <span>
        <h3 style="text-decoration: underline"><%= @shopping_mall.name%></h3>
        <h4> ALL ADS</h4>
     </span>
   </div>
   <div class="span3" style="text-align:center;border-width: 1; background-color:#A3D1FF ; font-size: 12px; text-decoration: underline">
-    <span class="text-centered">
+    <span class="text-center">
       <%=link_to "VIEW ALL Business Categories", business_items_path(:shopping_mall_id =>  @shopping_mall.id) %>
       <br/>
     </span >

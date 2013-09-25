@@ -6,7 +6,7 @@ one:
   vacancy_count: 1
   company_id: 1
   qualification: MyText
-  job_categiory_id: 1
+  job_category_id: 1
   meeting_address: MyText
   expiry_date: 2013-08-31
   ispublished: false
@@ -20,7 +20,7 @@ two:
   vacancy_count: 1
   company_id: 1
   qualification: MyText
-  job_categiory_id: 1
+  job_category_id: 1
   meeting_address: MyText
   expiry_date: 2013-08-31
   ispublished: false

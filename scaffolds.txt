@@ -13,7 +13,7 @@ rails generate scaffold CityService title:string description:text city_service_c
 rails generate scaffold Company name:string owner_name:string user_id:integer info:string description:text phone:string fax:string email:string ispublished:boolean isapproved:boolean   image:string address_id:integer
 rails generate scaffold EmergencyNumber name:string value:string priority:integer ispublished:boolean   image:string
 rails generate scaffold JobCategory name:string introtext:string description:text ispublished:boolean   parent_category_id:integer
-rails generate scaffold Job title:string description:text vacancy_count:integer company_id:integer qualification:text job_categiory_id:integer meeting_address:text expiry_date:date ispublished:boolean isapproved:boolean   image:string user_id:integer
+rails generate scaffold Job title:string description:text vacancy_count:integer company_id:integer qualification:text job_category_id:integer meeting_address:text expiry_date:date ispublished:boolean isapproved:boolean   image:string user_id:integer
 rails generate scaffold MallType name:string introtext:string description:text ispublished:boolean  
 rails generate scaffold ShoppingMall name:string description:text mall_type_id:integer ispublished:boolean   image:string address_id:integer
 

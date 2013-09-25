@@ -221,7 +221,7 @@ ActiveRecord::Schema.define(:version => 20130831143755) do
     t.integer  "vacancy_count"
     t.integer  "company_id"
     t.text     "qualification"
-    t.integer  "job_categiory_id"
+    t.integer  "job_category_id"
     t.text     "meeting_address"
     t.date     "expiry_date"
     t.boolean  "ispublished"

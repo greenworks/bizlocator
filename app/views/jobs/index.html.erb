@@ -1,43 +1,45 @@
-<h1>Listing jobs</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Vacancy count</th>
-    <th>Company</th>
-    <th>Qualification</th>
-    <th>Job categiory</th>
-    <th>Meeting address</th>
-    <th>Expiry date</th>
-    <th>Ispublished</th>
-    <th>Isapproved</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-  <% @jobs.each do |job| %>
-      <tr>
-        <td><%= job.title %></td>
-        <td><%= job.description %></td>
-        <td><%= job.vacancy_count %></td>
-        <td><%= job.company_id %></td>
-        <td><%= job.qualification %></td>
-        <td><%= job.job_categiory_id %></td>
-        <td><%= job.meeting_address %></td>
-        <td><%= job.expiry_date %></td>
-        <td><%= job.ispublished %></td>
-        <td><%= job.isapproved %></td>
-        <td><%= link_to 'Show', job %></td>
-        <% if user_signed_in? && job.user_id == current_user.id %>
-            <td><%= link_to 'Edit', edit_job_path(job) %></td>
-            <td><%= link_to 'Destroy', job, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+<div class="container" style="padding: 20px">
+  <div class="row-fluid">
+      <div class="span4 offset3 text-center">
+        <div class="row-fluid">
+          <span style="text-align: center; font-size: 24px; text-decoration: underline; padding-top: 10px">BUSINESS HIRING</span>
+        </div>
+        <div class="row-fluid">
+          <span style="text-align: center; font-size: 16px; font-weight: bolder">JOB LISTINGS</span>
+        </div>
+    </div>
+  </div>
+  <div class="row-fluid" style="padding: 20px">
+    <div class="span2">
+      <div class="row-fluid">
+        <span style="text-align: center; font-size: 16px; font-weight: bolder ">
+          Job Links
+        </span>
+      </div>
+      <div class="row-fluid">
+        <span style="text-align: center; font-size: 10px; ">
+          (Outside of Bizlocator)
+        </span>
+      </div>
+    </div>
+    <div class="span10">
+      <div class="row-fluid">
+        <div class="span3">
+          <span style="text-align: center; font-size: 16px; font-weight: bold ">
+            BUSINESS
+          </span>
+        </div>
+        <div class="span6">
+          <span style="text-align: center; font-size: 16px; font-weight: bold ">
+            JOB TITLE/DESCRIPTION
+          </span>
+        </div>
+      </div>
+      <div class="row-fluid">
+        <% @jobs.each do |job| %>
+            <%= render :partial =>"jobs/business_hiring_item" , :locals => { :job => job } %>
         <% end %>
-      </tr>
-  <% end %>
-</table>
-
-<br/>
-
-<%= link_to 'New Job', new_job_path %>
+      </div>
+    </div>
+  </div>
+</div>

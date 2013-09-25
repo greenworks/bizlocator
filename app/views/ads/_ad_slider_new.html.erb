@@ -70,7 +70,7 @@
                         <div class="item <% if (@xloopvar == 1)  %>
                             active
                             <% end %>">
-                          <div class="row-fluid">
+                          <div class="row-fluid offset1">
                     <% end %>
                     <div class="span2">
                       <div class="image-caption-wrapper" style="height:100%;width:120px; ">
@@ -87,8 +87,8 @@
                     <% if (@xloopvar%@items_per_list !=0)
                          next
                        else %>
-                        <%="</div><!--/row-fluid-->"%>
-                        <%="</div><!--/item-->"%>
+                        </div><!--/row-fluid-->
+                        </div><!--/item-->
                     <%end
                       end
                       end %>
@@ -97,7 +97,6 @@
                 </div><!--/item-->
             <% end %>
             </div><!--/carousel-inner-->
-
       <a class="left carousel-control" href="#myCarouselT" data-slide="prev">‹</a>
       <a class="right carousel-control" href="#myCarouselT" data-slide="next">›</a>
     </div><!--/myCarousel-->

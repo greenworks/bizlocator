@@ -54,7 +54,7 @@
 
 <div class="row-fluid business-item-header">
   <div class="span3">
-    <span class="text-centered" >
+    <span class="text-center" >
       <%= @shopping_mall.address.address_brief %>
     </span>
     <br>
@@ -63,14 +63,14 @@
     </span>
 
   </div>
-  <div class="span6 text-centered">
+  <div class="span6 text-center">
     <span>
        <h3 style="text-decoration: underline"><%= @shopping_mall.name%></h3>
        <h4> ALL BUSINESS ITEMS</h4>
     </span>
   </div>
   <div class="span3">
-    <span class="text-centered">
+    <span class="text-center">
       <%=link_to "VIEW ALL Business Categories", business_items_path(:shopping_mall_id =>  @shopping_mall.id) %>
       <br/>
     </span >
@@ -79,7 +79,7 @@
 
 <div class="row-fluid business-item-header" >
   <div class="span4" >
-    <span class="text-centered">
+    <span class="text-center">
         <%=link_to "MALL LINKS AND MAPS", business_items_path(:shopping_mall_id =>  @shopping_mall.id) %>
     </span>
     <br>
@@ -88,7 +88,7 @@
     </span>
 
   </div>
-  <div class="span8 text-centered">
+  <div class="span8 text-center">
     <span style="text-decoration: underline; font-size: 10px; ">
 
     </span>
