@@ -29,10 +29,3 @@
   </div>
 </div>
 
-<div class="data_actions">
-  <% if user_signed_in? && current_user.name == "Admin" %>
-      <div><%= link_to 'Edit', edit_ad_category_path(ad_category) %></div>
-      <div><%= link_to 'Destroy', ad_category, method: :delete, data: {confirm: 'Are you sure?'} %></div>
-  <% end %>
-</div>
-
