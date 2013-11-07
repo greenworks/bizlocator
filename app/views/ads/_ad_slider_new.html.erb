@@ -30,8 +30,14 @@
                     </div>
 
                     <div class="carousel-caption">
-                      <%= render :partial => "ads/ad_slider_header" %>
-                      <%= render :partial => "ads/ad_slider_footer" %>
+                      <div class="row-fluid" >
+                        <div class="span12">
+                          <%= render :partial => "ads/ad_slider_header" %>
+                        </div>
+                        <div class="span12">
+                          <%= render :partial => "ads/ad_slider_footer" %>
+                        </div>
+                      </div>
                     </div>
                   </div>
               <% end
