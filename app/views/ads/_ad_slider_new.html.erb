@@ -48,60 +48,6 @@
   </div>
 </div>
 
-<!--/Slider-->
-  <% @items_per_list = 5 %>
-  <div class="container">
-    <div class="span8">
-      <div class="well">
-        <div id="myCarouselT" class="carousel slide">
-          <!-- Carousel items -->
-          <div class="carousel-inner">
-            <%
-               @ad_categories = AdCategory.all(:select => :id).collect(&:id)
-               @xloopvar = 0
-               @ad_categories.each do |x|
-                 @ad = Ad.find_all_by_ad_category_id(x).first
-                 unless @ad.nil?
-                   @xloopvar +=1
-            %>
-                    <% if ((@xloopvar -1) %@items_per_list )==0 %>
-                        <div class="item <% if (@xloopvar == 1)  %>
-                            active
-                            <% end %>">
-                          <div class="row-fluid offset1">
-                    <% end %>
-                    <div class="span2">
-                      <div class="image-caption-wrapper" style="height:100%;width:120px; ">
-                        <a href="#0" class="thumbnail" id="carousel-selector-<%=@xloopvar%>">
-                          <% if @ad.image.to_s != ''  %>
-                              <%=image_tag(@ad.image.to_s, :height => '100px', :width => '120px')%>
-                          <% else %>
-                              <%=image_tag("/images/dummy.jpeg", :height => '250px') %>
-                          <% end %>
-                        </a>
-                        <span><%=@ad.title%></span>
-                      </div>
-                    </div>
-                    <% if (@xloopvar%@items_per_list !=0)
-                         next
-                       else %>
-                        </div><!--/row-fluid-->
-                        </div><!--/item-->
-                    <%end
-                      end
-                      end %>
-            <% if ((@xloopvar)%@items_per_list )!=0 %>
-                </div><!--/row-fluid-->
-                </div><!--/item-->
-            <% end %>
-            </div><!--/carousel-inner-->
-      <a class="left carousel-control" href="#myCarouselT" data-slide="prev">‹</a>
-      <a class="right carousel-control" href="#myCarouselT" data-slide="next">›</a>
-    </div><!--/myCarousel-->
-
-  </div><!--/well-->
-</div>
-</div>
 <script>
 //    $('#myCarousel').carousel({
 //        interval: 5000
