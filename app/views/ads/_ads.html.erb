@@ -1,26 +1,29 @@
 
 <%= will_paginate @ads %>
 
-<div class="active_deals">
+<div class="row-fluid">
 
-  <% begin
-     if index_scope == "creator" && user_signed_in?
-       #puts "ad index scope #{index_scope}  ,  #{current_user.id}"
-     else
-       #puts "ad index scope is chosen PUBLIC"
+  <%  @xloopvar = 0
+      @items_per_list = 2
+      @ads.each do |ad|
+        @xloopvar +=1
   %>
-      <%= render :partial =>"ads/ad_search"%>
-  <% end
-     rescue NameError
-       #puts "ad index scope is chosen PUBLIC"
-     end
-  %>
+       <% if ((@xloopvar -1)%@items_per_list )==0 %>
+          <div class="row-fluid">
+      <%end %>
 
-  <% @ads.each do |ad|  %>
+            <%= render :partial => "ads/ad_detailed_thumbnail", :locals => {:ad => ad} %>
 
-    <%= render :partial => "ads/ad_tiny", :locals => {:ad => ad} %>
+            <% if (@xloopvar%@items_per_list !=0)
+                 next
+               else %>
+                </div><!--/row-fluid-->
+            <%end
+              end %>
 
-  <% end %>
+            <% if ((@xloopvar)%@items_per_list )!=0 %>
+                </div><!--/row-fluid-->
+            <% end %>
 
 </div>
 

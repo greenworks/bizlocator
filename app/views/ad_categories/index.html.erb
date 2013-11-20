@@ -1,35 +1,56 @@
-<br/>
-<br/>
+<style>
+    .ad-category-header{
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: underline;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
 
-<h2>Ad Categories</h2>
+    .ad-category-header-index{
+        font-size: 16px;
+        text-decoration: none;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+</style>
 
-<% ('A'..'Z').each do |char| %>
+<div class="row-fluid text-center ad-category-header">
+    <span>
+        ALL CATEGORIES
+    </span>
+</div>
 
-    <% if char==params[:char] %>
-        <%= link_to char, ad_categories_path(:char => char), :class => 'selected_char' %>
-    <% else %>
-        <%= link_to char, ad_categories_path(:char => char) %>
-    <% end %>
-<% end %>
+<div class="row-fluid  text-center ad-category-header-index">
+    <span style="border-style: solid; border-width: 1px;">
+       <% ('A'..'Z').each do |char| %>
+          <% if char==params[:char] %>
+              <%= link_to char, ad_categories_path(:char => char), :class => 'selected_char' %>
+          <% else %>
+              <%= link_to char, ad_categories_path(:char => char) %>
+          <% end %>
+      <% end %>
+      <%= link_to "ALL", ad_categories_path %>
+    </span>
+</div>
 
-<%= link_to "ALL", ad_categories_path %>
 
-<br/>
-<%= link_to 'New Ad category', new_ad_category_path %>
 
-<!--
-  <tr>
-    <th>Name</th>
-    <th>SubCategories Ids</th>
-    <th>Parent Category</th>
-    <th>Introtext</th>
-    <th>Image</th>
-  </tr>
--->
-    <% @ad_categories.each do |ad_category| %>
-            <div class="ad_category">
-              <%= render :partial =>"ad_categories/ad_category_content", :locals => {:ad_category => ad_category} %>
-              <div class="clear: both"></div>
+    <%     @ad_categories = @ad_categories.where(" ( trim(parent_category_id) ='' or  parent_category_id is null)")
+
+           @ad_categories.each do |ad_category| %>
+            <div class="row-fluid ad_category">
+              <%= render :partial =>"ad_categories/ad_category_box_general", :locals => {:ad_category => ad_category} %>
+              <div style="clear: both"></div>
+            </div>
+            <div class="row-fluid">
+              <span>&nbsp;</span>
             </div>
     <% end %>
 

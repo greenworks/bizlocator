@@ -15,6 +15,9 @@ class AdsController < ApplicationController
     if params.has_key?(:company_id) && params[:company_id] != ''
       @ads = @ads.where(' company_id = ?', "#{params[:company_id]}")
     end
+    if params.has_key?(:ad_type_id) && params[:ad_type_id] != ''
+      @ads = @ads.where(' ad_type_id = ?', "#{params[:ad_type_id]}")
+    end
     if params.has_key?(:shopping_mall_id) && params[:shopping_mall_id] != ''
       @ads = @ads.where(' shopping_mall_id = ?', "#{params[:shopping_mall_id]}")
     end

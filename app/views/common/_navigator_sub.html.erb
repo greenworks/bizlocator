@@ -32,7 +32,8 @@
       }
 
       .second-nav-bar ul li:hover {
-          background-color:#CCC;
+          /*background-color:#c7c7c7;*/
+          color:#ffffff;
       }
 
       .second-nav-bar ul li a:visited{
@@ -40,9 +41,16 @@
       }
   </style>
   <ul>
-    <li style="width:34%;"><%= link_to "Sales-Deals-Flyers-Coupons-Group Buys-All Business", jobs_path  %> </li>
+    <li style="width:34%;">
+      <%= link_to "Sales - Deals -", ads_path(:ad_type => AdType.find_by_name("Sales & Deals").id )%>
+      <%= link_to "Flyers -", ads_path(:ad_type => AdType.find_by_name("Flyers").id )%>
+      <%= link_to "Coupons -", ads_path(:ad_type => AdType.find_by_name("Coupons").id )%>
+      <%= link_to "Group Buys -", ads_path(:ad_type => AdType.find_by_name("Group Buys").id )%>
+      <%= link_to "All Business", ads_path%>
+      </li>
     <li style="width:17%"><%= link_to "View The Malls", shopping_malls_path  %> </li>
     <li style="width:17%"><%= link_to "Save List", shopping_malls_path %> </li>
     <li style="width:17%"><%= link_to "10 Todays Points", shopping_malls_path %> </li>
   </ul>
 </div>
+
