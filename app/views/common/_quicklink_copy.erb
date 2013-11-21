@@ -1,11 +1,20 @@
 <div class="quick_link_bar">
   <br/>
   <div class="span1 text-centered offset3">
-      <span class="secondary label" style="text-align: center;background-color:#ffffff; color:#003871; font-family: Copperplate Gothic; font-size:large">Quick Links</span>
+      <span class="secondary label" style="text-align: center;background-color:#ffffff; color:#003871; font-family: Copperplate Gothic; font-size:large">
+        <a class="left carousel-control-ql" href="#quickLinkCarousel" data-slide="prev">‹-</a>
+            Quick Links
+        <a class="right carousel-control-ql" href="#quickLinkCarousel" data-slide="next">-›</a>
+      </span>
   </div>
   <br/>
   <br/>
   <style>
+
+      .carousel-control-ql{
+          top: 5%;
+
+      }
       .quick_link_bar{
           width:100%;
           float: none;
@@ -84,8 +93,7 @@
           <% end %>
 
           </div><!--/carousel-inner-->
-    <a class="left carousel-control-ql" href="#quickLinkCarousel" data-slide="prev">‹</a>
-    <a class="right carousel-control-ql" href="#quickLinkCarousel" data-slide="next">›</a>
+
   </div><!--/myCarousel-->
 
 </div><!--/well-->
