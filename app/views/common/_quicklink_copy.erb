@@ -1,9 +1,10 @@
 <div class="quick_link_bar">
-  <div class="span3 text-centered">
-    <span class="secondary label" style="position: center;background-color:#ffffff; color:#003871; font-family: Copperplate Gothic; font-size:large">Quick Links</span>
+  <br/>
+  <div class="span1 text-centered offset3">
+      <span class="secondary label" style="text-align: center;background-color:#ffffff; color:#003871; font-family: Copperplate Gothic; font-size:large">Quick Links</span>
   </div>
   <br/>
-
+  <br/>
   <style>
       .quick_link_bar{
           width:100%;
@@ -44,23 +45,10 @@
       }
   </style>
 
-  <ul>
-    <% @ad_categories = AdCategory.get_all_main_categories
-       @ad_categories.each do |ad_category| %>
-        <li>
-          <%= link_to ad_category.name , ads_path(:ad_category_id => ad_category.id), :class=>"tiny-12 columns tiny button secondary", :style => {:width=>"100%", :background_color=>"#74ad5a"} %>
-        </li>
-    <% end %>
-  </ul>
-</div>
-
-
-
-
 <!--/Slider-->
 <% @items_per_list = 7 %>
 <div class="container">
-  <div class="span8">
+  <div class="span3">
     <div class="well">
       <div id="quickLinkCarousel" class="carousel slide">
         <!-- Carousel items -->
@@ -75,25 +63,32 @@
                       <div class="item <% if (@xloopvar == 1)  %>
                             active
                             <% end %>">
-                        <div class="row-fluid offset1">
-                  <% end %>
-                  <%= link_to ad_category.name , ads_path(:ad_category_id => ad_category.id), :class=>"tiny-12 columns tiny button secondary", :style => {:width=>"100%", :background_color=>"#74ad5a"} %>
+                        <div class="quick_link_bar">
+
+                          <ul>
+                    <% end %>
+                        <li>
+                          <%= link_to ad_category.name , ads_path(:ad_category_id => ad_category.id), :class=>"tiny-12 columns tiny button secondary", :style => {:width=>"100%", :background_color=>"#74ad5a"} %>
+                          </li>
                   <% if (@xloopvar%@items_per_list !=0)
                        next
                      else %>
-                      </div><!--/row-fluid-->
-                      </div><!--/item-->
+                  </ul>
+                  </div>                    <!--/quick_link bar-->
+                  </div><!--/item-->
                   <%end
                     end%>
           <% if ((@xloopvar)%@items_per_list )!=0 %>
               </div><!--/row-fluid-->
               </div><!--/item-->
           <% end %>
+
           </div><!--/carousel-inner-->
-    <a class="left carousel-control" href="#quickLinkCarousel" data-slide="prev">‹</a>
-    <a class="right carousel-control" href="#quickLinkCarousel" data-slide="next">›</a>
+    <a class="left carousel-control-ql" href="#quickLinkCarousel" data-slide="prev">‹</a>
+    <a class="right carousel-control-ql" href="#quickLinkCarousel" data-slide="next">›</a>
   </div><!--/myCarousel-->
 
 </div><!--/well-->
+</div>
 </div>
 </div>

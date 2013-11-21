@@ -1,6 +1,6 @@
-<<<<<<< HEAD
+
 <div class="quick_link_bar">
-  <div class="span3 text-centered">
+  <div class="span1 text-centered offset2">
     <span class="secondary label" style="position: center;background-color:#ffffff; color:#003871; font-family: Copperplate Gothic; font-size:large">Quick Links</span>
   </div>
   <br/>
@@ -11,6 +11,7 @@
           float: none;
           list-style:none;
           color:#000000;
+          border-width: 1px ;
       }
 
       .quick_link_bar ul{
@@ -23,31 +24,6 @@
           float:none;
           color:#000000;
           padding:0 20px 0 20px;
-=======
-<div class="span12 text-center quicklink-nav-bar">
-  <style>
-      .quicklink-nav-bar{
-          width:100%;
-          float: left;
-          list-style:none;
-          color:#000000;
-          margin-top: 25px;
-          margin-bottom: 10px;
-      }
-
-      .quicklink-nav-bar ul{
-          /*width:100%;*/
-          margin:0 auto 0 auto;
-      }
-
-      .quicklink-nav-bar ul li {
-          background-color:#E9F4FF;
-          /*float:left;*/
-          color:#000000;
-          padding:0 20px 0 20px;
-          margin-top: 10px ;
-          margin-bottom: 10px;
->>>>>>> 573797120184f751ede19dc474f5b68bfb9b43d8
           border-right:1px solid #000000;
           border-left:1px solid #000000;
           border-top:1px solid #000000;
@@ -59,21 +35,8 @@
           text-align:center;
           cursor:pointer;
           font-size: 12px;
-<<<<<<< HEAD
       }
 
-      .quick_link_bar ul li:hover {
-          background-color:#CCC;
-      }
-
-      .quick_link_bar ul li a:visited{
-          color:#000000;
-      }
-  </style>
-
-=======
-          /*width:100%;*/
-      }
 
       .quicklink-nav-bar ul li:hover {
           background-color:#CCC;
@@ -98,8 +61,6 @@
       }
 
   </style>
-  <span class="quicklink-header" >Quick Links</span>
->>>>>>> 573797120184f751ede19dc474f5b68bfb9b43d8
   <ul>
     <% @ad_categories = AdCategory.get_all_main_categories
        @ad_categories.each do |ad_category| %>
