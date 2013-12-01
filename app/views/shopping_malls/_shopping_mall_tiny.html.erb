@@ -1,4 +1,4 @@
-<% width=450
+<% width=350
 height = (width*0.66).round(0) %>
 <style>
   td    {
@@ -52,58 +52,48 @@ height = (width*0.66).round(0) %>
 
       </div>
       <div>
-        <span id="mall_save<%=shopping_mall.id %>"
+        <span id="mall_save<%=shopping_mall.id %>
               style="font-weight: bold; text-decoration: underline" rel="popover">
-            <a href="#" class="btn btn-info btn-mini">SAVE <i class="icon-white icon-download-alt"></i></a>
+            <a href="#" class="btn btn-info btn-mini">SAVE<i class="icon-white icon-download-alt"></i></a>
         </span>
 
-      <span id="mall_map<%=shopping_mall.id%>">
-        <a href="javascript:showPopOver('popMap<%=shopping_mall.id%>','mall_map<%=shopping_mall.id%>');"
-           class="btn btn-info btn-mini"  style="text-decoration: none">
-         MAP <i class="icon-white icon-map-marker"></i>
-        </a>
-      </span>
-        <%  if !(shopping_mall.address.nil?) %>
-            <div id="popMap<%=shopping_mall.id%>" class="popoverMap" align="center">
+          <span id="mall_map<%=shopping_mall.id%>">
+            <a href="javascript:showPopOver('popMap<%=shopping_mall.id%>','mall_map<%=shopping_mall.id%>');"
+               class="btn btn-info btn-mini"  style="text-decoration: none">
+             MAP <i class="icon-white icon-map-marker"></i>
+            </a>
+          </span>
+      </div>
+
+      <div>
+        <span id="mall_directions<%=shopping_mall.id %>" style="font-weight: bold; text-decoration: underline" rel="popover">DIRECTIONS</span>
+      </div>
+
+    </td>
+  </tr>
+  <tr height="80%">
+    <td colspan="2">
+      <div style="position:relative; z-index:-1;">
+        <% if shopping_mall.image.to_s != ''  %>
+            <%=image_tag(shopping_mall.image.to_s, :width => width) %>
+        <% else %>
+            <%=image_tag("/images/dummy.jpeg", :height=>height, :width => width) %>
+        <% end %>
+      </div>
+
+      <% if !(shopping_mall.address.nil?) %>
+            <div id="popMap<%=shopping_mall.id%>" class="popoverMap" align="center" style="z-index:6; position:aboslute; top:0; left:5; font-size:80px; ">
             <span>
               <div class="button-group" style="margin: 5px 5px;">
-                <%= image_tag "http://maps.google.com/maps/api/staticmap?size=#{width}x#{height}&scale=1&sensor=false&zoom=12&feature=all&markers=#{shopping_mall.address.latitude}%2C#{shopping_mall.address.longitude}" %>
                 <center>
                   <a href="javascript:closePopOver('popMap<%=shopping_mall.id%>');" class="btn btn-success btn-mini">Hide</a>
                 </center>
+                <%= image_tag "http://maps.google.com/maps/api/staticmap?size=#{width}x#{height}&scale=1&sensor=false&zoom=12&feature=all&markers=#{shopping_mall.address.latitude}%2C#{shopping_mall.address.longitude}" %>
               </div>
             </span>
             </div>
         <% end %>
 
-      </div>
-
-
-      <div>
-
-      <span id="mall_directions<%=shopping_mall.id %>" style="font-weight: bold; text-decoration: underline" rel="popover">DIRECTIONS</span>
-      </div>
-
-      <br/>
-      <br/>
-      <br/>
-      <%=link_to "View All Ads (#{shopping_mall.ads.count })", "/shopping_malls/#{shopping_mall.id}/mall_ads"%>
-      <br/>
-      <%=link_to "View All Categories (#{AdCategory.where( " id in (select ad_category_id from ads where shopping_mall_id = ? )", params[:id]).count })","/shopping_malls/#{shopping_mall.id}/mall_ad_categories"%></li>
-      <br/>
-      <% if shopping_mall.mall_type_id == 1 %>
-          <%=link_to "View All Businesses (#{shopping_mall.business_items.count})", "/shopping_malls/#{shopping_mall.id}/mall_business_items" %>
-      <% end %>
-      <br/>
-    </td>
-  </tr>
-  <tr height="80%">
-    <td colspan="2">
-      <% if shopping_mall.image.to_s != ''  %>
-          <%=image_tag(shopping_mall.image.to_s, :style => "width:100%") %>
-      <% else %>
-          <%=image_tag("/images/dummy.jpeg", :height=>height, :width => width) %>
-      <% end %>
     </td>
   </tr>
 </table>
