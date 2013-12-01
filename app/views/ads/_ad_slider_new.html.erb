@@ -2,9 +2,6 @@
    @ad_categories = AdCategory.all(:select => :id).collect(&:id)
    @loopvar = 0
 %>
-<script>
-    var pause=false;
-</script>
 <div class="container">
   <div class="row-fluid">
     <div class="span9" style="margin-top: 20px">
@@ -33,23 +30,18 @@
 
                     <div class="carousel-caption" id="carousel-caption-part">
                       <div class="row-fluid" >
-                        <div class="span1" style="position: absolute; top:-20px"><a href="#" class="btn btn-inverse btn-mini" onclick=" $(function() {
-                                $('.carousel').each(function(){
-                                        if (pause==false) {
-                                                $(this).carousel({
-                                                        interval: 5000
-                                                        });
-                                                pause=true;
-                                                }
-                                        else
-                                                {
-                                                        $(this).carousel({
-                                                                interval: false
-                                                                });
-                                                        pause=false;
-                                                        }
-                                        });
-                                });">PAUSE/PLAY</a></div>
+                        <div class="span1" style="position: absolute; top:-20px; left:20px"><a class="btn btn-inverse btn-mini" id="pauseButton">PAUSE</a></div>
+                        <script>
+                            $('#pauseButton').click(function() {
+                                $('#myCarousel').carousel('pause');
+                            });
+                        </script>
+                        <div class="span1" style="position: absolute; top:-20px; left:60px"><a class="btn btn-inverse btn-mini" id="playButton">PLAY</a></div>
+                        <script>
+                            $('#playButton').click(function() {
+                                $('#myCarousel').carousel('cycle');
+                            });
+                        </script>
                         <div class="span1 offset11" style="position: absolute; top:-20px; left:-60px"><a id="hideshow_<%=@loopvar%>" class="btn btn-inverse btn-mini">SHOW/HIDE</a></div>
                         <script>
                             var button = document.getElementById('hideshow_<%=@loopvar%>'); // Assumes element with id='button'
@@ -64,8 +56,6 @@
                                     div.style.display = 'block';
                                 }
                             };
-
-
                         </script>
                       </div>
                       <div class="row-fluid" id="slider_<%=@loopvar%>">
