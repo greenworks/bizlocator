@@ -85,9 +85,9 @@ height = (width*0.66).round(0) %>
             <div id="popMap<%=shopping_mall.id%>" class="popoverMap" align="center" style="z-index:6; position:aboslute; top:0; left:5; font-size:80px; ">
             <span>
               <div class="button-group" style="margin: 5px 5px;">
-                <center>
+                <span style="text-align: center">
                   <a href="javascript:closePopOver('popMap<%=shopping_mall.id%>');" class="btn btn-success btn-mini">Hide</a>
-                </center>
+                </span>
                 <%= image_tag "http://maps.google.com/maps/api/staticmap?size=#{width}x#{height}&scale=1&sensor=false&zoom=12&feature=all&markers=#{shopping_mall.address.latitude}%2C#{shopping_mall.address.longitude}" %>
               </div>
             </span>

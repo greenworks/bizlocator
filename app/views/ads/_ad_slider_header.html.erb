@@ -1,32 +1,41 @@
-<div class="span6 columns ">
+<div class="span5">
+    <div style="font-size: 16px; font-weight: bold; color:#2F96B4; ">
+      <%=@ad.title%>
+    </div>
+    <div class="row-fluid">
+      <span style="color : #ffffff">
+        <%= truncate(@ad.description, :length => 200) %>
+      </span>
+      <span>
+        <%= link_to '... (more)', @ad , :style => "color: #51A351; font-weight: bold"%>
+      </span>
+    </div>
+</div>
+
+<div class="span1">
+  <span>&nbsp;</span>
+</div>
+
+<div class="span5" style="font-size: 12px; font-weight: normal; color:#ffffff; line-height: 2">
   <div class="row-fluid" style="height: 10px">
-  <div class="span10" style="\ font-size: 16px; font-weight: bold; color:#00000; background-color: #ffffff; text-decoration: underline">
-    <%=@ad.title%>
+    <div class="span10" style="font-size: 12px; font-weight: normal; color:#ffffff;   ">
+      <%=link_to "In The Mall", @ad.shopping_mall, :style=>"color:#ffffff; " %> -
+      <%=link_to "Order Online", @ad , :style=>"color:#ffffff; " %> -
+      <%=link_to "We Deliver", @ad , :style=>"color:#ffffff;" %> -
+    </div>
   </div>
-</div>
-<div class="row-fluid" style="height: 10px">
-  <div class="span10 columns" style="\ font-size: 12px; font-weight: normal; color:#00000; background-color: #ffffff;  ">
-    <%=link_to "In The Mall", @ad.shopping_mall, :style=>"color:#00000; background-color: #ffffff" %> -
-    <%=link_to "Order Online", @ad , :style=>"color:#00000; background-color: #ffffff" %> -
-    <%=link_to "We Deliver", @ad , :style=>"color:#00000; background-color: #ffffff" %> -
+  <div class="row-fluid" style="height: 10px">
+    <div class="span10" style=" font-size: 12px; font-weight: normal; color:#ffffff; ">
+      <%=@ad.address.address_brief%>
+    </div>
   </div>
-</div>
-<div class="row-fluid" style="height: 10px">
-  <div class="span10" style="\ font-size: 12px; font-weight: normal; color:#00000; background-color: #ffffff;  ">
-    <%=@ad.address.address_brief%>
+  <div class="row-fluid" style="height: 10px">
+    <div class="span10" style="font-size: 12px; font-weight: normal; color:#ffffff; ">
+      <%=@ad.address.contact_info%>
+    </div>
   </div>
-</div>
-<div class="row-fluid" style="height: 10px">
-  <div class="span10 columns" style="font-size: 12px; font-weight: normal; color:#00000; background-color: #ffffff; ">
-    <%=@ad.address.contact_info%>
-  </div>
-</div>
 </div>
 
-<div class="span1 columns">
+<div class="span1">
   <%= render :partial => "ads/ad_ethnicity_checker", :locals => {:user_ethicity => "user_ethnicity", :ad => "ad_enthicity"} %>
-</div>
-
-<div class="span5" style="font-size: 12px; font-weight: normal; color:#00000; background-color: #ffffff; line-height: 2">
-  <%= truncate(@ad.description, :length => 200) %><br/><%= link_to '... (more)', @ad %>
 </div>
