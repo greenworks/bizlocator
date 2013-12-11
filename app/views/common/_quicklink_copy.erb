@@ -46,17 +46,31 @@
       .quick_link_bar ul li a:visited{
           color:#000000;
       }
+
+          .quicklnk_box {
+              padding: 20px;
+              margin: 0px;
+              border-width: medium medium 3px;
+              border-style: solid;
+              border-color: #E9F4FF;
+              -moz-border-top-colors: none;
+              -moz-border-right-colors: none;
+              -moz-border-bottom-colors: none;
+              -moz-border-left-colors: none;
+              border-image: none;
+              height: 400px;
+          }
   </style>
 
 <!--/Slider-->
-<% @items_per_list = 13 %>
+<% @items_per_list = 14 %>
 <div class="container">
   <div class="span3">
-    <div class="span12" style="padding: 5px; margin: 20px; border-bottom-width: 0px; background-color: #E8E5E1; border-color: #000000; border">
+    <div class="span12 quicklnk_box">
       <div class="row-fluid">
-        <div class="span1 text-centered offset2">
-          <span class="secondary label" style="text-align: center;background-color:#E8E5E1; color:#003871; font-family: Copperplate Gothic; font-size:large">
-            <a class="left carousel-control-ql" href="#quickLinkCarousel" data-slide="prev"><img src="/images/left_arrrow.png" style="width: 30px; height: 15px; background: transparent" alt="‹-"/></a>
+        <div class="span1 text-centered offset1">
+          <span class="secondary label" style="text-align: center; color:#003871; font-family: Copperplate Gothic; font-size:large;background-color: transparent;">
+            <a class="left carousel-control-ql" href="#quickLinkCarousel" data-slide="prev"><img src="/images/left_arrrow.png" style="width: 30px; height: 15px; background: transparent;" alt="‹-"/></a>
                 Quick Links
             <a class="right carousel-control-ql" href="#quickLinkCarousel" data-slide="next"><img src="/images/right_arrow.png" style="width: 30px; height: 15px; background: transparent" alt="-›"/></a>
           </span>
@@ -81,7 +95,7 @@
                           <ul>
                     <% end %>
                         <li>
-                          <%= link_to ad_category.name , ads_path(:ad_category_id => ad_category.id) %>
+                          <%= link_to truncate(ad_category.name, :length => 20) , ads_path(:ad_category_id => ad_category.id) %>
                           </li>
                   <% if (@xloopvar%@items_per_list !=0)
                        next
