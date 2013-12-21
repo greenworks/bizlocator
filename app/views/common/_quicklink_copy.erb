@@ -19,24 +19,17 @@
       }
 
       .quick_link_bar ul li {
-          background-color:#E9F4FF;
+          background-color:#D4E7F9;
           float:none;
           color:#000000;
-          padding:0 20px 0 20px;
-          border-right:1px solid #000000;
-          border-left:1px solid #000000;
-          border-top:1px solid #000000;
-          border-bottom:1px solid #000000;
           height:20px;
           list-style:none;
           display:block;
-          line-height:20px;
           text-align:center;
-          cursor:pointer;
           font-size: 12px;
-          width :1;
           margin-top: 10px;
-          margin-bottom: 10px;
+          border: solid;
+          border-width: 1px;
       }
 
       .quick_link_bar ul li:hover {
@@ -49,16 +42,16 @@
   </style>
 
 <!--/Slider-->
-<% @items_per_list = 13 %>
+<% @items_per_list = 11 %>
 <div class="container">
   <div class="span3">
-    <div class="span12" style="padding: 5px; margin: 20px; border-bottom-width: 0px; background-color: #E8E5E1; border-color: #000000; border">
+    <div class="span12" style="padding: 5px; background-color: #EFF7FF; border-color: #000000; border-width: 0.5px; border:solid">
       <div class="row-fluid">
-        <div class="span1 text-centered offset2">
-          <span class="secondary label" style="text-align: center;background-color:#ffffff; color:#003871; font-family: Copperplate Gothic; font-size:large">
-            <a class="left carousel-control-ql" href="#quickLinkCarousel" data-slide="prev">‹-</a>
+        <div class="span3 text-centered " style="border-style: solid; border-width:1px; width: 100%">
+          <span class="secondary label offset2" style="text-align: center;background-color:transparent; color:#003871; font-size:large">
+            <a class="left carousel-control-ql" href="#quickLinkCarousel" data-slide="prev"><img src="/images/left_arrow.png" height="22px" width="25px" alt="‹-"/></a>
                 Quick Links
-            <a class="right carousel-control-ql" href="#quickLinkCarousel" data-slide="next">-›</a>
+            <a class="right carousel-control-ql" href="#quickLinkCarousel" data-slide="next"><img src="/images/right_arrow.png" height="22px" width="25px" alt="-›"/></a>
           </span>
         </div>
       </div>
@@ -81,7 +74,7 @@
                           <ul>
                     <% end %>
                         <li>
-                          <%= link_to ad_category.name , ads_path(:ad_category_id => ad_category.id) %>
+                          <%= link_to truncate(ad_category.name ,:length=>30), ads_path(:ad_category_id => ad_category.id) %>
                           </li>
                   <% if (@xloopvar%@items_per_list !=0)
                        next
