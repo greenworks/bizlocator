@@ -41,11 +41,6 @@
       }
   </style>
 
-<!--/Slider-->
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 06b78e0eb1e7e502d0c19c03adbcbd7e2ee5839c
 <% @items_per_list = 11 %>
 <div class="container">
   <div class="span3">
@@ -56,21 +51,6 @@
             <a class="left carousel-control-ql" href="#quickLinkCarousel" data-slide="prev"><img src="/images/left_arrow.png" height="22px" width="25px" alt="‹-"/></a>
                 Quick Links
             <a class="right carousel-control-ql" href="#quickLinkCarousel" data-slide="next"><img src="/images/right_arrow.png" height="22px" width="25px" alt="-›"/></a>
-<<<<<<< HEAD
-=======
-<% @items_per_list = 10 %>
-<div class="container">
-  <div class="span3">
-    <div class="span12 quicklnk_box">
-      <div class="row-fluid">
-        <div class="span1 text-centered offset1">
-          <span class="secondary label" style="text-align: center; color:#003871; font-family: Copperplate Gothic; font-size:large;background-color: transparent;">
-            <a class="left carousel-control-ql" href="#quickLinkCarousel" data-slide="prev"><img src="/images/left_arrrow.png" style="width: 30px; height: 15px; background: transparent;" alt="‹-"/></a>
-                Quick Links
-            <a class="right carousel-control-ql" href="#quickLinkCarousel" data-slide="next"><img src="/images/right_arrow.png" style="width: 30px; height: 15px; background: transparent" alt="-›"/></a>
->>>>>>> master
-=======
->>>>>>> 06b78e0eb1e7e502d0c19c03adbcbd7e2ee5839c
           </span>
         </div>
       </div>
@@ -93,15 +73,7 @@
                           <ul>
                     <% end %>
                         <li>
-<<<<<<< HEAD
-<<<<<<< HEAD
                           <%= link_to truncate(ad_category.name ,:length=>30), ads_path(:ad_category_id => ad_category.id) %>
-=======
-                          <%= link_to truncate(ad_category.name, :length => 20) , ads_path(:ad_category_id => ad_category.id) %>
->>>>>>> master
-=======
-                          <%= link_to truncate(ad_category.name ,:length=>30), ads_path(:ad_category_id => ad_category.id) %>
->>>>>>> 06b78e0eb1e7e502d0c19c03adbcbd7e2ee5839c
                           </li>
                   <% if (@xloopvar%@items_per_list !=0)
                        next
