@@ -28,6 +28,5 @@
 <div id="registerModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <%= form_for("user", :url => user_registration_path) do |f| %>
       <%= render :partial => "common/register_modal", :locals => {:f=> f} %>
-<% end %>
-
+  <% end %>
 </div>
