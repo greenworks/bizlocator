@@ -1,5 +1,5 @@
-
-<div class="second-nav-bar">
+<% session_points = 10 %>
+<div class="row second-nav-bar">
   <style>
       .second-nav-bar{
           width:100%;
@@ -51,7 +51,7 @@
       </li>
     <li style="width:17%"><%= link_to "View The Malls", shopping_malls_path  %> </li>
     <li style="width:17%"><%= link_to "Save List", shopping_malls_path %> </li>
-    <li style="width:17%"><%= link_to "10 Todays Points", shopping_malls_path %> </li>
+    <li style="width:17%"><%= link_to "Todays Points ", shopping_malls_path %><span style="border: solid; border-width: 1px;"><%=session_points %></span></li>
   </ul>
 </div>
 
