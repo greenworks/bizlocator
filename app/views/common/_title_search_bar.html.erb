@@ -4,16 +4,14 @@
       <div class="span3">
         <img src="/images/bizlocator-logo.png" height="90px">
       </div>
-      <div class="span6">
-        <div class="span3 offset1" style="width:100%;margin-top:10px;margin-bottom:10px;">
+      <div class="span4 offset1" style="margin-top:10px;margin-bottom:10px;">
           <table style="border:0px">
             <tr>
-              <td style="padding-top: 6px"><%= text_field_tag :search, params[:search], :class => "search_text_field" %></td>
-              <td style="padding-bottom: 6px"><button type="submit" class="btn" style="background-color: #22367C; color: #ffffff" >Find</button></td>
+              <td style="padding-top: 6px"><%= text_field_tag :search, params[:search], :class => "search_text_field", :style=> "width:260px" %></td>
+              <td style="padding-bottom: 6px"><input type="submit" class="" style="background-color: #22367C; color: #ffffff; border: none; height: 28px; width: 60px" value="Find"/></td>
             </tr>
           </table>
         </div>
-      </div>
     </div>
     <div class="row" style="position: relative;            top: 10px;">
         <%= render :partial => "common/navigator_main" %>

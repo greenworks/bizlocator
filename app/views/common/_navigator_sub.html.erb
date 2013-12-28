@@ -1,4 +1,5 @@
 <% session_points = 10 %>
+<% saved_ads = 0 %>
 <div class="row second-nav-bar">
   <style>
       .second-nav-bar{
@@ -51,7 +52,7 @@
       <%= link_to "& Agragation Links", ads_path%>
       </li>
     <li style="width:13%"><%= link_to "View The Malls", shopping_malls_path  %> </li>
-    <li style="width:14%"><%= link_to "Save List", shopping_malls_path %> </li>
+    <li style="width:14%"><%= link_to "Save List ", shopping_malls_path %><span style="border: solid; border-width: 1px;"><%=saved_ads %></span> </li>
     <li style="width:19%"><%= link_to "Todays Points ", shopping_malls_path %><span style="border: solid; border-width: 1px;"><%=session_points %></span></li>
   </ul>
 </div>

@@ -1,46 +1,36 @@
-<div class="span5">
-    <div class="row-fluid">
-        <div style="font-size: 16px; font-weight: bold; color:#2F96B4;position:relative; top:-10px ;text-decoration: underline">
-            <%=@ad.title%>
-        </div>
+<div class="span5" style="padding-left: 26px;line-height: 2; vertical-align: top">
+  <div class="row">
+    <div style="font-size: 16px; font-weight: bold; color:#2F96B4; ;text-decoration: underline">
+      <%=@ad.title%>
     </div>
-  <div class="row-fluid">
-    <span>&nbsp;</span>
   </div>
-
-  <div class="row-fluid">
-      <span style="color : #ffffff">
-        <%= truncate(@ad.description, :length => 200) %>
-      </span>
-      <span>
-        <%= link_to '... (more)', @ad , :style => "color: #51A351; font-weight: bold"%>
-      </span>
-    </div>
+  <div class="row">
+    <span style="color : #ffffff">
+      <%= truncate(@ad.description, :length => 80) %>
+    </span>
+    <span>
+      <%= link_to '... (more)', @ad , :style => "color: #51A351; font-weight: bold"%>
+    </span>
+  </div>
 </div>
 
 <div class="span1">
   <span>&nbsp;</span>
 </div>
 
-<div class="span5" style="font-size: 12px; font-weight: normal; color:#ffffff; line-height: 2">
-  <div class="row-fluid">
-    <div style="font-size: 16px; font-weight: bold; color:#2F96B4;position:relative; top:-15px; text-decoration: underline ">
-      <%=@ad.company && @ad.company.name  %>
-    </div>
+<div class="span5" style=" line-height: 2; vertical-align: top">
+  <div class="row" style="font-size: 16px; font-weight: bold; color:#2F96B4;; text-decoration: underline ">
+    <%=@ad.company && truncate(@ad.company.name, :length=>25)  %>
   </div>
-  <div class="row-fluid" style="height: 10px">
-    <div class="span10" style="font-size: 12px; font-weight: normal; color:#ffffff;   ">
+  <div class="row" style="font-size: 12px; font-weight: normal; color:#ffffff;  height: 14px ">
       <%=link_to "In The Mall", @ad.shopping_mall, :style=>"color:#ffffff; " %> -
       <%=link_to "Order Online", @ad , :style=>"color:#ffffff; " %> -
       <%=link_to "We Deliver", @ad , :style=>"color:#ffffff;" %> -
-    </div>
   </div>
-  <div class="row-fluid" style="height: 10px">
-    <div class="span10" style=" font-size: 12px; font-weight: normal; color:#ffffff; ">
+  <div class="row" style=" font-size: 12px; font-weight: normal; color:#ffffff; ;height: 14px">
       <%=@ad.address.address_brief%>
-    </div>
   </div>
-  <div class="row-fluid" style="height: 10px">
+  <div class="row" style="height: 10px">
     <div class="span10" style="font-size: 12px; font-weight: normal; color:#ffffff; ">
       <%=@ad.address.contact_info%>
     </div>
