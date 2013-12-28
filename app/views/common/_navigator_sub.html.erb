@@ -2,19 +2,19 @@
 <div class="row second-nav-bar">
   <style>
       .second-nav-bar{
-          width:100%;
+          width:1200px;
           float: left;
           list-style:none;
           color:#000000;
       }
 
       .second-nav-bar ul{
-          width:100%;
+          /*width:1490px;*/
           margin:0 auto 0 auto;
       }
 
       .second-nav-bar ul li {
-          background-color:#E9F4FF;
+          background-color:#D4E7F9;
           float:left;
           color:#000000;
           padding:0 20px 0 20px;
@@ -28,30 +28,31 @@
           line-height:20px;
           text-align:center;
           cursor:pointer;
-          font-size: 12px;
+          font-size: 14px;
       }
 
       .second-nav-bar ul li a:hover {
-          /*background-color:#c7c7c7;*/
+          background-color: transparent;
           color:#ffffff;
       }
 
       .second-nav-bar ul li a:visited{
-          /*color:#ffffff; */
+          background-color: transparent;
+          color:#000000;
       }
 
   </style>
   <ul>
-    <li style="width:34%;">
+    <li style="width:40%;">
       <%= link_to "Sales - Deals -", ads_path(:ad_type => AdType.find_by_name("Sales & Deals").id )%>
       <%= link_to "Flyers -", ads_path(:ad_type => AdType.find_by_name("Flyers").id )%>
       <%= link_to "Coupons -", ads_path(:ad_type => AdType.find_by_name("Coupons").id )%>
-      <%= link_to "Group Buys -", ads_path(:ad_type => AdType.find_by_name("Group Buys").id )%>
-      <%= link_to "All Business", ads_path%>
+      <%= link_to "Group Buys ", ads_path(:ad_type => AdType.find_by_name("Group Buys").id )%>
+      <%= link_to "& Agragation Links", ads_path%>
       </li>
-    <li style="width:17%"><%= link_to "View The Malls", shopping_malls_path  %> </li>
-    <li style="width:17%"><%= link_to "Save List", shopping_malls_path %> </li>
-    <li style="width:17%"><%= link_to "Todays Points ", shopping_malls_path %><span style="border: solid; border-width: 1px;"><%=session_points %></span></li>
+    <li style="width:13%"><%= link_to "View The Malls", shopping_malls_path  %> </li>
+    <li style="width:14%"><%= link_to "Save List", shopping_malls_path %> </li>
+    <li style="width:19%"><%= link_to "Todays Points ", shopping_malls_path %><span style="border: solid; border-width: 1px;"><%=session_points %></span></li>
   </ul>
 </div>
 
