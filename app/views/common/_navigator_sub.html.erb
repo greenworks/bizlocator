@@ -49,7 +49,7 @@
       <%= link_to "Flyers -", ads_path(:ad_type => AdType.find_by_name("Flyers").id )%>
       <%= link_to "Coupons -", ads_path(:ad_type => AdType.find_by_name("Coupons").id )%>
       <%= link_to "Group Buys ", ads_path(:ad_type => AdType.find_by_name("Group Buys").id )%>
-      <%= link_to "& Agragation Links", ads_path%>
+      <%= link_to "& More ", ads_path%>
       </li>
     <li style="width:13%"><%= link_to "View The Malls", shopping_malls_path  %> </li>
     <li style="width:14%"><%= link_to "Save List ", shopping_malls_path %><span style="border: solid; border-width: 1px;"><%=saved_ads %></span> </li>
