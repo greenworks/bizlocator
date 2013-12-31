@@ -2,9 +2,19 @@
 <style>
 
     .carousel-control-ql{
-        top: 5%;
-
+        /*top: 5%;*/
+        text-align: center;
+        background-color:#22367C;
+        color: #ffffdd;
+        font-size:large;
+        font-weight: bold
     }
+
+    .carousel-control-ql img{
+        width: 58px;
+        height: 16px;
+    }
+
     .quick_link_bar{
         width:100%;
         float: none;
@@ -37,6 +47,7 @@
     .quick_link_bar ul li a:visited{
         color:#000000;
     }
+
 </style>
 
 <div class="quick_link_bar container">
@@ -44,10 +55,10 @@
     <div class="span12" style="padding: 5px; background-color: #EFF7FF; border:thin solid #22367C; width:260px;height:400px; position: relative; top:20px">
       <div class="row-fluid">
         <div class="span3 text-centered " style="border:thin solid #22367C; width: 100%; background-color:#22367C">
-          <span class="secondary label offset2" style="text-align: center;background-color:#22367C; color: #ffffdd; font-size:large;  ">
-            <a class="left carousel-control-ql" href="#quickLinkCarousel" data-slide="prev"><img src="/images/left_arrow.png" style="height: 22px; width: 25px" height="22px" width="25px" alt="‹-"/></a>
+          <span class="carousel-control-ql">
+            <a href="#quickLinkCarousel" data-slide="prev"><img src="/images/left_arrow.png" alt="‹-"/></a>
                 Quick Links
-            <a class="right carousel-control-ql" href="#quickLinkCarousel" data-slide="next"><img src="/images/right_arrow.png" style="height: 22px; width: 25px" height="22px" width="25px" alt="-›"/></a>
+            <a href="#quickLinkCarousel" data-slide="next"><img src="/images/right_arrow.png" alt="-›"/></a>
           </span>
         </div>
       </div>
