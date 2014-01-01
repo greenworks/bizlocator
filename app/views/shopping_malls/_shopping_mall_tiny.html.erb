@@ -1,99 +1,63 @@
-<% width=350
-height = (width*0.66).round(0) %>
-<style>
-  td    {
-      border-style:solid;
-      border-width: 1px;
-      border-color: #000000;
-      border: 2;
-      padding: 0px;
-  }
+<%
+width=350
+height = (width*0.66).round(0)
+%>
 
- .popoverMap {
-      clear : both;
-      padding: 20px;
-      background-color: #eaeaea;
-      position: inherit;
-      top:0px;
-      left:0px;
-      display: none;
-      border-color: #444141;
-      border-style: solid;
-      border-width: 3px;
-      z-index: 220;
-  }
 
-</style>
-<table style="border-width: 2; border-color: #ff4301; border: 2" class="<%=shopping_mall.mall_type_id %>">
-  <tr>
-    <td style="width:40%">
-      <%= link_to (shopping_mall.name).upcase , shopping_mall ,  :style => "text-decoration: underline; text-weight: bold; text-size:16px" %>
-    </td>
-    <td rowspan="2">
-      <a data-content="<%= shopping_mall.description %>" title="" data-toggle="popover" class="btn btn-lg btn-danger" href="#" data-original-title="<%= shopping_mall.name %>">MALL INFO</a>
-    </td>
-    <td style="text-decoration: underline, bold; text-align: right">
-      <span style="font-size: 10px">APPROX :</span><span style="font-size: 14px"><%= pluralize( rand(10) , 'Minute' ) %></span>
-    </td>
-  </tr>
-  <tr>
-    <td style="word-wrap: true" width='20%' >
+<div class="row-fluid" >
+  <div class="shopping_mall-header-small" style="width: 52%">
+    <%= link_to (shopping_mall.name).upcase , shopping_mall ,  :style => "text-weight: bold; font-size:16px" %>
+  </div>
+  <div class="shopping_mall-header-small" style="width: 20%; background-color: #C8696F; text-align: center">
+    <a style="width: 78%; height: 16px; position: relative; top: -2px; color: #ffffff; text-align: center; font-weight: bolder" data-content="<%= shopping_mall.description %>" title=""
+       data-toggle="popover" href="#" data-original-title="<%= shopping_mall.name %>">Mall Info</a>
+  </div>
+  <div class="shopping_mall-header-small" style="width: 26.8%; text-align: center; color:#000000">
+        Approx <%= pluralize( rand(10) , 'Minute' ) %>
+  </div>
+</div>
+
+
+<div class="row-fluid">
+  <div style="border: 1px solid #000000; float: left ;width: 72.5%;  height: 297px; max-height: 297px">
+    <div class="row-fluid" >
       <%= shopping_mall.address && shopping_mall.address.address_brief %>
-    </td>
-    <td rowspan="2" width="40%" style="text-align: center">
-
-      <div>
-         <span id="mall_view<%=shopping_mall.id %>">
-           <a href="<%="/shopping_malls/#{shopping_mall.id}/view"%>"
-              class="btn btn-info btn-mini" style="text-decoration: none">
-             VIEW <i class="icon-white icon-share"></i></a>
-         </span>
-        <a href="#" class="btn btn-info btn-mini">SHARE <i class="icon-white icon-share"></i></a>
-
-      </div>
-      <div>
-        <span id="mall_save<%=shopping_mall.id %>
-              style="font-weight: bold; text-decoration: underline" rel="popover">
-            <a href="#" class="btn btn-info btn-mini">SAVE<i class="icon-white icon-download-alt"></i></a>
-        </span>
-
-          <span id="mall_map<%=shopping_mall.id%>">
-            <a href="javascript:showPopOver('popMap<%=shopping_mall.id%>','mall_map<%=shopping_mall.id%>');"
-               class="btn btn-info btn-mini"  style="text-decoration: none">
-             MAP <i class="icon-white icon-map-marker"></i>
-            </a>
-          </span>
-      </div>
-
-      <div>
-        <span id="mall_directions<%=shopping_mall.id %>" style="font-weight: bold; text-decoration: underline" rel="popover">DIRECTIONS</span>
-      </div>
-
-    </td>
-  </tr>
-  <tr height="80%">
-    <td colspan="2">
-      <div style="position:relative; z-index:-1;">
+      <span id="mall_map<%=shopping_mall.id%>">
+        <a class="btn btn-info btn-mini"  style="text-decoration: none"
+           href="javascript:showPopOver('popMap<%=shopping_mall.id%>',
+                            'mall_map<%=shopping_mall.id%>');">
+            MAP <i class="icon-white icon-map-marker"></i> </a>
+      </span>
+    </div>
+    <div class="row-fluid">
+      <div style="position:relative; z-index:0;">
         <% if shopping_mall.image.to_s != ''  %>
             <%=image_tag(shopping_mall.image.to_s, :width => width) %>
         <% else %>
             <%=image_tag("/images/dummy.jpeg", :height=>height, :width => width) %>
         <% end %>
       </div>
+      <div id="popMap<%=shopping_mall.id%>" class="popoverMap" align="center" style="z-index:6; position:aboslute; top:0; left:5; font-size:80px; ">
+        <div class="button-group" style="margin: 5px 5px;">
+          <span style="text-align: center">
+            <a href="javascript:closePopOver('popMap<%=shopping_mall.id%>');" class="btn btn-success btn-mini">Hide</a>
+          </span>
+          <% if !(shopping_mall.address.nil?) %>
+              <%= image_tag "http://maps.google.com/maps/api/staticmap?size=#{width}x#{height}&scale=1&sensor=false&zoom=12&feature=all&markers=#{shopping_mall.address.latitude}%2C#{shopping_mall.address.longitude}" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div  style="border: 1px solid #000000; float: left ; width: 26.5%; height: 297px; max-height: 300px">
+    <span id="mall_view<%=shopping_mall.id %>">
+        <a href="<%="/shopping_malls/#{shopping_mall.id}/view"%>" class="btn btn-info btn-mini" style="text-decoration: none"> VIEW ALL   </a>
+    </span>
+    <ul class="nav nav-pills">
+      <li><a href="#">Ads</a></li>
+      <li><a href="#">Categories</a></li>
+      <li><a href="#">Businesses</a></li>
+    </ul>
+  </div>
+</div>
 
-      <% if !(shopping_mall.address.nil?) %>
-            <div id="popMap<%=shopping_mall.id%>" class="popoverMap" align="center" style="z-index:6; position:aboslute; top:0; left:5; font-size:80px; ">
-            <span>
-              <div class="button-group" style="margin: 5px 5px;">
-                <span style="text-align: center">
-                  <a href="javascript:closePopOver('popMap<%=shopping_mall.id%>');" class="btn btn-success btn-mini">Hide</a>
-                </span>
-                <%= image_tag "http://maps.google.com/maps/api/staticmap?size=#{width}x#{height}&scale=1&sensor=false&zoom=12&feature=all&markers=#{shopping_mall.address.latitude}%2C#{shopping_mall.address.longitude}" %>
-              </div>
-            </span>
-            </div>
-        <% end %>
-
-    </td>
-  </tr>
-</table>

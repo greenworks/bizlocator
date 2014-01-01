@@ -5,7 +5,7 @@
    background: #FFFFFF url('/images/page.jpeg') repeat-x scroll;
    margin:0 auto;
    font-size: 14px;
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    font-weight: normal;
    font-style: normal;
    position: relative;
@@ -19,7 +19,7 @@
 table, ul.art-hmenu
 {
    font-size: 14px;
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    font-weight: normal;
    font-style: normal;
 }
@@ -80,7 +80,7 @@ ul.art-vmenu a
 .art-postcontent a.hovered
 {
    font-size: 13px;
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    font-weight: normal;
    font-style: normal;
 }
@@ -111,21 +111,21 @@ ul.art-vmenu a
 
 .art-postcontent a, .art-postcontent a:link
 {
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    text-decoration: none;
    color: #FF9009;
 }
 
 .art-postcontent a:visited, .art-postcontent a.visited
 {
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    text-decoration: none;
    color: #FF9009;
 }
 
 .art-postcontent  a:hover, .art-postcontent a.hover
 {
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    text-decoration: none;
    color: #007FFF;
 }
@@ -669,7 +669,7 @@ ul.art-hmenu li li ul>li:last-child
    line-height: 27px;
    color: #FAFDFF;
    font-size: 13px;
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    text-decoration: none;
    margin:0;
 }
@@ -683,7 +683,7 @@ ul.art-hmenu li li ul>li:last-child
    line-height: 27px;
    color: #FAFDFF;
    font-size: 13px;
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    text-decoration: none;
    margin:0;
 }
@@ -940,7 +940,7 @@ ul.art-vmenu a
    cursor: pointer;
    z-index: 1;
    font-size: 15px;
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    font-weight: normal;
    font-style: normal;
    text-decoration: none;
@@ -1118,7 +1118,7 @@ ul.art-vmenu ul a
    line-height: 20px;
    color: #003B75;
    font-size: 12px;
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    font-weight: normal;
    font-style: normal;
    margin-left: 0;
@@ -1130,7 +1130,7 @@ ul.art-vmenu ul a:visited, ul.art-vmenu ul a.active:hover, ul.art-vmenu ul a:hov
    line-height: 20px;
    color: #003B75;
    font-size: 12px;
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    font-weight: normal;
    font-style: normal;
    margin-left: 0;
@@ -1225,7 +1225,7 @@ div.art-block img
    margin:0 auto;
    color: #021527;
    font-size: 13px;
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    line-height: 150%;
 }
 .art-blockcontent table,
@@ -1237,7 +1237,7 @@ div.art-block img
 {
    color: #021527;
    font-size: 13px;
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    line-height: 150%;
 }
 
@@ -1250,7 +1250,7 @@ div.art-block img
 {
    color: #06447F;
    font-size: 13px;
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    text-decoration: none;
 }
 
@@ -1258,20 +1258,20 @@ div.art-block img
 {
    color: #06447F;
    font-size: 13px;
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    text-decoration: none;
 }
 
 .art-blockcontent a:hover, .art-blockcontent a.hover
 {
    color: #007FFF;
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    text-decoration: none;
 }
 .art-block li
 {
    font-size: 14px;
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    line-height: 125%;
    color: #0857A1;
 }
@@ -1407,7 +1407,7 @@ input[type="text"], input[type="password"], input[type="email"], input[type="url
    padding: 4px 0;
    color: #0052A3 !important;
    font-size: 14px;
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    font-weight: normal;
    font-style: normal;
    text-shadow: none;
@@ -1421,7 +1421,7 @@ input.art-error, textarea.art-error
 input.art-error, textarea.art-error {
    color: #0052A3 !important;
    font-size: 14px;
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    font-weight: normal;
    font-style: normal;
 }
@@ -1441,7 +1441,7 @@ form.art-search input[type="text"]
    box-sizing: border-box;
    color: #404040 !important;
    font-size: 14px;
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    font-weight: normal;
    font-style: normal;
 }
@@ -1506,7 +1506,7 @@ label.art-checkbox
 {
    cursor: pointer;
    font-size: 14px;
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    font-weight: normal;
    font-style: normal;
    line-height: 16px;
@@ -1560,7 +1560,7 @@ label.art-radiobutton
 {
    cursor: pointer;
    font-size: 14px;
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    font-weight: normal;
    font-style: normal;
    line-height: 12px;
@@ -1643,7 +1643,7 @@ label.art-radiobutton.hovered:before
 {
    padding:10px 0;
    color: #004080;
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
 }
 
 .art-comment
@@ -1659,7 +1659,7 @@ label.art-radiobutton.hovered:before
 .art-comment-header
 {
    color: #292929;
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    line-height: 100%;
 }
 
@@ -1670,25 +1670,25 @@ label.art-radiobutton.hovered:before
 .art-comment-header a:hover,
 .art-comment-header a.hovered
 {
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    line-height: 100%;
 }
 
 .art-comment-header a, .art-comment-header a:link
 {
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    color: #878787;
 }
 
 .art-comment-header a:visited, .art-comment-header a.visited
 {
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    color: #878787;
 }
 
 .art-comment-header a:hover,  .art-comment-header a.hovered
 {
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    color: #878787;
 }
 
@@ -1699,24 +1699,24 @@ label.art-radiobutton.hovered:before
 .art-comment-content a:hover,
 .art-comment-content a.hovered
 {
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
 }
 
 .art-comment-content a, .art-comment-content a:link
 {
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    color: #096CC8;
 }
 
 .art-comment-content a:visited, .art-comment-content a.visited
 {
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    color: #0054A8;
 }
 
 .art-comment-content a:hover,  .art-comment-content a.hovered
 {
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    color: #096CC8;
 }
 
@@ -1897,7 +1897,7 @@ pre
 .art-postheadericons a:visited,
 .art-postheadericons a:hover
 {
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    color: #1A8BF4;
 }
 
@@ -1908,14 +1908,14 @@ pre
 
 .art-postheadericons a, .art-postheadericons a:link
 {
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    text-decoration: none;
    color: #595959;
 }
 
 .art-postheadericons a:visited, .art-postheadericons a.visited
 {
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    font-weight: normal;
    font-style: italic;
    text-decoration: none;
@@ -1924,7 +1924,7 @@ pre
 
 .art-postheadericons a:hover, .art-postheadericons a.hover
 {
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    font-weight: normal;
    font-style: italic;
    text-decoration: underline;
@@ -2019,7 +2019,7 @@ pre
 .art-postcontent li, .art-post li, .art-textblock li
 {
    font-size: 13px;
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    color: #003B75;
    margin: 0 0 0 24px;
 }
@@ -2073,7 +2073,7 @@ blockquote
    padding:15px 15px 15px 49px;
    margin:10px 10px 10px 50px;
    color: #042A4E;
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    /* makes block not to align behind the image if they are in the same line */
   overflow: auto;
    clear:both;
@@ -2084,7 +2084,7 @@ blockquote a:visited, .art-postcontent blockquote a:visited, .art-blockcontent b
 blockquote a:hover, .art-postcontent blockquote a:hover, .art-blockcontent blockquote a:hover, .art-footer blockquote a:hover
 {
    color: #042A4E;
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
 }
 
 /* Override native 'p' margins*/
@@ -2103,7 +2103,7 @@ blockquote p,
 .art-postfootericons a:visited,
 .art-postfootericons a:hover
 {
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    color: #1A8BF4;
 }
 
@@ -2114,21 +2114,21 @@ blockquote p,
 
 .art-postfootericons a, .art-postfootericons a:link
 {
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    text-decoration: none;
    color: #595959;
 }
 
 .art-postfootericons a:visited, .art-postfootericons a.visited
 {
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    text-decoration: none;
    color: #595959;
 }
 
 .art-postfootericons a:hover, .art-postfootericons a.hover
 {
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    text-decoration: none;
    color: #0075EB;
 }
@@ -2148,7 +2148,7 @@ blockquote p,
    position: relative;
    color: #003B75;
    font-size: 13px;
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    line-height: 150%;
    text-align: center;
    padding: 0;
@@ -2164,7 +2164,7 @@ blockquote p,
 {
    color: #003B75;
    font-size: 13px;
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    line-height: 150%;
 }
 
@@ -2179,21 +2179,21 @@ blockquote p,
 {
    color: #389CFF;
    font-size: 13px;
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    text-decoration: none;
 }
 
 .art-footer a:visited
 {
    color: #389CFF;
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    text-decoration: none;
 }
 
 .art-footer a:hover
 {
    color: #FF9009;
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    font-weight: normal;
    font-style: normal;
    text-decoration: none;
@@ -2321,7 +2321,7 @@ blockquote p,
 .art-footer li
 {
    font-size: 13px;
-   font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+   font-family: Arial, Verdana, Geneva, Helvetica, Sans-Serif;
    line-height: 150%;
    color: #0F87FF;
 }
