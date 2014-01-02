@@ -81,7 +81,7 @@
       background-color: #ffffff;
       margin-top :5px;
       margin-bottom:10px;
-      height: 330px;
+      height: 325px;
   }
 
   .mall-list-header-counter{
@@ -94,7 +94,7 @@
 
   .popoverMap {
       clear : both;
-      padding: 20px;
+      padding: 15px;
       background-color: #eaeaea;
       position: inherit;
       top:0px;
@@ -102,11 +102,12 @@
       display: none;
       border-color: #444141;
       border-style: solid;
-      border-width: 3px;
-      z-index: 220;
+      border-width: 2px;
+      z-index: 20;
+      opacity: 0.85;
   }
 
-    .shopping_mall-header-small{
+  .shopping_mall-header-small{
         border: 1px solid #000000;
         height: 24px;
         color: #194C85;
@@ -121,13 +122,15 @@
       float: left ;
       /*width: 72.5%;  */
       height: 297px;
-      max-height: 297px
+      max-height: 297px;
+      font-weight: bold;
+      font-size: 14px;
+      color: #194C85;
   }
 
   .centered-group{
       text-align: center;
   }
-
 
   .shopping_mall-header-small a:visited{
       color: #194C85;
@@ -137,6 +140,12 @@
   .shopping_mall-header-small a{
       color: #194C85;
       text-decoration: none;
+  }
+
+  .shopping_mall-info-small img{
+      width: 100%;
+      height: 280px;
+
   }
 
   .mall-view-bar{
@@ -201,16 +210,16 @@
 </style>
 
 <div class="row">
-  <div style="text-align:center;border-width: 1">
+  <div style="font-size: 10px">
+    &nbsp;
+  </div>
+  <div style="text-align:left; border-width: 1; font-size: 14px ; font-weight: bold">
+    ALL MALLS (<%=@shopping_malls.count %>)
     <% if params[:city] %>
         In City  <%=params[:city]%>
     <% end %>
   </div>
-  <div style="font-size: 10px">
-    &nbsp;
-  </div>
 </div>
-
 
 <div class="row">
   <div class=" mall-list-header">
@@ -233,7 +242,7 @@
       <!--MAJOR MALLS-->
       <%     @shopping_malls.each do |shopping_mall|
              if shopping_mall.mall_type_id == 1 %>
-            <div style="border: 1px solid #ff4301" class="mall-brief-box <%=shopping_mall.mall_type_id %>">
+            <div style="border: 1px solid #D4E7F9" class="mall-brief-box <%=shopping_mall.mall_type_id %>">
               <%= render :partial => "shopping_malls/shopping_mall_tiny", :locals => {:shopping_mall => shopping_mall} %>
             </div>
           <% end %>
@@ -243,7 +252,7 @@
       <!--PLAZA MALLS -->
       <%     @shopping_malls.each do |shopping_mall|
         if shopping_mall.mall_type_id == 2 %>
-            <div style="border: 1px solid #ff4301" class="mall-brief-box <%=shopping_mall.mall_type_id %>">
+            <div style="border: 1px solid #D4E7F9" class="mall-brief-box <%=shopping_mall.mall_type_id %>">
               <%= render :partial => "shopping_malls/shopping_mall_tiny", :locals => {:shopping_mall => shopping_mall} %>
             </div>
           <% end %>

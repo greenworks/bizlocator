@@ -62,11 +62,9 @@ height = (width*0.66).round(0) %>
             </a>
           </span>
       </div>
-
       <div>
         <span id="mall_directions<%=shopping_mall.id %>" style="font-weight: bold; text-decoration: underline" rel="popover">DIRECTIONS</span>
       </div>
-
     </td>
   </tr>
   <tr height="80%">
@@ -78,7 +76,6 @@ height = (width*0.66).round(0) %>
             <%=image_tag("/images/dummy.jpeg", :height=>height, :width => width) %>
         <% end %>
       </div>
-
       <% if !(shopping_mall.address.nil?) %>
             <div id="popMap<%=shopping_mall.id%>" class="popoverMap" align="center" style="z-index:6; position:aboslute; top:0; left:5; font-size:80px; ">
             <span>
@@ -91,7 +88,6 @@ height = (width*0.66).round(0) %>
             </span>
             </div>
         <% end %>
-
     </td>
   </tr>
 </table>
