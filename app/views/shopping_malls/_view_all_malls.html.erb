@@ -116,6 +116,19 @@
         font-weight: bold;
     }
 
+  .shopping_mall-info-small{
+      border: 1px solid #000000;
+      float: left ;
+      /*width: 72.5%;  */
+      height: 297px;
+      max-height: 297px
+  }
+
+  .centered-group{
+      text-align: center;
+  }
+
+
   .shopping_mall-header-small a:visited{
       color: #194C85;
       text-decoration: none;
@@ -124,6 +137,65 @@
   .shopping_mall-header-small a{
       color: #194C85;
       text-decoration: none;
+  }
+
+  .mall-view-bar{
+      /*width:78%;*/
+      float: none;
+      list-style:none;
+      font-size:16px;
+      color:#ffffff;
+  }
+
+  .mall-view-bar a{
+      color: #ffffff;
+      background-color: #22367C;
+      width: 100%;
+  }
+
+  .mall-view-bar a:visited{
+      color: #ffffff;
+      background-color: #22367C;
+
+  }
+
+  .mall-view-bar a:hover{
+      color: #ffffff;
+      background-color: #22367C;
+  }
+
+  .mall-view-bar ul{
+      /*width:50%;*/
+      margin:0 auto 0 auto;
+  }
+
+  .mall-view-bar li {
+      background-color: #22367C;
+      border: 1px solid rgba(0, 0, 0, 0);
+      color: #FFFFFF;
+      cursor: pointer;
+      display: block;
+      float: left;
+      font-family: Arial;
+      font-weight: bold;
+      height: 20px;
+      line-height: 20px;
+      list-style: none outside none;
+      margin: 15px 0;
+      padding: 0;
+      text-align: center;
+      width: 120px;
+      left: -10px;
+      position: relative;
+  }
+
+  .mall-view-bar ul li:hover{
+      background-color:#22367C;
+      color:#ffffff;
+  }
+
+  .mall-view-bar ul li a:visited{
+      color:#ffffff;
   }
 
 </style>
@@ -146,7 +218,10 @@
   </div>
   <div class="mall-list-header mall-search-button">
       DISTANCE TO MALLS <br/>
-      <%= render :partial => "shopping_malls/mall_search" %>
+    <%
+       current_pos = "Toronto, Canada"
+    %>
+    <%= render :partial => "shopping_malls/mall_search" %>
   </div>
   <div class="mall-list-header">
       PLAZA MALLS     <span class="mall-list-header-counter"><%=@shopping_malls.where(" mall_type_id=2").count %></span>
