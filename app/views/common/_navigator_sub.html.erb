@@ -37,14 +37,39 @@
           color:#ffffff;
       }
 
-      .second-nav-bar ul li a:visited{
-          background-color: transparent;
+      .second-nav-bar ul li.active_link {
+          background-color: #CCCCCC;
           color:#000000;
+      }
+
+      li.active_link {
+          background-color: #ffcc00;
+          color:#ff0000;
       }
 
   </style>
   <ul>
-    <li style="width:40%;">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+//        $(document).on("click", "a.trigger", function(event){
+//            event.preventDefault();
+//            var anchor = $(this);
+//            var id = anchor.closest("li").attr("id");
+//            console.log(id);
+//        });
+
+        $(document).ready(function() {
+            $("[href]").each(function() {
+                if (this.href == window.location.href) {
+                    last_li = $(this).closest('li');
+//                    alert($(last_li));
+                    $(last_li).addClass('active_link')
+                    //$(this).closest('li').style.background = "#ffcc00"
+                }
+            });
+        });
+    </script>
+    <li style="width:40%; ">
       <%= link_to "Sales - Deals -", ads_path(:ad_type => AdType.find_by_name("Sales & Deals").id )%>
       <%= link_to "Flyers -", ads_path(:ad_type => AdType.find_by_name("Flyers").id )%>
       <%= link_to "Coupons -", ads_path(:ad_type => AdType.find_by_name("Coupons").id )%>
@@ -52,8 +77,8 @@
       <%= link_to "& More ", ads_path%>
       </li>
     <li style="width:13%"><%= link_to "View The Malls", shopping_malls_path  %> </li>
-    <li style="width:14%"><%= link_to "Save List ", shopping_malls_path %><span style="padding-left:5px ; padding-right :5px ;border: solid; border-width: 1px;"><%=saved_ads %></span> </li>
-    <li style="width:19%"><%= link_to "Todays Points ", shopping_malls_path %><span style="padding-left:5px ; padding-right :5px ;border: solid; border-width: 1px;"><%=session_points %></span></li>
+    <li style="width:14%"><%= link_to "Save List ", "save_list" %><span style="padding-left:5px ; padding-right :5px ; border: solid; border-width: 1px;"><%=saved_ads %></span> </li>
+    <li style="width:19%"><%= link_to "Todays Points ", "save_points" %><span style="padding-left:5px ; padding-right :5px ;border: solid; border-width: 1px;"><%=session_points %></span></li>
   </ul>
 </div>
 
