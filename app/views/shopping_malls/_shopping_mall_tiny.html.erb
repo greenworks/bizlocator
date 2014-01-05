@@ -26,12 +26,12 @@
             <%=image_tag("/images/dummy.jpeg") %>
         <% end %>
         <div id="popMap<%=shopping_mall.id%>" class="popoverMap" align="center"
-             style="z-index:<%=shopping_mall.id+1%>; position:absolute; top:0px; left:0px; width: 385px; font-size:18px; ">
-             <a href="javascript:closePopOver('popMap<%=shopping_mall.id%>');" style="position: relative; left: 380px; top: -15px; font-size: 12px; font-weight: bold; height: 30px">[X]</a>
+             style="z-index:<%=shopping_mall.id+1%>; position:absolute; top:0px; left:0px; width: 385px; height: 246px; font-size:18px; ">
+             <a href="javascript:closePopOver('popMap<%=shopping_mall.id%>');" style="position: relative; left: 380px; top: -15px; font-size: 12px; font-weight: bold; height: 25px">[X]</a>
              <!--class="btn btn-success btn-mini">Hide</a>-->
 
             <% if !(shopping_mall.address.nil?) %>
-              <%= image_tag "http://maps.google.com/maps/api/staticmap?size=350x250&scale=1&sensor=false&zoom=12&feature=all&markers=#{shopping_mall.address.latitude}%2C#{shopping_mall.address.longitude}" ,:alt => "Failed to load GMaps", :style=> "height :245px" %>
+              <!--%= image_tag "http://maps.google.com/maps/api/staticmap?size=350x250&scale=1&sensor=false&zoom=12&feature=all&markers=#{shopping_mall.address.latitude}%2C#{shopping_mall.address.longitude}" ,:alt => "Failed to load GMaps", :style=> "height :245px" %>-->
             <% end %>
         </div>
       </div>
