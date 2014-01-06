@@ -78,7 +78,7 @@
 
   .mall-brief-box{
       width: 100%;
-      background-color: #ffffff;
+      background: transparent;
       margin-top :5px;
       margin-bottom:10px;
       height: 325px;
@@ -225,6 +225,7 @@
   <div class=" mall-list-header">
       MAJOR MALLS <span class="mall-list-header-counter"><%=@shopping_malls.where(" mall_type_id=1").count %></span>
   </div>
+
   <div class="mall-list-header mall-search-button">
       DISTANCE TO MALLS <br/>
     <%
@@ -232,22 +233,33 @@
     %>
     <%= render :partial => "shopping_malls/mall_search" %>
   </div>
+
   <div class="mall-list-header">
       PLAZA MALLS     <span class="mall-list-header-counter"><%=@shopping_malls.where(" mall_type_id=2").count %></span>
   </div>
+
 </div>
 
-<div class="row" style="background-color: #D4E7F9; padding: 10px">
+<div class="row" style="background-color: #E8E7E2; padding: 10px">
+
   <div class="span6">
       <!--MAJOR MALLS-->
       <%     @shopping_malls.each do |shopping_mall|
              if shopping_mall.mall_type_id == 1 %>
-            <div style="border: 1px solid #D4E7F9" class="mall-brief-box <%=shopping_mall.mall_type_id %>">
+            <%
+               mall_background="/images/dummy.jpeg"
+               if shopping_mall.image.to_s != ""
+                 mall_background=shopping_mall.image.to_s
+               end
+            %>
+            <div style="border: 1px solid #D4E7F9l; background-image: url('<%=mall_background%>'); "
+                    class="mall-brief-box <%=shopping_mall.mall_type_id %>">
               <%= render :partial => "shopping_malls/shopping_mall_tiny", :locals => {:shopping_mall => shopping_mall} %>
             </div>
           <% end %>
       <% end %>
   </div>
+
   <div class="span6">
       <!--PLAZA MALLS -->
       <%     @shopping_malls.each do |shopping_mall|
