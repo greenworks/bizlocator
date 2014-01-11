@@ -24,6 +24,25 @@
   </div>
 </div>
 
+<div class="modal fade" id="popMapData<%=shopping_mall.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel"><%=shopping_mall.name%></h4>
+      </div>
+      <div class="modal-body">
+        <% if !(shopping_mall.address.nil?) %>
+            <%= image_tag "http://maps.google.com/maps/api/staticmap?size=600x400&scale=1&sensor=false&zoom=12&feature=all&markers=#{shopping_mall.address.latitude}%2C#{shopping_mall.address.longitude}" ,:alt => "Failed to load GMaps"%>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 <div class="row-fluid" >
   <div class="shopping_mall-info-small" style="width: 72.5%; ">
     <div class="row-fluid" style="padding-left: 6px">
@@ -64,11 +83,13 @@
         <span id="mall_map<%=shopping_mall.id%>">
           <a class="btn btn-info btn-mini"
              style="text-decoration: none; position: relative; top: 240px; border-radius: 20px; font-size: 14px"
-             href="javascript:showPopOver('popMap<%=shopping_mall.id%>',
-                   'mall_map<%=shopping_mall.id%>');">
+             data-toggle="modal"
+             data-target="#popMapData<%=shopping_mall.id%>">
             Locate on GMap <i class="icon-white icon-map-marker"></i></a>
         </span>
-    <% end %>
+
+
+  <% end %>
     <span id="mall-view-bar mall_view<%=shopping_mall.id %>">
         <a href="<%="/shopping_malls/#{shopping_mall.id}/view"%>"
            style="text-decoration: underline; font-weight:bold; width: 35%; margin: 0px auto; color:#D4E7F9; line-height: 40px">VIEW ALL</a>
