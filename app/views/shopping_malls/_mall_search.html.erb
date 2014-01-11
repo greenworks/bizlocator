@@ -17,7 +17,8 @@
                    font-weight: bold;"
            name="search2"
            value="Enter Your Address Here"
-           onfocus="this.value=''">
+           onfocus="if (trim(this.value)=='') this.value='Your Address Here'; "
+           onchange="if (trim(this.value)=='') this.value='Your Address Here'; ">
 
     <input type="submit"
            style="background-color: #E8E7E2;
