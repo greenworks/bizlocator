@@ -45,7 +45,7 @@
     <% if !(shopping_mall.address.nil?) %>
         <span id="mall_map<%=shopping_mall.id%>">
           <a class="btn btn-info btn-mini"
-             style="text-decoration: none; position: relative; top: 240px"
+             style="text-decoration: none; position: relative; top: 240px; border-radius: 20px; font-size: 14px"
              href="javascript:showPopOver('popMap<%=shopping_mall.id%>',
                    'mall_map<%=shopping_mall.id%>');">
             Locate on GMap <i class="icon-white icon-map-marker"></i></a>
@@ -56,10 +56,9 @@
            style="text-decoration: underline; font-weight:bold; width: 35%; margin: 0px auto; color:#D4E7F9; line-height: 40px">VIEW ALL</a>
       <ul class="mall-view-bar">
         <li><a href="#">ADS</a></li>
+        <li><a href="#">BUSINESSES</a></li>
         <li><a href="#">CATEGORIES</a></li>
-        <% if shopping_mall.mall_type_id==1 %>
-             <li><a href="#">BUSINESSES</a></li>
-        <% end %>
+
       </ul>
 
     </span>
