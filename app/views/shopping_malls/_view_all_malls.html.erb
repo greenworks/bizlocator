@@ -38,6 +38,27 @@
         // HIDE THE DIV
         document.getElementById(divID).style.display = "none";
     }
+
+    // SHOW POP-OVER
+    function showPopInfo(divID,parentID) {
+        // SET THE DIV POSITION
+        // SHOW THE DIV ()
+
+        document.getElementById(divID).style.display = "inline-flex";
+
+
+        var parent_y = parseInt(xy(parentID)[1]);
+        var parent_y = parseInt(xy(parentID)[0]);
+        var div_height=	parseInt(document.getElementById(divID).offsetHeight);
+        var pop_pos = parent_y - div_height - 10;
+
+    }
+
+    // CLOSE POP-OVER
+    function closePopInfo(divID) {
+        // HIDE THE DIV
+        document.getElementById(divID).style.display = "none";
+    }
 </script>
 <style>
   .mall-list-header{
@@ -107,7 +128,21 @@
       opacity: 0.85;
   }
 
-
+  .popoverInfo
+  {
+      clear : both;
+      padding: 15px;
+      background-color: #eaeaea;
+      position: inherit;
+      top:0px;
+      left:0px;
+      display: none;
+      border-color: #444141;
+      border-style: solid;
+      border-width: 2px;
+      z-index: 20;
+      opacity: 0.85;
+  }
 
   .shopping_mall-header-small{
         background: none repeat scroll 0 0 rgba(64, 64, 64, 0.64);

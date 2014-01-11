@@ -2,15 +2,22 @@
   <div class="shopping_mall-header-small" style="width: 51%; padding-left: 6px">
     <%= link_to (shopping_mall.name).upcase , shopping_mall ,  :style => "text-weight: bold; font-size:16px" %>
   </div>
-  <div class="shopping_mall-header-small" style="width: 20%; background-color: #C8696F; text-align: center">
-    <a style="width: 78%; height: 16px; position: relative; top: -2px; color: #ffffff; text-align:
-            center; font-weight: bolder;
-            font-size: 16px"
-       data-content="<%= shopping_mall.description %>"
-       title=""
-       data-toggle="popover"
-       href="#"
+  <div id="mall_info<%=shopping_mall.id%>"
+       class="shopping_mall-header-small" style="width: 20%; background-color: #C8696F; text-align: center">
+    <a style="width: 78%;
+            height: 16px;
+            position: relative;
+            top: -2px;
+            color: #ffffff;
+            text-align:center;
+            font-weight: bolder;
+            font-size: 16px;
+            text-decoration: none;"
+
+       href="javascript:showPopInfo('popInfo<%=shopping_mall.id%>',
+                   'mall_info<%=shopping_mall.id%>');"
        data-original-title="<%= shopping_mall.name %>">Mall Info</a>
+
   </div>
   <div class="shopping_mall-header-small" style="width: 26.8%; text-align: center; color:#D4E7F9">
         Approx <%= pluralize( rand(10) , 'Minute' ) %>
@@ -29,14 +36,25 @@
         <% else %>
             <%=image_tag("/images/dummy.jpeg") %>
         <% end %>
-        <div id="popMap<%=shopping_mall.id%>" class="popoverMap" align="center"
+        <div id="popMap<%=shopping_mall.id%>"
+             class="popoverMap"
+             align="center"
              style="z-index:<%=shopping_mall.id+1%>; position:absolute; top:0px; left:0px; width: 385px; height: 246px; font-size:18px; ">
-             <a href="javascript:closePopOver('popMap<%=shopping_mall.id%>');" style="position: relative; left: 380px; top: -15px; font-size: 12px; font-weight: bold; height: 25px">[X]</a>
+             <a href="javascript:closePopOver('popMap<%=shopping_mall.id%>');"
+                style="position: relative; left: 380px; top: -15px; font-size: 12px; font-weight: bold; height: 25px">[X]</a>
              <!--class="btn btn-success btn-mini">Hide</a>-->
 
             <% if !(shopping_mall.address.nil?) %>
-              <!--%= image_tag "http://maps.google.com/maps/api/staticmap?size=350x250&scale=1&sensor=false&zoom=12&feature=all&markers=#{shopping_mall.address.latitude}%2C#{shopping_mall.address.longitude}" ,:alt => "Failed to load GMaps", :style=> "height :245px" %>-->
+              <!--%= image_tag "http://maps.google.com/maps/api/staticmap?size=350x250&scale=1&sensor=false&zoom=12&feature=all&markers=#{shopping_mall.address.latitude}%2C#{shopping_mall.address.longitude}" ,:alt => "Failed to load GMaps", :style=> "height :245px" %-->
             <% end %>
+        </div>
+        <div id="popInfo<%=shopping_mall.id%>"
+             class="popoverInfo"
+             align="center"
+             style="z-index:<%=shopping_mall.id+1%>; position:absolute; top:0px; left:0px; width: 385px; height: 246px; font-size:18px; ">
+          <a href="javascript:closePopInfo('popInfo<%=shopping_mall.id%>');"
+             style="position: relative; left: 380px; top: -15px; font-size: 12px; font-weight: bold; height: 25px">[X]</a>
+          <span style="font-size: 12px; text-decoration: none; color: #000000"><%= truncate(shopping_mall.description, :length=>250) %></span>
         </div>
       </div>
     </div>
