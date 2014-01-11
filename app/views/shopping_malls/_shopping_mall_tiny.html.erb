@@ -45,7 +45,7 @@
              <!--class="btn btn-success btn-mini">Hide</a>-->
 
             <% if !(shopping_mall.address.nil?) %>
-              <!--%= image_tag "http://maps.google.com/maps/api/staticmap?size=350x250&scale=1&sensor=false&zoom=12&feature=all&markers=#{shopping_mall.address.latitude}%2C#{shopping_mall.address.longitude}" ,:alt => "Failed to load GMaps", :style=> "height :245px" %-->
+              <%= image_tag "http://maps.google.com/maps/api/staticmap?size=350x250&scale=1&sensor=false&zoom=12&feature=all&markers=#{shopping_mall.address.latitude}%2C#{shopping_mall.address.longitude}" ,:alt => "Failed to load GMaps", :style=> "height :245px" %>
             <% end %>
         </div>
         <div id="popInfo<%=shopping_mall.id%>"

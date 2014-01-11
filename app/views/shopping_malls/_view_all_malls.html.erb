@@ -19,18 +19,11 @@
         document.getElementById(divID).style.display = "inline-flex";
 
 
-        var parent_y = parseInt(xy(parentID)[1]);
+        //var parent_x= parseInt(xy(parentID)[1]);
         var parent_y = parseInt(xy(parentID)[0]);
         var div_height=	parseInt(document.getElementById(divID).offsetHeight);
         var pop_pos = parent_y - div_height - 10;
-        //document.getElementById(divID).style.top= pop_pos + 'px' ;
-        //document.getElementById(divID).style.left= xy(parentID)[0]+"px" ;  // left is as per parent
-        //alert(xy(parentID)[1]);
-        //alert(current_y);
-        //alert(hi);
-        //alert(current_y - hi);
-        //alert(top_pos);
-        //alert(document.getElementById(divID).style.top);
+
     }
 
     // CLOSE POP-OVER
