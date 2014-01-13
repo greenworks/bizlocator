@@ -286,47 +286,36 @@
 <% mall_background="/images/dummy.jpeg" %>
 
 <div class="row" style="background-color: #E8E7E2; padding: 10px">
+
   <%     @shopping_malls.each do |shopping_mall| %>
-
-
-      <div class="span6">
       <!--MAJOR MALLS-->
-
-      <%       if shopping_mall.mall_type_id == 1
-
-               if shopping_mall.image.to_s != ""
-                 mall_background=shopping_mall.image.to_s
-               else
-                  mall_background="/images/dummy.jpeg"
-               end
-            %>
-            <div style="border: 1px solid #D4E7F9l;
+      <%       if shopping_mall.mall_type_id == 1   %>
+            <div class="span6">
+            <% mall_background= (shopping_mall.image.to_s != "")?shopping_mall.image.to_s : "/images/dummy.jpeg" %>
+                <div style="border: 1px solid #D4E7F9l;
                         background-image: url('<%=mall_background%>'); "
                     class="mall-brief-box <%=shopping_mall.mall_type_id %>">
-              <%= render :partial => "shopping_malls/shopping_mall_tiny", :locals => {:shopping_mall => shopping_mall} %>
+                    <%= render :partial => "shopping_malls/shopping_mall_tiny", :locals => {:shopping_mall => shopping_mall} %>
+                </div>
             </div>
-          <% end %>
+      <% end %>
 
-  </div>
-
-  <div class="span6">
       <!--PLAZA MALLS -->
+      <%  if shopping_mall.mall_type_id == 2   %>
 
-<%        if shopping_mall.mall_type_id == 2
+          <% mall_background= (shopping_mall.image.to_s != "")?shopping_mall.image.to_s : "/images/dummy.jpeg" %>
 
-               if shopping_mall.image.to_s != ""
-                 mall_background=shopping_mall.image.to_s
-               else
-                 mall_background="/images/dummy.jpeg"
-               end
-            %>
+          <div class="span6">
 
             <div style="border: 1px solid #D4E7F9 ;
                         background-image: url('<%=mall_background%>'); "
                  class="mall-brief-box <%=shopping_mall.mall_type_id %>">
               <%= render :partial => "shopping_malls/shopping_mall_tiny", :locals => {:shopping_mall => shopping_mall} %>
             </div>
-          <% end %>
-  </div>
-</div>
+          </div>
+
+      <% end %>
+
   <% end %>
+
+</div>

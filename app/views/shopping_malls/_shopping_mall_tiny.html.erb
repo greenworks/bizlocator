@@ -1,4 +1,4 @@
-<div class="row-fluid" >
+<div class="row shopping_mall-header" >
   <div class="shopping_mall-header-small" style="width: 51%; padding-left: 6px">
     <%= link_to (shopping_mall.name).upcase , shopping_mall ,  :style => "text-weight: bold; font-size:16px" %>
   </div>
@@ -43,7 +43,7 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-<div class="row-fluid" >
+<div class="row shopping_mall-info" >
   <div class="shopping_mall-info-small" style="width: 72.5%; ">
     <div class="row-fluid" style="padding-left: 6px">
       <%= shopping_mall.address && truncate(shopping_mall.address.address_brief, :length=>50) %>
