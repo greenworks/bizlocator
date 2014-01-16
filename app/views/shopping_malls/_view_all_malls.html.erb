@@ -282,40 +282,34 @@
   </div>
 
 </div>
-
-<% mall_background="/images/dummy.jpeg" %>
-
-<div class="row" style="background-color: #E8E7E2; padding: 10px">
-
-  <%     @shopping_malls.each do |shopping_mall| %>
+<div class="row" style="background-color: #E8E7E2;">
+    <div class="span6">
+      <%     @shopping_malls.where(" mall_type_id=1").each do |shopping_mall| %>
       <!--MAJOR MALLS-->
-      <%       if shopping_mall.mall_type_id == 1   %>
-            <div class="span6">
-            <% mall_background= (shopping_mall.image.to_s != "")?shopping_mall.image.to_s : "/images/dummy.jpeg" %>
+          <div class="row" style="background-color: transparent; margin: 5px 0px 0px 10px">
+
+          <% mall_background= (shopping_mall.image.to_s != "")?shopping_mall.image.to_s : "/images/dummy.jpeg" %>
                 <div style="border: 1px solid #D4E7F9l;
                         background-image: url('<%=mall_background%>'); "
                     class="mall-brief-box <%=shopping_mall.mall_type_id %>">
                     <%= render :partial => "shopping_malls/shopping_mall_tiny", :locals => {:shopping_mall => shopping_mall} %>
                 </div>
-            </div>
+          </div>
       <% end %>
-
-      <!--PLAZA MALLS -->
-      <%  if shopping_mall.mall_type_id == 2   %>
+    </div>
+    <div class="span6">
+            <!--PLAZA MALLS -->
+         <%     @shopping_malls.where(" mall_type_id=2").each do |shopping_mall| %>
+          <div class="row" style="background-color: transparent; margin: 5px 10px 0px 0px">
 
           <% mall_background= (shopping_mall.image.to_s != "")?shopping_mall.image.to_s : "/images/dummy.jpeg" %>
-
-          <div class="span6">
 
             <div style="border: 1px solid #D4E7F9 ;
                         background-image: url('<%=mall_background%>'); "
                  class="mall-brief-box <%=shopping_mall.mall_type_id %>">
-              <%= render :partial => "shopping_malls/shopping_mall_tiny", :locals => {:shopping_mall => shopping_mall} %>
+                 <%= render :partial => "shopping_malls/shopping_mall_tiny", :locals => {:shopping_mall => shopping_mall} %>
             </div>
           </div>
-
-      <% end %>
-
-  <% end %>
-
+        <% end %>
+    </div>
 </div>
