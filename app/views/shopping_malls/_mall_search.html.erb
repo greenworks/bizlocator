@@ -6,19 +6,28 @@
                        :value=>"Enter Address Here" ,
                         :onFocus=>"this.value=''"
     %-->
+
+    <script>
+        function inputFocus(i){
+            if(i.value==i.defaultValue){ i.value=""; i.style.color="#000"; }
+        }
+        function inputBlur(i){
+            if(i.value==""){ i.value=i.defaultValue; i.style.color="#888"; }
+        }
+    </script>
+
     <input id="search"
            class="search_text_field"
            type="text"
+           name="Your Address "
            style="background-color: rgb(255, 255, 255);
                    height: 24px;
                    width: 260px;
                    top: 0px;
                    text-align: center;
-                   font-weight: bold;"
-           name="search2"
-           value="Enter Your Address Here"
-           onfocus="if (trim(this.value)=='') this.value='Your Address Here'; "
-           onchange="if (trim(this.value)=='') this.value='Your Address Here'; ">
+                   font-weight: bold;
+                   color:#888;"
+           value="Enter Address Here" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
 
     <input type="submit"
            style="background-color: #E8E7E2;
