@@ -3,17 +3,24 @@
   <div class="row" style="background-color: #ffffff; height:24px">
     <%= render :partial => "common/top_bar" %>
   </div>
-  <div class="row">
+  <div class="row" style="background: #A8DBEB ">    <!--#55BAD8-->
     <div class="span9">
       <div class="row" >
       <div class="span3" style="margin: 0px;">
-        <img src="/images/bizlocator-logo.png" style="height: 92px; ">
+        <img src="/images/NEW_LOGO_1AA.jpg" style="height: 92px; ">
       </div>
       <div class="span4" style="margin-top:10px;margin-bottom:10px; position: relative;left: 80px ">
         <table style="border:0px">
           <tr>
             <td style="padding-top: 6px"><%= text_field_tag :search, params[:search], :class => "search_text_field", :style=> "width:260px" %></td>
-            <td style="padding-bottom: 6px"><input type="submit" class="" style="background-color: #22367C; color: #ffffff; border: none; height: 28px; width: 60px" value="Find"/></td>
+            <td style="padding-bottom: 6px">
+              <input type="submit"
+                     style="background-color: #22367C;
+                             color: #ffffff;
+                             border: none;
+                             border-radius: 6px ;
+                             height: 30px;
+                             width: 60px" value="Find"/></td>
           </tr>
         </table>
       </div>

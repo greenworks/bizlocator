@@ -4,21 +4,39 @@
       <div class="span3" style="margin: 0px;">
         <img src="/images/bizlocator-logo.png" style="height: 92px; ">
       </div>
-      <div class="span4" style="margin-top:10px;margin-bottom:10px; position: relative;left: 80px ">
-          <table style="border:0px">
-            <tr>
-              <td style="padding-top: 6px"><%= text_field_tag :search, params[:search], :class => "search_text_field", :style=> "width:260px" %></td>
-              <td style="padding-bottom: 6px"><input type="submit" class="" style="background-color: #22367C; color: #ffffff; border: none; height: 28px; width: 60px" value="Find"/></td>
-            </tr>
-          </table>
-        </div>
+      <div class="span4"
+           style="margin-top:10px;
+                   margin-bottom:10px;
+                   position: relative;
+                   left: 80px ">
+         <table style="border:0px">
+           <tr>
+             <td style="padding-top: 6px">
+               <%= text_field_tag :search, params[:search],
+                                  :class => "search_text_field",
+                                  :style=> "width:260px" %>
+             </td>
+             <td style="padding-bottom: 6px">
+               <input type="submit"
+                      style="background-color: #22367C;
+                              color: #ffffff;
+                              border: none;
+                              height: 30px;
+                              width: 60px;
+                              font-weight: bolder;
+                              border-radius: 8px;"
+                      value="Find"/>
+             </td>
+           </tr>
+         </table>
+      </div>
     </div>
     <div class="row" style="position: relative;">
-        <%= render :partial => "common/navigator_main" %>
-     </div>
+      <%= render :partial => "common/navigator_main" %>
+    </div>
   </div>
   <div class="span3">
-      <img src="/images/dummy-ad.png" style="width:280px;height: 116px; display: inline" >
+    <img src="/images/dummy-ad.png" style="width:280px;height: 116px; display: inline" >
   </div>
 </div>
 
