@@ -72,7 +72,7 @@
         <hr>
             <div class="row-fluid" style="padding-left: 6px">
               <% if !(shopping_mall.address.nil?) %>
-                  <!--%= image_tag "http://maps.google.com/maps/api/staticmap?size=600x400&scale=1&sensor=false&zoom=12&feature=all&markers=#{shopping_mall.address.latitude}%2C#{shopping_mall.address.longitude}" ,:alt => "Failed to load GMaps"%-->
+                  <%= image_tag "http://maps.google.com/maps/api/staticmap?size=600x400&scale=1&sensor=false&zoom=12&feature=all&markers=#{shopping_mall.address.latitude}%2C#{shopping_mall.address.longitude}" ,:alt => "Failed to load GMaps"%>
               <% end %>
             </div>
         <hr>
