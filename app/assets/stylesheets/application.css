@@ -11,3 +11,77 @@
  *= require_self
  *= require_tree .
  */
+
+.main-nav-bar{
+    /*width:78%;*/
+    float: left;
+    list-style:none;
+    font-size:12px;
+    color:#000000;
+}
+
+.main-nav-bar a{
+    color: #ffffff;
+}
+
+.main-nav-bar a:visited{
+    color: #ffffff;
+}
+
+.main-nav-bar a:hover{
+    color: #ffffff;
+}
+
+.main-nav-bar ul{
+    width:1000px;
+    margin:0 auto 0 auto;
+}
+
+.main-nav-bar ul li {
+    background-color:#22367C  ;
+    float:left;
+    color:#ffffff;
+    padding:0 20px 0 20px;
+    border:1px solid #A8DBEB;
+    height:20px;
+    list-style:none;
+    display:block;
+    line-height:20px;
+    text-align:center;
+    cursor:pointer;
+    width: 105px;
+}
+
+.main-nav-bar ul li:hover {
+    background-color:#CCC;
+    color:#ffffff;
+}
+
+.main-nav-bar ul li a:visited{
+    color:#ffffff;
+}
+
+.main_search{
+    height: 40px;
+    margin: 0 auto;
+    position: relative;
+    top: 20px;
+    left: -20px;
+}
+
+.main_search .search_button{
+    background-color: #22367C;
+    border: medium none;
+    border-radius: 6px;
+    color: #FFFFFF;
+    height: 30px;
+    margin-bottom: auto;
+    margin-left: -3px;
+    font-weight: bold;
+    width: 80px; !IMPORTANT
+}
+
+.main_search .search_text_field{
+    width:270px;
+    margin-top:10px;
+}
