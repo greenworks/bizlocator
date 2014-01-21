@@ -1,0 +1,50 @@
+
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h4 class="modal-title" id="myModalLabel"><%= shopping_mall.name %></h4>
+
+      <div class="row-fluid">
+        <%= shopping_mall.address && shopping_mall.address.address_brief %>
+      </div>
+    </div>
+    <div class="modal-body">
+
+      <div class="row-fluid" style="padding-left: 6px; font-size: 12px; text-decoration: none; color: #000000">
+        <%= truncate(shopping_mall.description, :length => 250) %>
+      </div>
+      <hr>
+      <div class="row-fluid" style="padding-left: 6px">
+        <% if !(shopping_mall.address.nil?) %>
+            <%= image_tag "http://maps.google.com/maps/api/staticmap?size=600x400&scale=1&sensor=false&zoom=12&feature=all&markers=#{shopping_mall.address.latitude}%2C#{shopping_mall.address.longitude}" ,:alt => "GMaps service unreachable"%>
+        <% end %>
+      </div>
+      <hr>
+    </div>
+    <div class="modal-footer">
+
+      <button type="button" class="btn btn-info btn-default" data-dismiss="modal">
+        Mall Overview Map
+      </button>
+
+      <% if !(shopping_mall.address.nil?) %>
+          <button type="button" class="btn btn-info btn-default" data-dismiss="modal"
+                  data-toggle="modal"
+                  data-target="#popMapData<%= shopping_mall.id %>">
+            Locate on GMap<i class="icon-white icon-map-marker"></i>
+          </button>
+
+          <button type="button" class="btn btn-info btn-default" data-dismiss="modal"
+                  data-toggle="modal"
+                  data-target="#popMapData<%= shopping_mall.id %>">
+            Mall Directions<i class="icon-white icon-map-marker"></i>
+          </button>
+
+      <% end %>
+      <button type="button" class="btn btn-info btn-default" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+  <!-- /.modal-content -->
+</div>
+<!-- /.modal-dialog -->
