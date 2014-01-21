@@ -14,3 +14,21 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
+//        $(document).on("click", "a.trigger", function(event){
+//            event.preventDefault();
+//            var anchor = $(this);
+//            var id = anchor.closest("li").attr("id");
+//            console.log(id);
+//        });
+
+$(document).ready(function () {
+    $("[href]").each(function () {
+        if (this.href == window.location.href) {
+            last_li = $(this).closest('li');
+//                    alert($(last_li));
+            $(last_li).addClass('active_link')
+            //$(this).closest('li').style.background = "#ffcc00"
+        }
+    });
+});
