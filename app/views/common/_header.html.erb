@@ -1,16 +1,17 @@
-<div class="row">
+<div class="row" style="margin: 0px">
   <!-- Application Header -->
-  <div class="row" style="background-color: #ffffff; height:24px">
+  <div class="row" style="background-color: #ffffff; height:24px; margin: 0px">
     <%= render :partial => "common/top_bar" %>
   </div>
-  <div class="row" style="background: #A8DBEB ">    <!--#55BAD8-->
-    <div class="span9">
-      <div class="row">
+  <div class="row" style="background: #A8DBEB; margin: 0px ">    <!--#55BAD8-->
+    <div class="span9" style="margin: 0px">
+      <div class="row"
+            style="margin: 0px">
         <div class="span4" style="margin: 0px;">
           <img src="/images/NEW_LOGO_1AA.jpg"
                style="height: 94px; ">
         </div>
-        <div class="span5 main_search">
+        <div class="span5 main_search" style="margin: 0px">
           <%= text_field_tag :search,
                              params[:search],
                              :class => "search_text_field"
@@ -20,7 +21,9 @@
                  value="Find"/>
         </div>
       </div>
-      <div class="row" style="position: relative;">
+      <div class="row"
+           style="position: relative;
+           margin: 0px">
         <%= render :partial => "common/navigator_main" %>
       </div>
     </div>
@@ -28,7 +31,7 @@
       <img src="/images/dummy-ad.png" style="width:280px;height: 116px; display: inline">
     </div>
   </div>
-  <div class="row">
+  <div class="row" style="margin: 0px">
     <%= render :partial => "common/navigator_sub" %>
   </div>
 </div>

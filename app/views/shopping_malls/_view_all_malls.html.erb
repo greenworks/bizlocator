@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<div class="row">
+<div class="row" style="margin: 0px">
   <div style="font-size: 10px">
     &nbsp;
   </div>
@@ -13,7 +13,7 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row" style="margin: 0px">
   <div class=" mall-list-header">
       MAJOR MALLS <span class="mall-list-header-counter"><%=@shopping_malls.where(" mall_type_id=1").count %></span>
   </div>
@@ -32,11 +32,11 @@
 
 </div>
 
-<div class="row" style="background-color: #E8E7E2;">
-    <div class="span6">
+<div class="row" style="margin: 0px; background-color: #E8E7E2;">
+    <div class="span6" style="margin: 0px 5px 0px 10px;">
       <%     @shopping_malls.where(" mall_type_id=1").each do |shopping_mall| %>
       <!--MAJOR MALLS-->
-          <div class="row" style="background-color: transparent; margin: 5px 0px 0px 10px">
+          <div class="row" style="background-color: transparent; margin: 0px">
 
           <% mall_background= (shopping_mall.image.to_s != "")?shopping_mall.image.to_s : "/images/dummy.jpeg" %>
                 <div style="border: 1px solid #D4E7F9l;
@@ -47,10 +47,10 @@
           </div>
       <% end %>
     </div>
-    <div class="span6">
+    <div class="span6" style="margin: 0px 10px 0px 5px;">
             <!--PLAZA MALLS -->
          <%     @shopping_malls.where(" mall_type_id=2").each do |shopping_mall| %>
-          <div class="row" style="background-color: transparent; margin: 5px 10px 0px 0px">
+          <div class="row" style="background-color: transparent; margin: 0px">
 
           <% mall_background= (shopping_mall.image.to_s != "")?shopping_mall.image.to_s : "/images/dummy.jpeg" %>
 

@@ -33,7 +33,7 @@
 }
 
 .main-nav-bar ul{
-    width:1100px;
+    width:960px;
     margin:0 auto 0 auto;
 }
 
@@ -49,7 +49,7 @@
     line-height:20px;
     text-align:center;
     cursor:pointer;
-    width: 106px;
+    width: 94px;
 }
 
 .main-nav-bar ul li:hover {
@@ -88,15 +88,16 @@
 
 
 .second-nav-bar{
-    width:1235px;
+
     float: left;
     list-style:none;
     color:#000000;
     position: relative;
+    margin-left: 0px; !important
 }
 
 .second-nav-bar ul{
-    /*width:1490px;*/
+    width:1200px;
     margin:0 auto 0 auto;
 }
 
@@ -114,6 +115,7 @@
     cursor:pointer;
     font-size: 16px;
     font-weight: bold;
+    width: 166px;
 }
 
 .second-nav-bar ul li a:hover {
