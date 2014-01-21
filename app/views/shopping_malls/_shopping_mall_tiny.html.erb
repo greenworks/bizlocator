@@ -1,96 +1,48 @@
-<div class="shopping_mall-header" >
+<div class="shopping_mall-header">
   <div class="shopping_mall-header-small" style="width: 51%; padding-left: 6px">
-    <%= link_to (shopping_mall.name).upcase , shopping_mall ,  :style => "text-weight: bold; font-size:16px" %>
+    <%= link_to (shopping_mall.name).upcase, shopping_mall, :style => "text-weight: bold; font-size:16px" %>
   </div>
-  <div id="mall_info<%=shopping_mall.id%>"
+  <div id="mall_info<%= shopping_mall.id %>"
        class="shopping_mall-header-small" style="width: 20%; background-color: #C8696F; text-align: center">
-    <a style="width: 78%;
-            height: 16px;
-            position: relative;
-            top: -2px;
-            color: #ffffff;
-            text-align:center;
-            font-weight: bolder;
-            font-size: 16px;
-            text-decoration: none;"
-
-       href="javascript:showPopInfo('popInfo<%=shopping_mall.id%>',
-                   'mall_info<%=shopping_mall.id%>');"
-       data-original-title="<%= shopping_mall.name %>">Mall Links</a>
+    <span class="mall_links">
+    <a data-toggle="modal"
+       data-target="#popMapData<%= shopping_mall.id %>">Mall Links</a></span>
 
   </div>
   <div class="shopping_mall-header-small" style="width: 26.8%; text-align: center; color:#D4E7F9">
-        Approx <%= pluralize( rand(10) , 'Minute' ) %>
+    Approx <%= pluralize(rand(10), 'Minute') %>
   </div>
 </div>
 
-<div class="modal fade" id="popMapData<%=shopping_mall.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel"><%=shopping_mall.name%></h4>
-        <div class="row-fluid">
-          <%= shopping_mall.address && shopping_mall.address.address_brief %>
-        </div>
-      </div>
-      <div class="modal-body">
 
-        <div class="row-fluid" style="padding-left: 6px; font-size: 12px; text-decoration: none; color: #000000">
-          <%= truncate(shopping_mall.description, :length=>250) %>
-        </div>
-
-        <div class="row-fluid" style="padding-left: 6px">
-        <% if !(shopping_mall.address.nil?) %>
-            <!--%= image_tag "http://maps.google.com/maps/api/staticmap?size=600x400&scale=1&sensor=false&zoom=12&feature=all&markers=#{shopping_mall.address.latitude}%2C#{shopping_mall.address.longitude}" ,:alt => "Failed to load GMaps"%-->
-        <% end %>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-<div class="shopping_mall-info" >
+<div class="shopping_mall-info">
   <div class="shopping_mall-info-small" style="width: 72.5%; ">
     <div class="row-fluid" style="padding-left: 6px">
-      <%= shopping_mall.address && truncate(shopping_mall.address.address_brief, :length=>48) %>
+      <%= shopping_mall.address && truncate(shopping_mall.address.address_brief, :length => 48) %>
     </div>
     <div class="row-fluid">
       <div style="position:relative; z-index:0;">
-        <% if shopping_mall.image.to_s != ''  %>
-            <%=image_tag(shopping_mall.image.to_s) %>
+        <% if shopping_mall.image.to_s != '' %>
+            <%= image_tag(shopping_mall.image.to_s) %>
         <% else %>
-            <%=image_tag("/images/dummy.jpeg") %>
+            <%= image_tag("/images/dummy.jpeg") %>
         <% end %>
-        <div id="popInfo<%=shopping_mall.id%>"
+        <div id="popInfo<%= shopping_mall.id %>"
              class="popoverInfo"
              align="center"
              style="z-index:<%=shopping_mall.id+1%>; position:absolute; top:0px; left:0px; width: 385px; height: 246px; font-size:18px; ">
-          <a href="javascript:closePopInfo('popInfo<%=shopping_mall.id%>');"
+          <a href="javascript:closePopInfo('popInfo<%= shopping_mall.id %>');"
              style="position: relative; left: 380px; top: -15px; font-size: 12px; font-weight: bold; height: 25px">[X]</a>
-          <span style="font-size: 12px; text-decoration: none; color: #000000"><%= truncate(shopping_mall.description, :length=>250) %></span>
+          <span style="font-size: 12px; text-decoration: none; color: #000000"><%= truncate(shopping_mall.description, :length => 250) %></span>
         </div>
       </div>
     </div>
   </div>
   <div class="shopping_mall-info-small centered-group" style="width: 26.7%; ">
-    <% if !(shopping_mall.address.nil?) %>
-        <span id="mall_map<%=shopping_mall.id%>">
-          <a class="btn btn-info btn-mini"
-             style="text-decoration: none; position: relative; top: 240px; border-radius: 20px; font-size: 14px"
-             data-toggle="modal"
-             data-target="#popMapData<%=shopping_mall.id%>">
-            Locate on GMap <i class="icon-white icon-map-marker"></i></a>
-        </span>
-
-
-  <% end %>
-    <span id="mall-view-bar mall_view<%=shopping_mall.id %>">
-        <a href="<%="/shopping_malls/#{shopping_mall.id}/view"%>"
-           style="text-decoration: underline; font-weight:bold; width: 35%; margin: 0px auto; color:#D4E7F9; line-height: 40px">VIEW ALL</a>
+    <span id="mall-view-bar mall_view<%= shopping_mall.id %>">
+        <a href="<%= "/shopping_malls/#{shopping_mall.id}/view" %>"
+           style="text-decoration: underline; font-weight:bold; width: 35%; margin: 0px auto; color:#D4E7F9; line-height: 40px">VIEW
+          ALL</a>
       <ul class="mall-view-bar">
         <li><a href="#">ADS</a></li>
         <li><a href="#">BUSINESSES</a></li>
@@ -101,3 +53,54 @@
     </span>
   </div>
 </div>
+<div class="modal fade" id="popMapData<%= shopping_mall.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel"><%= shopping_mall.name %></h4>
+
+        <div class="row-fluid">
+          <%= shopping_mall.address && shopping_mall.address.address_brief %>
+        </div>
+      </div>
+      <div class="modal-body">
+
+        <div class="row-fluid" style="padding-left: 6px; font-size: 12px; text-decoration: none; color: #000000">
+          <%= truncate(shopping_mall.description, :length => 250) %>
+        </div>
+        <hr>
+            <div class="row-fluid" style="padding-left: 6px">
+              <% if !(shopping_mall.address.nil?) %>
+                  <!--%= image_tag "http://maps.google.com/maps/api/staticmap?size=600x400&scale=1&sensor=false&zoom=12&feature=all&markers=#{shopping_mall.address.latitude}%2C#{shopping_mall.address.longitude}" ,:alt => "Failed to load GMaps"%-->
+              <% end %>
+            </div>
+        <hr>
+      </div>
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-info btn-default" data-dismiss="modal">
+          Mall Overview Map
+        </button>
+
+        <% if !(shopping_mall.address.nil?) %>
+            <button type="button" class="btn btn-info btn-default" data-dismiss="modal"
+                    data-toggle="modal"
+                    data-target="#popMapData<%= shopping_mall.id %>">
+              Locate on GMap<i class="icon-white icon-map-marker"></i>
+            </button>
+
+            <button type="button" class="btn btn-info btn-default" data-dismiss="modal"
+                    data-toggle="modal"
+                    data-target="#popMapData<%= shopping_mall.id %>">
+              Mall Directions<i class="icon-white icon-map-marker"></i>
+            </button>
+
+        <% end %>
+        <button type="button" class="btn btn-info btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div><!-- /.modal -->
