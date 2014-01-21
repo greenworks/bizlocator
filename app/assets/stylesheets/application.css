@@ -104,7 +104,7 @@
 .second-nav-bar ul li {
     background-color:#D4E7F9;
     float:left;
-    color:#000000;
+    color:#22367C;
     padding:0 20px 0 20px;
     border:1px solid #000000;
     height:20px;
@@ -120,7 +120,12 @@
 
 .second-nav-bar ul li a:hover {
     background-color: transparent;
-    color:#ffffff;
+    color:#22367C;
+}
+
+.second-nav-bar ul li a{
+    background-color: transparent;
+    color:#22367C;
 }
 
 .second-nav-bar ul li.active_link {
