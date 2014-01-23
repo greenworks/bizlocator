@@ -2,7 +2,7 @@ class AdCategory < ActiveRecord::Base
 
   has_many :ads
 
-  attr_accessible :description, :introtext, :ispublished, :name , :image, :parent_category_id
+  attr_accessible :description, :introtext, :ispublished, :name , :image, :parent_category_id, :category_type
 
   mount_uploader :image, ImageUploader
 
