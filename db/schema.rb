@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130831143755) do
+ActiveRecord::Schema.define(:version => 20140123154433) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -33,10 +33,11 @@ ActiveRecord::Schema.define(:version => 20130831143755) do
     t.string   "introtext"
     t.text     "description"
     t.boolean  "ispublished"
-    t.string   "image"
-    t.integer  "parent_category_id"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+    t.string   "image"
+    t.integer  "parent_category_id"
+    t.integer  "category_type"
   end
 
   create_table "ad_positions", :force => true do |t|
@@ -66,13 +67,13 @@ ActiveRecord::Schema.define(:version => 20130831143755) do
     t.string   "google_map_code"
     t.string   "chat_code"
     t.boolean  "ispublished"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.integer  "user_id"
     t.string   "street"
     t.float    "latitude"
     t.float    "longitude"
     t.boolean  "gmaps"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
   end
 
   create_table "admin_users", :force => true do |t|
@@ -105,11 +106,11 @@ ActiveRecord::Schema.define(:version => 20130831143755) do
     t.boolean  "ispublished"
     t.boolean  "isapproved"
     t.date     "expiry_date"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.integer  "user_id"
     t.string   "image"
     t.integer  "ad_type_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
   end
 
   create_table "bookmark_ads", :force => true do |t|
@@ -138,9 +139,9 @@ ActiveRecord::Schema.define(:version => 20130831143755) do
     t.string   "introtext"
     t.text     "description"
     t.boolean  "ispublished"
-    t.integer  "parent_category_id"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+    t.integer  "parent_category_id"
   end
 
   create_table "business_items", :force => true do |t|
@@ -152,10 +153,10 @@ ActiveRecord::Schema.define(:version => 20130831143755) do
     t.boolean  "ispublished"
     t.boolean  "isapproved"
     t.date     "expiry_date"
-    t.string   "image"
-    t.integer  "user_id"
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
+    t.string   "image"
+    t.integer  "user_id"
   end
 
   create_table "city_service_categories", :force => true do |t|
@@ -163,9 +164,9 @@ ActiveRecord::Schema.define(:version => 20130831143755) do
     t.string   "introtext"
     t.text     "description"
     t.boolean  "ispublished"
-    t.integer  "parent_category_id"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+    t.integer  "parent_category_id"
   end
 
   create_table "city_services", :force => true do |t|
@@ -173,9 +174,9 @@ ActiveRecord::Schema.define(:version => 20130831143755) do
     t.text     "description"
     t.integer  "city_service_category_id"
     t.boolean  "ispublished"
-    t.string   "image"
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
+    t.string   "image"
   end
 
   create_table "companies", :force => true do |t|
@@ -189,10 +190,10 @@ ActiveRecord::Schema.define(:version => 20130831143755) do
     t.string   "email"
     t.boolean  "ispublished"
     t.boolean  "isapproved"
-    t.string   "image"
-    t.integer  "address_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "image"
+    t.integer  "address_id"
   end
 
   create_table "emergency_numbers", :force => true do |t|
@@ -200,9 +201,9 @@ ActiveRecord::Schema.define(:version => 20130831143755) do
     t.string   "value"
     t.integer  "priority"
     t.boolean  "ispublished"
-    t.string   "image"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "image"
   end
 
   create_table "job_categories", :force => true do |t|
@@ -210,9 +211,9 @@ ActiveRecord::Schema.define(:version => 20130831143755) do
     t.string   "introtext"
     t.text     "description"
     t.boolean  "ispublished"
-    t.integer  "parent_category_id"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+    t.integer  "parent_category_id"
   end
 
   create_table "jobs", :force => true do |t|
@@ -226,10 +227,18 @@ ActiveRecord::Schema.define(:version => 20130831143755) do
     t.date     "expiry_date"
     t.boolean  "ispublished"
     t.boolean  "isapproved"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.string   "image"
     t.integer  "user_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "locations", :force => true do |t|
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "mall_types", :force => true do |t|
@@ -252,10 +261,10 @@ ActiveRecord::Schema.define(:version => 20130831143755) do
     t.text     "description"
     t.integer  "mall_type_id"
     t.boolean  "ispublished"
-    t.string   "image"
-    t.integer  "address_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.string   "image"
+    t.integer  "address_id"
   end
 
   create_table "users", :force => true do |t|
