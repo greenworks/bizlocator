@@ -1,0 +1,47 @@
+<div class="row" style="margin: 0px">
+    <div style="font-size: 10px">
+        &nbsp;
+    </div>
+    <div style="text-align:left; border-width: 1; font-size: 14px ; font-weight: bold">
+        All Categories : By Letter / Title (<%=@ad_categories .count %>)
+        <% if params[:shopping_mall] %>
+        at <%=params[:shopping_mall]%>
+        <% end %>
+    </div>
+</div>
+
+<div class="row ad-category-char-index-box" style="margin: 0">
+  <div class="row text-center ad-category-char-index-header" style="margin: 0">
+    <span style="text-decoration: underline; font-weight: bold">ALL CATEGORIES:</span> By Letter
+  </div>
+  <div class="row text-center" style="margin: 0">
+    <span class="ad-category-char-index-list">
+       <% ('A'..'Z').each do |char| %>
+          <% if char==params[:char] %>
+              <%= link_to char, ad_categories_path(:char => char), :class => 'selected_char' %>
+          <% else %>
+              <%= link_to char, ad_categories_path(:char => char) %>
+          <% end %>
+      <% end %>
+      <!--%= link_to " : ALL", ad_categories_path %-->
+    </span>
+  </div>
+</div>
+
+<div class="row text-center ad-category-title-header" style="margin: 10px 0px 0px;">
+  <span style="text-decoration: underline; font-weight: bold">ALL CATEGORIES:</span> By Title
+</div>
+
+<%     @ad_categories = @ad_categories.where(" ( trim(parent_category_id) ='' or  parent_category_id is null)")
+
+        @ad_categories.each do |ad_category| %>
+
+    <div class="row ad_category" style="margin: 0px">
+            <%= render :partial =>"ad_categories/ad_category_box_general", :locals => {:ad_category => ad_category} %>
+    </div>
+<% end %>
+
+<br/>
+
+
+
