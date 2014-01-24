@@ -85,7 +85,7 @@
   padding: 5px 20px;
 }
 
-.ad-category-char-index-list a, a:hover, a:visited{
+.ad-category-char-index-list a,  a:visited{
   background: #22367C;
   color: #D4E7F9;
 }
@@ -104,4 +104,27 @@
   line-height: 32px;
   border: 2px solid #22367C;
   padding: 10px 0px;
+}
+
+.ad-category-box{
+  margin:0px;
+  font-size: 14px;
+  font-family: Arial, 'Arial Unicode MS';
+  background: #A8DBEB;
+  color: #22367C;
+
+}
+
+.ad-category-box h3{
+  font-size: 18px;
+}
+
+.notify_me_button{
+  background: #22367C;
+  color: #D4E7F9;
+//  color: #FFFFFF;
+  border: medium none;
+  border-radius: 2px;
+//  height: 30px;
+//  width: 120px; !IMPORTANT
 }

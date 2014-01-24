@@ -1,8 +1,9 @@
 class AdCategory < ActiveRecord::Base
 
   has_many :ads
+  belongs_to :ad_category_type
 
-  attr_accessible :description, :introtext, :ispublished, :name , :image, :parent_category_id, :category_type
+  attr_accessible :description, :introtext, :ispublished, :name , :image, :parent_category_id, :ad_category_type_id
 
   mount_uploader :image, ImageUploader
 
@@ -21,7 +22,7 @@ class AdCategory < ActiveRecord::Base
   end
 
   def self.get_all_main_categories
-    AdCategory.where("parent_category_id is NULL or parent_category_id = 0 or parent_category_id = '' ")
+    AdCategory.where("ad_category_type_id= 0")
   end
 
 end

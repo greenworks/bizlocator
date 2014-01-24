@@ -32,11 +32,8 @@
   <span style="text-decoration: underline; font-weight: bold">ALL CATEGORIES:</span> By Title
 </div>
 
-<%     @ad_categories = @ad_categories.where(" ( trim(parent_category_id) ='' or  parent_category_id is null)")
-
-        @ad_categories.each do |ad_category| %>
-
-    <div class="row ad_category" style="margin: 0px">
+<%  @ad_categories.each do |ad_category| %>
+    <div class="row ad-category-box" style="margin: 10px 0px 5px">
             <%= render :partial =>"ad_categories/ad_category_box_general", :locals => {:ad_category => ad_category} %>
     </div>
 <% end %>

@@ -1,51 +1,64 @@
-<div class="span10 offset1" style="background-color: #A3D1FF">
-
-    <table>
-      <tr>
-        <td colspan="3" style="width: 80%">
-          <span style="font-size: 16px; font-weight: bold">
-            <%= ad_category.name.upcase %>
-          </span>
-          <span style="text-decoration: underline">
-            <%= link_to " ALL ADS " , ads_path(:ad_category_id => ad_category.id) %>
-          </span>
-        </td>
-        <td style="border-width: 0px;">
-          <span style="text-align: right">
-            <a href="#" class="btn btn-info btn-mini">NOTIFY <i class="icon-white icon-inbox"></i></a>
-          </span>
-        </td>
-
-      </tr>
-      <%
-         @child1 =  ad_category.get_child_categories[0]
-         @child2 =  ad_category.get_child_categories[1]
-         @child3 =  ad_category.get_child_categories[2]
-      %>
-      <% if  @child1 || @child2 || @child3 %>
-      <tr>
-        <td>
-          <%=ad_category.get_child_categories[0] && ad_category.get_child_categories[0].name.upcase %>
-        </td>
-        <td>
-          <%=ad_category.get_child_categories[1] && ad_category.get_child_categories[0].name.upcase %>
-        </td>
-        <td>
-          <%=ad_category.get_child_categories[2] && ad_category.get_child_categories[0].name.upcase %>
-        </td>
-        <td>
-          <span style="text-decoration: underline; font-size: 12px ">
-            <% if ad_category.get_all_child_categories.count > 3 %>
-                 MORE SUB-CATEGORIES <br><%=link_to "CLICK", ad_categories_path(:id => ad_category.id) %>
-            <% end %>
-          </span>
-
-        </td>
-      </tr>
+<div class="row" style="margin: 0px; padding:10px">
+  <div class="span10 pull-left" style="margin: 0px">
+    <span style="font-size: 16px; font-weight: bold">
+      <%= ad_category.name.upcase %>
+     </span>
+     <span style="text-decoration: underline">
+       <%= link_to " ALL ADS ", ads_path(:ad_category_id => ad_category.id) %>
+     </span>
+  </div>
+  <div class="span2 pull-right text-right" style="margin: 0px">
+    <span class="notify_me_button" style="margin: 3px; padding: 5px; margin-right: 20px">
+      Notify Me
+    </span>
+  </div>
+</div>
+<%
+   @child1 = ad_category.get_child_categories[0]
+   @child2 = ad_category.get_child_categories[1]
+   @child3 = ad_category.get_child_categories[2]
+   @child4 = ad_category.get_child_categories[3]
+   @child5 = ad_category.get_child_categories[4]
+   @child6 = ad_category.get_child_categories[5]
+   @child7 = ad_category.get_child_categories[6]
+   @child8 = ad_category.get_child_categories[7]
+   @child9 = ad_category.get_child_categories[8]
+%>
+<div class="span10" style="margin: 0px">
+  <div class="span2" style="margin: 0px">
+      <% if @child1 %>
+          <%= render :partial =>"ad_categories/child_ad_category", :locals => {:ad_category => @child1} %>
       <% end %>
-    </table>
-
+  </div>
+  <div class="span2" style="margin: 0px">
+    <% if @child1 %>
+        <%= render :partial =>"ad_categories/child_ad_category", :locals => {:ad_category => @child1} %>
+    <% end %>
+  </div>
+  <div class="span2" style="margin: 0px">
+    <% if @child1 %>
+        <%= render :partial =>"ad_categories/child_ad_category", :locals => {:ad_category => @child1} %>
+    <% end %>
+  </div>
+  <div class="span2" style="margin: 0px">
+    <% if @child1 %>
+        <%= render :partial =>"ad_categories/child_ad_category", :locals => {:ad_category => @child1} %>
+    <% end %>
+  </div>
+  <div class="span2" style="margin: 0px">
+    <% if @child1 %>
+        <%= render :partial =>"ad_categories/child_ad_category", :locals => {:ad_category => @child1} %>
+    <% end %>
+  </div>
+      <span style="text-decoration: underline; font-size: 12px ">
+        <% if ad_category.get_all_child_categories.count > 8 %>
+             MORE SUB-CATEGORIES <br><%= link_to "CLICK", ad_categories_path(:id => ad_category.id) %>
+        <% end %>
+      </span>
+</div>
+<div>
 
 </div>
+
 
 
