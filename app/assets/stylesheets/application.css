@@ -89,7 +89,7 @@
 
 .second-nav-bar{
 
-    float: left;
+    /*float: left;*/
     list-style:none;
     color:#000000;
     position: relative;
