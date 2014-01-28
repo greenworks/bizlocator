@@ -13,52 +13,52 @@
     </span>
   </div>
 </div>
-<%
-   @child1 = ad_category.get_child_categories[0]
-   @child2 = ad_category.get_child_categories[1]
-   @child3 = ad_category.get_child_categories[2]
-   @child4 = ad_category.get_child_categories[3]
-   @child5 = ad_category.get_child_categories[4]
-   @child6 = ad_category.get_child_categories[5]
-   @child7 = ad_category.get_child_categories[6]
-   @child8 = ad_category.get_child_categories[7]
-   @child9 = ad_category.get_child_categories[8]
-%>
-<div class="span10" style="margin: 0px">
-  <div class="span2" style="margin: 0px">
-      <% if @child1 %>
-          <%= render :partial =>"ad_categories/child_ad_category", :locals => {:ad_category => @child1} %>
-      <% end %>
+
+<div class="row" style="margin: 0px; padding:0px">
+  <% if ad_category.get_all_child_categories.count > 1 %>
+      <div class="span11 sub-category-row" style="margin: 0px; width: 91.4%">
+    <div class="row" style="margin: 0px; width: 100%">
+      <%
+         n=0
+         5.times do
+           @child_category=ad_category.get_child_categories[n]
+      %>
+          <div class="sub-category-box" style="margin: 0px;  ">
+            <% if @child_category %>
+                <%= render :partial =>"ad_categories/child_ad_category", :locals => {:ad_category => @child_category} %>
+            <% end %>
+          </div>
+      <%
+         n=n+1
+         end
+      %>
+    </div>
+    <div class="row" style="margin: 0px; width: 100%">
+      <%
+         n=5
+         5.times do
+           @child_category=ad_category.get_child_categories[n]
+      %>
+          <div class="span2 sub-category-box" style="margin: 0px; width: 19.8%;">
+            <% if @child_category %>
+                <%= render :partial =>"ad_categories/child_ad_category", :locals => {:ad_category => @child_category} %>
+            <% end %>
+          </div>
+      <%
+         n=n+1
+         end
+      %>
+    </div>
   </div>
-  <div class="span2" style="margin: 0px">
-    <% if @child1 %>
-        <%= render :partial =>"ad_categories/child_ad_category", :locals => {:ad_category => @child1} %>
-    <% end %>
-  </div>
-  <div class="span2" style="margin: 0px">
-    <% if @child1 %>
-        <%= render :partial =>"ad_categories/child_ad_category", :locals => {:ad_category => @child1} %>
-    <% end %>
-  </div>
-  <div class="span2" style="margin: 0px">
-    <% if @child1 %>
-        <%= render :partial =>"ad_categories/child_ad_category", :locals => {:ad_category => @child1} %>
-    <% end %>
-  </div>
-  <div class="span2" style="margin: 0px">
-    <% if @child1 %>
-        <%= render :partial =>"ad_categories/child_ad_category", :locals => {:ad_category => @child1} %>
-    <% end %>
-  </div>
-      <span style="text-decoration: underline; font-size: 12px ">
-        <% if ad_category.get_all_child_categories.count > 8 %>
-             MORE SUB-CATEGORIES <br><%= link_to "CLICK", ad_categories_path(:id => ad_category.id) %>
+      <div class="span1 text-center more-category-box" style="margin: 0px; width: 7.5%">
+      <div class="more-category-div">
+        <% if ad_category.get_all_child_categories.count > 10 %>
+             <%= link_to "More Categories", ad_categories_path(:id => ad_category.id) %>
+        <% else %>
+            More Categories
         <% end %>
-      </span>
+      </div>
+  </div>
+  <% end %>
 </div>
-<div>
-
-</div>
-
-
 

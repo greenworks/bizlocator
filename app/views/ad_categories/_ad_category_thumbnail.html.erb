@@ -1,4 +1,3 @@
-
 <div class="row-fluid">
   <div class="span1 offset3 ad_category_image">
     <% if ad_category.image.to_s != ''  %>
@@ -9,6 +8,8 @@
   </div>
   <div class="span6 title">
     <%= link_to ad_category.name, ad_category %>
-    <%= link_to " ( #{pluralize(Ad.find_all_by_ad_category_id(ad_category.id).count, 'Ad')} )" , ads_path(:ad_category_id => ad_category.id, :shopping_mall_id =>  @shopping_mall.id) %>
+    <%= link_to " ( #{pluralize(Ad.find_all_by_ad_category_id(ad_category.id).count, 'Ad')} )" ,
+                ads_path(:ad_category_id => ad_category.id,
+                         :shopping_mall_id =>  @shopping_mall.id) %>
   </div>
 </div>
