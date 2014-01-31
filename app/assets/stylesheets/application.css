@@ -14,10 +14,11 @@
 
 .main-nav-bar{
     /*width:78%;*/
-    float: left;
+    float: right;
     list-style:none;
-    font-size:12px;
+    font-size:0.750em;
     color:#000000;
+    width:100%
 }
 
 .main-nav-bar a{
@@ -33,7 +34,7 @@
 }
 
 .main-nav-bar ul{
-    width:960px;
+    width:100%;
     margin:0 auto 0 auto;
 }
 
@@ -89,15 +90,17 @@
 
 .second-nav-bar{
 
-    float: left;
+    float: right;
     list-style:none;
     color:#000000;
     position: relative;
     margin-left: 0px; !important
+    width:100%;
+    border:2px solid green;
 }
 
 .second-nav-bar ul{
-    width:1200px;
+    width:100%;
     margin:0 auto 0 auto;
 }
 
