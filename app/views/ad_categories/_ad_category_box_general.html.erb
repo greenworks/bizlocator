@@ -21,7 +21,7 @@
       <%
          n=0
          5.times do
-           @child_category=ad_category.get_child_categories[n]
+           @child_category=ad_category.get_all_child_categories[n]
       %>
           <div class="sub-category-box" style="margin: 0px;  ">
             <% if @child_category %>
@@ -37,7 +37,7 @@
       <%
          n=5
          5.times do
-           @child_category=ad_category.get_child_categories[n]
+           @child_category=ad_category.get_all_child_categories[n]
       %>
           <div class="span2 sub-category-box" style="margin: 0px; width: 19.8%;">
             <% if @child_category %>
