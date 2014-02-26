@@ -4,12 +4,13 @@
 <div class="second-nav-bar">
   <ul>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <li style="width:500px; ">
+    <li style="width:560px; ">
       <%= link_to "Sales - Deals -", ads_path(:ad_type => AdType.find_by_name("Sales & Deals").id) %>
       <%= link_to "Flyers -", ads_path(:ad_type => AdType.find_by_name("Flyers").id) %>
       <%= link_to "Coupons -", ads_path(:ad_type => AdType.find_by_name("Coupons").id) %>
       <%= link_to "Group Buys -", ads_path(:ad_type => AdType.find_by_name("Group Buys").id) %>
-      <%= link_to "& More ", ads_path %>
+      <%= link_to "Shop Online -", ads_path(:ad_type => AdType.find_by_name("Shop Online").id) %>
+      <%= link_to "Cash Back", ads_path(:ad_type => AdType.find_by_name("Cash Back").id) %>
     </li>
     <li><%= link_to "View The Malls", shopping_malls_path %> </li>
     <li><%= link_to "Save List ", "save_list" %>
