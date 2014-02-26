@@ -105,17 +105,17 @@
 }
 
 .second-nav-bar ul li {
-    background-color:#D4E7F9;
-    float:left;
-    color:#22367C;
-    padding:0 20px 0 20px;
-    border:1px solid green;
-    height:20px;
-    list-style:none;
-    display:block;
-    line-height:20px;
-    text-align:center;
-    cursor:pointer;
+    background-color: #D4E7F9;
+    float: left;
+    color: #22367C;
+    padding: 0 20px 0 20px;
+    border: 1px solid green;
+    height: 20px;
+    list-style: none;
+    display: block;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
     font-size: 13px;
     font-weight: bold;
     /*width: 146px;*/
