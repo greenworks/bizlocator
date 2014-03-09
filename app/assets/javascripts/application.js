@@ -13,8 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-
-
+//= require bootstrap-tooltip.js
+//= require bootstrap-popover.js
 //        $(document).on("click", "a.trigger", function(event){
 //            event.preventDefault();
 //            var anchor = $(this);

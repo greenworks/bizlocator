@@ -9,23 +9,34 @@
       <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
         </div>
 <% else %>
-    <div class="btn-group" style="font-size:12px; color:#fffff; font-weight: bold">
-      <a href="#" id="blob" class="btn large primary" rel="popover"
-         data-content="And here's some amazing content. It's very engaging. right?"
-         data-original-title="A title">hover for popover</a>
 
-      <!--<button id="myLogin"-->
-              <!--type="button"-->
-              <!--class="btn btn-default"-->
-              <!--data-container="body"-->
-              <!--data-toggle="popover"-->
-              <!--data-placement="bottom"-->
-              <!--data-content="This is BizLocator.">-->
-        <!--MyLogin-->
-      <!--</button>-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <div class="btn-group" style="font-size:12px; color:#fffff; font-weight: bold">
+
+      <a href="#"
+         role="button"
+         class="login"
+         rel="popover"
+         data-content="And here's some amazing content. It's very engaging. right?">
+            Log In</a>
+      <div id="login_popover_content_wrapper" style="display: none">
+        <%= form_for("user", :url => user_session_path) do |f| %>
+            <%= render :partial => "common/login_popover", :locals => { :f=> f} %>
+        <% end %>
+      </div>
+
       <script>
-          $(function(){
-              ("#blob").popover();
+          $(document).ready(function(){
+              $('.login').popover( {
+                  placement: 'bottom',
+                          html : true,
+                          content: function() {
+                              return $('#login_popover_content_wrapper').html();
+                            }
+                      }
+              );
+//              ("#blob").popover();
           });
       </script>
       |
