@@ -1,0 +1,14 @@
+<div class="row" style="margin: 0px">
+    <div class="text-right">
+      <%= f.label :email %>
+      <%= f.email_field :email, :autofocus => true %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.label :role_id %>
+      <%= collection_select(:user, :role_id, Role.all, :id, :name) %>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+    </div>
+</div>

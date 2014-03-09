@@ -7,10 +7,27 @@
           "<%= link_to current_user.name, "/info/user_account_page" %>"
       <% end %>
       <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
-    </div>
+        </div>
 <% else %>
     <div class="btn-group" style="font-size:12px; color:#fffff; font-weight: bold">
-      <a href="#loginModal" role="button" data-toggle="modal">Log In</a>
+      <a href="#" id="blob" class="btn large primary" rel="popover"
+         data-content="And here's some amazing content. It's very engaging. right?"
+         data-original-title="A title">hover for popover</a>
+
+      <!--<button id="myLogin"-->
+              <!--type="button"-->
+              <!--class="btn btn-default"-->
+              <!--data-container="body"-->
+              <!--data-toggle="popover"-->
+              <!--data-placement="bottom"-->
+              <!--data-content="This is BizLocator.">-->
+        <!--MyLogin-->
+      <!--</button>-->
+      <script>
+          $(function(){
+              ("#blob").popover();
+          });
+      </script>
       |
       <a href="#registerModal" role="button" data-toggle="modal">Register</a>
     </div>

@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 
+
 //        $(document).on("click", "a.trigger", function(event){
 //            event.preventDefault();
 //            var anchor = $(this);
