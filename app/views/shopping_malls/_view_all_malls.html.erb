@@ -1,63 +1,64 @@
-
 <div class="row" style="margin: 0px">
-  <div style="font-size: 10px">
-    &nbsp;
-  </div>
-  <div style="text-align:left; border-width: 1; font-size: 14px ; font-weight: bold">
-    ALL MALLS (<%=@shopping_malls.count %>)
-    <% if params[:city] %>
-        In City  <%=params[:city]%>
-    <% end %>
-  </div>
+    <div style="font-size: 10px">
+        &nbsp;
+    </div>
+    <div style="text-align:left; border-width: 1; font-size: 14px ; font-weight: bold">
+        ALL MALLS (<%= @shopping_malls.count %>)
+        <% if params[:city] %>
+            In City  <%= params[:city] %>
+        <% end %>
+    </div>
 </div>
 
 <div class="row" style="margin: 0px">
-  <div class=" mall-list-header">
-      MAJOR MALLS <span class="mall-list-header-counter"><%=@shopping_malls.where(" mall_type_id=1").count %></span>
-  </div>
+    <div class=" mall-list-header">
+        MAJOR MALLS <span class="mall-list-header-counter"><%= @shopping_malls.where(" mall_type_id=1").count %></span>
+    </div>
 
-  <div class="mall-list-header mall-search-button">
+    <div class="mall-list-header mall-search-button">
 
-    <%
-       current_pos = "Toronto, Canada"
-    %>
-    <%= render :partial => "shopping_malls/mall_search" %>
-  </div>
+        <%
+           current_pos = "Toronto, Canada"
+        %>
+        <%= render :partial => "shopping_malls/mall_search" %>
+    </div>
 
-  <div class="mall-list-header">
-      PLAZA MALLS     <span class="mall-list-header-counter"><%=@shopping_malls.where(" mall_type_id=2").count %></span>
-  </div>
+    <div class="mall-list-header">
+        PLAZA MALLS <span class="mall-list-header-counter"><%= @shopping_malls.where(" mall_type_id=2").count %></span>
+    </div>
 
 </div>
 
-<div class="row" style="margin: 0px; background-color: #E8E7E2;">
+<div class="row-fluid" style="margin: 0px; background-color: #E8E7E2;">
     <div class="span6" style="margin: 0px 5px 0px 10px;">
-      <%     @shopping_malls.where(" mall_type_id=1").each do |shopping_mall| %>
-      <!--MAJOR MALLS-->
-          <div class="row" style="background-color: transparent; margin: 0px">
-
-          <% mall_background= (shopping_mall.image.to_s != "")?shopping_mall.image.to_s : "/images/dummy.jpeg" %>
-                <div style="border: 1px solid #D4E7F9l;
-                        background-image: url('<%=mall_background%>'); "
-                    class="mall-brief-box <%=shopping_mall.mall_type_id %>">
-                    <%= render :partial => "shopping_malls/shopping_mall_tiny", :locals => {:shopping_mall => shopping_mall} %>
+        <% @shopping_malls.where(" mall_type_id=1").each do |shopping_mall| %>
+            <!--MAJOR MALLS-->
+            <div class="row-fluid" style="background-color: transparent; margin: 0px">
+                <div class="span12">
+                    <% mall_background= (shopping_mall.image.to_s != "") ? shopping_mall.image.to_s : "/images/dummy.jpeg" %>
+                    <div style="border: 1px solid #D4E7F9l;
+                            background-image: url('<%=mall_background%>'); "
+                         class="mall-brief-box <%= shopping_mall.mall_type_id %>">
+                        <%= render :partial => "shopping_malls/shopping_mall_tiny", :locals => {:shopping_mall => shopping_mall} %>
+                    </div>
                 </div>
-          </div>
-      <% end %>
+            </div>
+        <% end %>
     </div>
     <div class="span6" style="margin: 0px 10px 0px 5px;">
-            <!--PLAZA MALLS -->
-         <%     @shopping_malls.where(" mall_type_id=2").each do |shopping_mall| %>
-          <div class="row" style="background-color: transparent; margin: 0px">
+        <!--PLAZA MALLS -->
+        <% @shopping_malls.where(" mall_type_id=2").each do |shopping_mall| %>
+            <div class="row-fluid" style="background-color: transparent; margin: 0px">
+                <div class="span12">
+                    <% mall_background= (shopping_mall.image.to_s != "") ? shopping_mall.image.to_s : "/images/dummy.jpeg" %>
 
-          <% mall_background= (shopping_mall.image.to_s != "")?shopping_mall.image.to_s : "/images/dummy.jpeg" %>
-
-            <div style="border: 1px solid #D4E7F9 ;
-                        background-image: url('<%=mall_background%>'); "
-                 class="mall-brief-box <%=shopping_mall.mall_type_id %>">
-                 <%= render :partial => "shopping_malls/shopping_mall_tiny", :locals => {:shopping_mall => shopping_mall} %>
+                    <div style="border: 1px solid #D4E7F9 ;
+                            background-image: url('<%=mall_background%>'); "
+                         class="mall-brief-box <%= shopping_mall.mall_type_id %>">
+                        <%= render :partial => "shopping_malls/shopping_mall_tiny", :locals => {:shopping_mall => shopping_mall} %>
+                    </div>
+                </div>
             </div>
-          </div>
         <% end %>
     </div>
 </div>
