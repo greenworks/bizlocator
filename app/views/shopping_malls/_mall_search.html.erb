@@ -1,4 +1,4 @@
-<div style="margin-top:15px; ">
+<div class="span12" style="margin-top:15px; ">
   <%= form_tag shopping_malls_path, :method => 'get', :id => "mall_search"   do %>
       <!--%= text_field_tag :search, params[:search],
                          :class => "search_text_field",
@@ -23,7 +23,7 @@
                               name="Your Address "
                               style="background-color: rgb(255, 255, 255);
                                       height: 24px;
-                                      width: 260px;
+                                      width: 40%;
                                       top: 0px;
                                       text-align: center;
                                       font-weight: bold;
@@ -33,7 +33,7 @@
       <input type="submit"
              style="background-color: #E8E7E2;
                      height:32px;
-                     width: 100px;
+                     width: 10%;
                      top:-5px;
                      left: -3px;
                      font-weight: bolder;
@@ -41,6 +41,3 @@
              value="GO"/>
   <% end %>
 </div>
-
-
-
