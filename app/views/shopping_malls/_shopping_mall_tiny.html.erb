@@ -1,5 +1,5 @@
 <div class="shopping_mall-header">
-  <div class="shopping_mall-header-small" style="width: 51%; padding-left: 6px">
+  <div class="shopping_mall-header-small" style="width: 50%; padding-left: 6px">
     <%= link_to (shopping_mall.name).upcase, shopping_mall, :style => "text-weight: bold; font-size:16px" %>
   </div>
   <div id="mall_info<%= shopping_mall.id %>"
@@ -30,7 +30,7 @@
       </div>
     </div>
   </div>
-  <div class="shopping_mall-info-small centered-group" style="width: 26.7%; ">
+  <div class="shopping_mall-info-small centered-group" style="width: 26%; ">
     <span id="mall-view-bar mall_view<%= shopping_mall.id %>">
         <a href="<%= "/shopping_malls/#{shopping_mall.id}/view" %>"
            style="text-decoration: underline; font-weight:bold; width: 35%; margin: 0px auto; color:#D4E7F9; line-height: 40px">VIEW
