@@ -7,7 +7,6 @@
     <span class="mall_links">
     <a data-toggle="modal"
        data-target="#popMapData<%= shopping_mall.id %>">Mall Links</a></span>
-
   </div>
   <div class="span3 shopping_mall-header-small" style="width: 28%; text-align: center; color:#D4E7F9; margin: 0px">
     Approx <%= pluralize(shopping_mall.address.distance_to("Islamic Bookstore - Sound Vision Canada (Toronto / Mississauga), 2570 Haines Rd #2, Mississauga, ON L4Y 4A3, Canada").round, 'Km') %>
@@ -32,9 +31,13 @@
     </div>
   </div>
   <div class="span3 shopping_mall-info-small centered-group mall-view-bar mall_view<%= shopping_mall.id %>" style="width: 28%; margin: 0px">
-        <a href="<%= "/shopping_malls/#{shopping_mall.id}/view" %>"
-           style="text-decoration: underline; font-weight:bold; width: 35%; margin: 0px auto; color:#D4E7F9; line-height: 40px">VIEW
-          ALL</a>
+      <a href="<%= "/shopping_malls/#{shopping_mall.id}/view" %>"
+         style="text-decoration: underline;
+                 font-weight:bold;
+                 width: 35%;
+                 margin: 0px auto;
+                 color:#D4E7F9;
+                 line-height: 40px">VIEW ALL</a>
       <ul class="mall-view-bar">
         <li><a href="#">ADS</a></li>
         <li><a href="#">BUSINESSES</a></li>
@@ -43,8 +46,14 @@
   </div>
 </div>
 
-<div class="modal fade" id="popMapData<%= shopping_mall.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade"
+     id="popMapData<%= shopping_mall.id %>"
+     tabindex="-1"
+     role = "dialog"
+     aria-labelledby = "myModalLabel"
+     aria-hidden = "true">
 
-  <%= render :partial => "shopping_malls/shopping_mall_links_modal", :locals => {:shopping_mall => shopping_mall} %>
+  <%= render :partial => "shopping_malls/shopping_mall_links_modal",
+             :locals => {:shopping_mall => shopping_mall} %>
 
 </div><!-- /.modal -->
