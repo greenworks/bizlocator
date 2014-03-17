@@ -15,6 +15,20 @@
 
 @media all and (max-width: 4200px)
 {
+    .top_bar{
+        color: #22367C;
+    }
+
+
+    .top_bar a{
+        color: #22367C;
+    }
+
+
+    .top_bar a:visited{
+        color: #22367C;
+    }
+
     .main-nav-bar{
         /*width:78%;*/
         float: right;
