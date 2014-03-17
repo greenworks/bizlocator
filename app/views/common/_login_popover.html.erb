@@ -1,4 +1,26 @@
-    <div class="modal-header text-center">
+<script>
+    $(document).ready(
+            function()
+            {
+
+                $('.login').popover(
+                        {
+                            placement: 'left',
+                            html : true,
+                            width: '450px',
+                            content:
+                                    function() {
+                                        return $('#login_popover_content_wrapper').html();
+                                    }
+                        }
+                );
+
+                $('.login').siblings('.popover').css({ width: '450px'});
+
+            });
+</script>
+
+<div class="modal-header text-center">
       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
       <h3 id="myModalLabel">Log In</h3>
     </div>
