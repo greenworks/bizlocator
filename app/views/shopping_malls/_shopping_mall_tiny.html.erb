@@ -5,8 +5,9 @@
   <div id="mall_info<%= shopping_mall.id %>"
        class="span2 shopping_mall-header-small" style="width: 20%; background-color: #C8696F; text-align: center; margin: 0px">
     <span class="mall_links">
-    <a data-toggle="modal"
-       data-target="#popMapData<%= shopping_mall.id %>">Mall Links</a></span>
+        <a data-toggle="modal"
+            data-target="#popMapData<%= shopping_mall.id %>">
+          Mall Links</a></span>
   </div>
   <div class="span3 shopping_mall-header-small" style="width: 28%; text-align: center; color:#D4E7F9; margin: 0px">
     Approx <%= pluralize(shopping_mall.address.distance_to("Islamic Bookstore - Sound Vision Canada (Toronto / Mississauga), 2570 Haines Rd #2, Mississauga, ON L4Y 4A3, Canada").round, 'Km') %>
@@ -24,7 +25,7 @@
     </div>
     <div class="row-fluid"
          style="position:relative;
-            z-index:0;
+                 z-index:0;
                  height: 93%;
             border: 1px solid #D4E7F9l;">
         <% if shopping_mall.image.to_s != '' %>
