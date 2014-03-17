@@ -96,11 +96,11 @@
         margin-bottom: auto;
         margin-left: -3px;
         font-weight: bold;
-        width: 80px; !IMPORTANT
+        width: 20%; !IMPORTANT
     }
 
     .main_search .search_text_field{
-        width:270px;
+        width:70%;
         margin-top:10px;
     }
 
