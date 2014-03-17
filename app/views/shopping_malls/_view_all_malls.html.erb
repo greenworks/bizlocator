@@ -34,13 +34,11 @@
         <% @shopping_malls.where(" mall_type_id=1").each do |shopping_mall| %>
             <!--MAJOR MALLS-->
             <div class="row-fluid" style="background-color: transparent; margin: 0px">
-                <div class="span12">
-                    <% mall_background= (shopping_mall.image.to_s != "") ? shopping_mall.image.to_s : "/images/dummy.jpeg" %>
-                    <div style="border: 1px solid #D4E7F9l;
-                            background-image: url('<%=mall_background%>'); "
-                         class="mall-brief-box <%= shopping_mall.mall_type_id %>">
-                        <%= render :partial => "shopping_malls/shopping_mall_tiny", :locals => {:shopping_mall => shopping_mall} %>
-                    </div>
+                <% mall_background= (shopping_mall.image.to_s != "") ? shopping_mall.image.to_s : "/images/dummy.jpeg" %>
+                <div style="border: 1px solid #D4E7F9l;
+                        background-image: url('<%=mall_background%>'); "
+                     class="mall-brief-box <%= shopping_mall.mall_type_id %>">
+                    <%= render :partial => "shopping_malls/shopping_mall_tiny", :locals => {:shopping_mall => shopping_mall} %>
                 </div>
             </div>
         <% end %>
@@ -49,7 +47,6 @@
         <!--PLAZA MALLS -->
         <% @shopping_malls.where(" mall_type_id=2").each do |shopping_mall| %>
             <div class="row-fluid" style="background-color: transparent; margin: 0px">
-                <div class="span12">
                     <% mall_background= (shopping_mall.image.to_s != "") ? shopping_mall.image.to_s : "/images/dummy.jpeg" %>
 
                     <div style="border: 1px solid #D4E7F9 ;
@@ -57,7 +54,6 @@
                          class="mall-brief-box <%= shopping_mall.mall_type_id %>">
                         <%= render :partial => "shopping_malls/shopping_mall_tiny", :locals => {:shopping_mall => shopping_mall} %>
                     </div>
-                </div>
             </div>
         <% end %>
     </div>
