@@ -8,12 +8,32 @@
      </span>
   </div>
   <div class="span2 pull-right text-right" style="margin: 0px">
-    <span class="notify_me_button" style="margin: 3px; padding: 5px; margin-right: 20px">
+    <span class="notify_me_button" id="example" style="margin: 3px; padding: 5px; margin-right: 20px">
       Notify Me
     </span>
   </div>
 </div>
-
+<script>
+    $(document).ready(function() {
+        $(".notify_me_button").popover({
+            placement: 'left',
+            html: 'true',
+            title : 'This is the example of popover'+
+                    '<button type="button" id="close" class="close" onclick="$(&quot;.notify_me_button&quot;).popover(&quot;hide&quot;);">&times;</button>',
+            content : 'This is the example of popover with close icon. Close icon with properly indicate that user can close it.'
+        });
+    });
+</script>
+<style>
+    .popover
+    {
+        min-width:300px;
+    }
+    .container
+    {
+        padding:100px;
+    }
+</style>
 <div class="row-fluid" style="margin: 0px; padding:0px 0px 10px 10px">
   <% if ad_category.get_all_child_categories.count > 1 %>
       <div class="span10 sub-category-row" style="margin: 0px; width: 88%">
@@ -52,6 +72,7 @@
       </div>
       <div class="span2 text-center" style="margin: 0px; width: 10%">
         <div class="more-category-div">
+
           <% if ad_category.get_all_child_categories.count > 10 %>
               <%= link_to "More Categories", ad_categories_path(:id => ad_category.id) %>
           <% else %>
