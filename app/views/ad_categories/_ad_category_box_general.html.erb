@@ -52,7 +52,7 @@
       </div>
       <div class="span2 text-center" style="margin: 0px; width: 10%">
         <div class="more-category-div">
-          <% if ad_category.get_all_child_categories.count > 0 %>
+          <% if ad_category.get_all_child_categories.count > 10 %>
               <%= link_to "More Categories", ad_categories_path(:id => ad_category.id) %>
           <% else %>
               More Categories
