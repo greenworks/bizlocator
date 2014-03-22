@@ -156,9 +156,13 @@ line-height: 30px;
   border: 1px solid #22367C;
   border-radius: 5px;
   color: #22367C;
-  font-size: 16px;
-  font-weight: bold;
-  height: 56px;
+  font-size: 1em;
+//  font-weight: bold;
+  height: 51px;
+  overflow: hidden;
+  text-overflow: clip;
+  background: #E8E7E2;
+  padding: 5px;
 }
 
 .more-category-div a {
