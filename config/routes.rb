@@ -22,6 +22,18 @@ Bizlocator::Application.routes.draw do
   resources :ad_types
   resources :ad_positions
   resources :ad_categories
+  resources :ad_categories do
+     collection  do
+       post :subscribe
+       put :save_subscribe
+     end
+  end
+  #resources :ad_categories do
+  #  member  do
+  #    put :subscribe
+  #    post :save_subscribe
+  #  end
+  #end
 
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
   devise_for :users
@@ -44,6 +56,7 @@ Bizlocator::Application.routes.draw do
   match 'shopping_malls/:id/mall_ads' => 'shopping_malls#mall_ads'
   match 'shopping_malls/:id/mall_ad_categories' => 'shopping_malls#mall_ad_categories'
   match 'shopping_malls/:id/mall_business_items' => 'shopping_malls#mall_business_items'
+  #match 'ad_categories/subscribe' => 'ad_categories#subscribe'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -8,7 +8,7 @@
      </span>
   </div>
   <div class="span2 pull-right text-right" style="margin: 0px">
-    <span class="notify_me_button" id="example" style="margin: 3px; padding: 5px; margin-right: 20px">
+    <span class="notify_me_button" id="notify_me_button<%=ad_category.id%>" style="margin: 3px; padding: 5px; margin-right: 20px">
       Notify Me
     </span>
   </div>
@@ -16,19 +16,48 @@
 <div id="notify_cetgories<%=ad_category.id%>" style="display: none; width: 150px">
   <div>
         <%= form_for("notification_subscription",
-                    :url => main_app.user_registration_path,
-                    :html => { :class => "form-horizontal" }
+                    :url => subscribe_ad_categories_path(ad_category, method: :post),
+                    :html => { :class => "form-horizontal" },
+                    :method => 'get'
                     ) do |f| %>
             <fieldset>
-              <div class="control-group">
+              <div class="control-group" style="height: 100px; overflow-y: scroll; overflow-x: hidden; overflow-style: scrollbar">
+
                 <% ad_category.get_all_child_categories.each do |child_category| %>
-                    <div style="float: left">
-                      <%= f.check_box(:a, { :multiple => true }, child_category.name )%>
-                      <%= f.label(child_category.name )%>
+                    <div class="input-group" >
+                    <%= f.label(child_category.name ) do %>
+                          <%= f.check_box(:a, { :multiple => true }, child_category.id )%>
+                          <%= child_category.name %>
+                      <%end%>
                     </div>
                 <% end %>
               </div>
-              <div class="form-actions">
+              <h4>SEND TO</h4>
+              <div class="input-group" >
+                <div class="row-fluid">
+                  <div class="span10">MY MEMBERS PAGE</div>
+                  <div class="span2 input-group-addon">
+                    <%= f.check_box(:a, { :multiple => true }, "MEMBER_PAGE" )%>
+                  </div>
+                </div>
+                <div class="row-fluid">
+                  <div class="span10">MY text message</div>
+                  <div class="span2 input-group-addon">
+                    <%= f.check_box(:a, { :multiple => true }, "MEMBER_PAGE" )%>
+                  </div>
+                </div>
+                <div class="row-fluid">
+                  <div class="span10 ">MY EMAIL</div>
+                  <div class="span2 input-group-addon">
+                    <%= f.check_box(:a, { :multiple => true }, "MEMBER_PAGE" )%>
+                  </div>
+                </div>
+                <div class="row-fluid text-centered">
+                  <div class="span6 " style="text-align: right">ALL</div>
+                  <div class="span4 pull-left">
+                    <%= f.check_box(:a, { :multiple => true }, "MEMBER_PAGE" )%>
+                  </div>
+                </div>
                 <%= f.submit "Done" %>
               </div>
             </fieldset>
@@ -37,11 +66,11 @@
 </div>
 <script>
     $(document).ready(function() {
-        $(".notify_me_button").popover({
+        $("#notify_me_button<%=ad_category.id%>").popover({
             placement: 'left',
             html: 'true',
             title : '<span style="text-decoration: underline" >NEW ADS</span>'+
-                    '<button type="button" id="close" class="close" onclick="$(&quot;.notify_me_button&quot;).popover(&quot;hide&quot;);">&times;</button>',
+                    '<button type="button" id="close" class="close" onclick="$(&quot;#notify_me_button<%=ad_category.id%>&quot;).popover(&quot;hide&quot;);">&times;</button>',
             content : function() {
                 return $('#notify_cetgories<%=ad_category.id%>').html();
             }

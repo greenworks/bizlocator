@@ -12,6 +12,21 @@ class AdCategoriesController < ApplicationController
     end
   end
 
+  def subscribe
+    #@ad_categories = AdCategory.all
+    #@ad_categories = AdCategory.alphabetical_group(params[:letter])
+    logger.debug 'entering subscription'
+    @subscribed_items = params['notification_subscription[a]']
+    @subscribed_items.each do|subscribed_item|
+      logger.debug subscribed_item
+    end
+    #
+    #respond_to do |format|
+    #  format.htm  l # subscribe.html.erb
+    #  format.json { render json: @ad_categories }
+    #end
+  end
+
   # GET /ad_categories/1
   # GET /ad_categories/1.json
   def show
