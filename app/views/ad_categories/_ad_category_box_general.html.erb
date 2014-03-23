@@ -13,14 +13,38 @@
     </span>
   </div>
 </div>
+<div id="notify_cetgories<%=ad_category.id%>" style="display: none; width: 150px">
+  <div>
+        <%= form_for("notification_subscription",
+                    :url => main_app.user_registration_path,
+                    :html => { :class => "form-horizontal" }
+                    ) do |f| %>
+            <fieldset>
+              <div class="control-group">
+                <% ad_category.get_all_child_categories.each do |child_category| %>
+                    <div style="float: left">
+                      <%= f.check_box(:a, { :multiple => true }, child_category.name )%>
+                      <%= f.label(child_category.name )%>
+                    </div>
+                <% end %>
+              </div>
+              <div class="form-actions">
+                <%= f.submit "Done" %>
+              </div>
+            </fieldset>
+    <% end %>
+  </div>
+</div>
 <script>
     $(document).ready(function() {
         $(".notify_me_button").popover({
             placement: 'left',
             html: 'true',
-            title : 'This is the example of popover'+
+            title : '<span style="text-decoration: underline" >NEW ADS</span>'+
                     '<button type="button" id="close" class="close" onclick="$(&quot;.notify_me_button&quot;).popover(&quot;hide&quot;);">&times;</button>',
-            content : 'This is the example of popover with close icon. Close icon with properly indicate that user can close it.'
+            content : function() {
+                return $('#notify_cetgories<%=ad_category.id%>').html();
+            }
         });
     });
 </script>
