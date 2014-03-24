@@ -1,0 +1,2 @@
+module AdCategoriesNotificationsHelper
+end

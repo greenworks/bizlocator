@@ -1,0 +1,27 @@
+<h1>Listing ad_categories_notifications</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Ad category</th>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ad_categories_notifications.each do |ad_categories_notification| %>
+  <tr>
+    <td><%= ad_categories_notification.user_id %></td>
+    <td><%= ad_categories_notification.ad_category_id %></td>
+    <td><%= ad_categories_notification.name %></td>
+    <td><%= link_to 'Show', ad_categories_notification %></td>
+    <td><%= link_to 'Edit', edit_ad_categories_notification_path(ad_categories_notification) %></td>
+    <td><%= link_to 'Destroy', ad_categories_notification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ad categories notification', new_ad_categories_notification_path %>

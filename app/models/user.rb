@@ -17,7 +17,6 @@ class User < ActiveRecord::Base
   has_many :jobs
   has_many :business_items
   has_many :companies
-
   has_many :bookmark_jobs
   has_many :bookmark_ads
   has_many :bookmark_business_items

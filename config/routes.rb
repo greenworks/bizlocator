@@ -1,9 +1,26 @@
 Bizlocator::Application.routes.draw do
 
+  resources :ad_categories_notifications
+
+
   # You can have the root of your site routed with "root"
   # just remember to delete public/removed_index.html.
   root :to => 'info#home'
-  
+
+  resources :ad_categories do
+    collection  do
+      post :subscribe
+      put :save_subscribe
+    end
+  end
+
+  resources :ad_categories do
+    member  do
+      put :subscribe
+      post :save_subscribe
+    end
+  end
+
   resources :shopping_malls
   resources :mall_types
   resources :jobs
@@ -22,18 +39,6 @@ Bizlocator::Application.routes.draw do
   resources :ad_types
   resources :ad_positions
   resources :ad_categories
-  resources :ad_categories do
-     collection  do
-       post :subscribe
-       put :save_subscribe
-     end
-  end
-  #resources :ad_categories do
-  #  member  do
-  #    put :subscribe
-  #    post :save_subscribe
-  #  end
-  #end
 
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
   devise_for :users
