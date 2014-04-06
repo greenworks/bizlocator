@@ -2,6 +2,7 @@ class AdCategory < ActiveRecord::Base
 
   has_many :ads
   belongs_to :ad_category_type
+  has_many :ad_category_notifications
 
   attr_accessible :description, :introtext, :ispublished, :name , :image, :parent_category_id, :ad_category_type_id
 

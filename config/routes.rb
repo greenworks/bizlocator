@@ -7,20 +7,6 @@ Bizlocator::Application.routes.draw do
   # just remember to delete public/removed_index.html.
   root :to => 'info#home'
 
-  resources :ad_categories do
-    collection  do
-      post :subscribe
-      put :save_subscribe
-    end
-  end
-
-  resources :ad_categories do
-    member  do
-      put :subscribe
-      post :save_subscribe
-    end
-  end
-
   resources :shopping_malls
   resources :mall_types
   resources :jobs

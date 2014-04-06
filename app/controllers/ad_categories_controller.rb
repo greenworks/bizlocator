@@ -4,7 +4,7 @@ class AdCategoriesController < ApplicationController
   def index
     #@ad_categories = AdCategory.all
     #@ad_categories = AdCategory.alphabetical_group(params[:letter])
-    @ad_categories = AdCategory.where("name LIKE ?", "#{params[:char]}%")
+    @ad_categories = AdCategory.where(" name LIKE ?", "#{params[:char]}%")
 
     respond_to do |format|
       format.html # index.html.erb

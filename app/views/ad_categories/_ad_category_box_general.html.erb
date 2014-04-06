@@ -16,7 +16,7 @@
 <div id="notify_cetgories<%=ad_category.id%>" style="display: none; width: 150px">
   <div>
         <%= form_for("notification_subscription",
-                    :url => subscribe_ad_categories_path(ad_category, method: :post),
+                    :url => new_ad_categories_notification_path(ad_category, method: :post),
                     :html => { :class => "form-horizontal" },
                     :method => 'get'
                     ) do |f| %>
