@@ -23,7 +23,7 @@ class AdCategory < ActiveRecord::Base
   end
 
   def self.get_all_main_categories
-    AdCategory.where("ad_category_type_id= 0")
+    AdCategory.where("ad_category_type_id = 1")
   end
 
 end

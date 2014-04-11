@@ -159,4 +159,52 @@
         background-color: #E8E7E2;
         color:#22367C;
     }
+
+    .carousel-control-ql{
+        /*top: 5%;*/
+        text-align: center;
+        background-color:#22367C;
+        color: #ffffdd;
+        font-size:large;
+        font-weight: bold
+    }
+
+    .carousel-control-ql img{
+        width: 58px;
+        height: 16px;
+    }
+
+    .quick_link_bar{
+        width:100%;
+        float: none;
+        list-style:none;
+        color:#000000;
+    }
+
+    .quick_link_bar ul{
+        width:100%;
+        margin:0 auto 0 auto;
+    }
+
+    .quick_link_bar ul li {
+        background-color:#D4E7F9;
+        float:none;
+        color:#0088CC;
+        height:20px;
+        list-style:none;
+        display:block;
+        text-align:center;
+        font-size: 12px;
+        margin-top: 10px;
+        border:thin solid #22367C;
+    }
+
+    .quick_link_bar ul li:hover {
+        background-color:#CCC;
+    }
+
+    .quick_link_bar ul li a:visited{
+        color:#000000;
+    }
+
 }
