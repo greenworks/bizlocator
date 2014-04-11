@@ -10,7 +10,8 @@
           Mall Links</a></span>
   </div>
   <div class="span3 shopping_mall-header-small" style="width: 28%; text-align: center; color:#D4E7F9; margin: 0px">
-    Approx <%= pluralize(shopping_mall.address.distance_to("Islamic Bookstore - Sound Vision Canada (Toronto / Mississauga), 2570 Haines Rd #2, Mississauga, ON L4Y 4A3, Canada").round, 'Km') %>
+    <%@dist = shopping_mall.address.distance_to("Islamic Bookstore - Sound Vision Canada (Toronto / Mississauga), 2570 Haines Rd #2, Mississauga, ON L4Y 4A3, Canada").to_f %>
+    Approx <%= pluralize( @dist, 'Km') %>
   </div>
 </div>
 
