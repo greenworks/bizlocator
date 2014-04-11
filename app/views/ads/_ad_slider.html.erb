@@ -2,97 +2,100 @@
    @ad_categories = AdCategory.all(:select => :id).collect(&:id)
    @loopvar = 0
 %>
-<div class="container">
-  <div class="row-fluid">
-    <div class="span9" style="margin-top: 20px">
-      <div id="myCarousel" class="carousel slide">
-        <div class="carousel-inner">
-          <%
-             @ad_categories.each do |x|
-               #@loopvar+=1
-               #puts "ad_category ==> #{x}"
-               @ad = Ad.find_all_by_ad_category_id(x).first
-               unless @ad.nil?
-                 #puts "ad ==> #{@ad.id}"
-          %>
-                  <div class="item
+<div class="span9" >
+  <div id="myCarousel" class="carousel slide">
+    <div class="carousel-inner">
+      <%
+         @ad_categories.each do |x|
+           #@loopvar+=1
+           #puts "ad_category ==> #{x}"
+           @ad = Ad.find_all_by_ad_category_id(x).first
+           unless @ad.nil?
+             #puts "ad ==> #{@ad.id}"
+      %>
+              <div class="item
                     <%= @loopvar %>
                     <% if (@loopvar == 1)  %>
                         active
                     <% end %>">
-                    <div class="image-caption-wrapper" style="height:400px; ">
-                      <% if @ad.image.to_s != ''  %>
-                          <%=image_tag(@ad.image.to_s, :style => "width=866px; height:396px" )%>
-                      <% else %>
-                          <%=image_tag("/images/dummy.jpeg", :height => '257') %>
-                      <% end %>
+                <div class="image-caption-wrapper" style="height:400px; ">
+                  <% if @ad.image.to_s != ''  %>
+                      <%=image_tag(@ad.image.to_s, :style => "width:100%; height:396px" )%>
+                  <% else %>
+                      <%=image_tag("/images/dummy.jpeg", :height => '257') %>
+                  <% end %>
+                </div>
+
+               <div class="carousel-caption" id="buttonsgroup-part_<%=@loopvar%>" style="padding:0px; height:160px ; background: none repeat scroll 0 0 rgba(0, 0, 0, 0); z-index: 2">
+                 <div class="row-fluid" style="padding:0px ">
+                   <div class="span1" style="text-align: left; "><a id="hideshow_<%=@loopvar%>" class="btn btn-inverse btn-mini" style="position: relative; top: -12px;">HIDE</a></div>
+                   <div class="span1 offset10" style="text-align: right;"><a class="btn btn-inverse btn-mini" id="pauseplay_<%=@loopvar%>" style="position: relative; top: -12px;">PAUSE</a></div>
+                 </div>
+               </div>
+               <div class="carousel-caption" id="carousel-caption-part_<%=@loopvar%>" style="padding:0px; height:160px; z-index: 0 ">
+                 <div class="row-fluid" id="slider_<%=@loopvar%>" style="padding: 5px 10px; position: relative; ">
+                    <div class="row-fluid">
+                      <%= render :partial => "ads/ad_slider_header" %>
                     </div>
-
-                    <div class="carousel-caption" id="carousel-caption-part" style="padding:0px; height:160px ">
-                      <div class="row-fluid" style="padding:0px ">
-                        <div class="span1" style="text-align: left; "><a id="hideshow_<%=@loopvar%>" class="btn btn-inverse btn-mini" style="position: relative; top: -12px;">HIDE</a></div>
-                        <div class="span1 offset10" style="text-align: right;"><a class="btn btn-inverse btn-mini" id="pauseplay_<%=@loopvar%>" style="position: relative; top: -12px;">PAUSE</a></div>
-                      </div>
-                      <div class="row-fluid" id="slider_<%=@loopvar%>" style="padding: 5px 10px; position: relative; top: -20px">
-                          <div class="row-fluid">
-                          <%= render :partial => "ads/ad_slider_header" %>
-                        </div>
-                        <div class="row-fluid">
-                          <%= render :partial => "ads/ad_slider_footer" %>
-                        </div>
-                      </div>
+                    <div class="row-fluid">
+                      <%= render :partial => "ads/ad_slider_footer" %>
                     </div>
-                    <script>
-                        //$('#pauseButton').click(function() {
-                        //  $('#myCarousel').carousel('pause');
-                        //});
-                        // $('#playButton').click(function() {
-                        //   $('#myCarousel').carousel('cycle');
-                        //});
-                        var hsbutton = document.getElementById('hideshow_<%=@loopvar%>');
-                        var pplbutton = document.getElementById('pauseplay_<%=@loopvar%>');
-
-                        hsbutton.onclick = function() {
-                            var div = document.getElementById('slider_<%=@loopvar%>');
-
-                            if (div.style.display !== 'none') {
-                                div.style.display = 'none';
-                                document.getElementById('hideshow_<%=@loopvar%>').innerHTML="SHOW";
-                            }
-                            else {
-                                div.style.display = 'block';
-                                document.getElementById('hideshow_<%=@loopvar%>').innerHTML="HIDE";
-                            }
-                        };
-
-                        pplbutton.onclick = function() {
-
-                            if (document.getElementById('pauseplay_<%=@loopvar%>').innerHTML=="PAUSE") {
-
-                                document.getElementById('pauseplay_<%=@loopvar%>').innerHTML="PLAY";
-                                document.getElementById('myCarousel').carousel('pause');
-                            }
-                            else {
-                                document.getElementById('pauseplay_<%=@loopvar%>').innerHTML="PAUSE";
-                                document.getElementById('myCarousel').carousel('cycle');
-                            }
-                        };
-                    </script>
                   </div>
-              <% end
-                 @loopvar+= 1
-                 end %>
-        </div>
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
-      </div>
+                </div>
+                <script>
+                    //$('#pauseButton').click(function() {
+                    //  $('#myCarousel').carousel('pause');
+                    //});
+                    // $('#playButton').click(function() {
+                    //   $('#myCarousel').carousel('cycle');
+                    //});
+                    var hsbutton = document.getElementById('hideshow_<%=@loopvar%>');
+                    var pplbutton = document.getElementById('pauseplay_<%=@loopvar%>');
+
+                    hsbutton.onclick = function() {
+//                        var div = document.getElementById('slider_<%=@loopvar%>');
+                        var div = document.getElementById('carousel-caption-part_<%=@loopvar%>');
+                        var bdiv2 = document.getElementById('buttonsgroup-part_<%=@loopvar%>');
+
+                        if (div.style.display != 'none') {
+                            div.style.display = 'none';
+                            bdiv2.style.position='relative';
+//                            bdiv2.style.top='20px';
+                            document.getElementById('hideshow_<%=@loopvar%>').innerHTML="SHOW";
+                        }
+                        else {
+                            div.style.display = 'block';
+                            bdiv2.style.position='absolute';
+//                            bdiv2.style.top='0px';
+                            document.getElementById('hideshow_<%=@loopvar%>').innerHTML="HIDE";
+                        }
+                    };
+
+                    pplbutton.onclick = function() {
+
+                        if (document.getElementById('pauseplay_<%=@loopvar%>').innerHTML=="PAUSE") {
+
+                            document.getElementById('pauseplay_<%=@loopvar%>').innerHTML="PLAY";
+                            document.getElementById('myCarousel').carousel('pause');
+                        }
+                        else {
+                            document.getElementById('pauseplay_<%=@loopvar%>').innerHTML="PAUSE";
+                            document.getElementById('myCarousel').carousel('cycle');
+                        }
+                    };
+                </script>
+              </div>
+          <% end
+             @loopvar+= 1
+             end %>
     </div>
-    <div class="span3">
-        <%= render "/common/quicklink" %>
-    </div>
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
   </div>
 </div>
-
+<div class="span3">
+  <%= render "/common/quicklink" %>
+</div>
 <script>
 //    $('#myCarousel').carousel({
 //        interval: 5000
