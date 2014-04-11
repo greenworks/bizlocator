@@ -2,7 +2,20 @@
    @ad_categories = AdCategory.all(:select => :id).collect(&:id)
    @loopvar = 0
 %>
-<div class="span9" >
+
+<script>
+    // Load this when the DOM is ready
+    $(function(){
+        // You used .myCarousel here.
+        // That's the class selector not the id selector,
+        // which is #myCarousel
+        $('#myCarousel').carousel({
+            interval:1000
+        });
+    });
+</script>
+
+<div class="span9" style="margin: 0px" >
   <div id="myCarousel" class="carousel slide" style="height: 450px">
     <div class="carousel-inner">
       <%
@@ -75,11 +88,14 @@
                         }
                     };
 
+
+
                     pplbutton.onclick = function() {
 
                         if (document.getElementById('pauseplay_<%=@loopvar%>').innerHTML=="PAUSE") {
 
                             document.getElementById('pauseplay_<%=@loopvar%>').innerHTML="PLAY";
+                            //alert(document.getElementById('myCarousel').innerHTML);
                             document.getElementById('myCarousel').carousel('pause');
                         }
                         else {
