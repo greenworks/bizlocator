@@ -22,13 +22,13 @@
 //            console.log(id);
 //        });
 //
-//$(document).ready(function () {
-//    $("[href]").each(function () {
-//        if (this.href == window.location.href) {
-//            last_li = $(this).closest('li');
-////                    alert($(last_li));
-//            $(last_li).addClass('active_link')
-//            //$(this).closest('li').style.background = "#ffcc00"
-//        }
-//    });
-//});
+$(document).ready(function () {
+    $("[href]").each(function () {
+        if (this.href == window.location.href) {
+            last_li = $(this).closest('li');
+//                    alert($(last_li));
+            $(last_li).addClass('active_link')
+            //$(this).closest('li').style.background = "#ffcc00"
+        }
+    });
+});
