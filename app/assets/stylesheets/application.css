@@ -172,13 +172,26 @@
     .carousel-control-ql img{
         width: 58px;
         height: 16px;
+        background-color:#22367C;
+    }
+
+    .carousel-control-ql a{
+        background-color:#22367C;
+    }
+
+    .carousel-control-ql a:hover{
+        background-color:#22367C;
+    }
+
+    .carousel-control-ql a:visited{
+        background-color:#22367C;
     }
 
     .quick_link_bar{
         width:100%;
         float: none;
         list-style:none;
-        color:#000000;
+        color:#22367C;
     }
 
     .quick_link_bar ul{
@@ -200,11 +213,17 @@
     }
 
     .quick_link_bar ul li:hover {
+        color:#22367C;
         background-color:#CCC;
     }
 
-    .quick_link_bar ul li a:visited{
-        color:#000000;
+    .quick_link_bar ul li a:hover{
+        color:#22367C;
+        background-color:#CCC;
+    }
+
+    .quick_link_bar ul li a{
+        color:#22367C;
     }
 
 }
