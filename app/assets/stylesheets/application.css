@@ -94,6 +94,21 @@
         color:#22367C;
     }
 
+    .main-nav-bar ul li.active_link {
+        background-color: #E8E7E2;
+        color:#22367C;
+    }
+
+    li.active_link a{
+        background-color: #E8E7E2;
+        color:#22367C;
+    }
+
+    li.active_link a:visited{
+        background-color: #E8E7E2;
+        color:#22367C;
+    }
+
 
     .main_search{
         height: 40px;

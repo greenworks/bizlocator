@@ -1,4 +1,4 @@
-<div class="span12" style="margin-top:15px; ">
+<div class="span12" style="margin-top:0px; ">
   <%= form_tag shopping_malls_path, :method => 'get', :id => "mall_search"   do %>
       <!--%= text_field_tag :search, params[:search],
                          :class => "search_text_field",
@@ -16,14 +16,14 @@
               if(i.value==""){ i.value=i.defaultValue; i.style.color="#888"; }
           }
       </script>
-      <span style="text-decoration: underline">DISTANCE TO MALLS</span>
+      <span style="text-decoration: underline">DISTANCE TO MALLS<br/></span>
       <input id="search"
                               class="search_text_field"
                               type="text"
                               name="Your Address "
                               style="background-color: rgb(255, 255, 255);
                                       height: 24px;
-                                      width: 40%;
+                                      width: 60%;
                                       top: 0px;
                                       text-align: center;
                                       font-weight: bold;
