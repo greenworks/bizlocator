@@ -1,28 +1,38 @@
-class AdCategoriesNotificationsController < ApplicationController # < InheritedResources::Base
+class AdCategoriesNotificationsController < InheritedResources::Base
+  def index
+    sleep 1
+    @ad_categories_notifications = AdCategoriesNotification.all
+    @unnotified_ad_categories = AdCategoriesNotification.where("user_id = 1")
+    @notified_ad_categories = AdCategoriesNotification.where("user_id <> 1")
+  end
+
   def new
-    @ad_category_notification = AdCategoriesNotification.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @ad_category }
-    end
+    @ad_categories_notification = AdCategoriesNotification.new
   end
 
-
-  # POST /ad_categories
-  # POST /ad_categories.json
   def create
-    @ad_category_notification = AdCategoriesNotification.new(params[:ad_category_notification])
-
+    @ad_categories_notification = AdCategoriesNotification.create!(params[:ad_categories_notification])
     respond_to do |format|
-      if @ad_category.save
-        format.html { redirect_to @ad_category, notice: 'Ad category was successfully created.' }
-        format.json { render json: @ad_category, status: :created, location: @ad_category }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @ad_category.errors, status: :unprocessable_entity }
-      end
+      format.html { redirect_to ad_categories_notifications_url }
+      format.js
     end
   end
 
+  def update
+    @ad_categories_notification = AdCategoriesNotification.find(params[:id])
+    @ad_categories_notification.update_attributes!(params[:task])
+    respond_to do |format|
+      format.html { redirect_to ad_categories_notifications_url }
+      format.js
+    end
+  end
+
+  def destroy
+    @ad_categories_notification = AdCategoriesNotification.destroy(params[:id])
+    respond_to do |format|
+      format.html { redirect_to ad_categories_notifications_url }
+      format.js
+    end
+  end
+  
 end

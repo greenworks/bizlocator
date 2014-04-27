@@ -3,6 +3,9 @@ Bizlocator::Application.routes.draw do
   resources :ad_categories_notifications
 
 
+  resources :ad_categories_notifications
+
+
   # You can have the root of your site routed with "root"
   # just remember to delete public/removed_index.html.
   root :to => 'info#home'

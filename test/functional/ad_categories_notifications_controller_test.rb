@@ -18,7 +18,7 @@ class AdCategoriesNotificationsControllerTest < ActionController::TestCase
 
   test "should create ad_categories_notification" do
     assert_difference('AdCategoriesNotification.count') do
-      post :create, ad_categories_notification: { ad_category_id: @ad_categories_notification.ad_category_id, name: @ad_categories_notification.name, user_id: @ad_categories_notification.user_id }
+      post :create, ad_categories_notification: { ad_category: @ad_categories_notification.ad_category, user_id: @ad_categories_notification.user_id }
     end
 
     assert_redirected_to ad_categories_notification_path(assigns(:ad_categories_notification))
@@ -35,7 +35,7 @@ class AdCategoriesNotificationsControllerTest < ActionController::TestCase
   end
 
   test "should update ad_categories_notification" do
-    put :update, id: @ad_categories_notification, ad_categories_notification: { ad_category_id: @ad_categories_notification.ad_category_id, name: @ad_categories_notification.name, user_id: @ad_categories_notification.user_id }
+    put :update, id: @ad_categories_notification, ad_categories_notification: { ad_category: @ad_categories_notification.ad_category, user_id: @ad_categories_notification.user_id }
     assert_redirected_to ad_categories_notification_path(assigns(:ad_categories_notification))
   end
 
