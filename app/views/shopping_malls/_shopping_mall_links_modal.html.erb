@@ -3,19 +3,19 @@
   <div class="modal-content">
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-      <button type="button" class="btn btn-info btn-default" data-dismiss="modal">
-        Mall Overview Map
-      </button>
+
 
       <% if !(shopping_mall.address.nil?) %>
 
-          <button type="button" class="btn btn-info btn-default" data-dismiss="modal"
-                  data-toggle="modal"
-                  data-target="#">
-            Mall Directions<i class="icon-white icon-map-marker"></i>
-          </button>
+          <div class="button-group" style="margin: 0px 0px;">
+            <button type="button" class="btn btn-info btn-default" data-dismiss="modal">
+              Mall Overview Map
+            </button>
+          <a href="#" class="btn btn-info btn-default" style="color: #ffffff">Save <i class="icon-white icon-download-alt"></i></a>
+          <a href="#" class="btn btn-info btn-default" style="color: #ffffff">e-Mail <i class="icon-white icon-comment"></i></a>
+          </div>
 
-      <% end %>
+    <% end %>
       <h4 class="modal-title" id="myModalLabel"><%= shopping_mall.name %></h4>
 
       <div class="row-fluid">
