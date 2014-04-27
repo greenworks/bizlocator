@@ -48,6 +48,12 @@
         <li><a href="#">ADS</a></li>
         <li><a href="#">BUSINESSES</a></li>
         <li><a href="#">CATEGORIES</a></li>
+        <li style="height: 40px; padding: 5px 2px">
+          <% @gmap_target = shopping_mall.name + "," + (shopping_mall.address && shopping_mall.address.address_brief).to_s %>
+          <a href="http://www.google.com/maps?q=<%= @gmap_target%>"
+             style="font-size: 14px"
+             target="_blank">Directions to Mall<i class="icon-white icon-map-marker"></i></a>
+        </li>
       </ul>
   </div>
 </div>
