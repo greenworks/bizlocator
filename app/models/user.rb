@@ -21,6 +21,10 @@ class User < ActiveRecord::Base
   has_many :bookmark_ads
   has_many :bookmark_business_items
 
+  has_many  :ad_category_notifications
+  has_many  :ad_categories,  :through => :ad_category_notifications
+
+
   before_create :set_default_role
 
   private

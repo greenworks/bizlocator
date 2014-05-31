@@ -11,13 +11,16 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :ad_category_id %><br />
-    <%= f.number_field :ad_category_id %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
+   <% @ad_categories.each do |ad_category| %>
+        <%= check_box_tag(
+                    "ad_categories_notification[ad_categories][#{ad_category.id}]",
+                    @ad_categories_notification.ad_categories.nil? ? true :  @ad_categories_notification.ad_categories.detect{|d| d == ad_category} ) %>
+        <%= "#{ad_category.name}"%><br />
+    <% end %>
+
+  <div class="feild">
+    User : <%=current_user.name %><br />
+    <%= hidden_field_tag :user_id, current_user.id %>
   </div>
   <div class="actions">
     <%= f.submit %>

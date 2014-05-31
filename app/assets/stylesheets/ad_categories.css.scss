@@ -76,6 +76,24 @@
   padding: 10px 0px;
 }
 
+.ad-category-char-index-header-title a{
+  text-decoration: underline;
+  font-weight: bold
+
+  }
+.ad-category-char-index-header-title a{
+  color: #22367C;
+}
+
+.ad-category-char-index-header-title a:hover{
+  color: #22367C;
+}
+
+.ad-category-char-index-header-title a:visited
+{
+  color: #22367C;
+}
+
 .ad-category-char-index-list
 {
   background: #22367C;
@@ -85,7 +103,12 @@
   padding: 5px 20px;
 }
 
-.ad-category-char-index-list a,  a:visited{
+.ad-category-char-index-list a{
+  background: #22367C;
+  color: #D4E7F9;
+}
+
+.ad-category-char-index-list a:visited{
   background: #22367C;
   color: #D4E7F9;
 }

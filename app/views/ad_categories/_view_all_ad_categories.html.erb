@@ -3,7 +3,7 @@
         &nbsp;
     </div>
     <div style="text-align:left; border-width: 1; font-size: 14px ; font-weight: bold">
-        All Categories : By Letter / Title (<%=@ad_categories .count %>)
+        <%= link_to 'All Categories', ad_categories_path %> : By Letter / Title (<%=@ad_categories .count %>)
         <% if params[:shopping_mall] %>
         at <%=params[:shopping_mall]%>
         <% end %>
@@ -11,8 +11,8 @@
 </div>
 
 <div class="row ad-category-char-index-box" style="margin: 0">
-  <div class="row text-center ad-category-char-index-header" style="margin: 0">
-    <span style="text-decoration: underline; font-weight: bold">ALL CATEGORIES:</span> By Letter
+  <div class="row text-center ad-category-char-index-header" style="margin: 0; ">
+    <span class="ad-category-char-index-header-title"><%= link_to 'ALL CATEGORIES', ad_categories_path %></span> : By Letter
   </div>
   <div class="row text-center" style="margin: 0">
     <span class="ad-category-char-index-list">
@@ -29,7 +29,7 @@
 </div>
 
 <div class="row text-center ad-category-title-header" style="margin: 10px 0px 0px;">
-  <span style="text-decoration: underline; font-weight: bold">ALL CATEGORIES:</span> By Title
+  <span style="text-decoration: underline; font-weight: bold">ALL CATEGORIES</span> : By Title
 </div>
 
 <%  @ad_categories.each do |ad_category| %>

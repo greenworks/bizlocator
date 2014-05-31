@@ -1,19 +1,7 @@
-<div id="ads">
-  <% @ads = Ad.search(params[:search])
-     @ads = @ads.where("user_id = ? ", current_user.id)
-     if params.has_key?(:ad_category_id) && params[:ad_category_id] != ''
-       @ads = @ads.where(' ad_category_id = ?', "#{params[:ad_category_id]}")
-     end
-     if params.has_key?(:company_id) && params[:company_id] != ''
-       @ads = @ads.where(' company_id = ?', "#{params[:company_id]}")
-     end
-     if params.has_key?(:price_from) && params[:price_from] != ''
-       @ads = @ads.where(' price >= ?', "#{params[:price_from]}")
-     end
-     if params.has_key?(:price_to) && params[:price_to] != ''
-       @ads = @ads.where(' price <= ?', "#{params[:price_to]}")
-     end
+<div id="ad_categories_notifications">
+  <% @ad_categories_notifications = AdCategoriesNotification.search(params[:search])
+     @ad_categories_notifications = @ad_categories_notifications.where("user_id = ? ", current_user.id)
   %>
-  <% @ads = @ads.paginate(:per_page => 8, :page => params[:page]) %>
-  <%= render :partial => 'ads/ads' , :locals => {:index_scope => "creator" , :ads => @ads }%>
+  <% @ad_categories_notifications = @ad_categories_notifications.paginate(:per_page => 8, :page => params[:page]) %>
+  <%= render :partial => 'ad_categories_notifications/ad_categories_notifications' , :locals => {:index_scope => "creator" , :ad_categories_notifications => @ad_categories_notifications }%>
 </div>
