@@ -1,3 +1,54 @@
 // Place all the styles related to the info controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.sda_box {
+  //height: 200px;
+  width: 35%;
+
+  float: left;
+  border: 2px #22367C solid;
+
+}
+
+.sda-btn{
+//  width: 100px;
+  font-weight: 100;
+  font-size: small;
+  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  text-overflow: clip;
+  text-wrap: none;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 110px;
+}
+
+.sda_box_header {
+  font-weight: bold;
+  border: 2px #22367C solid;
+
+  font-size: smaller;
+  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  text-decoration: underline;
+  color: white;
+  background-color: #22367C;
+  width: 35%;
+  text-overflow: clip;
+}
+
+.sda_box_content {
+
+  font-weight: bold;
+  font-size: small;
+  font-family: Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+
+//  text-decoration: underline;
+  color: #22367C;
+  background-color: white;
+  text-overflow: clip;
+  padding: 10px;
+}
+
+

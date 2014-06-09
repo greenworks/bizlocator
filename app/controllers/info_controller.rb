@@ -25,7 +25,7 @@ class InfoController < ApplicationController
 
   end
 
-  def sda_main_page
+  def sda_page
 
   end
 

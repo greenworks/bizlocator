@@ -45,14 +45,14 @@ Bizlocator::Application.routes.draw do
   get "info/user_account_page"
   get "info/business_page_1"
   get "info/tester"
-  get "info/sda_main_page"
+  get "info/sda_page"
 
   match 'shopping_malls/:id/view' => 'shopping_malls#view'
   match 'shopping_malls/:id/mall_ads' => 'shopping_malls#mall_ads'
   match 'shopping_malls/:id/mall_ad_categories' => 'shopping_malls#mall_ad_categories'
   match 'shopping_malls/:id/mall_business_items' => 'shopping_malls#mall_business_items'
 
-  match 'info/sda_main_page' => 'ads#sda_main_page'
+  match 'info/sda_page' => 'info#sda_page'
 
   #match 'ad_categories/subscribe' => 'ad_categories#subscribe'
 

@@ -17,6 +17,15 @@ class Address < ActiveRecord::Base
 
   #before_validation_on_update :geocode_address
 
+  def xyz2
+
+  end
+
+  def address_brief
+    [ address_line_one, address_line_two, street, postal_code , city, country].compact.join(' ')
+  end
+
+
   def address_brief_changed?
     attrs = %w(address_line_one address_line_two street postal_code city country)
     attrs.any?{|a| send "#{a}_changed?"}
@@ -30,17 +39,11 @@ class Address < ActiveRecord::Base
     end
   end
 
-  def address_brief
-    [ address_line_one, address_line_two, street, postal_code , city, country].compact.join(' ')
-  end
-
   def gmaps4rails_address
     address_brief
   end
 
-  def contact_info
-    "Ph : " + phone
-  end
+
 =begin
 
   def geocode_address
