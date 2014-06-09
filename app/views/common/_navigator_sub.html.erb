@@ -5,12 +5,12 @@
   <ul>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <li style="width:48%; ">
-      <%= link_to "Sales - Deals -", ads_path(:ad_type => AdType.find_by_name("Sales & Deals").id) %>
-      <%= link_to "Flyers -", ads_path(:ad_type => AdType.find_by_name("Flyers").id) %>
-      <%= link_to "Coupons -", ads_path(:ad_type => AdType.find_by_name("Coupons").id) %>
-      <%= link_to "Group Buys -", ads_path(:ad_type => AdType.find_by_name("Group Buys").id) %>
-      <%= link_to "Shop Online -", ads_path(:ad_type => AdType.find_by_name("Shop Online").id) %>
-      <%= link_to "Cash Back", ads_path(:ad_type => AdType.find_by_name("Cash Back").id) %>
+      <%= link_to "Sales - Deals -", "info/sda_main_page?ad_type=#{AdType.find_by_name("Sales & Deals").id}" %>
+      <%= link_to "Flyers -", "info/sda_main_page?ad_type=#{AdType.find_by_name("Flyers").id}" %>
+      <%= link_to "Coupons -", "info/sda_main_page?ad_type=#{AdType.find_by_name("Coupons").id}"%>
+      <%= link_to "Group Buys -", "info/sda_main_page?ad_type=#{AdType.find_by_name("Group Buys").id}" %>
+      <%= link_to "Shop Online -", "info/sda_main_page?ad_type=#{AdType.find_by_name("Shop Online").id}" %>
+      <%= link_to "Cash Back", "info/sda_main_page?ad_type=#{AdType.find_by_name("Cash Back").id}" %>
     </li>
     <li style="width:16%; border-left-width: 0px;" ><%= link_to "View The Malls", shopping_malls_path %> </li>
     <li style="width:14%; border-left-width: 0px; overflow: hidden;"><%= link_to "Save List ", "save_list" %>
