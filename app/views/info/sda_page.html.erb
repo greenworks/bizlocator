@@ -31,40 +31,50 @@
     <div class="row-fluid sda_box_header" style="margin: 0px" >
         Sales - Deals - Flyers - Group Buys - Shop Online - Cash Back
     </div>
-    <div class="row-fluid sda_box_content" style="margin-left: -2px" >
-      <div>
-        View All Ads
+    <div class="row-fluid sda_box_content" style="margin-left: -2px; height: 132px" >
+      <div class="span4">
+        <button type="button" class="btn btn-default sda-main-link">View All Ads</button>
+      </div>
+      <div class="span8" style="width:65%;height:130px  ;  margin:0px; border-radius: 3px; background-color: lightgrey; font-size: large; font-weight: bold; border: 1px #000000 solid ; text-align: center; ">
+        <span style="vertical-align: middle">Random Ads Contents</span>
       </div>
     </div>
   </div>
-  <div class=" sda_box" style="margin: 0px; border-right: 2px #22367C solid; ">
+  <div class=" sda_box" style="margin: 0px;  ">
 
-    <div class="row-fluid sda_box_header" style="margin: 0px" >
+    <div class="row-fluid sda_box_header" style="margin: 0px; width:99%" >
       Sales - Deals - Flyers - Group Buys - Shop Online - Cash Back
     </div>
-    <div class="row-fluid sda_box_content" style="margin: 0px" >
-      <div>
-        View All Categories
+    <div class="row-fluid sda_box_content" style="margin: 0px; width:94%; border-right: 0px #22367C solid; height: 132px " >
+      <div class="span4">
+        <button type="button" class="btn btn-default sda-main-link">View All Categories</button>
       </div>
+        <div class="span8" style="width:65%;height:130px  ;  margin:5px; border-radius: 3px; background-color: lightgrey; font-size: large; font-weight: bold; border: 1px #000000 solid ; text-align: center; ">
+          <span style="vertical-align: middle">Selected Top Ads Cotegories table</span>
+        </div>
     </div>
   </div>
 </div>
-<div class="row-fluid " style="margin-top: 0px">
-  <div class="row-fluid" style="margin: 3px">
-    <div class="sda_box" style="margin: 0px ; width: 28.8%">
-      <div class="row-fluid sda_box_header" style="margin: 0px" >
-        Agggreegation Points
+<div class="row-fluid " style="width:98.9%; padding-top: 5px; ; padding-left:5px; padding-bottom:5px; border: 2px #22367C solid; margin-top: -1px">
+  <div class="row-fluid" style="margin: 0px">
+    <div class="sda_box" style="margin-left: 5px; margin-top:5px; width: 28.8%">
+      <div class="row-fluid sda_box_header" style="margin: 0px; width:99.1%" >
+        Aggregation Points
       </div>
-      <div class="row-fluid sda_box_content" style="margin: 0px" >
-        Buttons
+      <div class="row-fluid sda_box_content" style="padding: 0px;margin: 0px; width:100% ;" >
+        <div class="span12" style="width:96%;height:270px ;  margin:5px; border-radius: 3px; background-color: lightgrey; font-size: x-large; font-weight: bold; border: 1px #000000 solid ; text-align: center; ">
+          <span style="vertical-align: middle">Information</span>
+        </div>
       </div>
     </div>
-    <div class="sda_box" style="margin: 0px ; width: 70% ; border-right: 2px #22367C solid; ">
-      <div class="row-fluid sda_box_header" style="margin: 0px" >
-        Agggreegation Categories
+    <div class="sda_box" style="margin-left: 5px; margin-top:5px; width: 68% ; ">
+      <div class="row-fluid sda_box_header" style="margin: 0px; width:99.7%" >
+        Aggregation Categories
       </div>
-      <div class="row-fluid sda_box_content" style="margin: 0px ; " >
-        Buttons
+      <div class="row-fluid sda_box_content" style="margin: 0px ; width:97.2%; border-right: 2px #22367C solid;" >
+        <div class="span12" style="width:96%;margin:5px; border-radius: 3px; background-color: #D4E7F9; font-size: x-large; font-weight: bold; border: 1px #000000 solid ; text-align: center; ">
+          <%= render :partial => '/info/sda_agg_cat' %>
+        </div>
       </div>
     </div>
   </div>
