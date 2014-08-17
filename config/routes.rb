@@ -1,5 +1,7 @@
 Bizlocator::Application.routes.draw do
 
+  ActiveAdmin.routes(self)
+
   resources :ad_categories_notifications
 
 
