@@ -1,0 +1,9 @@
+1) mall links button put on top in side popover thenrest of information will be downside.
+2) Blue print of mall is not being shown, will add with tab there
+3) In Popover add button of share and email
+4) remove unrequired buttons
+5) "Directions to Mall" button should take to google maps page (below Ad Business Cat buttons)
+6) Darken font of quicklinks
+7) Distnce to Malls line break
+8) Second menu first buttton complete thing need a joint single underline
+9) fist menu .. correct black on hover ... on hover- font will be standard dark-blue
