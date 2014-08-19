@@ -20,7 +20,7 @@
       <%= f.label :role_id %>
     </div>
     <div class="span8">
-      <%= collection_select(:user, :role_id, Role.all, :id, :name) %>
+      <%= collection_select(:user, :role_id, Role.where("id=1  or id=2"), :id, :name) %>
     </div>
   </div>
   <div class="row-fluid" style="margin: 0px">

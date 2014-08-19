@@ -19,7 +19,7 @@
           <br/>
           <div><%= f.label :role_id %>
             <br/>
-            <%=collection_select(:user, :role_id, Role.all, :id, :name  ) %>
+            <%=collection_select(:user, :role_id, Role.where(role_id.equal?1 or role_id.equal?2), :id, :name  ) %>
           </div>
           <br/>
           <div><%= f.label :password %>
