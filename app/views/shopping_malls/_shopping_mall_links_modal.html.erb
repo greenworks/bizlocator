@@ -1,5 +1,5 @@
 
-<div class="modal-dialog">
+<div id="mall_moodle<%= shopping_mall.id%>" class="modal-dialog">
   <div class="modal-content">
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -34,26 +34,33 @@
 
 
             <script type="text/javascript">
-                var map;
+
                 $(document).ready(function(){
-                    map = new GMaps({
-                        el: '#mall_location<%= shopping_mall.id %>',
-                        lat: -12.043333,
-                        lng: -77.028333,
-                        zoomControl : true,
-                        zoomControlOpt: {
-                            style : 'SMALL',
-                            position: 'TOP_LEFT'
-                        },
-                        panControl : false,
-                        streetViewControl : false,
-                        mapTypeControl: false,
-                        overviewMapControl: false
+                    $('#popMapData<%= shopping_mall.id %>').on('shown', function () {
+
+                        var map;
+                        map = new GMaps({
+                            el: '#mall_location<%= shopping_mall.id %>',
+                            lat: -12.043333,
+                            lng: -77.028333,
+                            zoomControl : true,
+                            zoomControlOpt: {
+                                style : 'SMALL',
+                                position: 'TOP_LEFT'
+                            },
+                            panControl : false,
+                            streetViewControl : false,
+                            mapTypeControl: false,
+                            overviewMapControl: false
+                        });
+
+                        console.log("map ", map, " resize invoked on " , this);
+                        map.event.trigger(map, "resize");
                     });
                 });
             </script>
             AAA
-            <div class="span6" id="mall_location<%= shopping_mall.id%>">
+            <div style="width: 500px; height: 400px" id="mall_location<%= shopping_mall.id%>">
             </div>
 
             <!--</div>-->
